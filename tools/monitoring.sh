@@ -10,7 +10,7 @@ echo "Uptime ="
 
 echo "===== Detail server ====="
 echo "Virtualization = " `grep -Eoc '(vmx|svm)' /proc/cpuinfo`
-echo "Archistektur = "
+echo "Architecture = $(uname -m)"
 echo "OS = " `awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release`
 echo "CPU = "
 echo "RAM Usage = Mb | Free = Mb | Total = Mb"

@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo -e "Waktu pada server"
-echo jam date "+%H:%M:%S"
-echo tanggal date "%d/%m/%y"
+echo "jam =" date "+%H:%M:%S"
+echo "tanggal =" date "%d/%m/%y"
 
 
 FREE=`free -m | grep "buffers/cache" | awk '{print $3}'`

@@ -5,7 +5,7 @@ virt= `grep -Eoc '(vmx|svm)' /proc/cpuinfo`
 
 echo "=====Time on server====="
 echo "Time =" `date "+%H:%M:%S"`
-echo "Date =" `date "%d/%m/%y"`
+echo "Date =" `date "+%d/%m/%y"`
 echo "Uptime server ="
 
 echo "=====Detail server====="

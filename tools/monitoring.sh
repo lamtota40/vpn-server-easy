@@ -1,9 +1,9 @@
 #!/bin/bash
 
-echo -e "Waktu pada server"
-echo "jam =" date "+%H:%M:%S"
-echo "tanggal =" date "%d/%m/%y"
-
+echo -e "Time on server"
+echo "Time =" date "+%H:%M:%S"
+echo "Date =" date "%d/%m/%y"
+echo "Uptime server =" uptime
 
 FREE=`free -m | grep "buffers/cache" | awk '{print $3}'`
 SWAP=`free -m | grep "Swap" | awk '{print $3}'`

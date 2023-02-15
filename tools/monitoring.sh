@@ -9,8 +9,11 @@ echo "Date =" `date "+%d/%m/%y"`
 echo "Uptime server ="
 
 echo "=====Detail server====="
-echo "Virtualization =" $virt
-echo "OS = " $osv
+echo "Virtualization = $virt"
+echo "OS = $osv"
+echo "CPU ="
+echo "RAM Usage= Mb Free= Mb Total="
+echo "HHD Usage= Mb Free= Mb Total="
 
 FREE=`free -m | grep "buffers/cache" | awk '{print $3}'`
 SWAP=`free -m | grep "Swap" | awk '{print $3}'`

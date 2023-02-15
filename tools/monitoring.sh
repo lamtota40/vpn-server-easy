@@ -1,9 +1,14 @@
 #!/bin/bash
 
+virt= `grep -Eoc '(vmx|svm)' /proc/cpuinfo`
+
 echo "=====Time on server====="
 echo "Time =" date "+%H:%M:%S"
 echo "Date =" date "%d/%m/%y"
 echo "Uptime server =" `uptime`
+
+echo "=====Detail server====="
+echo "virtualization = $virt "
 
 FREE=`free -m | grep "buffers/cache" | awk '{print $3}'`
 SWAP=`free -m | grep "Swap" | awk '{print $3}'`

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+osv= `awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release`
 virt= `grep -Eoc '(vmx|svm)' /proc/cpuinfo`
 
 echo "=====Time on server====="
@@ -9,7 +10,7 @@ echo "Uptime server ="
 
 echo "=====Detail server====="
 echo "Virtualization =" $virt
-echo "OS = "
+echo "OS = " $osv
 
 FREE=`free -m | grep "buffers/cache" | awk '{print $3}'`
 SWAP=`free -m | grep "Swap" | awk '{print $3}'`

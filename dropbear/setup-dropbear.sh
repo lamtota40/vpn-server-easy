@@ -1,7 +1,6 @@
 #!/bin/bash
 
 apt install dropbear -y
-systemctl stop dropbear
 sudo cp /etc/default/dropbear /etc/default/dropbear.bak
 
 default_port= "443"
@@ -13,7 +12,7 @@ sed -i -e 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 80 -p 8080"/g' /etc/de
 sed -i -e 's/DROPBEAR_BANNER=/DROPBEAR_BANNER="/etc/issue.ssh"/g' /etc/default/dropbear
 
 systemctl enable dropbear
-systemctl start dropbear
+systemctl restart dropbear
 
 #unistall
 #sudo apt-get purge dropbear -y

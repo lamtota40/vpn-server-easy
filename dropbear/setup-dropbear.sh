@@ -1,8 +1,15 @@
 #!/bin/bash
 
-echo "Status :"
+if [ ! $(which sshd) ]; then
+    stat="Not Instaled"
+else
+    stat="Already Instaled"
+fi
+
+
+echo "Status :$stat"
 apt install dropbear -y
-sudo cp /etc/default/dropbear /etc/default/dropbear.bak
+cp /etc/default/dropbear /etc/default/dropbear.bak
 
 default_port= "443"
 extra_port= "-p 80 -p 8080"

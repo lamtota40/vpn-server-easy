@@ -1,9 +1,10 @@
 #!/bin/bash
 
 echo "oke"
+echo "==================================="
 read -p "input username     : " username
-read -p "input password     : " password
-read -p "Expired (yyyy-mm-dd) : " expired
+#read -p "input password     : " password
+#read -p "Expired (yyyy-mm-dd) : " expired
 #egrep "^$username" /etc/passwd >/dev/null
 #if [ $? -eq 0 ]; then
      #echo  "Not created Username $username Already!"

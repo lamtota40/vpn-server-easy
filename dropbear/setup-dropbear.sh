@@ -1,5 +1,6 @@
+#!/bin/bash
 
-apt-get install dropbear -y
+apt install dropbear -y
 sudo cp /etc/default/dropbear /etc/default/dropbear.bak
 
 sed -i -e 's/NO_START=1/NO_START=0/g' /etc/default/dropbear

@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 read -p "input username     : " username
 read -p "input password     : " password
 read -p "Expired (yyyy-mm-dd) : " expired
@@ -13,5 +12,5 @@ else
      IP=`ifconfig venet0:0| awk 'NR==2 {print $2}'| awk -F: '{print $2}'`
      useradd -e $expired -d /home/$username -m -g users -p $pass -s /bin/false $username
      rm -r /home/$username
-		echo -e "===============\nUser     : $username\nPassword : $password\nExpired  : $expired\n\n============\n"
+		echo -e "===============\n$IP \nUser     : $username\nPassword : $password\nExpired  : $expired\n\n============\n"
 fi

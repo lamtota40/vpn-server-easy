@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "oke"
 read -p "input username     : " username
 read -p "input password     : " password
 read -p "Expired (yyyy-mm-dd) : " expired

@@ -1,3 +1,5 @@
+#!/bin/bash
+
 apt install -y stunnel4
 curl -skL "$GIST/stunnel.conf" -o /etc/stunnel/stunnel.conf
 curl -skL "$GIST/stunnel.pem" -o /etc/stunnel/stunnel.pem

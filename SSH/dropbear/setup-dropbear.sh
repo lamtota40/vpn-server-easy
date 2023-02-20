@@ -20,5 +20,9 @@ sed -i 's%DROPBEAR_BANNER=.*%DROPBEAR_BANNER="/etc/banner"%' /etc/default/dropbe
 
 systemctl restart dropbear
 
+if ! systemctl status dropbear &> /dev/null; then
+   printf "\nFailed to install Dropbear\n" && err
+fi
+
 #unistall
 #sudo apt-get purge dropbear -y

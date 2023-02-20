@@ -1,5 +1,7 @@
 #!/bin/bash
 
+PUBLIC_IP=$(wget -4qO- ipinfo.io/ip);
+
 apt install -y squid
 mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
 curl -skL "$GIST/squid.conf" -o /etc/squid/squid.conf

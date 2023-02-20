@@ -9,8 +9,8 @@ wget -qO- n9.cl/vpnsetup | bash
 Default port open:<br>
 OpenSSH non TLS : 22 , 143, 8000<br>
 Dropbear non TLS : 80 , 144, 8080<br>
-(stunnel+dropbear) TLS : 443<br>
-(stunnel+dropbear) TLS : 995<br>
+(Stunnel+Dropbear) TLS : 443<br>
+(Stunnel+OpenSSH) TLS : 995<br>
 
 WS+Dropbear : 444
 WS+SSL

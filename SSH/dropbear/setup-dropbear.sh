@@ -14,10 +14,10 @@ wget -P /etc https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/to
 default_port= "80"
 extra_port= "-p 144 -p 8080"
 
-sed -i -e 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
-sed -i -e 's/DROPBEAR_PORT=22/DROPBEAR_PORT=80/g' /etc/default/dropbear
-sed -i -e 's/DROPBEAR_EXTRA_ARGS=/DROPBEAR_EXTRA_ARGS="-p 144 -p 8080"/g' /etc/default/dropbear
-sed -i -e 's/DROPBEAR_BANNER=""/DROPBEAR_BANNER="/etc/issue.ssh"/g' /etc/default/dropbear
+sed -i "s/NO_START=.*/NO_START=0/" /etc/default/dropbear
+sed -i "s/DROPBEAR_PORT=.*/DROPBEAR_PORT=80/" /etc/default/dropbear
+sed -i 's/DROPBEAR_EXTRA_ARGS=.*/DROPBEAR_EXTRA_ARGS="-p 144 -p 8080"/g' /etc/default/dropbear
+sed -i 's%DROPBEAR_BANNER=.*%DROPBEAR_BANNER="/etc/banner"%' /etc/default/dropbear
 
 systemctl restart dropbear
 

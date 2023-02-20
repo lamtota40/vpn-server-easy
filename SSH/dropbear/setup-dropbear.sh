@@ -10,8 +10,9 @@ fi
 echo "Status :$stat"
 apt install dropbear -y
 cp /etc/default/dropbear /etc/default/dropbear.bak
+wget -P /etc https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/other/issue.ssh
 
-default_port= "443"
+default_port= "80"
 extra_port= "-p 80 -p 8080"
 
 sed -i -e 's/NO_START=1/NO_START=0/g' /etc/default/dropbear

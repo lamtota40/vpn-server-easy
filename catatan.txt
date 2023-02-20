@@ -1,0 +1,2 @@
+port
+dropbear 80, 144, 8080

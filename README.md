@@ -6,5 +6,5 @@ create vpn server easy
 wget -qO- n9.cl/vpnsetup | bash
 ```
 
-default port open:
-dropbear : 80 , 144, 8080
+default port open:<br>
+dropbear : 80 , 144, 8080<br>

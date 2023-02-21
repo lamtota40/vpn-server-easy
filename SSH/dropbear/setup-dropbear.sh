@@ -22,7 +22,7 @@ if ! systemctl status dropbear &> /dev/null; then
    printf "\nFailed to install Dropbear\n" && err
 fi
 
-rm -f setup-dropbear.sh
+rm -rf setup-dropbear.sh
 
 #unistall
 #sudo apt-get purge dropbear -y

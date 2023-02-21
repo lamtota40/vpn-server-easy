@@ -6,11 +6,15 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 
-site=https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/
+site=https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main
+
 apt update
 apt upgrade -y
 apt install curl -y
-wget -P /etc https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/other/banner
+wget -P /etc $site/tools/other/banner
 
 #install dropbear
-wget $siteSSH/dropbear/setup-dropbear.sh
+wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
+
+#install stunnel4
+wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh

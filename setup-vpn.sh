@@ -10,7 +10,7 @@ site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
 apt update
 apt upgrade -y
-apt install curl -y
+apt install curl openssl -y
 wget -P /etc $site/tools/other/banner
 
 #install dropbear

@@ -10,4 +10,4 @@ if ! systemctl status stunnel4 &> /dev/null; then
    printf "\nFailed to install Stunnel4\n" && err
 fi
 
-rm -f setup-stunnel4.sh
+rm -rf setup-stunnel4.sh

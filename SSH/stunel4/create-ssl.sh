@@ -2,12 +2,12 @@
 
 # detail nama perusahaan
 country=ID
-state=Semarang
-locality=Jawa Tengah
-organization=hidessh
-organizationalunit=HideSSH
-commonname=hidessh.com
-email=admin@hidessh.com
+state=Bandung
+locality=Jawa Barat
+organization=VPN Crops
+organizationalunit=myVPN
+commonname=vpncrops.com
+email=admin@vpncrops.com
 
 echo "=================  membuat Sertifikat OpenSSL ======================"
 echo "========================================================="

@@ -6,7 +6,7 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 
-site=https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main
+site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
 apt update
 apt upgrade -y

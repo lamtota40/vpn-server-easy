@@ -8,4 +8,4 @@ fi
 
 apt update
 apt upgrade -y
-apt install curl
+apt install curl -y

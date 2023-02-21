@@ -6,7 +6,11 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 
+site=https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/
 apt update
 apt upgrade -y
 apt install curl -y
 wget -P /etc https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/other/banner
+
+#install dropbear
+wget $siteSSH/dropbear/setup-dropbear.sh

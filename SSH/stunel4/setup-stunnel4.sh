@@ -10,5 +10,4 @@ if ! systemctl status stunnel4 &> /dev/null; then
    printf "\nFailed to install Stunnel4\n" && err
 fi
 
-sleep 20
-rm -f setup-dropbear.sh
+rm -f setup-stunnel4.sh

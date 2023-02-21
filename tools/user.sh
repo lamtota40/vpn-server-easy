@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "==================================="
-read -p "input username     : " username
-read -p "input password     : " password
+read -p "input username     : " Login
+read -p "input password     : " Pass
 
 echo "/bin/false" >> /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
@@ -10,7 +10,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 pass=$(perl -e 'print crypt($ARGV[0], "password")' $password)
 #useradd -s /bin/false -M kolam
 #passwd kolam
-useradd -s /bin/false -p $pass -M username
+useradd -s /bin/false -p $pass -M $Login
 
 echo -e "==============================="
 echo -e "Thank You For Using Our Services"

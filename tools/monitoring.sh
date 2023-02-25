@@ -33,4 +33,4 @@ echo "HDD Free = Mb | Usage = Mb | Total = ram_total"
 echo "=================================="
 parted -l
 echo "=================================="
-echo "ok"
+echo "ok ${ram_free_p%.*}"

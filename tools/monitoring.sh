@@ -1,11 +1,12 @@
 #!/bin/bash
 
-apt install virt-what -y
-
+if [ ! $(which virt-what) ]; then
+   apt install virt-what -y
+fi
 clear
 public_ip=$(grep -m 1 -oE '^[0-9]{1,3}(\.[0-9]{1,3}){3}$' <<< "$(wget -T 10 -t 1 -4qO- "http://ip1.dynupdate.no-ip.com/" || curl -m 10 -4Ls "http://ip1.dynupdate.no-ip.com/")")
 private_ip=$(ip -4 addr | grep inet | grep -vE '127(\.[0-9]{1,3}){3}' | cut -d '/' -f 1 | grep -oE '[0-9]{1,3}(\.[0-9]{1,3}){3}' | sed -n "$ip_number"p)
-curl https://proxycheck.io/v2/$public_ip?vpn=1&asn=1
+cekip= $(wget https://proxycheck.io/v2/$public_ip?vpn=1&asn=1 -q -O -)
 
 echo "===== Time on server ====="
 echo "Time =" `date "+%H:%M:%S"`

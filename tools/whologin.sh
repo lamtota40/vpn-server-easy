@@ -1,11 +1,10 @@
  #!/bin/bash
 clear
-echo "Created By : FreeDroid"
 echo "=========================================";
  
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 echo "Memeriksa User Dropbear Yang Login";
-echo "(ID - Username - IP)";
+echo "(PID - Username - IP)";
 echo "-----------------------------------------";
  
 for PID in "${data[@]}"

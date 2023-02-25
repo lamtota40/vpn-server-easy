@@ -8,12 +8,12 @@ public_ip=$(grep -m 1 -oE '^[0-9]{1,3}(\.[0-9]{1,3}){3}$' <<< "$(wget -T 10 -t 1
 private_ip=$(ip -4 addr | grep inet | grep -vE '127(\.[0-9]{1,3}){3}' | cut -d '/' -f 1 | grep -oE '[0-9]{1,3}(\.[0-9]{1,3}){3}' | sed -n "$ip_number"p)
 cekip= $(wget https://proxycheck.io/v2/$public_ip?vpn=1&asn=1 -q -O -)
 
-echo "===== Time on server ====="
+echo "========= Time on server ========="
 echo "Time =" `date "+%H:%M:%S"`
 echo "Date =" `date "+%d/%m/%y"`
 echo "Uptime =" `uptime -p`
 
-echo "===== Detail server ====="
+echo "========= Detail server ========="
 echo "Hostname = $HOSTNAME"
 echo "Ip Public = $public_ip"
 echo "Ip Private = $private_ip"

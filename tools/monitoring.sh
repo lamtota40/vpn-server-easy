@@ -4,7 +4,7 @@ if [ ! $(which virt-what) ]; then
    apt install virt-what -y
 fi
 clear
-ram_use=$(free -h | grep Mem | awk '{print $3}')
+ram_usage=$(free -h | grep Mem | awk '{print $3}')
 ram_free=$(free -h | grep Mem | awk '{print $4}')
 ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
 ram_total=$(free -h | grep Mem | awk '{print $2}')
@@ -26,7 +26,8 @@ echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(en
 echo "Architecture = $(uname -m)"
 echo "OS = " `awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release`
 echo "CPU = "
-echo "RAM Free = $ram_free ($ram_free_p) | Usage = $ram_use | Total = $ram_total"
-echo "HDD Usage = Mb | Free = Mb | Total = ram_total"
+echo "RAM Free = $ram_free ($ram_free_p) | Usage = $ram_usage | Total = $ram_total"
+echo "HDD Free = Mb | Usage = Mb | Total = ram_total"
+parted -l
 echo "=================================="
 echo "ok"

@@ -26,7 +26,7 @@ echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(en
 echo "Architecture = $(uname -m)"
 echo "OS = " `awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release`
 echo "CPU = "
-echo "RAM Free = $ram_free ($ram_free_p) | Usage = $ram_usage | Total = $ram_total"
+echo "RAM Free = $ram_free ($ram_free_p %) | Usage = $ram_usage | Total = $ram_total"
 echo "HDD Free = Mb | Usage = Mb | Total = ram_total"
 echo "=================================="
 parted -l

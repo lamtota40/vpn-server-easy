@@ -5,7 +5,6 @@ if [ ! $(which virt-what) ]; then
 fi
 clear
 ram_use=$(free -h | grep Mem | awk '{print $3}')
-ram_use_p=$(free | grep Mem | awk '{print $3/$2 * 100.0}')
 ram_free=$(free -h | grep Mem | awk '{print $4}')
 ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100.0}')
 ram_total=$(free -h | grep Mem | awk '{print $2}')
@@ -27,7 +26,7 @@ echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(en
 echo "Architecture = $(uname -m)"
 echo "OS = " `awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release`
 echo "CPU = "
-echo "RAM Usage = $ram_use $ram_use_p | Free = $ram_free $ram_free_p | Total = $ram_total"
+echo "RAM Usage = $ram_use | Free = $ram_free $ram_free_p | Total = $ram_total"
 echo "HDD Usage = Mb | Free = Mb | Total = ram_total"
 echo "=================================="
 echo "ok"

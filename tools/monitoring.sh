@@ -28,6 +28,6 @@ echo "Architecture = $(uname -m)"
 echo "OS = " `awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release`
 echo "CPU = "
 echo "RAM Usage = $ram_use <$ram_use_p> | Free = $ram_free <$ram_free_p> | Total = Mb"
-echo "HDD Usage = Mb | Free = Mb | Total = Mb"
+echo "HDD Usage = Mb | Free = Mb | Total = ram_total"
 echo "=================================="
 echo "ok"

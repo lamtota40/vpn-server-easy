@@ -10,7 +10,7 @@ echo "Date =" `date "+%d/%m/%y"`
 echo "Uptime =" `uptime -p`
 
 echo "===== Detail server ====="
-echo "Virtualization = " if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "enable"; else echo "disable"; fi
+echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "enable"; else echo "disable"; fi`
 echo "Architecture = $(uname -m)"
 echo "OS = " `awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release`
 echo "CPU = "

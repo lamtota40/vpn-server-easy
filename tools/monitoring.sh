@@ -4,6 +4,8 @@ if [ ! $(which virt-what) ]; then
    apt install virt-what -y
 fi
 clear
+os_name=$(awk -F= '$1=="NAME" { print $2 ;}' /etc/os-release)
+os_version=$(awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release)
 ram_usage=$(free -h | grep Mem | awk '{print $3}')
 ram_free=$(free -h | grep Mem | awk '{print $4}')
 ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
@@ -24,7 +26,7 @@ echo "Ip Private = $private_ip"
 echo "ISP = | City= | Country="
 echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(enable)"; else echo "(disable)"; fi`
 echo "Architecture = $(uname -m)"
-echo "OS = " `awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release`
+echo "OS = $os_name $os_version"
 echo "CPU = "
 echo "RAM Free = $ram_free ($ram_free_p %) | Usage = $ram_usage | Total = $ram_total"
 echo "HDD Free = Mb | Usage = Mb | Total = ram_total"

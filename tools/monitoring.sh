@@ -28,6 +28,7 @@ echo "OS = " `awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release`
 echo "CPU = "
 echo "RAM Free = $ram_free ($ram_free_p) | Usage = $ram_usage | Total = $ram_total"
 echo "HDD Free = Mb | Usage = Mb | Total = ram_total"
+echo "=================================="
 parted -l
 echo "=================================="
 echo "ok"

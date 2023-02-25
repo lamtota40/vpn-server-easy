@@ -6,7 +6,7 @@ private_ip=$(ip -4 addr | grep inet | grep -vE '127(\.[0-9]{1,3}){3}' | cut -d '
 echo "===== Time on server ====="
 echo "Time =" `date "+%H:%M:%S"`
 echo "Date =" `date "+%d/%m/%y"`
-echo "Uptime ="
+echo "Uptime =" `uptime -p`
 
 echo "===== Detail server ====="
 echo "Virtualization = " if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "enable"; else echo "disable"; fi

@@ -17,7 +17,7 @@ echo "OS = " `awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release`
 echo "CPU = "
 echo "RAM Usage = Mb | Free = Mb | Total = Mb"
 echo "HHD Usage = Mb | Free = Mb | Total = Mb"
-echo "Hostname = "
+echo "Hostname = $HOSTNAME"
 echo "ISP = | City= | Country="
 echo "Ip Public = $public_ip"
 echo "Ip Private = $private_ip"

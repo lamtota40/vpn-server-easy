@@ -39,4 +39,4 @@ echo "HDD Free = $(awk '{print $4}' <<< "$hddinfo") | Usage = $(awk '{print $3}'
 echo "=================================="
 parted -l
 echo "=================================="
-echo "tes15"
+echo "tes16"

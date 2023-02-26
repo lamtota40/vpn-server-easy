@@ -32,6 +32,7 @@ echo "Architecture = $(uname -m)"
 echo "OS = $os_name $os_version"
 echo "CPU = "
 echo "RAM Free = $ram_free (${ram_free_p%.*} %) | Usage = $ram_usage | Total = $ram_total"
+echo "SWAP Free = $ram_free (${ram_free_p%.*} %) | Usage = $ram_usage | Total = $ram_total"
 echo "HDD Free = $(awk '{print $4}' <<< "$hddinfo") | Usage = $(awk '{print $3}' <<< "$hddinfo") | Total = $(awk '{print $2}' <<< "$hddinfo")"
 echo "=================================="
 parted -l

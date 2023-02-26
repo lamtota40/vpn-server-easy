@@ -24,7 +24,7 @@ echo "========= Detail server ========="
 echo "Hostname = $HOSTNAME"
 echo "Ip Public = $(jq -r '.ip' <<< "$cekip") "
 echo "Ip Private = $private_ip"
-echo "ISP = $(jq -r '.organization_name' $cekip) | Country= $($cekip | jq -r '.country') | Region= $($cekip | jq -r '.region') | City= $($cekip | jq -r '.city')"
+echo "ISP = $(jq -r '.organization_name' <<< "$cekip") | Country= $(jq -r '.country' <<< "$cekip") | Region= $(jq -r '.region' <<< "$cekip") | City= $(jq -r '.city' <<< "$cekip")"
 echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(enable)"; else echo "(disable)"; fi`
 echo "Architecture = $(uname -m)"
 echo "OS = $os_name $os_version"

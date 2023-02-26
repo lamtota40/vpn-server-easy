@@ -12,14 +12,14 @@ useradd -e `date -d "$exp days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 
 expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
-
+clear
 echo -e "==============================="
 echo -e "Thank You For Using Our Services"
 echo -e "SSH & OpenVPN Account Info"
 echo -e "Username       : $Login "
 echo -e "Password       : $Pass"
 echo -e "==============================="
-echo -e "Domain         : "
+echo -e "IP             : "
 echo -e "Host           : "
 echo -e "OpenSSH        : "
 echo -e "Dropbear       : "

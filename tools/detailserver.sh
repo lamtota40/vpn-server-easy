@@ -33,7 +33,7 @@ echo "OS = $os_name $os_version"
 echo "Frimware = $([ -d /sys/firmware/efi ] && echo UEFI || echo BIOS)"
 echo "CPU = "
 echo "RAM Free = $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"
-#echo "SWAP Free = $ram_free (${ram_free_p%.*} %) | Usage = $ram_usage | Total = $ram_total"
+echo "SWAP Free = $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"
 echo "HDD Free = $(awk '{print $4}' <<< "$hddinfo") | Usage = $(awk '{print $3}' <<< "$hddinfo") | Total = $(awk '{print $2}' <<< "$hddinfo")"
 echo "=================================="
 parted -l

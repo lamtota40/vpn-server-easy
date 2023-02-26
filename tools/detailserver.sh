@@ -7,10 +7,13 @@ clear
 os_name=$(awk -F= '$1=="NAME" { print $2 ;}' /etc/os-release)
 os_version=$(awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release)
 raminfo=$(free -h | grep Mem)
+#free -m
 ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
 hddinfo=$(df -h --total | grep total)
 private_ip=$(ip -4 addr | grep inet | grep -vE '127(\.[0-9]{1,3}){3}' | cut -d '/' -f 1 | grep -oE '[0-9]{1,3}(\.[0-9]{1,3}){3}' | sed -n "$ip_number"p)
 cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json")
+swapinfo=$(swapon --bytes | awk '{print $2}')
+
 
 echo "========= Time on server ========="
 echo "Time =" `date "+%H:%M:%S"`

@@ -10,6 +10,7 @@ ram_usage=$(free -h | grep Mem | awk '{print $3}')
 ram_free=$(free -h | grep Mem | awk '{print $4}')
 ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
 ram_total=$(free -h | grep Mem | awk '{print $2}')
+hddinfo=$(df -h --total | grep total)
 #public_ip=$(grep -m 1 -oE '^[0-9]{1,3}(\.[0-9]{1,3}){3}$' <<< "$(wget -T 10 -t 1 -4qO- "http://ip1.dynupdate.no-ip.com/" || curl -m 10 -4Ls "http://ip1.dynupdate.no-ip.com/")")
 private_ip=$(ip -4 addr | grep inet | grep -vE '127(\.[0-9]{1,3}){3}' | cut -d '/' -f 1 | grep -oE '[0-9]{1,3}(\.[0-9]{1,3}){3}' | sed -n "$ip_number"p)
 cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json")
@@ -31,8 +32,8 @@ echo "Architecture = $(uname -m)"
 echo "OS = $os_name $os_version"
 echo "CPU = "
 echo "RAM Free = $ram_free (${ram_free_p%.*} %) | Usage = $ram_usage | Total = $ram_total"
-echo "HDD Free = Mb | Usage = Mb | Total = ram_total"
+echo "HDD Free = $(awk '{print $4}' <<< "$hddinfo") | Usage = $(awk '{print $3}' <<< "$hddinfo") | Total = $(awk '{print $2}' <<< "$hddinfo")"
 echo "=================================="
 parted -l
 echo "=================================="
-echo "tes"
+echo "testos"                                           

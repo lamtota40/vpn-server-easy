@@ -18,7 +18,7 @@ a=$((a+1))
 echo "$PID - $USER - $IP";
 fi
 done
-echo "Total User Dropbear= $a"
+echo "Total User Dropbear = $a"
  
 data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
 echo "";
@@ -36,5 +36,5 @@ b=$((b+1))
 echo "$PID - $USER - $IP";
 fi
 done
-echo "Total User OpenSSH= $b"
+echo "Total User OpenSSH = $b"
 echo "=========================================";

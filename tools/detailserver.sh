@@ -18,6 +18,7 @@ swapinfo=$(swapon --bytes | awk '{print $2}')
 echo "========= Time on server ========="
 echo "Time =" `date "+%H:%M:%S"`
 echo "Date =" `date "+%d/%m/%y"`
+#timedatectl | grep "Time zone"
 echo "Time Zone = "
 echo "Uptime =" `uptime -p`
 

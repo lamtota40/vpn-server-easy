@@ -30,6 +30,7 @@ echo "Region= $(jq -r '.region' <<< "$cekip") | City= $(jq -r '.city' <<< "$ceki
 echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(enable)"; else echo "(disable)"; fi`
 echo "Architecture = $(uname -m)"
 echo "OS = $os_name $os_version"
+echo "Frimware = $([ -d /sys/firmware/efi ] && echo UEFI || echo BIOS)"
 echo "CPU = "
 echo "RAM Free = $ram_free (${ram_free_p%.*} %) | Usage = $ram_usage | Total = $ram_total"
 echo "SWAP Free = $ram_free (${ram_free_p%.*} %) | Usage = $ram_usage | Total = $ram_total"

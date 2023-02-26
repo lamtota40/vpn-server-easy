@@ -6,10 +6,10 @@ data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
 echo "Memeriksa User Dropbear Yang Login";
 echo "(PID - Username - IP)";
 echo "-----------------------------------------";
-x=1
+x=0
 for PID in "${data[@]}"
 do
-x++
+x=x+1
 #echo "check $PID";
 NUM=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | wc -l`;
 USER=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | awk '{print $10}'`;

@@ -12,7 +12,7 @@ ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
 ram_total=$(free -h | grep Mem | awk '{print $2}')
 public_ip=$(grep -m 1 -oE '^[0-9]{1,3}(\.[0-9]{1,3}){3}$' <<< "$(wget -T 10 -t 1 -4qO- "http://ip1.dynupdate.no-ip.com/" || curl -m 10 -4Ls "http://ip1.dynupdate.no-ip.com/")")
 private_ip=$(ip -4 addr | grep inet | grep -vE '127(\.[0-9]{1,3}){3}' | cut -d '/' -f 1 | grep -oE '[0-9]{1,3}(\.[0-9]{1,3}){3}' | sed -n "$ip_number"p)
-cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json" | jq -r '.city')
+cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json")
 
 echo "========= Time on server ========="
 echo "Time =" `date "+%H:%M:%S"`
@@ -24,7 +24,7 @@ echo "========= Detail server ========="
 echo "Hostname = $HOSTNAME"
 echo "Ip Public = $public_ip"
 echo "Ip Private = $private_ip"
-echo "ISP = | City= $cekip | Country="
+echo "ISP = ($cekip | jq -r '.organization_name') | City= ($cekip | jq -r '.city') | Country= ($cekip | jq -r '.country')."
 echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(enable)"; else echo "(disable)"; fi`
 echo "Architecture = $(uname -m)"
 echo "OS = $os_name $os_version"

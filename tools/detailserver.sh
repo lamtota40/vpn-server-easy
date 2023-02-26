@@ -22,9 +22,9 @@ echo "Uptime =" `uptime -p`
 
 echo "========= Detail server ========="
 echo "Hostname = $HOSTNAME"
-echo "Ip Public = $($cekip | jq -r '.ip') "
+echo "Ip Public = $(jq -r '.ip' $cekip) "
 echo "Ip Private = $private_ip"
-echo "ISP = $($cekip | jq -r '.organization_name') | Country= $($cekip | jq -r '.country') | Region= $($cekip | jq -r '.region') | City= $($cekip | jq -r '.city')"
+echo "ISP = $(jq -r '.organization_name' $cekip) | Country= $($cekip | jq -r '.country') | Region= $($cekip | jq -r '.region') | City= $($cekip | jq -r '.city')"
 echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(enable)"; else echo "(disable)"; fi`
 echo "Architecture = $(uname -m)"
 echo "OS = $os_name $os_version"

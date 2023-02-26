@@ -5,9 +5,6 @@ read -p "input username     : " Login
 read -p "input password     : " Pass
 read -p "Expired (day)      : " exp
 
-echo "/bin/false" >> /etc/shells
-echo "/usr/sbin/nologin" >> /etc/shells
-
 useradd -e `date -d "$exp days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 

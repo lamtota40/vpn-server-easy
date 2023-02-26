@@ -3,7 +3,7 @@ clear
 echo "=========================================";
  
 data=( `ps aux | grep -i dropbear | awk '{print $2}'`);
-echo "Memeriksa User Dropbear Yang Login";
+echo "Checking User Dropbear Yang Login";
 echo "(PID - Username - IP)";
 echo "-----------------------------------------";
 x=0
@@ -22,7 +22,7 @@ echo $x
  
 data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
 echo "";
-echo "Memeriksa User OpenSSH Yang Login";
+echo "Checking User OpenSSH Yang Login";
 echo "(PID - Username - IP)";
 echo "-----------------------------------------";
 for PID in "${data[@]}"

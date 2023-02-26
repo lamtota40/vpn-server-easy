@@ -6,6 +6,7 @@ fi
 clear
 os_name=$(awk -F= '$1=="NAME" { print $2 ;}' /etc/os-release)
 os_version=$(awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release)
+raminfo= $(free | grep Mem)
 ram_usage=$(free -h | grep Mem | awk '{print $3}')
 ram_free=$(free -h | grep Mem | awk '{print $4}')
 ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')

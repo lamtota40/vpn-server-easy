@@ -14,13 +14,13 @@ private_ip=$(ip -4 addr | grep inet | grep -vE '127(\.[0-9]{1,3}){3}' | cut -d '
 cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json")
 swapinfo=$(swapon --bytes)
 
-echo "=========== Time on server ==========="
+echo "============= Time on server ============="
 echo "Time =" `date "+%H:%M:%S"`
 echo "Date =" `date "+%d/%m/%y"`
 echo "Time Zone = $(timedatectl | grep -oP "(?<=Time zone:).*")"
 echo "Uptime =" `uptime -p`
 
-echo "=========== Detail server ==========="
+echo "============= Detail server ============="
 echo "Hostname = $HOSTNAME"
 echo "Ip Public = $(jq -r '.ip' <<< "$cekip") "
 echo "Ip Private = $private_ip"
@@ -36,7 +36,7 @@ echo "Kernel = $(hostnamectl | grep -oP "(?<=Kernel:).*")"
 echo "RAM Free = $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"
 echo "SWAP Free = $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk 'FNR == 2 {print$4}' <<< "$swapinfo" | numfmt --to=iec) | Total = $(awk 'FNR == 2 {print$3}' <<< "$swapinfo" | numfmt --to=iec)"
 echo "HDD Free = $(awk '{print $4}' <<< "$hddinfo") | Usage = $(awk '{print $3}' <<< "$hddinfo") | Total = $(awk '{print $2}' <<< "$hddinfo")"
-echo "===================================="
+echo "======================================"
 parted -l
-echo "===================================="
-echo "tes16"
+echo "======================================"
+echo "tes17"

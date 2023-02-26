@@ -17,14 +17,15 @@ cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json")
 echo "========= Time on server ========="
 echo "Time =" `date "+%H:%M:%S"`
 echo "Date =" `date "+%d/%m/%y"`
-echo "Time Zone= "
+echo "Time Zone = "
 echo "Uptime =" `uptime -p`
 
 echo "========= Detail server ========="
 echo "Hostname = $HOSTNAME"
 echo "Ip Public = $(jq -r '.ip' <<< "$cekip") "
 echo "Ip Private = $private_ip"
-echo "ISP = $(jq -r '.organization_name' <<< "$cekip") | Country= $(jq -r '.country' <<< "$cekip") | Region= $(jq -r '.region' <<< "$cekip") | City= $(jq -r '.city' <<< "$cekip")"
+echo "ISP = $(jq -r '.organization_name' <<< "$cekip") | Country= $(jq -r '.country' <<< "$cekip")"
+echo "Region= $(jq -r '.region' <<< "$cekip") | City= $(jq -r '.city' <<< "$cekip")"
 echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(enable)"; else echo "(disable)"; fi`
 echo "Architecture = $(uname -m)"
 echo "OS = $os_name $os_version"

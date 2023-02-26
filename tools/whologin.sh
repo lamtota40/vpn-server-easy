@@ -14,7 +14,7 @@ NUM=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded
 USER=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | awk '{print $10}'`;
 IP=`cat /var/log/auth.log | grep -i dropbear | grep -i "Password auth succeeded" | grep "dropbear\[$PID\]" | awk '{print $12}'`;
 if [ $NUM -eq 1 ]; then
-x=$x++
+x=$((x+1))
 echo "$PID - $USER - $IP";
 fi
 done

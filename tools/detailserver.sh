@@ -12,8 +12,7 @@ ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
 hddinfo=$(df -h --total | grep total)
 private_ip=$(ip -4 addr | grep inet | grep -vE '127(\.[0-9]{1,3}){3}' | cut -d '/' -f 1 | grep -oE '[0-9]{1,3}(\.[0-9]{1,3}){3}' | sed -n "$ip_number"p)
 cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json")
-swapinfo=$(swapon --bytes | awk '{print $2}')
-
+swapinfo=$(swapon --bytes)
 
 echo "========= Time on server ========="
 echo "Time =" `date "+%H:%M:%S"`
@@ -35,9 +34,9 @@ echo "CPU(s) = $(lscpu | grep -oP "(?<=CPU).*")"
 echo "Model name = $(lscpu | grep -oP "(?<=Model name:).*")"
 echo "Kernel = $(hostnamectl | grep -oP "(?<=Kernel:).*")"
 echo "RAM Free = $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"
-echo "SWAP Free = $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"
+echo "SWAP Free = $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk 'FNR == 2 {print$3} <<< "$swapinfo") | Total = $(awk 'FNR == 2 {print$3} <<< "$swapinfo")"
 echo "HDD Free = $(awk '{print $4}' <<< "$hddinfo") | Usage = $(awk '{print $3}' <<< "$hddinfo") | Total = $(awk '{print $2}' <<< "$hddinfo")"
 echo "=================================="
 parted -l
 echo "=================================="
-echo "tes8"                                           
+echo "tes9"                                           

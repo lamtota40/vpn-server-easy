@@ -26,6 +26,10 @@ wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 #cryptpass= $(openssl passwd -6 -salt xyz $pass)
 #useradd -s /bin/false -p $cryptpass -M $user
 
+wget -O menu https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/menu
+chmod +x menu
+
+#installation for nginx
 apt install nginx -y
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default

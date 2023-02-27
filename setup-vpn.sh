@@ -13,7 +13,10 @@ apt upgrade -y
 apt install curl openssl -y
 wget -P /etc $site/tools/other/banner
 
+grep "/bin/false" /etc/shells
 echo "/bin/false" >> /etc/shells
+
+grep "/bin/nologin" /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 
 #install dropbear

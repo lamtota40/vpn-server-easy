@@ -1,4 +1,5 @@
 #!/bin/bash
+
 echo "================================"
 echo " Choose Menu
 echo "================================"
@@ -9,5 +10,5 @@ echo "4. Settings"
 echo "5. Detail server"
 echo "6. Check port open"
 echo "7. Monitoring bandwith"
-echo "8. uninstall"
+echo "8. Uninstall"
 echo "0. Quit"

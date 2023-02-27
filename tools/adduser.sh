@@ -2,14 +2,15 @@
 
 echo "==================================="
 read -p "input username     : " Login
-read -p "input password     : " Pass
-read -p "Expired (day)      : " exp
 
 /bin/egrep  -i "^${Login}:" /etc/passwd
 if [ $? -eq 0 ]; then
    echo "User $Login exists Please create New User"
    exit 1
 fi
+
+read -p "input password     : " Pass
+read -p "Expired (day)      : " exp
 
 useradd -e `date -d "$exp days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null

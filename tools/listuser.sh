@@ -1,6 +1,5 @@
 #!/bin/bash
 
-MYIP=$(wget -qO- ifconfig.me/ip);
 echo "Checking VPS"
 
 clear

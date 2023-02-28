@@ -30,6 +30,7 @@ echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(en
 echo "Architecture = $(uname -m)"
 echo "OS = $os_name $os_version"
 echo "Frimware = $([ -d /sys/firmware/efi ] && echo UEFI || echo BIOS)"
+echo "Number of core ="
 #echo "CPU(s) = $(lscpu | grep -oP "(?<=CPU).*")"
 echo "Model name = $(lscpu | grep -oP "(?<=Model name:).*")"
 echo "Kernel = $(hostnamectl | grep -oP "(?<=Kernel:).*")"

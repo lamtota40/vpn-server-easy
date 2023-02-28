@@ -14,7 +14,7 @@ read -p "Expired (day)      : " exp
 
 useradd -e `date -d "$exp days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
-myip="127.0.0.1"
+myip=$(wget -qO- ifconfig.me/ip)
 expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
 echo -e "==============================="

@@ -1,9 +1,12 @@
 #!/bin/bash
-1. All
-2. Dropbear
-3. OpenSSH
-3. Stunnel4
-4. Squid
-5. openvpn
-6. 
+
+echo "1. All"
+echo "2. Dropbear"
+echo "3. OpenSSH"
+echo "3. Stunnel4"
+echo "4. Squid"
+echo "5. openvpn"
+echo "6. "
+
+
 apt purge dropbear -y

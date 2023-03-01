@@ -28,6 +28,7 @@ wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 #install badvpn
 wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 
+#menu command
 wget -O menu https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/menu
 chmod +x menu
 

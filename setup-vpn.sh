@@ -6,11 +6,12 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 
-site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
-
+#depency
 apt update
 apt upgrade -y
 apt install curl openssl -y
+
+site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 wget -P /etc $site/tools/other/banner
 
 #grep "/bin/false" /etc/shells

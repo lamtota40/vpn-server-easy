@@ -4,6 +4,27 @@
 wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 
+#######
+#!/bin/bash
+
+[Unit]
+Description=badvpn udpgw 7100
+Documentation=
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+Restart=on-failure
+ExecStart=/usr/bin/badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500
+
+[Install]
+WantedBy=multi-user.target
+#######
+
 #system badvpn 7300
 wget -O /etc/systemd/system/svr-7300.service https://raw.githubusercontent.com/hidessh99/projectku/main/badvpn/svr-7300.service && chmod +x  /etc/systemd/system/svr-7300.service
 #system badvpn 7200

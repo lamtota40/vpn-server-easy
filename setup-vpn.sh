@@ -44,3 +44,4 @@ Login="master"
 Pass="qwerty"
 useradd -m $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
+usermod -aG sudo $Login

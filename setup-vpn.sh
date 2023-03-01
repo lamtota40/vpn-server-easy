@@ -26,7 +26,7 @@ wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
 wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 
 #install badvpn
-wget $site/VPN/badvpn/setup-badvpn.sh
+wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-stunnel4.sh
 
 #-1=MD5,-5=SHA256,-6=SHA512 (recommend)
 #cryptpass= $(openssl passwd -6 -salt xyz $pass)

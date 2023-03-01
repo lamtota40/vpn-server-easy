@@ -1,7 +1,7 @@
 #!/bin/bash
 # installer badvpn
 
-wget -O /usr/bin/badvpn-udpgw "https://gitlab.com/hidessh/baru/-/raw/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 
 #system badvpn 7300

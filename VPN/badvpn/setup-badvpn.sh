@@ -11,7 +11,7 @@ port3=7300
 
 for (( x=1; x<=3; x++ ))
 do 
-xport="port$x"
+  xport="port$x"
   cat > /etc/systemd/system/svr-$xport.service <<-END
 [Unit]
 Description=badvpn udpgw $xport

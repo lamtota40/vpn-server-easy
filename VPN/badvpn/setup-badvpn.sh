@@ -3,6 +3,7 @@
 
 wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
+systemctl daemon-reload
 
 port1=7100
 port2=7200
@@ -30,7 +31,6 @@ WantedBy=multi-user.target
 END
 chmod +x /etc/systemd/system/svr-$xport.service
 
-systemctl daemon-reload
 systemctl start svr-$xport.service
 systemctl enable svr-$xport.service
 done

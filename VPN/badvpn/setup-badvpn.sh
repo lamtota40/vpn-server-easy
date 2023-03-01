@@ -33,7 +33,6 @@ chmod +x /etc/systemd/system/svr-$xport.service
 systemctl daemon-reload
 systemctl start svr-$xport.service
 systemctl enable svr-$xport.service
-systemctl restart svr-$xport.service
 done
 
 rm -rf setup-dropbear.sh

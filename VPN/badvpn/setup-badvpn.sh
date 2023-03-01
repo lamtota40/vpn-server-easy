@@ -28,3 +28,5 @@ systemctl daemon-reload
 systemctl start svr-7300.service
 systemctl enable svr-7300.service
 systemctl restart svr-7300.service
+
+rm -rf setup-dropbear.sh

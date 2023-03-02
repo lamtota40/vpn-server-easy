@@ -2,6 +2,7 @@
 # Script  installer slowdns
 
 #setting IPtables
+apt install netfilter-persistent -y
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
 netfilter-persistent save

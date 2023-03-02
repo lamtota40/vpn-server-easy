@@ -8,5 +8,6 @@ echo "4. Squid"
 echo "5. openvpn"
 echo "6. "
 
-
 apt purge dropbear -y
+	
+rm -f /etc/cron.d/autoreboot

@@ -23,6 +23,3 @@ if ! systemctl status dropbear &> /dev/null; then
 fi
 
 rm -rf setup-dropbear.sh
-
-#unistall
-#sudo apt-get purge dropbear -y

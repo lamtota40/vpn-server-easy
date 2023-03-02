@@ -48,6 +48,7 @@ useradd -m $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
 
+#auto reboot 24Hours
 wget -P /root https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/autoreboot.sh
 chmod +x /root/autoreboot.sh
 echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot

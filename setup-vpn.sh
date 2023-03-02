@@ -55,4 +55,5 @@ usermod -aG sudo $Login
 wget -P /root $site/tools/autoreboot.sh
 chmod +x /root/autoreboot.sh
 echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
-#tes2
+service cron reload
+service cron restart

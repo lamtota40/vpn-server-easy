@@ -1,7 +1,6 @@
 #!/bin/bash
 # Script  installer slowdns
 
-
 #setting IPtables
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
@@ -15,7 +14,6 @@ rm nsdomain
 
 #input nameserver manual to cloudflare
 read -rp "Masukkan domain: " -e domain
-
 read -rp "Masukkan Subdomain: " -e sub
 SUB_DOMAIN=${sub}.${domain}
 NS_DOMAIN=slowdns-${SUB_DOMAIN}
@@ -114,6 +112,3 @@ systemctl enable server-sldns
 
 systemctl start client-sldns
 systemctl start server-sldns
-
-systemctl restart client-sldns
-systemctl restart server-sldns

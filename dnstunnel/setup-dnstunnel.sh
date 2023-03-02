@@ -29,8 +29,6 @@ apt install screen -y
 apt install whois -y
 apt install gnutls-bin -y
 apt install -y dos2unix debconf-utils
-service cron reload
-service cron restart
 
 #konfigurasi slowdns
 rm -rf /etc/slowdns

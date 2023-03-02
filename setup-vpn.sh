@@ -47,3 +47,6 @@ Pass="qwerty"
 useradd -m $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
+
+chmod +x /root/autoreboot.sh
+echo "0 0 * * * root /root/reboot_otomatis.sh" > /etc/cron.d/autorboot

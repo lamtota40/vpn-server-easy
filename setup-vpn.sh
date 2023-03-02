@@ -57,3 +57,4 @@ chmod +x /root/autoreboot.sh
 echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
 service cron reload
 service cron restart
+#tes3

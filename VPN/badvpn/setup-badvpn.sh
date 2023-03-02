@@ -35,4 +35,4 @@ systemctl start svr-$xport.service
 systemctl enable svr-$xport.service
 done
 
-rm -rf setup-dropbear.sh
+rm -rf setup-badvpn.sh

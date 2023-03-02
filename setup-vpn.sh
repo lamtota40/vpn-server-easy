@@ -9,7 +9,7 @@ fi
 #depency
 apt update
 apt upgrade -y
-apt install cron curl openssl -y
+apt install cron curl openssl iptables -y
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 wget -P /etc $site/tools/other/banner

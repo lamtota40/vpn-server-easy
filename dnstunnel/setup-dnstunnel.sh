@@ -1,7 +1,5 @@
 #!/bin/bash
-# Script  By nstaller slowdns
-# 2022 SLOWDNS
-# ===============================================
+# Script  installer slowdns
 
 
 #setting IPtables

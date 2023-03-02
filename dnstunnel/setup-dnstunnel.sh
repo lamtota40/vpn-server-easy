@@ -24,7 +24,6 @@ nameserver=$(cat /root/nsdomain)
 apt install -y python3 python3-dnslib net-tools
 apt install ncurses-utils -y
 apt install dnsutils -y
-apt install git -y
 apt install ncurses-utils -y
 apt install screen -y
 apt install whois -y

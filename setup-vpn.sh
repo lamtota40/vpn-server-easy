@@ -30,8 +30,11 @@ wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 
 #menu command
-wget -O menu https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/menu
+wget -O menu $site/tools/menu
 chmod +x menu
+
+#install slowdns
+wget $site/dnstunnel/setup-dnstunnel.sh && bash setup-dnstunnel.sh
 
 #installation for nginx
 apt install nginx -y

@@ -50,4 +50,4 @@ usermod -aG sudo $Login
 
 wget -P /root https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/autoreboot.sh
 chmod +x /root/autoreboot.sh
-echo "0 0 * * * root /root/reboot_otomatis.sh" > /etc/cron.d/autoreboot
+echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot

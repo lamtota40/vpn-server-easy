@@ -50,7 +50,7 @@ service cron restart
 
 Login="master"
 Pass="qwerty"
-useradd -m $Login
+useradd -m -s /bin/bash $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
 

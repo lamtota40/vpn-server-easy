@@ -34,7 +34,7 @@ wget -O menu $site/tools/menu
 chmod +x menu
 
 #install slowdns
-wget $site/dnstunnel/setup-dnstunnel.sh && bash setup-dnstunnel.sh
+#wget $site/dnstunnel/setup-dnstunnel.sh && bash setup-dnstunnel.sh
 
 #installation for nginx
 apt install nginx -y
@@ -57,4 +57,3 @@ chmod +x /root/autoreboot.sh
 echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
 service cron reload
 service cron restart
-#tes3

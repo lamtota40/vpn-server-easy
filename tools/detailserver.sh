@@ -3,6 +3,10 @@
 if [ ! $(which virt-what) ]; then
    apt install virt-what -y
 fi
+if [ ! $(which jq) ]; then
+   apt install jq -y
+fi
+
 clear
 os_name=$(awk -F= '$1=="NAME" { print $2 ;}' /etc/os-release)
 os_version=$(awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release)

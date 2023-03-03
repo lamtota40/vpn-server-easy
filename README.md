@@ -3,7 +3,7 @@ create vpn server easy
 
 # Instalation
 ```console
-wget n9.cl/vpnsetup -O vpnsetup.sh && bash vpnsetup.sh
+wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 ```
 
 Default port open:<br>

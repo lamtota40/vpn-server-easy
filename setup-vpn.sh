@@ -36,6 +36,13 @@ chmod +x menu
 #install slowdns
 #wget $site/dnstunnel/setup-dnstunnel.sh && bash setup-dnstunnel.sh
 
+#auto reboot 24Hours
+wget -P /root $site/tools/autoreboot.sh
+chmod +x /root/autoreboot.sh
+echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
+service cron reload
+service cron restart
+
 #installation for nginx
 apt install nginx -y
 rm /etc/nginx/sites-enabled/default
@@ -50,10 +57,3 @@ Pass="qwerty"
 useradd -m $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
-
-#auto reboot 24Hours
-wget -P /root $site/tools/autoreboot.sh
-chmod +x /root/autoreboot.sh
-echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
-service cron reload
-service cron restart

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+#sudo usermod {username} -s /sbin/nologin
 echo "Checking VPS"
 
 clear

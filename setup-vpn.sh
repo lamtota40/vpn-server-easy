@@ -29,15 +29,15 @@ wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 #install badvpn
 wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 
-#menu command
-wget -O menu $site/tools/menu
-chmod +x menu
-
 #install slowdns
 #wget $site/dnstunnel/setup-dnstunnel.sh && bash setup-dnstunnel.sh
 
-#installation nginx
+#install nginx
 wget $site/nginx/nginx.conf && bash nginx.conf
+
+#menu command
+wget -O menu $site/tools/menu
+chmod +x menu
 
 #auto reboot 24Hours
 wget -P /root $site/tools/autoreboot.sh

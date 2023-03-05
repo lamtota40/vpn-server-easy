@@ -35,7 +35,7 @@ wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 #wget $site/dnstunnel/setup-dnstunnel.sh && bash setup-dnstunnel.sh
 
 #install nginx
-wget $site/nginx/nginx.conf && bash nginx.conf
+#wget $site/nginx/nginx.conf && bash nginx.conf
 
 #menu command
 wget -O menu $site/tools/menu

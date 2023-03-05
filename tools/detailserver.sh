@@ -11,6 +11,8 @@ clear
 os_name=$(awk -F= '$1=="NAME" { print $2 ;}' /etc/os-release)
 os_version=$(awk -F= '$1=="VERSION" { print $2 ;}' /etc/os-release)
 raminfo=$(free -h | grep Mem)
+core=$(awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo)
+freq=$(awk -F: '/cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo | sed 's/^[ \t]*//;s/[ \t]*$//')
 #free -m
 ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
 hddinfo=$(df -h --total | grep total)
@@ -34,8 +36,8 @@ echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(en
 echo "Architecture = $(uname -m)"
 echo "OS = $os_name $os_version"
 echo "Frimware = $([ -d /sys/firmware/efi ] && echo UEFI || echo BIOS)"
-echo "Number of core ="
-#echo "CPU(s) = $(lscpu | grep -oP "(?<=CPU).*")"
+echo "Number of core = $core"
+echo "CPU frequency = $freq MHz"
 echo "Model name = $(lscpu | grep -oP "(?<=Model name:).*")"
 echo "Kernel = $(hostnamectl | grep -oP "(?<=Kernel:).*")"
 echo "RAM Free = $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"
@@ -44,4 +46,3 @@ echo "HDD Free = $(awk '{print $4}' <<< "$hddinfo") | Usage = $(awk '{print $3}'
 echo "========================================"
 parted -l
 echo "========================================"
-echo "tes19"

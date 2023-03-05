@@ -1,5 +1,16 @@
 #!/bin/bash
 
+#config tls && no tls
+
+mkdir /data
+#konfigurasi TLS / SSL
+wget -O /data/tls.pem "https://raw.githubusercontent.com/4hidessh/hidessh/main/vmess/tls.pem"
+#konfigurasi NOn TLS
+wget -O /data/tls.key "https://raw.githubusercontent.com/4hidessh/hidessh/main/vmess/tls.key"
+#auto installer 
+wget https://raw.githubusercontent.com/4hidessh/hidessh/main/vmess/install-vmess && chmod +x install-vmess && ./install-vmess
+
+
 # Created By HideSSH
 # Some methods from 233boy/v2ray
 

@@ -4,17 +4,9 @@
 
 mkdir /data
 #konfigurasi TLS / SSL
-wget -O /data/tls.pem "https://raw.githubusercontent.com/4hidessh/hidessh/main/vmess/tls.pem"
+wget -O /data/tls.pem "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/V2RAY/vmess/tls.pem"
 #konfigurasi NOn TLS
-wget -O /data/tls.key "https://raw.githubusercontent.com/4hidessh/hidessh/main/vmess/tls.key"
-#auto installer 
-wget https://raw.githubusercontent.com/4hidessh/hidessh/main/vmess/install-vmess && chmod +x install-vmess && ./install-vmess
-
-
-# Created By HideSSH
-# Some methods from 233boy/v2ray
-
-apt-get update -y && apt-get install wget curl -y
+wget -O /data/tls.key "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/V2RAY/vmess/tls.key"
 
 check_if_running_as_root() {
   # If you want to run as another user, please modify $UID to be owned by this user

@@ -8,16 +8,6 @@ wget -O /data/tls.pem "https://raw.githubusercontent.com/lamtota40/vpn-server-ea
 #konfigurasi NOn TLS
 wget -O /data/tls.key "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/V2RAY/vmess/tls.key"
 
-check_if_running_as_root() {
-  # If you want to run as another user, please modify $UID to be owned by this user
-  if [[ "$UID" -ne '0' ]]; then
-    echo "WARNING: The user currently executing this script is not root. You may encounter the insufficient privilege error."
-    echo "Exiting..."
-    sleep 1
-    exit 1
-  fi
-}
-
 check_if_tls_cert_exists() {
 	if [ ! -e /data/tls.pem ] || [ ! -e /data/tls.key ]; then
 		echo "TLS File on /data directory does not exists!"
@@ -292,18 +282,10 @@ EOF
 	echo "https://233boy.github.io/tools/qr.html#vmess://$ntlsBase"
 }
 
-apt-get update
 
-apt-get install curl wget build-essential -y
-
+apt-get install build-essential -y
 clear
-
-check_if_running_as_root
-
 check_if_tls_cert_exists
-
 init_input_config
-
 install_nginx
-
 install_v2ray

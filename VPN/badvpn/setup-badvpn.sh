@@ -12,7 +12,6 @@ else
     exit 1
 fi
 
-
 chmod +x /usr/bin/badvpn-udpgw
 systemctl daemon-reload
 

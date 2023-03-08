@@ -9,6 +9,7 @@ then
     wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw"
 else
     echo "Architecture not support, UDPGW/BadVPN cannot installed"
+    rm -rf setup-badvpn.sh
     exit 1
 fi
 

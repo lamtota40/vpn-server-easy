@@ -11,7 +11,7 @@ OpenSSH non TLS : 22 , 143, 8000<br>
 Dropbear non TLS : 80 , 144, 8080<br>
 (Stunnel+Dropbear) TLS : 443<br>
 (Stunnel+OpenSSH) TLS : 995<br>
-UDPGW/Badvpn : 7100, 7200, 7300<br>
+UDPGW/Badvpn : 7200, 7300<br>
 WEB/NGIX : 81<br>
 
 Auto reboot once day on 00:00

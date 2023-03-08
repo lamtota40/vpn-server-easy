@@ -1,8 +1,6 @@
 #!/bin/bash
 # installer badvpn
 
-
-ARCH=
 if [ "$(uname -m)" == 'x86_64' ] || [ "$(uname -m)" == 'aarch64' ]
 then
     wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw64"

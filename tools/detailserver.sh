@@ -1,8 +1,6 @@
 #!/bin/bash
 
-if [ ! $(which virt-what) ]; then
-   apt install virt-what -y
-fi
+#apt install virt-what -y
 if [ ! $(which jq) ]; then
    apt install jq -y
 fi

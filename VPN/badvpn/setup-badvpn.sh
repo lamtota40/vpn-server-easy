@@ -5,11 +5,10 @@ wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/
 chmod +x /usr/bin/badvpn-udpgw
 systemctl daemon-reload
 
-port1=7100
-port2=7200
-port3=7300
+port1=7200
+port2=7300
 
-for (( x=1; x<=3; x++ ))
+for (( x=1; x<=2; x++ ))
 do 
   xport="port$x"
   cat > /etc/systemd/system/svr-$xport.service <<-END

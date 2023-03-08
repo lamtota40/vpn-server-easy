@@ -33,6 +33,7 @@ echo "Ip Private = $private_ip"
 echo "ISP = $(jq -r '.organization_name' <<< "$cekip") | Country= $(jq -r '.country' <<< "$cekip")"
 echo "Region= $(jq -r '.region' <<< "$cekip") | City= $(jq -r '.city' <<< "$cekip")"
 echo "Virtualization = " `if grep -Eoc '(vmx|svm)' /proc/cpuinfo; then echo "(enable)"; else echo "(disable)"; fi`
+echo "Type = $(systemd-detect-virt)"
 echo "Architecture = $(uname -m)"
 echo "OS = $os_name $os_version"
 echo "Frimware = $([ -d /sys/firmware/efi ] && echo UEFI || echo BIOS)"

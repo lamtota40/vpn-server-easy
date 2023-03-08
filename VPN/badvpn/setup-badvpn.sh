@@ -5,15 +5,16 @@
 ARCH=
 if [ "$(uname -m)" == 'x86_64' ] || [ "$(uname -m)" == 'aarch64' ]
 then
-
+    wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw64"
 elif [ "$(uname -m)" == 'i386' ] || [ "$(uname -m)" == 'i686' ]
 then
-    ARCH=386
+    wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw"
 else
-    ARCH=arm
+    echo "Architecture not support, UDPGW/BadVPN cannot installed"
+    exit 1
 fi
 
-wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw64"
+
 chmod +x /usr/bin/badvpn-udpgw
 systemctl daemon-reload
 

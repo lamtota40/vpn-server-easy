@@ -1,6 +1,11 @@
 #!/bin/bash
 
 echo "================================"
+echo "Domain : "
+echo "Ip Public : "
+echo "Cpu Usage : "
+echo "Free Ram : "
+echo "================================"
 echo " ++++++++++++ Menu ++++++++++++
 echo "================================"
 echo "1. Add user"
@@ -14,4 +19,4 @@ echo "8. Uninstall"
 echo "9. "
 echo "0. Quit"
 echo "================================"
-echo " Choose Menu : "
+read "Choose Menu : " menu

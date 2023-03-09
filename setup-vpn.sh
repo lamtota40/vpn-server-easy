@@ -6,7 +6,7 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 
-#depency
+#dependency
 apt update
 apt upgrade -y
 apt install cron curl openssl iptables -y
@@ -53,5 +53,8 @@ Pass="qwerty"
 useradd -m -s /bin/bash $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
+
+clear
+echo "OK…finish installation..you can enter command 'menu'"
 
 rm -rf setup-vpn.sh

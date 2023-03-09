@@ -19,4 +19,4 @@ echo "8. Uninstall"
 echo "9. "
 echo "0. Quit"
 echo "================================"
-read "Choose Menu : " menu
+read -p "choose [0-9]:" num

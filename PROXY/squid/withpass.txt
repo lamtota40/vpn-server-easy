@@ -3,4 +3,5 @@ auth_param basic realm proxy
 acl authenticated proxy_auth REQUIRED
 http_access allow authenticated
 
+apt install apache2-utils
 htpasswd -c /etc/squid/passwords userxxx

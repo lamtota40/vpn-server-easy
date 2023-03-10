@@ -3,6 +3,7 @@
 echo "================================"
 echo "Domain : "
 echo "Ip Public : "
+echo "location :"
 echo "Cpu Usage : "
 echo "Free Ram : "
 echo "================================"

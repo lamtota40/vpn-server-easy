@@ -16,13 +16,14 @@ WEB/NGIX : 81<br>
 
 Auto reboot once day on 00:00
 
-WS+Dropbear : 444
-WS+SSL
+squid 3128
+WS+Dropbear : 8880
+WS+SSL 5222
 WS+Ovpn : 445
 
 SSH TLS/non+ slowDNS<br>
 V2ray TLS/non+ slowDNS<br>
 
-#TOOLS<br>
+# TOOLS<br>
 
 

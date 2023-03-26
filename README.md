@@ -21,6 +21,9 @@ Stunnel+Dropbear :443<br>
 WS+Stunnel+OpenSSH :5333<br>
 Stunnel+OpenSSH :995<br>
 
+http://myip:81/openvpn-tcp80.ovpn
+http://myip:81/openvpn-tcp1194.ovpn
+http://myip:81/openvpn-udp53.ovpn
 http://myip:81/openvpn-ohp.ovpn
 http://myip:81/openvpn-allconfig.zip
 

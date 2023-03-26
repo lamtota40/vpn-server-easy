@@ -19,11 +19,11 @@ UDPGW/Badvpn :7200, 7300<br>
 WEB(NGIX) :81<br>
 
 TLS:::<br>
-Stunnel+Dropbear :443<br>
-Stunnel+OpenSSH :995<br>
 WS+Stunnel+Dropbear :5222<br>
+Stunnel+Dropbear :443<br>
 WS+Stunnel+OpenSSH :5333<br>
-WS+Ovpn :445<br>
+Stunnel+OpenSSH :995<br>
+Ovpn :445<br>
 
 Auto reboot once day on 00:00<br>
 

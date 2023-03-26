@@ -32,7 +32,8 @@ Squid :3128<br>
 OHP :<br>
 Auto reboot once day on 00:00<br>
 
-SSH TLS/non+ slowDNS<br>
-V2ray TLS/non+ slowDNS<br>
+slowDNS<br>
+NS Server :
+PUB Key :
 
 # TOOLS<br>

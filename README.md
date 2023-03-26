@@ -13,8 +13,8 @@ OHP :<br>
 Non TLS:::<br>
 OpenSSH :22, 143, 8000<br>
 WS+OpenSSH :8880<br>
-Dropbear :80, 144, 8080<br>
-WS+Dropbear :8880<br>
+Dropbear :144, 8080<br>
+WS+Dropbear :80<br>
 UDPGW/Badvpn :7200, 7300<br>
 WEB(NGIX) :81<br>
 

@@ -16,7 +16,6 @@ UDPGW/Badvpn :7200, 7300<br>
 WEB(NGIX) :81<br>
 
 SSH TLS:::<br>
-
 Stunnel+Dropbear :5222<br>
 Stunnel+WS+Dropbear :443<br>
 Stunnel+OpenSSH :5333<br>

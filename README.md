@@ -16,10 +16,11 @@ UDPGW/Badvpn :7200, 7300<br>
 WEB(NGIX) :81<br>
 
 SSH TLS:::<br>
-WS+Stunnel+Dropbear :5222<br>
-Stunnel+Dropbear :443<br>
-WS+Stunnel+OpenSSH :5333<br>
-Stunnel+OpenSSH :995<br>
+
+Stunnel+Dropbear :5222<br>
+Stunnel+WS+Dropbear :443<br>
+Stunnel+OpenSSH :5333<br>
+Stunnel+WS+OpenSSH :995<br>
 
 http://myip:81/openvpn-tcp80.ovpn
 http://myip:81/openvpn-tcp1194.ovpn

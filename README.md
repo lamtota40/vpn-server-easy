@@ -23,6 +23,7 @@ Stunnel+OpenSSH :995<br>
 
 http://myip:81/openvpn-tcp80.ovpn
 http://myip:81/openvpn-tcp1194.ovpn
+http://myip:81/openvpn-tcp443.ovpn
 http://myip:81/openvpn-udp53.ovpn
 http://myip:81/openvpn-ohp.ovpn
 http://myip:81/openvpn-allconfig.zip

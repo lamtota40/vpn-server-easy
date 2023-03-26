@@ -28,9 +28,9 @@ http://myip:81/openvpn-udp53.ovpn
 http://myip:81/openvpn-ohp.ovpn
 http://myip:81/openvpn-allconfig.zip
 
-Auto reboot once day on 00:00<br>
 Squid :3128<br>
 OHP :<br>
+Auto reboot once day on 00:00<br>
 
 SSH TLS/non+ slowDNS<br>
 V2ray TLS/non+ slowDNS<br>

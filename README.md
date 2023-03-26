@@ -14,12 +14,12 @@ Dropbear non TLS : 80 , 144, 8080<br>
 UDPGW/Badvpn : 7200, 7300<br>
 WEB/NGIX : 81<br>
 
-Auto reboot once day on 00:00
+Auto reboot once day on 00:00<br>
 
-squid 3128
-WS+Dropbear : 8880
-WS+SSL 5222
-WS+Ovpn : 445
+squid :3128<br>
+WS+Dropbear :8880<br>
+WS+SSL :5222<br>
+WS+Ovpn :445<br>
 
 SSH TLS/non+ slowDNS<br>
 V2ray TLS/non+ slowDNS<br>

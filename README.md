@@ -33,7 +33,7 @@ OHP :<br>
 Auto reboot once day on 00:00<br>
 
 slowDNS<br>
-NS Server :
-PUB Key :
+NS Server :<br>
+PUB Key :<br>
 
 # TOOLS<br>

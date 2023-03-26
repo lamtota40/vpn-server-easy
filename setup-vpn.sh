@@ -9,7 +9,7 @@ fi
 #dependency
 apt update
 apt upgrade -y
-apt install jq cron curl openssl iptables -y
+apt install python jq cron curl openssl iptables -y
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 

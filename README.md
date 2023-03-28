@@ -14,7 +14,7 @@ Dropbear :23,144,7000<br>
 WS+Dropbear :80<br>
 UDPGW/Badvpn :7200,7300<br>
 WEB(NGIX) :81<br>
-OHP+Dropbear :
+OHP+Dropbear : <br>
 
 SSH TLS:::<br>
 Stunnel+Dropbear :8443,5222<br>
@@ -29,13 +29,19 @@ TCP Stunnel+WS+OpenVPN :443<br>
 TCP OHP+OpenVPN :9088<br>
 UDP OpenVPN :53,443<br>
 
+shock4:
+shock5:
 Squid :3128,8080<br>
-OHP :<br>
 Auto reboot every day at 00:00<br>
 
 slowDNS<br>
 NS Server :<br>
 PUB Key :<br>
+
+V2ray:
+-vmess
+-vless
+-shadowshock
 
 # TOOLS<br>
 .

@@ -19,7 +19,7 @@ SSH TLS:::<br>
 Stunnel+Dropbear :5222<br>
 Stunnel+WS+Dropbear :443<br>
 Stunnel+OpenSSH :5333<br>
-Stunnel+WS+OpenSSH :995<br>
+Stunnel+WS+OpenSSH :8443<br>
 
 http://myip:81/openvpn-tcp80.ovpn
 http://myip:81/openvpn-tcp1194.ovpn

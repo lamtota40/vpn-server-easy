@@ -14,12 +14,14 @@ Dropbear :23,144,7000<br>
 WS+Dropbear :80<br>
 UDPGW/Badvpn :7200,7300<br>
 WEB(NGIX) :81<br>
+OHP+Dropbear :
 
 SSH TLS:::<br>
 Stunnel+Dropbear :8443,5222<br>
 Stunnel+WS+Dropbear :443,955<br>
 Stunnel+OpenSSH :7443,5228<br>
 Stunnel+WS+OpenSSH :6443,944<br>
+Stunnel+OHP+Dropbear : <br>
 
 TCP OpenVPN :1194<br>
 TCP WS+OpenVPN :80<br>

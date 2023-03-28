@@ -21,8 +21,8 @@ Stunnel+WS+Dropbear :443,955<br>
 Stunnel+OpenSSH :7443,5228<br>
 Stunnel+WS+OpenSSH :6443,944<br>
 
-TCP OpenVPN :1194
-UDP OpenVPN :53,443
+TCP OpenVPN :1194<br>
+UDP OpenVPN :53,443<br>
 
 Squid :3128,8080<br>
 OHP :<br>

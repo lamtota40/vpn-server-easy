@@ -18,7 +18,7 @@ WEB(NGIX) :81<br>
 SSH TLS:::<br>
 Stunnel+Dropbear :8443,5222<br>
 Stunnel+WS+Dropbear :443,955<br>
-Stunnel+OpenSSH :7443,5333<br>
+Stunnel+OpenSSH :7443,5228<br>
 Stunnel+WS+OpenSSH :8443,944<br>
 
 http://myip:81/openvpn-tcp80.ovpn

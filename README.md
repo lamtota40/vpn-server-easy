@@ -22,6 +22,8 @@ Stunnel+OpenSSH :7443,5228<br>
 Stunnel+WS+OpenSSH :6443,944<br>
 
 TCP OpenVPN :1194<br>
+TCP WS+OpenVPN :80<br>
+TCP Stunnel+WS+OpenVPN :443<br>
 UDP OpenVPN :53,443<br>
 
 Squid :3128,8080<br>

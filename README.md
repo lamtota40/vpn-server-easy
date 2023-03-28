@@ -31,7 +31,7 @@ UDP OpenVPN :53,443<br>
 
 Squid :3128,8080<br>
 OHP :<br>
-Auto reboot once day on 00:00<br>
+Auto reboot every day at 00:00<br>
 
 slowDNS<br>
 NS Server :<br>

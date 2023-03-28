@@ -21,12 +21,8 @@ Stunnel+WS+Dropbear :443,955<br>
 Stunnel+OpenSSH :7443,5228<br>
 Stunnel+WS+OpenSSH :6443,944<br>
 
-http://myip:81/openvpn-tcp80.ovpn
-http://myip:81/openvpn-tcp1194.ovpn
-http://myip:81/openvpn-tcp443.ovpn
-http://myip:81/openvpn-udp53.ovpn
-http://myip:81/openvpn-ohp.ovpn
-http://myip:81/openvpn-allconfig.zip
+TCP OpenVPN :1194
+UDP OpenVPN :53,443
 
 Squid :3128,8080<br>
 OHP :<br>

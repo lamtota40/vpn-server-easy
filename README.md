@@ -6,7 +6,7 @@ create vpn server easy
 wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 ```
 
-Default port open:<br>
+Default TCP port open:<br>
 SSH Non TLS:::<br>
 OpenSSH :22,143,8000<br>
 WS+OpenSSH :8880<br>

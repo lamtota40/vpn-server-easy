@@ -1,4 +1,4 @@
-wget -q -O /usr/local/bin/ws-nontls https://raw.githubusercontent.com/fisabiliyusri/Mantap/main/websocket/websocket.py
+wget -q -O /usr/local/bin/ws-nontls https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/websocket/websocket.py
 chmod +x /usr/local/bin/ws-nontls
 
 # Installing Service

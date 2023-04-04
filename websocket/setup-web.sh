@@ -24,3 +24,5 @@ END
 systemctl daemon-reload
 systemctl enable ws-tls
 systemctl restart ws-tls
+
+wget https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/websocket/ws-tls.py

@@ -2,7 +2,7 @@
 
 apt install python -y
 
-cat > /etc/systemd/system/ssh-tls-websocket.service << END
+cat > /etc/systemd/system/ws-tls.service << END
 [Unit]
 Description=Python Proxy Mod By geovpn
 Documentation=https://t.me/geovpn
@@ -21,4 +21,4 @@ Restart=on-failure
 WantedBy=multi-user.target
 END
 
-ssh-tls-websocket.service
+ws-tls.service

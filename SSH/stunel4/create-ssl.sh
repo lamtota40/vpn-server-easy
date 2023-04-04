@@ -18,4 +18,4 @@ openssl genrsa -out key.pem 2048
 openssl req -new -x509 -key key.pem -out cert.pem -days 1095 -subj "/CN=$CN"
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 
-#rm -rf stunnel.sh
+rm -rf stunnel.sh

@@ -2,6 +2,7 @@
 
 apt install python -y
 
+cat > /etc/systemd/system/ssh-ohp.service << END
 [Unit]
 Description=Python Proxy Mod By geovpn
 Documentation=https://t.me/geovpn
@@ -18,3 +19,4 @@ Restart=on-failure
 
 [Install]
 WantedBy=multi-user.target
+END

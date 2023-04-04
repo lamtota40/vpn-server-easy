@@ -6,7 +6,7 @@ state=Bandung
 locality=Jawa Barat
 organization=VPN Crops
 organizationalunit=myVPN
-CN=vpncrops.com
+CN=*.game.naver.com
 email=admin@vpncrops.com
 
 echo "=================  membuat Sertifikat OpenSSL ======================"

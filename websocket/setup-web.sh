@@ -2,6 +2,9 @@
 
 apt install python -y
 
+wget -q -O /usr/local/bin/ws-tls https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/websocket/ws-tls.py
+chmod +x /usr/local/bin/ws-tls
+
 cat > /etc/systemd/system/ws-tls.service << END
 [Unit]
 Description=Python Proxy Mod By geovpn
@@ -24,5 +27,3 @@ END
 systemctl daemon-reload
 systemctl enable ws-tls
 systemctl restart ws-tls
-
-wget https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/websocket/ws-tls.py

@@ -21,4 +21,6 @@ Restart=on-failure
 WantedBy=multi-user.target
 END
 
-ws-tls.service
+systemctl daemon-reload
+systemctl enable ws-tls
+systemctl restart ws-tls

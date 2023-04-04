@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # detail nama perusahaan
-CN=*.game.naver.com
+CN=*.line.me
 organization=NAVER
 country=ID
 state=Bandung

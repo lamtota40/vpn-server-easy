@@ -18,7 +18,7 @@ OHP+Dropbear : <br>
 
 SSH TLS:::<br>
 Stunnel+Dropbear :8443,5222<br>
-Stunnel+WS+Dropbear :443,955<br>
+Stunnel+WS+Dropbear :443,955,5228<br>
 Stunnel+OpenSSH :7443,5228<br>
 Stunnel+WS+OpenSSH :6443,944<br>
 Stunnel+OHP+Dropbear : <br>
@@ -29,8 +29,8 @@ TCP Stunnel+WS+OpenVPN :443<br>
 TCP OHP+OpenVPN :9088<br>
 UDP OpenVPN :53,443<br>
 
-shock4:
-shock5:
+shock4:<br>
+shock5:<br>
 Squid :3128,8080<br>
 Auto reboot every day at 00:00<br>
 
@@ -38,10 +38,10 @@ slowDNS<br>
 NS Server :<br>
 PUB Key :<br>
 
-V2ray:
--vmess
--vless
--shadowshock
+V2ray:<br>
+-vmess<br>
+-vless<br>
+-shadowshock<br>
 
 # TOOLS<br>
 .

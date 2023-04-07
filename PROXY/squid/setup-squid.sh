@@ -4,8 +4,8 @@ PUBLIC_IP=$(wget -4qO- ipinfo.io/ip);
 
 apt install squid apache2-utils -y
 mv /etc/squid/squid.conf /etc/squid/squid.conf.bak
-https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/PROXY/squid/all-squid.conf
-wget -P /etc/squid/ "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/PROXY/squid/squid.conf"
+wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/PROXY/squid/all-squid.conf
+#wget -P /etc/squid/ "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/PROXY/squid/squid.conf"
 PUBLIC_IP2="s/xxxxxxxxx/$PUBLIC_IP/g";
 sed -i $PUBLIC_IP2 /etc/squid/squid.conf
 systemctl restart squid

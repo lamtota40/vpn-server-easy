@@ -8,6 +8,12 @@ wget -O /etc/squid/squid.conf https://raw.githubusercontent.com/lamtota40/vpn-se
 #wget -P /etc/squid/ "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/PROXY/squid/squid.conf"
 PUBLIC_IP2="s/xxxxxxxxx/$PUBLIC_IP/g";
 sed -i $PUBLIC_IP2 /etc/squid/squid.conf
+
+cat > /etc/squid/blockURL << END
+block1.com
+n9.cl
+END
+
 systemctl restart squid
 #systemctl reload squid
 

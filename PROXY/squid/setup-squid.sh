@@ -11,7 +11,7 @@ sed -i $PUBLIC_IP2 /etc/squid/squid.conf
 
 cat > /etc/squid/blockURL << END
 block1.com
-n9.cl
+block2.com
 END
 
 systemctl restart squid

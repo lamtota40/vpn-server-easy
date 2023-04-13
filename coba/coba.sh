@@ -32,15 +32,15 @@ systemctl enable rc-local
 systemctl start rc-local.service
 
 # disable ipv6
-echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
-sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
+#echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+#sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 #update
-apt-get remove --purge ufw firewalld -y
-apt-get remove --purge exim4 -y
+#apt-get remove --purge ufw firewalld -y
+#apt-get remove --purge exim4 -y
 
 # install wget and curl
-apt -y install wget curl
+#apt -y install wget curl
 apt -y install python
 
 # install python
@@ -49,7 +49,7 @@ gem install lolcat
 apt -y install figlet
 
 # set time GMT +7
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+#ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 
 # install
@@ -70,26 +70,26 @@ apt install g++ -y
 apt-get install net-tools -y
 
 #hapus apache
-apt-get remove apache2 -y
-apt-get purge apache2* -y
+#apt-get remove apache2 -y
+#apt-get purge apache2* -y
 
 # install webserver
-apt -y install nginx
-cd
-rm /etc/nginx/sites-enabled/default
-rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://gitlab.com/hidessh/baru/-/raw/main/nginx.conf"
-mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://gitlab.com/hidessh/baru/-/raw/main/vps.conf"
-/etc/init.d/nginx restart
+#apt -y install nginx
+#cd
+#rm /etc/nginx/sites-enabled/default
+#rm /etc/nginx/sites-available/default
+#wget -O /etc/nginx/nginx.conf "https://gitlab.com/hidessh/baru/-/raw/main/nginx.conf"
+#mkdir -p /home/vps/public_html
+#wget -O /etc/nginx/conf.d/vps.conf "https://gitlab.com/hidessh/baru/-/raw/main/vps.conf"
+#/etc/init.d/nginx restart
 
 # install badvpn
-cd
-wget -O /usr/bin/badvpn-udpgw "https://gitlab.com/hidessh/baru/-/raw/main/badvpn-udpgw64"
-chmod +x /usr/bin/badvpn-udpgw
+#cd
+#wget -O /usr/bin/badvpn-udpgw "https://gitlab.com/hidessh/baru/-/raw/main/badvpn-udpgw64"
+#chmod +x /usr/bin/badvpn-udpgw
 
 #installer badvpn
-wget https://raw.githubusercontent.com/hidessh99/projectku/main/badvpn/installer-badvpn.sh && chmod +x installer-badvpn.sh && ./installer-badvpn.sh
+#wget https://raw.githubusercontent.com/hidessh99/projectku/main/badvpn/installer-badvpn.sh && chmod +x installer-badvpn.sh && ./installer-badvpn.sh
 
 
 # setting port ssh

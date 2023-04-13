@@ -45,7 +45,7 @@ apt-get -y bzip2 gzip wget screen htop net-tools zip unzip wget curl nano sed sc
 apt install python -y
 apt install make -y
 apt install cmake -y
-apt install jq -y
+#apt install jq -y
 apt install apt-transport-https -y
 #apt install neofetch -y
 #apt install git -y

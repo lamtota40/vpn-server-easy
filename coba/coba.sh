@@ -13,7 +13,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 
 #instalasi Websocket
 #accept http port 44 to port 88
-wget -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/coba/ws-http.py && chmod +x /usr/local/bin/edu-proxy
+wget -O /usr/local/bin/ws-http https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/coba/ws-http.py && chmod +x /usr/local/bin/ws-http
 wget -O /etc/systemd/system/ws-http.service https://gitlab.com/hidessh/baru/-/raw/main/websocket-python/baru/http.service && chmod +x /etc/systemd/system/ws-http.service
 
 systemctl daemon-reload

@@ -2,36 +2,30 @@
 
 apt install python -y
 
-GIST="https://gist.githubusercontent.com/forphc/16f95185e2647d361c6ee07d690765af/raw/"
+#instalasi Websocket (accept http port 80 to port 44[dropbear])
+wget -O /usr/local/bin/ws-http https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/coba/ws-http.py && chmod +x /usr/local/bin/ws-http
 
-curl -skL "$GIST/ws-ssh.service" -o /lib/systemd/system/ws-ssh.service
-curl -skL "$GIST/ws-stunnel.service" -o /lib/systemd/system/ws-stunnel.service
-curl -skL "$GIST/ws-ovpn.service" -o /lib/systemd/system/ws-ovpn.service
-curl -skL "$GIST/ws-ssh.py" -o /usr/local/bin/ws-ssh.py
-curl -skL "$GIST/ws-stunnel.py" -o /usr/local/bin/ws-stunnel.py
-curl -skL "$GIST/ws-ovpn.py" -o /usr/local/bin/ws-ovpn.py
+cat > /etc/systemd/system/ws-http.service <<-END
+[Unit]
+Description=HTTP SSH Over Websocket Python HideSSH
+Documentation=https://hidessh.com
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+Restart=on-failure
+ExecStart=/usr/bin/python -O /usr/local/bin/ws-http
+
+[Install]
+WantedBy=multi-user.target
+END
+chmod +x /etc/systemd/system/ws-http.service
 
 systemctl daemon-reload
-systemctl enable ws-ssh.service  &> /dev/null
-systemctl enable ws-stunnel.service  &> /dev/null
-systemctl enable ws-ovpn.service  &> /dev/null
-systemctl start ws-ssh.service
-systemctl start ws-stunnel.service
-systemctl start ws-ovpn.service
-
-if ! systemctl status ws-ssh.service &> /dev/null; then
-	clear
-	printf "\nFailed to start no-load\n"
-elif ! systemctl status ws-stunnel.service &> /dev/null; then
-	clear
-	printf "\nFailed to start no-load\n"
-elif ! systemctl status ws-ovpn.service &> /dev/null; then
-	clear
-	printf "\nFailed to start no-load\n"
-else
-	clear
-	printf "\nNo-load started\n"
-  printf "\nWebsocket DropbearSSH port: 80\n"
-  printf "\nWebsocket Stunnel/SSL port: 443\n"  
-  printf "\nWebsocket Ovpn port: 99\n\n"
-fi
+systemctl enable ws-http.service
+systemctl start ws-http.service
+systemctl restart ws-http.service

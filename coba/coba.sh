@@ -48,7 +48,7 @@ apt install cmake -y
 apt install jq -y
 apt install apt-transport-https -y
 #apt install neofetch -y
-apt install git -y
+#apt install git -y
 apt install gcc -y
 apt install g++ -y
 

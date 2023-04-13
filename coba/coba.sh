@@ -14,7 +14,6 @@ SysVStartPriority=99
 WantedBy=multi-user.target
 END
 
-
 # nano /etc/rc.local
 cat > /etc/rc.local <<-END
 #!/bin/sh -e
@@ -48,7 +47,7 @@ apt install make -y
 apt install cmake -y
 apt install jq -y
 apt install apt-transport-https -y
-apt install neofetch -y
+#apt install neofetch -y
 apt install git -y
 apt install gcc -y
 apt install g++ -y

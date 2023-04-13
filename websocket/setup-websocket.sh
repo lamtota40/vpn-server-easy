@@ -3,7 +3,7 @@
 apt install python -y
 
 #instalasi Websocket (accept http port 80 to port 44[dropbear])
-wget -O /usr/local/bin/ws-http https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/coba/ws-http.py && chmod +x /usr/local/bin/ws-http
+wget -O /usr/local/bin/ws-http https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/websocket/ws-http.py && chmod +x /usr/local/bin/ws-http
 
 cat > /etc/systemd/system/ws-http.service <<-END
 [Unit]

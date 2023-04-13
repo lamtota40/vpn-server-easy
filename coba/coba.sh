@@ -1,51 +1,6 @@
-# Edit file /etc/systemd/system/rc-local.service
-cat > /etc/systemd/system/rc-local.service <<-END
-[Unit]
-Description=/etc/rc.local
-ConditionPathExists=/etc/rc.local
-[Service]
-Type=forking
-ExecStart=/etc/rc.local start
-TimeoutSec=0
-StandardOutput=tty
-RemainAfterExit=yes
-SysVStartPriority=99
-[Install]
-WantedBy=multi-user.target
-END
-
-# nano /etc/rc.local
-cat > /etc/rc.local <<-END
-#!/bin/sh -e
-# rc.local
-# By default this script does nothing.
-exit 0
-END
-
-# Ubah izin akses
-chmod +x /etc/rc.local
-
-# enable rc local
-systemctl enable rc-local
-systemctl start rc-local.service
-
-# install wget and curl
-apt -y install python
-
-# install python
-gem install lolcat
-apt -y install figlet
-
-# install
-apt-get -y bzip2 gzip wget screen htop net-tools zip unzip wget curl nano sed screen
 
 # Install Requirements Tools
 apt install python -y
-apt install make -y
-apt install cmake -y
-apt install apt-transport-https -y
-apt install gcc -y
-apt install g++ -y
 
 # install dropbear
 apt -y install dropbear

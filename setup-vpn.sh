@@ -34,6 +34,9 @@ wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 #install slowdns
 #wget $site/dnstunnel/setup-dnstunnel.sh && bash setup-dnstunnel.sh
 
+#install websocket
+wget $site/websocket/setup-websocket.sh
+
 #install nginx
 #wget $site/nginx/nginx.conf && bash nginx.conf
 

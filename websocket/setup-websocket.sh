@@ -31,3 +31,5 @@ systemctl daemon-reload
 systemctl enable ws-http.service
 systemctl start ws-http.service
 systemctl restart ws-http.service
+
+rm -rf setup-dropbear.sh

@@ -52,14 +52,6 @@ apt install apt-transport-https -y
 apt install gcc -y
 apt install g++ -y
 
-# setting port ssh
-#sed -i '/Port 22/a Port 88' /etc/ssh/sshd_config
-#sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
-#sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
-#service ssh restart
-#/etc/init.d/ssh restart
-
-
 # install dropbear
 apt -y install dropbear
 sed -i 's/NO_START=1/NO_START=0/g' /etc/default/dropbear
@@ -70,11 +62,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 /etc/init.d/dropbear restart
 
 #instalasi Websocket
-#wget https://raw.githubusercontent.com/hidessh99/projectku/main/websocket/hideinstall-websocket.sh && chmod +x hideinstall-websocket.sh && ./hideinstall-websocket.sh
-
-# Websocket HTTP
-#accept http port 23 to port 88 
-cd
+#accept http port 23 to port 88
 wget -O /usr/local/bin/edu-proxy https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/coba/ws-http.py && chmod +x /usr/local/bin/edu-proxy
 wget -O /etc/systemd/system/edu-proxy.service https://gitlab.com/hidessh/baru/-/raw/main/websocket-python/baru/http.service && chmod +x /etc/systemd/system/edu-proxy.service
 

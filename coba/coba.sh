@@ -53,11 +53,11 @@ apt install gcc -y
 apt install g++ -y
 
 # setting port ssh
-sed -i '/Port 22/a Port 88' /etc/ssh/sshd_config
-sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
-sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
-service ssh restart
-/etc/init.d/ssh restart
+#sed -i '/Port 22/a Port 88' /etc/ssh/sshd_config
+#sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
+#sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
+#service ssh restart
+#/etc/init.d/ssh restart
 
 
 # install dropbear

@@ -44,6 +44,7 @@ Squid :3128,8080<br>
 slowDNS:::<br>
 NS Server :<br>
 PUB Key :<br>
+SLOWDNS OPENSSH :ALL Port(22,143,8000)<br>
 -----------------------------------------------------<br>
 UDPGW/Badvpn :7200,7300<br>
 WEB(NGIX) :81<br>

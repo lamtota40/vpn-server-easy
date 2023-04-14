@@ -40,6 +40,9 @@ wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 #install websocket
 wget $site/websocket/setup-websocket.sh && bash setup-websocket.sh
 
+#install sslh
+wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
+
 #install nginx
 #wget $site/nginx/nginx.conf && bash nginx.conf
 

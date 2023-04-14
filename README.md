@@ -6,21 +6,25 @@ create vpn server easy
 wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 ```
 
-Default TCP port open:<br>
-SSH Non TLS:::<br>
+Mode TCP direct Non TLS:::<br>
 OpenSSH :22,143,8000<br>
+Dropbear :23,80,443,144,7000<br>
+Mode TCP direct Non TLS:::<br>
+Stunnel+Dropbear :8443,5222<br>
+Stunnel+OpenSSH :7443,5228<br>
+
+Mode TCP websocket Non TLS:::<br>
 WS+OpenSSH :8880<br>
-Dropbear :23,144,7000<br>
 WS+Dropbear :80<br>
+
+Mode TCP websocket TLS:::<br>
+Stunnel+WS+OpenSSH :6443,944<br>
+Stunnel+WS+Dropbear :443,955,5228<br>
+
 UDPGW/Badvpn :7200,7300<br>
 WEB(NGIX) :81<br>
 OHP+Dropbear : <br>
 
-SSH TLS:::<br>
-Stunnel+Dropbear :8443,5222<br>
-Stunnel+WS+Dropbear :443,955,5228<br>
-Stunnel+OpenSSH :7443,5228<br>
-Stunnel+WS+OpenSSH :6443,944<br>
 Stunnel+OHP+Dropbear : <br>
 
 TCP OpenVPN :1194<br>

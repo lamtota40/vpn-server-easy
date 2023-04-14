@@ -50,6 +50,9 @@ UDPGW/Badvpn :7200,7300<br>
 WEB(NGIX) :81<br>
 -----------------------------------------------------<br>
 <b>Mode V2ray TCP non TLS:::</b><br>
+trojan:<br>
+shadowshock:<br>
+
 TCP vmess: <br>
 TCP vless: <br>
 TCP WS+vmess: <br>
@@ -68,7 +71,6 @@ TCP Stunnel+vmess: <br>
 TCP Stunnel+vless: <br>
 TCP XTLS+vmess: <br>
 TCP XTLS+vless: <br>
--shadowshock<br>
 -----------------------------------------------------<br>
 
 Auto reboot every day at 00:00<br>

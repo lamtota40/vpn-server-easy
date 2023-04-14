@@ -1,9 +1,7 @@
 #!/bin/bash
 
 if [ ! $(which sshd) ]; then
-    stat="Not Instaled"
-else
-    apt-get install openssh-server -y
+   apt install openssh-server -y
 fi
 
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak

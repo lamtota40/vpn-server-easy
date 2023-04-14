@@ -60,6 +60,8 @@ TCP QUIC+vmess: <br>
 TCP QUIC+vless: <br>
 TCP GRPC+vmess: <br>
 TCP GRPC+vless: <br>
+TCP H2+vmess: <br>
+TCP H2+vless: <br>
 
 <b>Mode V2ray TCP TLS:::</b><br>
 TCP Stunnel+vmess: <br>

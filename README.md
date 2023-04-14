@@ -23,7 +23,7 @@ WS+Dropbear :80<br>
 Stunnel+WS+OpenSSH :6443,944<br>
 Stunnel+WS+Dropbear :443,955,5228<br>
 -----------------------------------------------------<br>
-<b>Mode Openvpn<b><br>
+<b>Mode Openvpn</b><br>
 TCP OpenVPN :1194<br>
 TCP WS+OpenVPN :80<br>
 TCP Stunnel+OpenVPN :1194<br>

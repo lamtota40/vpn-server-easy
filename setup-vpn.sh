@@ -14,7 +14,7 @@ apt install python jq cron curl openssl iptables -y
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
 #install openSSH
-wget $site/SSH/openssh/setup-openssh.sh && bash setup-dropbear.sh
+wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
 
 #install dropbear
 wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh

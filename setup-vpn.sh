@@ -13,6 +13,12 @@ apt install python jq cron curl openssl iptables -y
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
+#install openSSH
+wget $site/SSH/openssh/setup-openssh.sh && bash setup-dropbear.sh
+
+#install dropbear
+wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
+
 #Banner
 wget -P /etc $site/tools/other/banner
 
@@ -21,9 +27,6 @@ echo "/bin/false" >> /etc/shells
 
 #grep "/bin/nologin" /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
-
-#install dropbear
-wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
 
 #install stunnel4
 wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh

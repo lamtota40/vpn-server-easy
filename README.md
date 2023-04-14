@@ -45,15 +45,15 @@ slowDNS:::<br>
 NS Server :<br>
 PUB Key :<br>
 -----------------------------------------------------<br>
+<b>Mode V2ray:::</b><br>
+-TCP vmess<br>
+-vless<br>
+-shadowshock<br>
+-----------------------------------------------------<br>
 UDPGW/Badvpn :7200,7300<br>
 WEB(NGIX) :81<br>
 
 Auto reboot every day at 00:00<br>
-
-<b>Mode V2ray:::</b><br>
--vmess<br>
--vless<br>
--shadowshock<br>
 
 # TOOLS<br>
 .

@@ -13,14 +13,14 @@ apt install python jq cron curl openssl iptables -y
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
+#Banner
+wget -P /etc $site/tools/other/banner
+
 #install openSSH
 wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
 
 #install dropbear
 wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
-
-#Banner
-wget -P /etc $site/tools/other/banner
 
 #grep "/bin/false" /etc/shells
 echo "/bin/false" >> /etc/shells

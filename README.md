@@ -48,11 +48,9 @@ PUB Key :<br>
 UDPGW/Badvpn :7200,7300<br>
 WEB(NGIX) :81<br>
 -----------------------------------------------------<br>
-<b>Mode V2ray:::</b><br>
+<b>Mode V2ray TCP non TLS:::</b><br>
 TCP vmess: <br>
 TCP vless: <br>
-TCP Stunnel+vmess: <br>
-TCP Stunnel+vless: <br>
 TCP WS+vmess: <br>
 TCP WS+vless: <br>
 TCP KCP+vmess: <br>
@@ -61,6 +59,12 @@ TCP QUIC+vmess: <br>
 TCP QUIC+vless: <br>
 TCP GRPC+vmess: <br>
 TCP GRPC+vless: <br>
+
+<b>Mode V2ray TCP TLS:::</b><br>
+TCP Stunnel+vmess: <br>
+TCP Stunnel+vless: <br>
+TCP XTLS+vmess: <br>
+TCP XTLS+vless: <br>
 -shadowshock<br>
 -----------------------------------------------------<br>
 

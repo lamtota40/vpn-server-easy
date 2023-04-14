@@ -17,5 +17,7 @@ service ssh restart
 service sshd restart
 /etc/init.d/ssh restart
 
+rm -rf setup-dropbear.sh
+
 
 #apt-get purge openssh-server -y

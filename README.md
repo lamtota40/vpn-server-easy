@@ -23,7 +23,7 @@ WS+Dropbear :80<br>
 Stunnel+WS+OpenSSH :6443,944<br>
 Stunnel+WS+Dropbear :443,955,5228<br>
 -----------------------------------------------------<br>
-<b>Mode Openvpn</b><br>
+<b>Mode Openvpn:::</b><br>
 TCP OpenVPN :1194<br>
 TCP WS+OpenVPN :80<br>
 TCP Stunnel+OpenVPN :1194<br>
@@ -31,17 +31,17 @@ TCP Stunnel+WS+OpenVPN :443<br>
 TCP OHP+OpenVPN :9088<br>
 UDP OpenVPN :53,123,443<br>
 -----------------------------------------------------<br>
-<b>Mode OHP</b><br>
+<b>Mode OHP:::</b><br>
 TCP OHP+Dropbear : <br>
 TCP Stunnel+OHP+Dropbear : <br>
 TCP WS+OHP+Dropbear : <br>
 -----------------------------------------------------<br>
-<b>PROXY</b><br>
+<b>PROXY:::</b><br>
 shock4:4145<br>
 shock5:1080<br>
 Squid :3128,8080<br>
 -----------------------------------------------------<br>
-slowDNS<br>
+slowDNS:::<br>
 NS Server :<br>
 PUB Key :<br>
 -----------------------------------------------------<br>
@@ -50,7 +50,7 @@ WEB(NGIX) :81<br>
 
 Auto reboot every day at 00:00<br>
 
-V2ray:<br>
+<b>Mode V2ray:::</b><br>
 -vmess<br>
 -vless<br>
 -shadowshock<br>

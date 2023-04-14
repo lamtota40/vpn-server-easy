@@ -29,7 +29,7 @@ TCP WS+OpenVPN :80<br>
 TCP Stunnel+OpenVPN :1194<br>
 TCP Stunnel+WS+OpenVPN :443<br>
 TCP OHP+OpenVPN :9088<br>
-UDP OpenVPN :53,443<br>
+UDP OpenVPN :53,123,443<br>
 -----------------------------------------------------<br>
 <b>Mode OHP</b><br>
 TCP OHP+Dropbear : <br>

@@ -1,6 +1,10 @@
 #!/bin/bash
 
-apt-get install openssh-server -y
+if [ ! $(which dropbear) ]; then
+    stat="Not Instaled"
+else
+    apt-get install openssh-server -y
+fi
 
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config

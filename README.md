@@ -31,20 +31,24 @@ TCP Stunnel+WS+OpenVPN :443<br>
 TCP OHP+OpenVPN :9088<br>
 UDP OpenVPN :53,443<br>
 -----------------------------------------------------<br>
-UDPGW/Badvpn :7200,7300<br>
-WEB(NGIX) :81<br>
-OHP+Dropbear : <br>
-
-Stunnel+OHP+Dropbear : <br>
-
+<b>Mode OHP</b><br>
+TCP OHP+Dropbear : <br>
+TCP Stunnel+OHP+Dropbear : <br>
+TCP WS+OHP+Dropbear : <br>
+-----------------------------------------------------<br>
+<b>PROXY</b><br>
 shock4:<br>
 shock5:<br>
 Squid :3128,8080<br>
-Auto reboot every day at 00:00<br>
-
+-----------------------------------------------------<br>
 slowDNS<br>
 NS Server :<br>
 PUB Key :<br>
+-----------------------------------------------------<br>
+UDPGW/Badvpn :7200,7300<br>
+WEB(NGIX) :81<br>
+
+Auto reboot every day at 00:00<br>
 
 V2ray:<br>
 -vmess<br>

@@ -37,7 +37,7 @@ TCP Stunnel+OHP+Dropbear : <br>
 TCP WS+OHP+Dropbear : <br>
 -----------------------------------------------------<br>
 <b>PROXY</b><br>
-shock4:<br>
+shock4:4145<br>
 shock5:1080<br>
 Squid :3128,8080<br>
 -----------------------------------------------------<br>

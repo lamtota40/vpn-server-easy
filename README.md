@@ -41,7 +41,7 @@ shock4:4145<br>
 shock5:1080<br>
 Squid :3128,8080<br>
 -----------------------------------------------------<br>
-slowDNS:::<br>
+</b>Mode slowDNS:::</b><br>
 NS Server :<br>
 PUB Key :<br>
 SLOWDNS OPENSSH :ALL Port(22,143,8000)<br>

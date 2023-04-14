@@ -23,17 +23,19 @@ WS+Dropbear :80<br>
 Stunnel+WS+OpenSSH :6443,944<br>
 Stunnel+WS+Dropbear :443,955,5228<br>
 -----------------------------------------------------<br>
+mode Openvpn
+TCP OpenVPN :1194<br>
+TCP WS+OpenVPN :80<br>
+TCP Stunnel+OpenVPN :1194<br>
+TCP Stunnel+WS+OpenVPN :443<br>
+TCP OHP+OpenVPN :9088<br>
+UDP OpenVPN :53,443<br>
+-----------------------------------------------------<br>
 UDPGW/Badvpn :7200,7300<br>
 WEB(NGIX) :81<br>
 OHP+Dropbear : <br>
 
 Stunnel+OHP+Dropbear : <br>
-
-TCP OpenVPN :1194<br>
-TCP WS+OpenVPN :80<br>
-TCP Stunnel+WS+OpenVPN :443<br>
-TCP OHP+OpenVPN :9088<br>
-UDP OpenVPN :53,443<br>
 
 shock4:<br>
 shock5:<br>

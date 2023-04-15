@@ -1,12 +1,12 @@
 #!/bin/bash
 # detail ssl
 CN=*.whatsapp.com
-organization=NAVER
-country=ID
-state=Bandung
-locality=Jawa Barat
-organizationalunit=myVPN
-email=admin@vpncrops.com
+#organization=NAVER
+#country=ID
+#state=Bandung
+#locality=Jawa Barat
+#organizationalunit=myVPN
+#email=admin@vpncrops.com
 
 apt install stunnel4 -y
 

@@ -1,8 +1,7 @@
 #!/bin/bash
 
-wget -P /etc https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/other/banner
-
 #setting IPtables
+apt install iptables -y
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
 netfilter-persistent save
@@ -22,44 +21,19 @@ NS_DOMAIN=slowdns-${SUB_DOMAIN}
 echo $NS_DOMAIN > /root/nsdomain
 
 nameserver=$(cat /root/nsdomain)
-apt update -y
 apt install -y python3 python3-dnslib net-tools
 apt install ncurses-utils -y
 apt install dnsutils -y
-#apt install git -y
-apt install curl -y
-apt install wget -y
-apt install ncurses-utils -y
-apt install screen -y
-apt install cron -y
-apt install iptables -y
-#apt install -y git screen whois dropbear wget
-apt install -y sudo gnutls-bin
-apt install -y dos2unix debconf-utils
-service cron reload
-service cron restart
-
-#tambahan port openssh
-cd
-cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
-echo "Port 2222" >> /etc/ssh/sshd_config
-echo "Port 2269" >> /etc/ssh/sshd_config
-sed -i 's%#Banner.*%Banner /etc/banner%' /etc/ssh/sshd_config
-sed -i 's/PasswordAuthentication .*/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
-sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
-
-service ssh restart
-service sshd restart
+apt install gnutls-bin -y
+apt install dos2unix debconf-utils -y
 
 #konfigurasi slowdns
 rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
-wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/server.key"
-wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/server.pub"
-wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/sldns-server"
-wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/sldns-client"
+wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/server.key"
+wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/server.pub"
+wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/sldns-server"
+wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/sldns-client"
 cd
 chmod +x /etc/slowdns/server.key
 chmod +x /etc/slowdns/server.pub
@@ -67,7 +41,7 @@ chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
 
 cd
-#install client-sldns.service
+#for service startup-client slowdns
 cat > /etc/systemd/system/client-sldns.service << END
 [Unit]
 Description=Client SlowDNS By HideSSH
@@ -88,7 +62,7 @@ WantedBy=multi-user.target
 END
 
 cd
-#install server-sldns.service
+#for service startup-server slowdns
 cat > /etc/systemd/system/server-sldns.service << END
 [Unit]
 Description=Server SlowDNS By HideSSH
@@ -111,7 +85,6 @@ END
 #permission service slowdns
 cd
 chmod +x /etc/systemd/system/client-sldns.service
-
 chmod +x /etc/systemd/system/server-sldns.service
 pkill sldns-server
 pkill sldns-client

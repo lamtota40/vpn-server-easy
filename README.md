@@ -45,9 +45,9 @@ shock5:1080<br>
 Squid :3128,8080<br>
 -----------------------------------------------------<br>
 <b>Mode slowDNS:::</b><br>
-NS Server :<br>
-PUB Key :<br>
-SLOWDNS OPENSSH :ALL Port(22,143,8000)<br>
+NS Server :slow-id.xxxxx.com<br>
+PUB Key :7fbd1f8aa0abfe15a7903e837f78aba39cf61d36f183bd604daa2fe4ef3b7b59<br>
+SLOWDNS OPENSSH :ALL Port<br>
 -----------------------------------------------------<br>
 UDPGW/Badvpn :7200,7300<br>
 WEB(NGIX) :81<br>

@@ -1,8 +1,9 @@
 #!/bin/bash
 
-#apt-get install sslh -y
+#SSLH Probes for HTTP, TLS/SSL (including SNI and ALPN), SSH, OpenVPN, tinc, XMPP, SOCKS5,
+
 apt-get install sslh --no-install-recommends -y
-#port 333 to 44 and 777
+#port 443,5222,5228
 wget -O /etc/default/sslh "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/sslh/sslh.conf"
 service sslh restart
 

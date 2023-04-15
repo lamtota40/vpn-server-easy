@@ -102,4 +102,4 @@ systemctl start server-sldns
 systemctl restart client-sldns
 systemctl restart server-sldns
 
-rm -rf setup-dropbear.sh
+rm -rf setup-slowdns.sh

@@ -30,11 +30,11 @@ apt install dnsutils -y
 #apt install git -y
 #apt install curl -y
 #apt install wget -y
-apt install ncurses-utils -y
-apt install screen -y
+#apt install screen -y
 #apt install cron -y
+#apt install sudo
 #apt install -y git screen whois dropbear wget
-apt install -y sudo gnutls-bin
+apt install -y gnutls-bin
 apt install -y dos2unix debconf-utils
 #service cron reload
 #service cron restart

@@ -1,7 +1,5 @@
 #!/bin/bash
 
-wget -P /etc https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/other/banner
-
 #setting IPtables
 apt install iptables -y
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
@@ -28,20 +26,6 @@ apt install ncurses-utils -y
 apt install dnsutils -y
 apt install gnutls-bin -y
 apt install dos2unix debconf-utils -y
-
-#tambahan port openssh
-cd
-cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
-sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
-echo "Port 2222" >> /etc/ssh/sshd_config
-echo "Port 2269" >> /etc/ssh/sshd_config
-sed -i 's%#Banner.*%Banner /etc/banner%' /etc/ssh/sshd_config
-sed -i 's/PasswordAuthentication .*/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
-sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
-
-service ssh restart
-service sshd restart
 
 #konfigurasi slowdns
 rm -rf /etc/slowdns

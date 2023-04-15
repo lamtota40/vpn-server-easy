@@ -9,11 +9,13 @@ wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 -----------------------------------------------------<br>
 <b>Mode TCP direct Non TLS:::</b><br>
 OpenSSH :22,143,8000<br>
-Dropbear :23,80,443,144,7000<br>
+Dropbear :23,144,7000<br>
+SSLH+Dropbear : 443,5222,5228
 
 <b>Mode TCP direct TLS:::</b><br>
-Stunnel+Dropbear :443,5222<br>
-Stunnel+OpenSSH :7443,5228<br>
+SSLH+Stunnel+Dropbear : 443,5222,5228<br>
+Stunnel+Dropbear :955<br>
+Stunnel+OpenSSH :944<br>
 -----------------------------------------------------<br>
 <b>Mode TCP websocket Non TLS:::</b><br>
 WS+OpenSSH :8880<br>

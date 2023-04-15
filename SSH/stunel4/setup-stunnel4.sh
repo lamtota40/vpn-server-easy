@@ -24,7 +24,7 @@ cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 #curl -skL "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/SSH/stunel4/stunnel.conf" -o /etc/stunnel/stunnel.conf
 
 cat > /etc/stunnel/stunnel.conf <<-END
-cert = /etc/hidessh/stunnel.pem
+cert = /etc/stunnel/stunnel.pem
 client = no
 socket = a:SO_REUSEADDR=1
 socket = l:TCP_NODELAY=1

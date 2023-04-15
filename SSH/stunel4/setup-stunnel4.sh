@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # detail ssl
 CN=*.whatsapp.com
 #organization=NAVER

@@ -1,6 +1,7 @@
 #!/bin/bash
 
-#SSLH Probes for HTTP, TLS/SSL (including SNI and ALPN), SSH, OpenVPN, tinc, XMPP, SOCKS5,
+#https://github.com/yrutschle/sslh
+#SSLH support TCP UDP & Probes for HTTP, TLS/SSL (including SNI and ALPN), SSH, OpenVPN, tinc, XMPP, SOCKS5,
 
 apt-get install sslh --no-install-recommends -y
 #port 443,5222,5228

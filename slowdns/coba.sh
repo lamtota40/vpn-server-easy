@@ -23,21 +23,11 @@ NS_DOMAIN=slowdns-${SUB_DOMAIN}
 echo $NS_DOMAIN > /root/nsdomain
 
 nameserver=$(cat /root/nsdomain)
-#apt update -y
 apt install -y python3 python3-dnslib net-tools
 apt install ncurses-utils -y
 apt install dnsutils -y
-#apt install git -y
-#apt install curl -y
-#apt install wget -y
-#apt install screen -y
-#apt install cron -y
-#apt install sudo
-#apt install -y git screen whois dropbear wget
-apt install -y gnutls-bin
-apt install -y dos2unix debconf-utils
-#service cron reload
-#service cron restart
+apt install gnutls-bin -y
+apt install dos2unix debconf-utils -y
 
 #tambahan port openssh
 cd
@@ -67,7 +57,7 @@ chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
 
 cd
-#install client-sldns.service
+#for service startup-client slowdns
 cat > /etc/systemd/system/client-sldns.service << END
 [Unit]
 Description=Client SlowDNS By HideSSH
@@ -88,7 +78,7 @@ WantedBy=multi-user.target
 END
 
 cd
-#install server-sldns.service
+#for service startup-server slowdns
 cat > /etc/systemd/system/server-sldns.service << END
 [Unit]
 Description=Server SlowDNS By HideSSH

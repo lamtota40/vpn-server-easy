@@ -1,5 +1,7 @@
 #!/bin/bash
 
+wget -P /etc https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/other/banner
+
 #setting IPtables
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300

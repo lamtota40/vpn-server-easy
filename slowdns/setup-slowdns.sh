@@ -1,8 +1,4 @@
 #!/bin/bash
-# Script  By nstaller slowdns
-# 2022 SLOWDNS
-# ===============================================
-
 
 #setting IPtables
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
@@ -61,10 +57,6 @@ chmod +x /etc/slowdns/server.key
 chmod +x /etc/slowdns/server.pub
 chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
-
-cd
-#wget -q -O /etc/systemd/system/client-sldns.service "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/client-sldns.service"
-#wget -q -O /etc/systemd/system/server-sldns.service "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/server-sldns.service"
 
 cd
 #install client-sldns.service

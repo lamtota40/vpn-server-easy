@@ -21,7 +21,7 @@ openssl req -new -x509 -key key.pem -out cert.pem -days 1095 -subj "/CN=$CN"
 
 cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 
-curl -skL "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/SSH/stunel4/stunnel.conf" -o /etc/stunnel/stunnel.conf
+wget -O /etc/stunnel/stunnel.conf "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/SSH/stunel4/stunnel.conf"
 
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart

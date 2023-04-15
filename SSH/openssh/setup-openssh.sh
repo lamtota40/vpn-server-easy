@@ -11,7 +11,7 @@ echo "Port 8000" >> /etc/ssh/sshd_config
 sed -i 's%#Banner.*%Banner /etc/banner%' /etc/ssh/sshd_config
 sed -i 's/PasswordAuthentication .*/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
-#sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
+sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
 
 service ssh restart
 service sshd restart

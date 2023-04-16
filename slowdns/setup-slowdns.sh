@@ -44,8 +44,8 @@ cd
 #for service startup-client slowdns
 cat > /etc/systemd/system/client-sldns.service << END
 [Unit]
-Description=Client SlowDNS By HideSSH
-Documentation=https://hidessh.com
+Description=Client SlowDNS
+Documentation=https://github.com/lamtota40
 After=network.target nss-lookup.target
 
 [Service]
@@ -65,8 +65,8 @@ cd
 #for service startup-server slowdns
 cat > /etc/systemd/system/server-sldns.service << END
 [Unit]
-Description=Server SlowDNS By HideSSH
-Documentation=https://hidessh.com
+Description=Server SlowDNS
+Documentation=https://github.com/lamtota40
 After=network.target nss-lookup.target
 
 [Service]

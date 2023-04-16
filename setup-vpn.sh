@@ -40,6 +40,9 @@ wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 #install websocket
 wget $site/websocket/setup-websocket.sh && bash setup-websocket.sh
 
+#install shock4 & shock5
+wget $site/PROXY/shock/setup-shock.sh && bash setup-shock.sh 
+
 #install sslh
 wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 

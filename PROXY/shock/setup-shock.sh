@@ -6,4 +6,5 @@ sudo systemctl enable danted
 sudo service danted status
 adduser --shell /usr/sbin/nologin --no-create-home proxyuser
 sudo passwd proxyuser
-curl https://ipinfo.io --proxy socks5://master:qwerty@3.1.58.120:443
+curl http://portquiz.net --proxy "socks5://xxx.xxx.xxx.xxx:1080"
+curl http://portquiz.net --proxy "socks5://user:pass@xxx.xxx.xxx.xxx:1080"

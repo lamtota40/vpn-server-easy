@@ -41,8 +41,7 @@ TCP Stunnel+OHP+Dropbear : <br>
 TCP WS+OHP+Dropbear : <br>
 -----------------------------------------------------<br>
 <b>PROXY:::</b><br>
-shock4 :4145<br>
-shock5 :1080<br>
+Shock4 & Shock5 :1080<br>
 Squid :3128,8080<br>
 -----------------------------------------------------<br>
 <b>Mode slowDNS:::</b><br>

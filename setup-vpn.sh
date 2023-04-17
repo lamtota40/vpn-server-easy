@@ -52,6 +52,9 @@ wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 #install nginx (website)
 #wget $site/nginx/nginx.conf && bash nginx.conf
 
+#install OHP
+#wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh
+
 #menu command
 wget -O menu $site/tools/menu
 chmod +x menu

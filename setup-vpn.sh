@@ -13,13 +13,13 @@ apt install python jq cron curl openssl iptables iptables-persistent net-tools -
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
-#Banner
+#Banner welcome SSH
 wget -P /etc $site/tools/other/banner
 
-#install openSSH
+#install openSSH (SSH)
 wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
 
-#install dropbear
+#install dropbear (SSH)
 wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
 
 #grep "/bin/false" /etc/shells
@@ -31,7 +31,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 #install stunnel4/TLS
 wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 
-#install badvpn(For support UDP)
+#install badvpn (For support UDP)
 wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 
 #install slowdns (ssh over dns)
@@ -40,16 +40,16 @@ wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 #install websocket
 wget $site/websocket/setup-websocket.sh && bash setup-websocket.sh
 
-#proxy squid
+#install proxy squid
 wget $site/PROXY/squid/setup-squid.sh
 
 #install shock4 & shock5
 wget $site/PROXY/shock/setup-shock.sh && bash setup-shock.sh 
 
-#install sslh
+#install sslh (for sharing one port/multiplexer)
 wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 
-#install nginx
+#install nginx (website)
 #wget $site/nginx/nginx.conf && bash nginx.conf
 
 #menu command

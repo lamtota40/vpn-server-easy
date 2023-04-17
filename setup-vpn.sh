@@ -41,7 +41,7 @@ wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 wget $site/websocket/setup-websocket.sh && bash setup-websocket.sh
 
 #install proxy squid
-wget $site/PROXY/squid/setup-squid.sh
+#wget $site/PROXY/squid/setup-squid.sh && bash setup-squid.sh
 
 #install shock4 & shock5
 wget $site/PROXY/shock/setup-shock.sh && bash setup-shock.sh 

@@ -79,7 +79,10 @@ TCP XTLS+vless: <br>
 Auto reboot every day at 00:00<br>
 
 # TOOLS Android<br>
-proxy vpn<br>
+All in one<br>
+Support: SSH,Openvpn,SlowDNS,phisipon,V2Ray,TLS/Non TLS<br>
+https://play.google.com/store/apps/details?id=xyz.easypro.httpcustom
+<br>proxy vpn<br>
 https://play.google.com/store/apps/details?id=com.scheler.superproxy
 <br>shock vpn<br>
 https://play.google.com/store/apps/details?id=net.typeblog.socks

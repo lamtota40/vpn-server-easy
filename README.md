@@ -50,7 +50,7 @@ PUB Key :7fbd1f8aa0abfe15a7903e837f78aba39cf61d36f183bd604daa2fe4ef3b7b59<br>
 Port SLOWDNS :ALL Port OpenSSH<br>
 -----------------------------------------------------<br>
 UDPGW/Badvpn :7200,7300<br>
-WEB(NGIX) :81<br> example: http://yourip:81
+WEB(NGIX) :81 example: http://yourip:81<br>
 -----------------------------------------------------<br>
 <b>Mode V2ray TCP non TLS:::</b><br>
 trojan:<br>

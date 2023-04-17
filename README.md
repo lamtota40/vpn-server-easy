@@ -81,5 +81,5 @@ Auto reboot every day at 00:00<br>
 # TOOLS Android<br>
 proxy vpn<br>
 https://play.google.com/store/apps/details?id=com.scheler.superproxy
-shock vpn<br>
+<br>shock vpn<br>
 https://play.google.com/store/apps/details?id=net.typeblog.socks

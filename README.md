@@ -79,4 +79,6 @@ TCP XTLS+vless: <br>
 Auto reboot every day at 00:00<br>
 
 # TOOLS<br>
-.
+
+shock vpn<br>
+https://play.google.com/store/apps/details?id=net.typeblog.socks

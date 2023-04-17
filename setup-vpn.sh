@@ -28,17 +28,20 @@ echo "/bin/false" >> /etc/shells
 #grep "/bin/nologin" /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 
-#install stunnel4
+#install stunnel4/TLS
 wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 
-#install badvpn
+#install badvpn(For support UDP)
 wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 
-#install slowdns
+#install slowdns (ssh over dns)
 wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
 #install websocket
 wget $site/websocket/setup-websocket.sh && bash setup-websocket.sh
+
+#proxy squid
+wget $site/PROXY/squid/setup-squid.sh
 
 #install shock4 & shock5
 wget $site/PROXY/shock/setup-shock.sh && bash setup-shock.sh 

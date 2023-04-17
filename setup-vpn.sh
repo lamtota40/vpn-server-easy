@@ -56,7 +56,7 @@ wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 wget -O menu $site/tools/menu
 chmod +x menu
 
-#auto reboot 24Hours
+#auto reboot vps once at 00.00 clock
 wget -P /root $site/tools/autoreboot.sh
 chmod +x /root/autoreboot.sh
 echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot

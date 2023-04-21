@@ -78,4 +78,9 @@ usermod -aG sudo $Login
 clear
 echo "OK…finish installation..you can enter command 'menu'"
 
+#cek status all service
+if ! systemctl status squid &> /dev/null; then
+    printf "\nFailed to install Squid\n" && err
+fi
+
 rm -rf setup-vpn.sh

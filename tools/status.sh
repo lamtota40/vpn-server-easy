@@ -47,3 +47,5 @@ if ! systemctl status server-sldns &> /dev/null; then
 else
     printf "\n[OK] to install server-slowdns\n"
 fi
+
+rm -rf status.sh

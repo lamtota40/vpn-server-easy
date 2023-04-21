@@ -86,6 +86,8 @@ echo "OK…finish installation..you can enter command 'menu'"
 #cek status all service
 if ! systemctl status squid &> /dev/null; then
     printf "\n[Failed] to install Squid\n"
+else
+    printf "\n[OK] to install Squid\n"
 fi
 
 rm -rf setup-vpn.sh

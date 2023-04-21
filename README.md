@@ -26,12 +26,12 @@ WS+Dropbear :80<br>
 
 <b>Mode TCP websocket TLS:::</b><br>
 Stunnel+WS+OpenSSH :6443,944<br>
-Stunnel+WS+Dropbear :443,955,5228<br>
+Stunnel+WS+Dropbear :000,000<br>
 -----------------------------------------------------<br>
 <b>Mode Openvpn:::</b><br>
 TCP OpenVPN :1194<br>
 TCP WS+OpenVPN :80<br>
-TCP Stunnel+OpenVPN :1194<br>
+TCP Stunnel+OpenVPN :995<br>
 TCP SSLH+Stunnel+WS+OpenVPN :443<br>
 TCP OHP+OpenVPN :9088<br>
 UDP OpenVPN :53,123,443<br>

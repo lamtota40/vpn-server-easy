@@ -34,7 +34,7 @@ mkdir -p /usr/bin/xray
 mkdir -p /etc/xray
 
 # / / Unzip Xray Linux 64
-cd `mktemp -d`
+cd 'mktemp -d'
 curl -sL "$xraycore_link" -o xray.zip
 unzip -q xray.zip && rm -rf xray.zip
 mv xray /usr/local/bin/xray

@@ -28,6 +28,9 @@ echo "/bin/false" >> /etc/shells
 #grep "/bin/nologin" /etc/shells
 echo "/usr/sbin/nologin" >> /etc/shells
 
+#install OpenVPN
+wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+
 #install stunnel4/TLS
 wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 

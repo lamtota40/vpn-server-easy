@@ -11,6 +11,10 @@ apt update
 apt upgrade -y
 apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
 
+#for security
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
+
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
 #Banner welcome SSH
@@ -57,10 +61,6 @@ wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 
 #install OHP
 #wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh
-
-#for security
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 
-sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 #menu command
 wget -O menu $site/tools/menu

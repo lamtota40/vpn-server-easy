@@ -59,6 +59,8 @@ wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 #wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh
 
 #for security
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 #menu command
 wget -O menu $site/tools/menu

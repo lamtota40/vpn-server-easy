@@ -101,20 +101,13 @@ echo '</ca>' >> /etc/openvpn/tcp.ovpn
 echo '<ca>' >> /etc/openvpn/udp.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/udp.ovpn
 echo '</ca>' >> /etc/openvpn/udp.ovpn
-
-# Copy config OpenVPN client ke home directory root agar mudah didownload ( UDP 2200 )
-cp /etc/openvpn/udp.ovpn /home/vps/public_html/udp.ovpn
-
+.
 # masukkan certificatenya ke dalam config client SSL
 echo '<ca>' >> /etc/openvpn/ssl.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/ssl.ovpn
 echo '</ca>' >> /etc/openvpn/ssl.ovpn
 
-# Copy config OpenVPN client ke home directory root agar mudah didownload ( SSL )
-cp /etc/openvpn/ssl.ovpn /home/vps/public_html/ssl.ovpn
-
-#firewall untuk memperbolehkan akses UDP dan akses jalur TCP
-
+# allowed access ip client firewall
 iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ANU -j MASQUERADE
 iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ANU -j MASQUERADE
 iptables-save > /etc/iptables.up.rules
@@ -131,6 +124,8 @@ systemctl start openvpn
 
 # Copy config OpenVPN client ke home directory root agar mudah didownload ( TCP 1194 )
 cp /etc/openvpn/tcp.ovpn /home/vps/public_html/tcp.ovpn
+cp /etc/openvpn/ssl.ovpn /home/vps/public_html/ssl.ovpn
+cp /etc/openvpn/udp.ovpn /home/vps/public_html/udp.ovpn
 
 # Delete script
 #history -c

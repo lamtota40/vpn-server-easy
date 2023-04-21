@@ -58,6 +58,8 @@ wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 #install OHP
 #wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh
 
+#for security
+
 #menu command
 wget -O menu $site/tools/menu
 chmod +x menu

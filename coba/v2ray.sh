@@ -23,65 +23,6 @@ chronyc sourcestats -v
 chronyc tracking -v
 date
 
-
-lamtota40
-/
-pvt
-Public
-forked from godtrex99/pvt
-Code
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Settings
-Beta Try the new code view
-pvt/xray/ins-xray.sh
-@lamtota40
-lamtota40 Update ins-xray.sh
- 2 contributors
-388 lines (372 sloc)  9.17 KB
-#!/bin/bash
-# AutoScriptSSH By JAGOANNEON
-# =====================================================
-# Color
-RED='\033[0;31m'
-NC='\033[0m'
-GREEN='\033[0;32m'
-ORANGE='\033[0;33m'
-BLUE='\033[0;34m'
-PURPLE='\033[0;35m'
-CYAN='\033[0;36m'
-LIGHT='\033[0;37m'
-# =====================================================
-MYIP=$(wget -qO- ipinfo.io/ip);
-clear
-
-mkdir /etc/xray
-mkdir /var/lib/crot;
-echo "IP=" >> /var/lib/crot/ipvps.conf
-echo "Masukkan Domain Anda, Jika Anda Tidak Memiliki Domain Klik Enter"
-echo "Ketikkan Perintah newhost setelah proses instalasi Script Selesai"
-read -p "Hostname / Domain: " host
-echo "IP="$host >> /var/lib/crot/ipvps.conf
-echo "$host" >> /etc/xray/domain
-
-domain=$(cat /etc/xray/domain)
-apt install iptables iptables-persistent -y
-apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
-apt install socat cron bash-completion ntpdate -y
-ntpdate pool.ntp.org
-apt -y install chrony
-timedatectl set-ntp true
-systemctl enable chronyd && systemctl restart chronyd
-systemctl enable chrony && systemctl restart chrony
-timedatectl set-timezone Asia/Jakarta
-chronyc sourcestats -v
-chronyc tracking -v
-date
-
 # / / Ambil Xray Core Version Terbaru
 latest_version="$(curl -s https://api.github.com/repos/XTLS/Xray-core/releases | grep tag_name | sed -E 's/.*"v(.*)".*/\1/' | head -n 1)"
 

@@ -17,3 +17,5 @@ END
 systemctl restart squid
 #systemctl reload squid
 
+rm -rf setup-squid.sh
+

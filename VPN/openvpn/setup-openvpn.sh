@@ -2,7 +2,7 @@
 
 MYIP=$(wget -qO- ipinfo.io/ip);
 
-# initialion var
+# initialization var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
 MYIP=$(wget -qO- ipinfo.io/ip);
@@ -23,7 +23,7 @@ cd
 mkdir -p /usr/lib/openvpn/
 cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib/openvpn/openvpn-plugin-auth-pam.so
 
-# nano /etc/default/openvpn
+# edit /etc/default/openvpn
 sed -i 's/#AUTOSTART="all"/AUTOSTART="all"/g' /etc/default/openvpn
 
 # restart openvpn
@@ -90,16 +90,12 @@ END
 sed -i $MYIP2 /etc/openvpn/ssl.ovpn;
 
 cd
-# pada tulisan xxx ganti dengan alamat ip address VPS anda 
 /etc/init.d/openvpn restart
 
-# masukkan certificatenya ke dalam config client TCP 1194
+# puting certificate in config client TCP 1194
 echo '<ca>' >> /etc/openvpn/tcp.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/tcp.ovpn
 echo '</ca>' >> /etc/openvpn/tcp.ovpn
-
-# Copy config OpenVPN client ke home directory root agar mudah didownload ( TCP 1194 )
-cp /etc/openvpn/tcp.ovpn /home/vps/public_html/tcp.ovpn
 
 # masukkan certificatenya ke dalam config client UDP 2200
 echo '<ca>' >> /etc/openvpn/udp.ovpn
@@ -132,6 +128,9 @@ netfilter-persistent reload
 systemctl enable openvpn
 systemctl start openvpn
 /etc/init.d/openvpn restart
+
+# Copy config OpenVPN client ke home directory root agar mudah didownload ( TCP 1194 )
+cp /etc/openvpn/tcp.ovpn /home/vps/public_html/tcp.ovpn
 
 # Delete script
 #history -c

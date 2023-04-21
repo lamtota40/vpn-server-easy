@@ -69,6 +69,7 @@ echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
 service cron reload
 service cron restart
 
+#add user for admin default
 Login="master"
 Pass="qwerty"
 useradd -m -s /bin/bash $Login

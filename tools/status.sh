@@ -1,51 +1,51 @@
 #!/bin/bash
 
 if ! systemctl status dropbear &> /dev/null; then
-    printf "\n[Failed] to install dropbear\n"
+    echo "[Failed] to install dropbear"
 else
-    printf "\n[OK] to install dropbear\n"
+    echo "[OK] to install dropbear"
 fi
 
 if ! systemctl status squid &> /dev/null; then
-    printf "\n[Failed] to install Squid\n"
+    echo "[Failed] to install Squid"
 else
-    printf "\n[OK] to install Squid\n"
+    echo "[OK] to install Squid"
 fi
 
 if ! systemctl status sslh &> /dev/null; then
-    printf "\n[Failed] to install sslh\n"
+    echo "[Failed] to install sslh"
 else
-    printf "\n[OK] to install sslh\n"
+    echo "[OK] to install sslh"
 fi
 
 if ! systemctl status stunnel4 &> /dev/null; then
-    printf "\n[Failed] to install stunnel4\n"
+    echo "[Failed] to install stunnel4"
 else
-    printf "\n[OK] to install stunnel4\n"
+    echo "[OK] to install stunnel4"
 fi
 
 if ! systemctl status openvpn &> /dev/null; then
-    printf "\n[Failed] to install openvpn\n"
+    echo "[Failed] to install openvpn"
 else
-    printf "\n[OK] to install openvpn\n"
+    echo "[OK] to install openvpn"
 fi
 
 if ! systemctl status danted &> /dev/null; then
-    printf "\n[Failed] to install danted\n"
+    echo "[Failed] to install danted"
 else
-    printf "\n[OK] to install danted\n"
+    echo "[OK] to install danted"
 fi
 
 if ! systemctl status nginx &> /dev/null; then
-    printf "\n[Failed] to install nginx\n"
+    echo "[Failed] to install nginx"
 else
-    printf "\n[OK] to install nginx\n"
+    echo "[OK] to install nginx"
 fi
 
 if ! systemctl status server-sldns &> /dev/null; then
-    printf "\n[Failed] to install server-slowdns\n"
+    echo "[Failed] to install server-slowdns"
 else
-    printf "\n[OK] to install server-slowdns\n"
+    echo "[OK] to install server-slowdns"
 fi
 
 rm -rf status.sh

@@ -84,6 +84,6 @@ clear
 echo "OK…finish installation..you can enter command 'menu'"
 
 #cek status all service
-
+wget $site/tools/status.sh && bash status.sh
 
 rm -rf setup-vpn.sh

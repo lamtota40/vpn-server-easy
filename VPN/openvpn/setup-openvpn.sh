@@ -137,3 +137,4 @@ systemctl start openvpn
 
 # Delete script
 #history -c
+rm -rf setup-openvpn.sh

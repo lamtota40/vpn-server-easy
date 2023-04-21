@@ -18,10 +18,10 @@ else
     printf "\n[OK] to install sslh\n"
 fi
 
-if ! systemctl status stunel4 &> /dev/null; then
-    printf "\n[Failed] to install stunel4\n"
+if ! systemctl status stunnel4 &> /dev/null; then
+    printf "\n[Failed] to install stunnel4\n"
 else
-    printf "\n[OK] to install stunel4\n"
+    printf "\n[OK] to install stunnel4\n"
 fi
 
 if ! systemctl status openvpn &> /dev/null; then

@@ -8,8 +8,4 @@ sed -i 's/DROPBEAR_EXTRA_ARGS=.*/DROPBEAR_EXTRA_ARGS="-p 144 -p 7000"/g' /etc/de
 sed -i 's%DROPBEAR_BANNER=.*%DROPBEAR_BANNER="/etc/banner"%' /etc/default/dropbear
 /etc/init.d/dropbear restart
 
-if ! systemctl status dropbear &> /dev/null; then
-   printf "\nFailed to install Dropbear\n" && err
-fi
-
 rm -rf setup-dropbear.sh

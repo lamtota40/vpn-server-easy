@@ -17,6 +17,3 @@ END
 systemctl restart squid
 #systemctl reload squid
 
-if ! systemctl status squid &> /dev/null; then
-    printf "\nFailed to install Squid\n" && err
-fi

@@ -6,7 +6,7 @@ Tested on ubuntu 18 & 20<br>
 ```console
 wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 ```
-username default for access OpenSSH,dropbear,squid,shock5,slowdns<br>
+username default for access OpenSSH,dropbear,Openvpn,squid,shock5,slowdns<br>
 user: <b>master</b><br>
 pass: <b>qwerty</b><br>
 -----------------------------------------------------<br>

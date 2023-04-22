@@ -62,7 +62,7 @@ wget $site/websocket/setup-websocket.sh && bash setup-websocket.sh
 wget $site/PROXY/squid/setup-squid.sh && bash setup-squid.sh
 
 #install shock4 & shock5
-wget $site/PROXY/shock/setup-shock.sh && bash setup-shock.sh 
+wget $site/PROXY/socks/setup-socks.sh && bash setup-socks.sh 
 
 #install sslh (for sharing one port/multiplexer)
 wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh

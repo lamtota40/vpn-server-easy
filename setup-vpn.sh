@@ -47,6 +47,7 @@ wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 
 #install slowdns (ssh over dns)
+#
 wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
 #install websocket

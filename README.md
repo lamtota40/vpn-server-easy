@@ -85,7 +85,6 @@ https://play.google.com/store/apps/details?id=xyz.easypro.httpcustom
 <br><br>v2ray vpn<br>
 https://play.google.com/store/apps/details?id=com.v2ray.ang
 <br><br>proxy vpn<br>
-https://play.google.com/store/apps/details?id=com.dzebb.squid<br>
 https://play.google.com/store/apps/details?id=com.scheler.superproxy<br>
 <br>shock vpn<br>
 https://play.google.com/store/apps/details?id=net.typeblog.socks

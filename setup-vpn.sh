@@ -9,7 +9,8 @@ fi
 #dependency
 apt update
 apt upgrade -y
-apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
+#apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
+apt install python jq cron curl openssl net-tools -y
 
 #for security
 #sysctl -w net.ipv6.conf.all.disable_ipv6=1 
@@ -19,7 +20,7 @@ site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
 #install OpenVPN
 #wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
-#wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
+wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #Banner welcome SSH
 wget -P /etc $site/tools/other/banner

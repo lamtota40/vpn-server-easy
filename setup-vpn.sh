@@ -7,8 +7,8 @@ if (( $EUID != 0 )); then
 fi
 
 #dependency
-#apt update
-#apt upgrade -y
+apt update
+apt upgrade -y
 #apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
 apt install python jq cron curl openssl net-tools -y
 
@@ -16,11 +16,23 @@ apt install python jq cron curl openssl net-tools -y
 #sysctl -w net.ipv6.conf.all.disable_ipv6=1 
 #sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
+#add user for admin default
+Login="master"
+Pass="qwerty"
+useradd -m -s /bin/bash $Login
+echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
+usermod -aG sudo $Login
+
+#grep "/bin/false" /etc/shells
+echo "/bin/false" >> /etc/shells
+#grep "/bin/nologin" /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
 #install OpenVPN
-#wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
-wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
+wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+#wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #Banner welcome SSH
 wget -P /etc $site/tools/other/banner
@@ -71,19 +83,6 @@ chmod +x /root/autoreboot.sh
 echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
 service cron reload
 service cron restart
-
-#add user for admin default
-Login="master"
-Pass="qwerty"
-useradd -m -s /bin/bash $Login
-echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
-usermod -aG sudo $Login
-
-#grep "/bin/false" /etc/shells
-echo "/bin/false" >> /etc/shells
-#grep "/bin/nologin" /etc/shells
-echo "/usr/sbin/nologin" >> /etc/shells
-
 
 clear
 echo "OK…finish installation..you can enter command 'menu'"

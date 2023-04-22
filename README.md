@@ -1,6 +1,6 @@
 # vpn-server-easy
 create vpn server easy<br>
-Tested on ubuntu 18 & 20<br>
+Tested on 64bit ubuntu 18 & 20<br>
 
 # Instalation
 ```console

@@ -7,8 +7,8 @@ if (( $EUID != 0 )); then
 fi
 
 #dependency
-apt update
-apt upgrade -y
+#apt update
+#apt upgrade -y
 #apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
 apt install python jq cron curl openssl net-tools -y
 
@@ -30,12 +30,6 @@ wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
 
 #install dropbear (SSH)
 wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
-
-#grep "/bin/false" /etc/shells
-echo "/bin/false" >> /etc/shells
-
-#grep "/bin/nologin" /etc/shells
-echo "/usr/sbin/nologin" >> /etc/shells
 
 #install OpenVPN
 #wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
@@ -84,6 +78,12 @@ Pass="qwerty"
 useradd -m -s /bin/bash $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
+
+#grep "/bin/false" /etc/shells
+echo "/bin/false" >> /etc/shells
+#grep "/bin/nologin" /etc/shells
+echo "/usr/sbin/nologin" >> /etc/shells
+
 
 clear
 echo "OK…finish installation..you can enter command 'menu'"

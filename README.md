@@ -15,6 +15,7 @@ username default for access OpenSSH,dropbear,Openvpn,shock5,slowdns<br>
 user: <b>master</b><br>
 pass: <b>qwerty</b><br>
 -----------------------------------------------------<br>
+# List Port
 <b>Mode TCP direct Non TLS:::</b><br>
 OpenSSH :22,143,8000<br>
 Dropbear :23,144,7000<br>
@@ -84,7 +85,7 @@ TCP XTLS+vless: <br>
 
 Auto reboot every day at 00:00<br>
 
-# TOOLS Android<br>
+# TOOLS Android
 All in one Support: SSH,Openvpn,SlowDNS,phisipon,V2Ray,TLS/Non TLS<br>
 https://play.google.com/store/apps/details?id=xyz.easypro.httpcustom
 <br><br>v2ray vpn<br>

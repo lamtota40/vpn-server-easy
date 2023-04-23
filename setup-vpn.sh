@@ -31,7 +31,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
 #install OpenVPN
-#wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
 #wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #Banner welcome SSH
@@ -62,7 +62,7 @@ wget $site/websocket/setup-websocket.sh && bash setup-websocket.sh
 #install proxy squid
 wget $site/PROXY/squid/setup-squid.sh && bash setup-squid.sh
 
-#install shock4 & shock5
+#install socks4 & socks5
 wget $site/PROXY/socks/setup-socks.sh && bash setup-socks.sh 
 
 #install sslh (for sharing one port/multiplexer)

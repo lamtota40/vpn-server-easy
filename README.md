@@ -16,7 +16,7 @@ user: <b>master</b><br>
 pass: <b>qwerty</b><br>
 
 # List Port
-Auto reboot every day at 00:00<br>
+Auto reboot every day at 00:00<br><br>
 <b>Mode TCP direct Non TLS:::</b><br>
 OpenSSH :22,143,8000<br>
 Dropbear :23,144,7000<br>

@@ -3,6 +3,11 @@ create vpn server easy<br>
 Tested on 64bit ubuntu 18 & 20<br>
 
 # Instalation
+step 1:
+```console
+apt update && apt upgrade -y
+```
+step 2:
 ```console
 wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 ```

@@ -9,8 +9,8 @@ wget -O /usr/local/bin/ws-http https://raw.githubusercontent.com/lamtota40/vpn-s
 
 cat > /etc/systemd/system/ws-http.service <<-END
 [Unit]
-Description=HTTP SSH Over Websocket Python HideSSH
-Documentation=https://hidessh.com
+Description=HTTP SSH Over Websocket Python
+Documentation=https://github.com/lamtota40
 After=network.target nss-lookup.target
 
 [Service]

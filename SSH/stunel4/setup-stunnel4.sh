@@ -15,7 +15,6 @@ rm -rf /etc/stunnel/stunnel.pem
 
 #create key.pem
 openssl genrsa -out key.pem 2048
-
 #create cert.pem
 #openssl req -new -x509 -key key.pem -out cert.pem -days 1095 -subj "/C=$country/ST=$state/L=$locality/O=$organization/OU=$organizationalunit/CN=$CN/emailAddress=$email"
 openssl req -new -x509 -key key.pem -out cert.pem -days 1095 -subj "/CN=$CN"

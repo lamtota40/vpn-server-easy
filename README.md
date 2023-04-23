@@ -14,8 +14,9 @@ wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 username default for access OpenSSH,dropbear,Openvpn,shock5,slowdns<br>
 user: <b>master</b><br>
 pass: <b>qwerty</b><br>
------------------------------------------------------<br>
+
 # List Port
+Auto reboot every day at 00:00<br>
 <b>Mode TCP direct Non TLS:::</b><br>
 OpenSSH :22,143,8000<br>
 Dropbear :23,144,7000<br>
@@ -81,9 +82,6 @@ TCP Stunnel+vmess: <br>
 TCP Stunnel+vless: <br>
 TCP XTLS+vmess: <br>
 TCP XTLS+vless: <br>
------------------------------------------------------<br>
-
-Auto reboot every day at 00:00<br>
 
 # TOOLS Android
 All in one Support: SSH,Openvpn,SlowDNS,phisipon,V2Ray,TLS/Non TLS<br>

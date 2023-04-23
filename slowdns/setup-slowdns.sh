@@ -8,16 +8,9 @@ netfilter-persistent save
 netfilter-persistent reload
 
 cd
-#delete directory
-rm -rf /root/nsdomain
-rm nsdomain
-
 #input nameserver manual to cloudflare
-read -rp "Masukkan domain: " -e domain
-
-read -rp "Masukkan Subdomain: " -e sub
-SUB_DOMAIN=${sub}.${domain}
-NS_DOMAIN=slowdns-${SUB_DOMAIN}
+read -rp "input your domain: " -e domain
+NS_DOMAIN=slow.${domain}
 echo $NS_DOMAIN > /root/nsdomain
 
 nameserver=$(cat /root/nsdomain)

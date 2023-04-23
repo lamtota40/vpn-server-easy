@@ -52,7 +52,7 @@ wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 #install badvpn (For support UDP)
 wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 
-apt install iptables-persistent -y
+#apt install iptables-persistent -y
 #install slowdns (ssh over dns)
 wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 

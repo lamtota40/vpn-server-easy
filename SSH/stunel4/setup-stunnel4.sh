@@ -28,8 +28,4 @@ chmod 600 /etc/stunnel/stunnel.pem
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
-if ! systemctl status stunnel4 &> /dev/null; then
-   printf "\nFailed to install Stunnel4\n" && err
-fi
-
 rm -rf setup-stunnel4.sh

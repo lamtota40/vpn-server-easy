@@ -4,6 +4,7 @@
 apt install iptables netfilter-persistent -y
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
+iptables-restore -t < /etc/iptables.up.rules
 netfilter-persistent save
 netfilter-persistent reload
 
@@ -20,7 +21,7 @@ apt install dnsutils -y
 apt install gnutls-bin -y
 apt install dos2unix debconf-utils -y
 
-#konfigurasi slowdns
+#configuration slowdns
 rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
 wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/server.key"

@@ -23,10 +23,8 @@ useradd -m -s /bin/bash $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
 
-#grep "/bin/false" /etc/shells
-echo "/bin/false" >> /etc/shells
-#grep "/bin/nologin" /etc/shells
-echo "/usr/sbin/nologin" >> /etc/shells
+grep "/bin/false" /etc/shells || echo "/bin/false" >> /etc/shells
+grep "/bin/nologin" /etc/shells || echo "/usr/sbin/nologin" >> /etc/shells
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 

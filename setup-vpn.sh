@@ -30,10 +30,6 @@ echo "/usr/sbin/nologin" >> /etc/shells
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
-#install OpenVPN
-wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
-#wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
-
 #Banner welcome SSH
 wget -P /etc $site/tools/other/banner
 
@@ -52,9 +48,6 @@ wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 #install badvpn (For support UDP)
 wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 
-#apt install iptables-persistent -y
-#install slowdns (ssh over dns)
-wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
 #install websocket
 wget $site/websocket/setup-websocket.sh && bash setup-websocket.sh
@@ -73,6 +66,14 @@ wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 
 #install OHP
 #wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh
+#apt install iptables-persistent -y
+
+#install slowdns (ssh over dns)
+wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
+
+#install OpenVPN
+wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+#wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #menu command
 wget -O menu $site/tools/menu

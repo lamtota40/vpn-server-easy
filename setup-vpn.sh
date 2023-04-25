@@ -67,7 +67,7 @@ wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 #apt install iptables-persistent -y
 
 #install slowdns (ssh over dns)
-wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
+#wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
 #install OpenVPN
 wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh

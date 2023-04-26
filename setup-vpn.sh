@@ -74,8 +74,8 @@ wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
 
 #menu command
 cd
-wget -O menu $site/tools/menu
-chmod +x menu
+wget $site/tools/setup-tools.sh && bash setup-slowdns.sh
+wget -O menu $site/tools/menu && chmod +x menu
 mkdir -p myvpn
 
 #auto reboot vps once at 00.00 clock

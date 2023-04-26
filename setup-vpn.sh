@@ -75,7 +75,7 @@ wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
 #download menu & tools
 cd
 mkdir -p myvpn
-wget $site/tools/setup-tools.sh && bash setup-slowdns.sh
+wget $site/tools/setup-tools.sh && bash setup-tools.sh
 wget -O menu $site/tools/menu && chmod +x menu
 
 

@@ -1,10 +1,8 @@
 #!/bin/bash
 
 #sudo usermod {username} -s /sbin/nologin
-echo "Checking VPS"
-
 clear
-echo "Name : List Member SSH & OpenVPN"
+echo "Name : List Member SSH/OpenVPN/Socks"
 echo "---------------------------------------------------"
 echo "USERNAME          EXP DATE          STATUS"
 echo "---------------------------------------------------"

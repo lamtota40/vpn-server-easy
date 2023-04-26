@@ -1,0 +1,1 @@
+GET wss://bug.com GET / HTTP/1.1[crlf]Host: [host][crlf]User-Agent: [ua]Connection: keep-alive[crlf]Upgrade: websocket[crlf][crlf]

@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir myvpn/cron
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 wget -O myvpn/listusers.sh $site/tools/listusers.sh && chmod +x listusers.sh
 wget -O myvpn/adduser $site/tools/adduser.sh && chmod +x adduser

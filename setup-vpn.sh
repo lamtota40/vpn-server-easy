@@ -38,9 +38,6 @@ wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
 #install dropbear (SSH)
 wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
 
-#install OpenVPN
-#wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
-
 #install stunnel4/TLS
 wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 

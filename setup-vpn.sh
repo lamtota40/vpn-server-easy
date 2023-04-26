@@ -9,9 +9,12 @@ fi
 #dependency
 apt update
 apt upgrade -y
-mkdir -p myvpn
 #apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
 apt install python jq cron curl openssl net-tools -y
+
+#create directory
+mkdir -p /root/myvpn
+mkdir -p /root/myvpn/cron
 
 #for security
 #sysctl -w net.ipv6.conf.all.disable_ipv6=1 
@@ -74,7 +77,6 @@ wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
 wget $site/tools/setup-tools.sh && bash setup-tools.sh
 cd
 wget -O menu $site/tools/menu && chmod +x menu
-
 
 #auto reboot vps once at 00.00 clock
 wget -P /root $site/tools/autoreboot.sh

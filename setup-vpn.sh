@@ -46,7 +46,6 @@ wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 #install badvpn (For support UDP)
 wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 
-
 #install websocket
 wget $site/websocket/setup-websocket.sh && bash setup-websocket.sh
 
@@ -74,8 +73,10 @@ wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
 #wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #menu command
+cd
 wget -O menu $site/tools/menu
 chmod +x menu
+mkdir -p myvpn
 
 #auto reboot vps once at 00.00 clock
 wget -P /root $site/tools/autoreboot.sh

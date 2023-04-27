@@ -8,11 +8,11 @@ mkdir -p /root/udp
 
 # install udp-custom
 echo downloading udp-custom
-wget "https://github.com/Haris131/UDP-Custom/raw/main/udp-custom-linux-amd64" -O /root/udp/udp-custom
+wget "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/udp-custom-linux-amd64" -O /root/udp/udp-custom
 chmod +x /root/udp/udp-custom
 
 echo downloading default config
-wget "https://raw.githubusercontent.com/Haris131/UDP-Custom/main/config.json" -O /root/udp/config.json
+wget "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/config.json" -O /root/udp/config.json
 chmod 644 /root/udp/config.json
 
 if [ -z "$1" ]; then
@@ -55,12 +55,4 @@ systemctl start udp-custom &>/dev/null
 echo enable service udp-custom
 systemctl enable udp-custom &>/dev/null
 
-echo reboot
-reboot
-
-
-
-
-
-
-
+rm -rf setup-UDPcustom.sh

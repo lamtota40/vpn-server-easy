@@ -123,9 +123,9 @@ systemctl start openvpn
 /etc/init.d/openvpn restart
 
 # Copy config OpenVPN client ke home directory root agar mudah didownload ( TCP 1194 )
-#cp /etc/openvpn/tcp.ovpn /home/vps/public_html/tcp.ovpn
-#cp /etc/openvpn/ssl.ovpn /home/vps/public_html/ssl.ovpn
-#cp /etc/openvpn/udp.ovpn /home/vps/public_html/udp.ovpn
+cp /etc/openvpn/tcp.ovpn /root/myvpn/public_html/file/tcp1194.ovpn
+cp /etc/openvpn/ssl.ovpn /root/myvpn/public_html/file/ssl443.ovpn
+cp /etc/openvpn/udp.ovpn /root/myvpn/public_html/file/udp2200.ovpn
 
 # Delete script
 #history -c

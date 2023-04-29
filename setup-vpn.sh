@@ -12,6 +12,7 @@ apt install python jq cron curl openssl net-tools -y
 
 #create directory
 mkdir -p /root/myvpn
+mkdir -p /root/myvpn/data
 mkdir -p /root/myvpn/config
 mkdir -p /root/myvpn/cron
 

@@ -74,7 +74,7 @@ wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
 #wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #install UDP custom
-wget $site/UDPcustom/setup-UDPcustom.sh && bash setup-openvpn.sh
+wget $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPcustom.sh
 
 #download menu & tools
 wget $site/tools/setup-tools.sh && bash setup-tools.sh

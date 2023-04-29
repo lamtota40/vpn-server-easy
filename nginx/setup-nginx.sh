@@ -5,7 +5,7 @@ rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
 wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/nginx/nginx.conf"
 mkdir -p /var/myvpn/public_html
-mkdir -p /var/myvpn/public_html/openvpn
+mkdir -p /var/myvpn/public_html/file
 #wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/nginx/vps.conf"
 
 cat > /var/myvpn/public_html/index.html

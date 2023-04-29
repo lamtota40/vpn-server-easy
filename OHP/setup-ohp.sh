@@ -1,3 +1,5 @@
+#!/bin/bash
+
 wget https://github.com/lamtota40/vpn-server-easy/raw/main/OHP/ohpserver-linux32.zip
 unzip ohpserver-linux32.zip
 chmod +x ohpserver

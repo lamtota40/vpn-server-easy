@@ -60,7 +60,7 @@ wget $site/PROXY/socks/setup-socks.sh && bash setup-socks.sh
 wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 
 #install nginx (website)
-#wget $site/nginx/nginx.conf && bash nginx.conf
+wget $site/nginx/nginx.conf && bash nginx.conf
 
 #install OHP [require install proxy+ssh]
 #wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh

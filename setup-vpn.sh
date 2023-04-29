@@ -21,10 +21,10 @@ mkdir -p /root/myvpn/cron
 #sysctl -w net.ipv6.conf.all.disable_ipv6=1 
 #sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
+#add user for admin default
 grep "/bin/false" /etc/shells || echo "/bin/false" >> /etc/shells
 grep "/bin/nologin" /etc/shells || echo "/usr/sbin/nologin" >> /etc/shells
 
-#add user for admin default
 Login="master"
 Pass="qwerty"
 useradd -m -s /bin/bash $Login

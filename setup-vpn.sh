@@ -63,7 +63,7 @@ wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 wget $site/nginx/nginx.sh && bash setup-nginx.sh
 
 #install OHP [require install proxy+ssh]
-#wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh
+wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh
 #apt install iptables-persistent -y
 
 #install slowdns [require ssh]

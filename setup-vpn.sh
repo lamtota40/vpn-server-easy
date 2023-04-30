@@ -8,7 +8,7 @@ fi
 
 #dependency
 #apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
-apt install python jq cron curl openssl net-tools -y
+apt install python jq cron curl openssl net-tools unzip -y
 
 #create directory
 mkdir -p /root/myvpn

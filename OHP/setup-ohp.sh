@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 wget -O ohpserver-linux32.zip https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/OHP/ohpserver-linux32.zip
 unzip ohpserver-linux32.zip
 chmod +x ohpserver
@@ -8,59 +7,62 @@ cp ohpserver /usr/local/bin/ohpserver
 /bin/rm -rf ohpserver*
 
 # Installing Service
-# SSH OHP Port 8181
+# OpenSSH OHP Port 8282
 cat > /etc/systemd/system/ssh-ohp.service << END
 [Unit]
-Description=SSH OHP Redirection Service
-Documentation=https://github.com/lamtota40
-After=network.target nss-lookup.target
+Description=OHP Server Default Server Service
+Documentation=https://github.com/cybertize/
+After=network.target network-online.target nss-lookup.target
+
 [Service]
-Type=simple
-User=root
+User=nobody
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/ohpserver -port 8181 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:22
+ExecStart=/usr/local/bin/ohpserver -port 8282 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:22
 Restart=on-failure
-LimitNOFILE=infinity
+RestartPreventExitStatus=23
+
 [Install]
 WantedBy=multi-user.target
 END
 
-# Dropbear OHP 8282
+# Dropbear OHP 8383
 cat > /etc/systemd/system/dropbear-ohp.service << END
 [Unit]
-Description=Dropbear OHP Redirection Service
-Documentation=https://github.com/lamtota40
-After=network.target nss-lookup.target
+Description=OHP Server Default Server Service
+Documentation=https://github.com/cybertize/
+After=network.target network-online.target nss-lookup.target
+
 [Service]
-Type=simple
-User=root
+User=nobody
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/ohpserver -port 8282 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:23
+ExecStart=/usr/local/bin/ohpserver -port 8383 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:23
 Restart=on-failure
-LimitNOFILE=infinity
+RestartPreventExitStatus=23
+
 [Install]
 WantedBy=multi-user.target
 END
 
-# OpenVPN OHP 8383
+# OpenVPN OHP 8484
 cat > /etc/systemd/system/openvpn-ohp.service << END
 [Unit]
-Description=OpenVPN OHP Redirection Service
-Documentation=https://github.com/lamtota40
-After=network.target nss-lookup.target
+Description=OHP Server Default Server Service
+Documentation=https://github.com/cybertize/
+After=network.target network-online.target nss-lookup.target
+
 [Service]
-Type=simple
-User=root
+User=nobody
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/ohpserver -port 8383 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:1194
+ExecStart=/usr/local/bin/ohpserver -port 8484 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:1194
 Restart=on-failure
-LimitNOFILE=infinity
+RestartPreventExitStatus=23
+
 [Install]
 WantedBy=multi-user.target
 END

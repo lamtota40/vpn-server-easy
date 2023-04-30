@@ -44,7 +44,9 @@ TCP OHP+OpenVPN :9088<br>
 UDP OpenVPN :53,123,443<br>
 -----------------------------------------------------<br>
 <b>Mode OHP:::</b><br>
-TCP OHP+Dropbear : <br>
+TCP OHP+OpenSSH : 8080<br>
+TCP OHP+Dropber : 8181<br>
+TCP OHP+OpenVPN : 8282<br>
 TCP Stunnel+OHP+Dropbear : <br>
 TCP WS+OHP+Dropbear : <br>
 -----------------------------------------------------<br>

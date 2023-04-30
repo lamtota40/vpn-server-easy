@@ -28,8 +28,8 @@ Stunnel+Dropbear :955,465<br>
 Stunnel+OpenSSH :944,587<br>
 -----------------------------------------------------<br>
 <b>Mode TCP websocket Non TLS:::</b><br>
-WS+OpenSSH :8880<br>
-WS+Dropbear :80<br>
+WS+OpenSSH :-<br>
+WS+Dropbear :80,2082,8880<br>
 
 <b>Mode TCP websocket TLS:::</b><br>
 Stunnel+WS+OpenSSH :6443,944<br>

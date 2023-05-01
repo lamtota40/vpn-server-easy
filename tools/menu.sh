@@ -1,10 +1,9 @@
 #!/bin/bash
 
-PUBLIC_IP=$(wget -4qO- ipinfo.io/ip);
 raminfo=$(free -h | grep Mem)
 ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
 cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json")
-$domain="zerostore.sit.my.id"
+domain="zerostore.sit.my.id"
 
 echo "================================"
 echo "Time =" `date "+%H:%M:%S"`

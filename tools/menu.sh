@@ -21,7 +21,7 @@ echo "================================"
 echo "1. ADD USER"
 echo "2. List/Delete/Extend USER"
 echo "3. Who login"
-echo "4. Monitoring Bandwith
+echo "4. Monitoring Bandwith"
 echo "5. Settings"
 echo "6. Service Manager"
 echo "7. "

@@ -1,8 +1,11 @@
 #!/bin/bash
 
 echo "================================"
+echo "Time =" `date "+%H:%M:%S"`
+echo "Date =" `date "+%d/%m/%y"`
+echo "Uptime =" `uptime -p`
 echo "Domain : "
-echo "Ip Public : "
+echo "Ip Public = $
 echo "location :"
 echo "Cpu Usage : "
 echo "Free Ram : "

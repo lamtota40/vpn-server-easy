@@ -1,6 +1,9 @@
 #!/bin/bash
 
 PUBLIC_IP=$(wget -4qO- ipinfo.io/ip);
+raminfo=$(free -h | grep Mem)
+ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
+
 echo "================================"
 echo "Time =" `date "+%H:%M:%S"`
 echo "Date =" `date "+%d/%m/%y"`
@@ -9,7 +12,7 @@ echo "Domain : "
 echo "Ip Public = $PUBLIC_IP"
 echo "location :"
 echo "Cpu Usage : "
-echo "RAM Free$(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"
+echo "Free RAM= $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"
 echo "================================"
 echo " ++++++++++++ Menu ++++++++++++
 echo "================================"

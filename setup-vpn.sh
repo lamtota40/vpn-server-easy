@@ -10,6 +10,7 @@ fi
 #apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
 apt install python jq cron curl openssl net-tools unzip -y
 
+sudo ufw disable
 #create directory
 mkdir -p /root/myvpn
 mkdir -p /root/myvpn/data

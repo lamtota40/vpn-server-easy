@@ -18,7 +18,6 @@ myip=$(wget -qO- ifconfig.me/ip)
 expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
 echo -e "==============================="
-echo -e "Thank You For Using Our Services"
 echo -e "SSH & OpenVPN Account Info"
 echo -e "Username         : $Login "
 echo -e "Password         : $Pass"

@@ -11,7 +11,7 @@ echo "Time =" `date "+%H:%M:%S"`
 echo "Date =" `date "+%d/%m/%y"`
 echo "Uptime =" `uptime -p`
 echo "Domain : $domain"
-echo "Ip Public = $PUBLIC_IP"
+echo "Ip Public = $(jq -r '.ip' <<< "$cekip")"
 echo "ISP = $(jq -r '.organization_name' <<< "$cekip") | Country= $(jq -r '.country' <<< "$cekip")"
 echo "Cpu Usage : "
 echo "RAM | Free= $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"

@@ -12,7 +12,6 @@ echo "Uptime =" `uptime -p`
 echo "Domain : $domain"
 echo "Ip Public = $(jq -r '.ip' <<< "$cekip")"
 echo "ISP = $(jq -r '.organization_name' <<< "$cekip") | Country= $(jq -r '.country' <<< "$cekip")"
-echo "Cpu Usage : "
 echo "RAM | Free= $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"
 echo "SWAP RAM | Free = $(awk 'FNR == 2 {print$3-$4}' <<< "$swapinfo" | numfmt --to=iec) (${ram_free_p%.*} %) | Usage = $(awk 'FNR == 2 {print$4}' <<< "$swapinfo" | numfmt --to=iec) | Total = $(awk 'FNR == 2 {print$3}' <<< "$swapinfo" | numfmt --to=iec)"
 echo "================================"

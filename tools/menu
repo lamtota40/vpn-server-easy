@@ -1,11 +1,12 @@
 #!/bin/bash
 
+PUBLIC_IP=$(wget -4qO- ipinfo.io/ip);
 echo "================================"
 echo "Time =" `date "+%H:%M:%S"`
 echo "Date =" `date "+%d/%m/%y"`
 echo "Uptime =" `uptime -p`
 echo "Domain : "
-echo "Ip Public = $
+echo "Ip Public = $PUBLIC_IP"
 echo "location :"
 echo "Cpu Usage : "
 echo "Free Ram : "

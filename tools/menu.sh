@@ -33,7 +33,7 @@ echo "================================"
 read -p "choose [0-9]:" num
 case $menu in
 1)
-root/myvpn/adduser
+/root/myvpn/adduser
 ;;
 2)
 trialssh

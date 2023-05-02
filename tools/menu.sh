@@ -31,7 +31,7 @@ echo "9. Tools"
 echo "0. Quit"
 echo "================================"
 read -p "choose [0-9]:" num
-case $menu in
+case $num in
 1)
 /root/myvpn/adduser
 ;;

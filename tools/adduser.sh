@@ -1,6 +1,11 @@
 #!/bin/bash
 
-echo "==================================="
+clear
+echo "============================================="
+echo "+++++++++++++++++ADD user for+++++++++++++++++"
+echo "++++++++OpenSSH+Dropbear+Openvpn+Socks++++++++"
+echo "+++++++++Note: For cancel use CTRL+C+++++++++"
+echo "=============================================="
 read -p "input username     : " Login
 
 /bin/egrep  -i "^${Login}:" /etc/passwd

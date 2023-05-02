@@ -12,6 +12,8 @@ read -p "Expired (day)      : " exp
 
 expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
+echo -e"◇━━━━━━━━━━━━━━━━━◇"
+echo -e"◇━━━━━━━━━━━━━━━━━◇"
 echo -e "==============================="
 echo -e "Username         : udp "
 echo -e "Password         : $Pass"

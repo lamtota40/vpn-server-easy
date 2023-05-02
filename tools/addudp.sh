@@ -3,7 +3,7 @@ clear
 
 PUBLIC_IP=$(wget -4qO- ipinfo.io/ip);
 domain="zerostore.sit.my.id"
-$username="udp"
+username="udp"
 echo "======================================"
 echo "ADD account for UDP"
 echo "Note: For cancel use CTRL+C"

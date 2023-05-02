@@ -80,7 +80,7 @@ wget $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPcustom.sh
 #download menu & tools
 wget $site/tools/setup-tools.sh && bash setup-tools.sh
 cd
-wget -O /usr/sbin/menu $site/tools/menu.sh && chmod +x menu
+wget -O /usr/sbin/menu $site/tools/menu.sh && chmod +x /usr/sbin/menu
 
 #auto reboot vps once at 00.00 clock
 wget -P /root $site/tools/autoreboot.sh

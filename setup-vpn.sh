@@ -35,7 +35,7 @@ grep "/bin/nologin" /etc/shells || echo "/usr/sbin/nologin" >> /etc/shells
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
 #Extra Ram Swap 2GB
-wget -P /etc $site/tools/ramextra.sh && bash ramextra.sh
+wget -P /etc $site/tools/setup-ramextra.sh && bash setup-ramextra.sh
 
 #Banner welcome SSH
 wget -P /etc $site/tools/other/banner

@@ -8,7 +8,7 @@ echo "======================================"
 echo "ADD account for UDP"
 echo "Note: For cancel use CTRL+C"
 echo "======================================"
-echo.   "Username     : $username "
+echo "Username     : $username "
 echo "Please input!"
 read -p "Password     : " pass
 read -p "Expired (day): " exp

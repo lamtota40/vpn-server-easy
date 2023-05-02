@@ -5,7 +5,8 @@ echo "======================================"
 echo "ADD account for UDP"
 echo "Note: For cancel use CTRL+C"
 echo "======================================"
-read -p "input username     : " Login
+echo "Username         : udp "
+read -p "input Password     : " Login
 read -p "Expired (day)      : " exp
 
 expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"

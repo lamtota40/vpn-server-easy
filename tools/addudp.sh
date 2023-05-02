@@ -16,7 +16,7 @@ pasword=$pass
 #expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
 echo "◇━━━━━━━━━━━━━━━━━◇"
-echo "(UDP Account)-Zero Store"
+echo "-----UDP Account-----"
 echo "https://t.me/zerovpn3"
 echo "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "Username : $username "

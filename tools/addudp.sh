@@ -15,7 +15,7 @@ read -p "Password     : " pass
 read -p "Expired (day): " exp
 
 pasword=$pass
-date=$(date '+%d-%m-%Y')
+#ddate=$(date '+%d-%m-%Y')
 expdate=$(date -d "+$exp days")
 #expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear

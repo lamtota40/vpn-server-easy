@@ -1,9 +1,9 @@
 {
   "stream_buffer": 33554432,
   "receive_buffer": 83886080,
-  "user": "el",
+  "user": "master",
   "auth": {
     "mode": "passwords",
-    "pass": ["satu", "team"]
+    "pass": ["qwerty"]
   }
 }

@@ -21,8 +21,8 @@ Description=udp-custom by ePro Dev. Team
 [Service]
 User=root
 Type=simple
-ExecStart=/root/udp/udp-custom server
-WorkingDirectory=/root/udp/
+ExecStart=/root/myvpn/udp/udp-custom server
+WorkingDirectory=/root/myvpn/udp/
 Restart=always
 RestartSec=2s
 

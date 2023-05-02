@@ -1,5 +1,6 @@
 #!/bin/bash
 
+PUBLIC_IP=$(wget -4qO- ipinfo.io/ip);
 clear
 echo "======================================"
 echo "ADD account for UDP"
@@ -16,7 +17,7 @@ echo -e "Username         : udp "
 echo -e "Password         : $Pass"
 echo -e "Expired          : $expdate"
 echo -e "Domain           : "
-echo -e "IP         : 23,"
+echo -e "IP         : $PUBLIC_IP"
 echo -e "Port      : 1-65535,"
 echo -e "==============================="
                                  

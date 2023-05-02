@@ -6,7 +6,7 @@ domain="zerostore.sit.my.id"
 username="udp"
 
 echo "======================================"
-echo "ADD account for UDP"
+echo "2ADD account for UDP"
 echo "Note: For cancel use CTRL+C"
 echo "======================================"
 echo "Username     : $username "

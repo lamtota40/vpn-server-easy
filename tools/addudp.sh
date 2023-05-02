@@ -6,7 +6,7 @@ domain="zerostore.sit.my.id"
 username="udp"
 
 echo "======================================"
-echo "2ADD account for UDP"
+echo "3ADD account for UDP"
 echo "Note: For cancel use CTRL+C"
 echo "======================================"
 echo "Username     : $username "
@@ -16,7 +16,7 @@ read -p "Expired (day): " exp
 
 pasword=$pass
 #ddate=$(date '+%d-%m-%Y')
-expdate=$(date -d "+$exp days")
+expdate=$(date '+%d-%m-%Y' -d "+$exp days")
 #expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
 echo "◇━━━━━━━━━━━━━━━━━◇"

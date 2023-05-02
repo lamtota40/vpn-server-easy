@@ -16,6 +16,7 @@ read -p "Expired (day): " exp
 
 pasword=$pass
 date=$(date '+%d-%m-%Y')
+expdate=$(date -d "+$exp days")
 #expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
 echo "◇━━━━━━━━━━━━━━━━━◇"
@@ -27,5 +28,5 @@ echo "Pasword  : $pasword"
 echo "Domain   : $domain"
 echo "IP       : $PUBLIC_IP"
 echo "Port     : 1-655359"
-echo "Expired  : $exp"
+echo "Expired  : $expdate"
 echo "◇━━━━━━━━━━━━━━━━━◇"                               

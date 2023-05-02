@@ -4,6 +4,7 @@ clear
 PUBLIC_IP=$(wget -4qO- ipinfo.io/ip);
 domain="zerostore.sit.my.id"
 username="udp"
+
 echo "======================================"
 echo "ADD account for UDP"
 echo "Note: For cancel use CTRL+C"
@@ -14,6 +15,7 @@ read -p "Password     : " pass
 read -p "Expired (day): " exp
 
 pasword=$pass
+date=$(date '+%d-%m-%Y')
 #expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
 echo "◇━━━━━━━━━━━━━━━━━◇"

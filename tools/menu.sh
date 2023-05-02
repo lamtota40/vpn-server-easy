@@ -2,6 +2,7 @@
 
 PUBLIC_IP=$(wget -4qO- ipinfo.io/ip);
 raminfo=$(free -h | grep Mem)=$(free | grep Mem | awk '{print $4/$2 * 100}')
+ram_free_p=$(free -h | grep Mem)=$(free | grep Mem | awk '{print $4/$2 * 100}')
 swap_free_p=$(free -h | grep Mem)=$(free | grep Mem | awk '{print $4/$2 * 100}')
 cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json")
 domain="zerostore.sit.my.id"

@@ -11,4 +11,4 @@ sudo bash -c "echo -e 'vm.swappiness=10\nvm.vfs_cache_pressure=50' >> /etc/sysct
 sudo sysctl vm.swappiness=10
 sudo sysctl vm.vfs_cache_pressure=50
 
-rm -rf setup-vpn.sh
+rm -rf setup-ramextra.sh

@@ -1,13 +1,13 @@
 #!/bin/bash
-clear
 
+clear
 PUBLIC_IP=$(wget -4qO- ipinfo.io/ip);
 domain="zerostore.sit.my.id"
 username="udp"
 
 echo "======================================"
 echo "ADD account for UDP"
-echo "* For cancel use CTRL+C"
+echo "*For cancel use CTRL+C"
 echo "======================================"
 echo "Username     : $username "
 echo -e "\nPlease input!"
@@ -15,9 +15,7 @@ read -p "Password     : " pass
 read -p "Expired (day): " exp
 
 pasword=$pass
-#ddate=$(date '+%d-%m-%Y')
 expdate=$(date '+%d/%m/%Y' -d "+$exp days")
-#expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
 echo "◇━━━━━━━━━━━━━━━━━◇"
 echo "##### UDP Account #####"

@@ -10,7 +10,8 @@ fi
 #apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
 apt install python jq cron curl openssl net-tools unzip -y
 
-https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/ramextra.sh
+site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
+
 sudo ufw disable
 #create directory
 mkdir -p /root/myvpn
@@ -32,10 +33,8 @@ useradd -m -s /bin/bash $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
 
-site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
-
-#Extra Ram Swap 2GB
-wget -P /etc $site/tools/setup-ramextra.sh && bash setup-ramextra.sh
+#ADD Extra Ram Swap 2GB
+wget $site/tools/setup-ramextra.sh && bash setup-ramextra.sh
 
 #Banner welcome SSH
 wget -P /etc $site/tools/other/banner

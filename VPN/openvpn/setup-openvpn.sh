@@ -101,7 +101,7 @@ echo '</ca>' >> /etc/openvpn/tcp.ovpn
 echo '<ca>' >> /etc/openvpn/udp.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/udp.ovpn
 echo '</ca>' >> /etc/openvpn/udp.ovpn
-.
+
 # masukkan certificatenya ke dalam config client SSL
 echo '<ca>' >> /etc/openvpn/ssl.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/ssl.ovpn

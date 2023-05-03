@@ -45,6 +45,9 @@ wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
 #install dropbear (SSH)
 wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
 
+#install nginx (website)
+#wget $site/nginx/setup-nginx.sh && bash setup-nginx.sh
+
 #install stunnel4/TLS
 wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 
@@ -62,9 +65,6 @@ wget $site/PROXY/socks/setup-socks.sh && bash setup-socks.sh
 
 #install sslh (for sharing one port/multiplexer)
 wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
-
-#install nginx (website)
-#wget $site/nginx/setup-nginx.sh && bash setup-nginx.sh
 
 #install OHP [require install proxy+ssh]
 wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh

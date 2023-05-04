@@ -33,6 +33,9 @@ useradd -m -s /bin/bash $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
 
+##useradd -s /bin/false -M el
+##echo -e "satu\nsatu\n" | passwd el &> /dev/null
+
 #ADD Extra Ram Swap 2GB
 wget $site/tools/setup-ramextra.sh && bash setup-ramextra.sh
 
@@ -92,14 +95,12 @@ echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
 service cron reload
 service cron restart
 
-##useradd -s /bin/false -M el
-##echo -e "satu\nsatu\n" | passwd el &> /dev/null
-
 clear
 echo "OK…finish installation..you can enter command 'menu'"
 
 #cek status all service
 wget $site/tools/status.sh && bash status.sh
 
+echo "type menu"
 history -c && history -w
 rm -rf setup-vpn.sh

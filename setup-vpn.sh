@@ -37,7 +37,7 @@ usermod -aG sudo $Login
 ##echo -e "satu\nsatu\n" | passwd el &> /dev/null
 
 #ADD Extra Ram Swap 2GB
-wget $site/tools/setup-ramextra.sh && bash setup-ramextra.sh
+wget $site/tools/setup-rameswap.sh && bash setup-ramswap.sh
 
 #Banner welcome SSH
 wget -P /etc $site/tools/other/banner

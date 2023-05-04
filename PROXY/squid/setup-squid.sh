@@ -13,7 +13,7 @@ block1.com
 .block2.com
 END
 
-systemctl restart squid
-#systemctl reload squid
+#systemctl restart squid
+systemctl reload squid
 
 rm -rf setup-squid.sh

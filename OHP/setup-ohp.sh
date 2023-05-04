@@ -74,3 +74,5 @@ systemctl enable dropbear-ohp
 systemctl restart dropbear-ohp
 systemctl enable openvpn-ohp
 systemctl restart openvpn-ohp
+
+rm -rf setup-ohp.sh

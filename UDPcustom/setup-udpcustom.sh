@@ -49,7 +49,5 @@ WantedBy=default.target
 EOF
 fi
 
-systemctl enable udp-custom &>/dev/null
-systemctl start udp-custom &>/dev/null
-systemctl restart udp-custom &>/dev/null
-
+systemctl enable udp-custom
+systemctl start udp-custom

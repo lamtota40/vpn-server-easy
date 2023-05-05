@@ -50,11 +50,7 @@ WantedBy=default.target
 EOF
 fi
 
-echo start service udp-custom
 systemctl start udp-custom &>/dev/null
-
-echo enable service udp-custom
 systemctl enable udp-custom &>/dev/null
 
-echo reboot
-reboot
+

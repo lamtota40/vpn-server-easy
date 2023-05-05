@@ -17,7 +17,9 @@ sudo ufw disable
 apt purge ufw
 
 #change Timezone
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+cekip=$(curl -s "http://ipinfo.io")
+timezone=$(jq -r '.timezone' <<< "$cekip")
+ln -fs /usr/share/zoneinfo/$timezone /etc/localtime
 
 #create directory
 mkdir -p /root/myvpn

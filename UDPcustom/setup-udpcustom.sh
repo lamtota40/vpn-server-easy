@@ -5,8 +5,7 @@ rm -rf /root/udp
 mkdir -p /root/udp
 
 # change to time GMT+7
-echo "change to time GMT+7"
-ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+#ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # install udp-custom
 wget -O /root/udp/udp-custom "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/udp-custom"

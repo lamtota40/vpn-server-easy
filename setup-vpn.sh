@@ -12,7 +12,13 @@ apt install python jq cron curl openssl net-tools unzip -y
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
+#remove firewall
 sudo ufw disable
+apt purge ufw
+
+#change Timezone
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+
 #create directory
 mkdir -p /root/myvpn
 mkdir -p /root/myvpn/data

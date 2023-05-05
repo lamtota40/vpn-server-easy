@@ -2,7 +2,7 @@
 
 #sudo usermod {username} -s /sbin/nologin
 clear
-echo "Name : List Member SSH/OpenVPN/Socks"
+echo "Name : List Account SSH/OpenVPN/Socks"
 echo "---------------------------------------------------"
 echo "USERNAME          EXP DATE          STATUS"
 echo "---------------------------------------------------"

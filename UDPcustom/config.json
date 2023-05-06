@@ -1,5 +1,0 @@
-{
-  "listen": ":36712",
-  "auth": {
-    "mode": "passwords"
- }

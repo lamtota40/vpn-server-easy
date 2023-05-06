@@ -96,6 +96,10 @@ wget $site/tools/setup-tools.sh && bash setup-tools.sh
 cd
 wget -O /usr/sbin/menu $site/tools/menu.sh && chmod +x /usr/sbin/menu
 
+#if [[ -n $SSH_CONNECTION ]] ; then
+#   /usr/sbin/menu
+#fi
+
 #auto reboot vps once at 00.00 clock
 wget -P /root $site/tools/autoreboot.sh
 chmod +x /root/autoreboot.sh

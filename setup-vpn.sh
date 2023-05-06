@@ -96,6 +96,7 @@ wget $site/tools/setup-tools.sh && bash setup-tools.sh
 cd
 wget -O /usr/sbin/menu $site/tools/menu.sh && chmod +x /usr/sbin/menu
 
+#nano ~/.bashrc
 #if [[ -n $SSH_CONNECTION ]] ; then
 #   /usr/sbin/menu
 #fi

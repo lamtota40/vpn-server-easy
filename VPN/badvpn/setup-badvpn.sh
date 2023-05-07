@@ -1,30 +1,22 @@
 #!/bin/bash
-# installer badvpn
 
 if [ "$(uname -m)" == 'x86_64' ] || [ "$(uname -m)" == 'aarch64' ]
 then
-    wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw64"
+    wget -O /usr/bin/udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw64"
 elif [ "$(uname -m)" == 'i386' ] || [ "$(uname -m)" == 'i686' ] || [ "$(uname -m)" == 'aarch32' ]
 then
-    wget -O /usr/bin/badvpn-udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw"
+    wget -O /usr/bin/udpgw "https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/badvpn/badvpn-udpgw"
 else
     echo "Architecture not support, UDPGW/BadVPN cannot installed"
     rm -rf setup-badvpn.sh
     exit 1
 fi
+chmod +x /usr/bin/udpgw
 
-chmod +x /usr/bin/badvpn-udpgw
-systemctl daemon-reload
-
-port1=7200
-port2=7300
-
-for (( x=1; x<=2; x++ ))
-do 
-  xport="port$x"
-  cat > /etc/systemd/system/svr-$xport.service <<-END
+#for UDPGW port 7200
+cat > /etc/systemd/system/udpgw7200.service <<-END
 [Unit]
-Description=badvpn udpgw $xport
+Description=udpgw 7200
 After=network.target nss-lookup.target
 
 [Service]
@@ -34,15 +26,38 @@ CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
 Restart=on-failure
-ExecStart=/usr/bin/badvpn-udpgw --listen-addr 127.0.0.1:$xport --max-clients 500
+ExecStart=/usr/bin/udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 
 [Install]
 WantedBy=multi-user.target
 END
-chmod +x /etc/systemd/system/svr-$xport.service
+chmod +x /etc/systemd/system/udpgw7200.service
 
-systemctl start svr-$xport.service
-systemctl enable svr-$xport.service
+#for UDPGW port 7300
+cat > /etc/systemd/system/udpgw7200.service <<-END
+[Unit]
+Description=udpgw 7300
+After=network.target nss-lookup.target
+
+[Service]
+Type=simple
+User=root
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+Restart=on-failure
+ExecStart=/usr/bin/udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
+
+[Install]
+WantedBy=multi-user.target
+END
+chmod +x /etc/systemd/system/udpgw7300.service
+
+systemctl daemon-reload
+systemctl start udpgw7200.service
+systemctl enable udpgw7200.service
+systemctl start udpgw7300.service
+systemctl enable udpgw7300.service
 done
 
 rm -rf setup-badvpn.sh

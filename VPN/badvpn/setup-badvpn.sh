@@ -14,7 +14,7 @@ fi
 chmod +x /usr/bin/udpgw
 
 #for UDPGW port 7200
-cat > /etc/systemd/system/udpgw7200.service <<-END
+cat <<EOF > /etc/systemd/system/udpgw7200.service
 [Unit]
 Description=udpgw 7200
 After=network.target nss-lookup.target
@@ -30,11 +30,11 @@ ExecStart=/usr/bin/udpgw --listen-addr 127.0.0.1:7200 --max-clients 500
 
 [Install]
 WantedBy=multi-user.target
-END
+EOF
 chmod +x /etc/systemd/system/udpgw7200.service
 
 #for UDPGW port 7300
-cat > /etc/systemd/system/udpgw7200.service <<-END
+cat <<EOF > /etc/systemd/system/udpgw7300.service
 [Unit]
 Description=udpgw 7300
 After=network.target nss-lookup.target
@@ -50,7 +50,7 @@ ExecStart=/usr/bin/udpgw --listen-addr 127.0.0.1:7300 --max-clients 500
 
 [Install]
 WantedBy=multi-user.target
-END
+EOF
 chmod +x /etc/systemd/system/udpgw7300.service
 
 systemctl daemon-reload

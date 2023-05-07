@@ -18,3 +18,4 @@ rm -rf /root/vnstat-2.6
 
 #daily_usage=$(vnstat -d --oneline | awk -F\; '{print $6}' | sed 's/ //')
 #monthly_usage=$(vnstat -m --oneline | awk -F\; '{print $11}' | sed 's/ //')
+#https://github.com/Zeastore/tipu/blob/2f26232f1119b31ac4baf0c1c4026e1f0011fa5e/ssh-vpn.sh#L138

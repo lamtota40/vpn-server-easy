@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 #for UDPGW port 7200
 cat <<EOF > /etc/systemd/system/udpgw7200.service

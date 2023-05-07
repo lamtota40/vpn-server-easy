@@ -58,6 +58,5 @@ systemctl start udpgw7200.service
 systemctl enable udpgw7200.service
 systemctl start udpgw7300.service
 systemctl enable udpgw7300.service
-done
 
 rm -rf setup-badvpn.sh

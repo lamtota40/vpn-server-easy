@@ -1,5 +1,11 @@
 #!/bin/bash
 
+Login="master"
+Pass="qwerty"
+useradd -m -s /bin/bash $Login
+echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
+usermod -aG sudo $Login
+
 cd
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
@@ -24,9 +30,10 @@ netfilter-persistent reload
 
 cd
 #input nameserver manual to cloudflare
-read -rp "input your domain: " -e domain
-NS_DOMAIN=slow.${domain}
-echo $NS_DOMAIN > /root/nsdomain
+
+#read -rp "input your domain: " -e domain
+#NS_DOMAIN=slow.${domain}
+echo "slow-id.vip.sit.my.id" > /root/nsdomain
 
 nameserver=$(cat /root/nsdomain)
 apt install -y python3 python3-dnslib net-tools
@@ -107,7 +114,7 @@ systemctl enable server-sldns
 systemctl start client-sldns
 systemctl start server-sldns
 
-systemctl restart client-sldns
-systemctl restart server-sldns
+#systemctl restart client-sldns
+#systemctl restart server-sldns
 
-rm -rf setup-slowdns.sh
+#rm -rf setup-slowdns.sh

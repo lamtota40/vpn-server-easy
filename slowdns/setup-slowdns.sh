@@ -7,6 +7,7 @@ echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
 
 cd
+wget -O /etc/banner https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/tools/other/banner
 cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bak
 sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 echo "Port 2222" >> /etc/ssh/sshd_config
@@ -16,7 +17,6 @@ sed -i 's/PasswordAuthentication .*/PasswordAuthentication yes/g' /etc/ssh/sshd_
 sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
 sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
 #sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
-
 
 #setting IPtables
 apt install iptables netfilter-persistent -y

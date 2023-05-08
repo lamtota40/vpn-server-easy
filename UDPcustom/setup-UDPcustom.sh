@@ -6,12 +6,11 @@ mkdir -p /root/udp
 # change to time GMT+7
 #ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
-# install udp-custom
-echo downloading udp-custom
+# download udp-custom
 wget -O /root/udp/udp-custom https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/udp-custom
 chmod +x /root/udp/udp-custom
 
-echo downloading default config
+# download config.json
 wget -O /root/udp/config.json https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/config.json
 chmod 644 /root/udp/config.json
 

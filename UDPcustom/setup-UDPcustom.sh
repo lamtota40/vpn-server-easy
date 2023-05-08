@@ -1,29 +1,29 @@
 #!/bin/bash
 
 cd
-mkdir -p /root/udp
+mkdir -p /etc/udpc
 
 # change to time GMT+7
 #ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 
 # download udp-custom
-wget -O /root/udp/udp-custom https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/udp-custom
-chmod +x /root/udp/udp-custom
+wget -O /etc/udpc/udp-custom https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/udp-custom
+chmod +x /etc/udpc/udp-custom
 
 # download config.json
-wget -O /root/udp/config.json https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/config.json
-chmod 644 /root/udp/config.json
+wget -O /etc/udpc/config.json https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/config.json
+chmod 644 /etc/udpc/config.json
 
 if [ -z "$1" ]; then
-cat <<EOF > /etc/systemd/system/udp-custom.service
+cat <<EOF > /etc/systemd/system/udpcustom.service
 [Unit]
 Description=UDP Custom by ePro Dev. Team
 
 [Service]
 User=root
 Type=simple
-ExecStart=/root/udp/udp-custom server
-WorkingDirectory=/root/udp/
+ExecStart=/etc/udpc/udp-custom server
+WorkingDirectory=/etc/udpc
 Restart=always
 RestartSec=2s
 
@@ -31,15 +31,15 @@ RestartSec=2s
 WantedBy=default.target
 EOF
 else
-cat <<EOF > /etc/systemd/system/udp-custom.service
+cat <<EOF > /etc/systemd/system/udpcustom.service
 [Unit]
 Description=UDP Custom by ePro Dev. Team
 
 [Service]
 User=root
 Type=simple
-ExecStart=/root/udp/udp-custom server -exclude $1
-WorkingDirectory=/root/udp/
+ExecStart=/etc/udpc/udp-custom server -exclude $1
+WorkingDirectory=/etc/udpcustom
 Restart=always
 RestartSec=2s
 
@@ -48,8 +48,8 @@ WantedBy=default.target
 EOF
 fi
 
-echo start service udp-custom
-systemctl start udp-custom &>/dev/null
+echo start service udpcustom
+systemctl start udpcustom &>/dev/null
 
-echo enable service udp-custom
-systemctl enable udp-custom &>/dev/null
+echo enable service udpcustom
+systemctl enable udpcustom &>/dev/null

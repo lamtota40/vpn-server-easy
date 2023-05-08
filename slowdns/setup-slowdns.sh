@@ -17,7 +17,7 @@ sed -i 's/PasswordAuthentication .*/PasswordAuthentication yes/g' /etc/ssh/sshd_
 sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
 sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
 #sed -i 's/AcceptEnv/#AcceptEnv/g' /etc/ssh/sshd_config
-systemctl restart ssh
+systemctl restart sshd
 
 #setting IPtables
 apt install iptables netfilter-persistent -y

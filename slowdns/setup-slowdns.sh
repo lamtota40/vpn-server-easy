@@ -108,3 +108,4 @@ chmod +x /usr/bin/slowdns-eror
 
 echo "0 4 * * * root slowdns-eror" >> /etc/crontab
 echo "0 18 * * * root slowdns-eror" >> /etc/crontab
+rm -rf setup-slowdns.sh

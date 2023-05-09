@@ -1,5 +1,11 @@
 #!/bin/bash
 
+Login="master"
+Pass="qwerty"
+useradd -m -s /bin/bash $Login
+echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
+usermod -aG sudo $Login
+
 #setting IPtables
 apt install iptables netfilter-persistent -y
 

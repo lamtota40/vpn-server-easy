@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # detail ssl
-CN=*.whatsapp.com
+CN=$(cat /root/myvpn/domain)
+#CN=*.whatsapp.com
 #organization=NAVER
 #country=ID
 #state=Bandung

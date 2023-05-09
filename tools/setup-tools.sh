@@ -8,5 +8,6 @@ wget -O /root/myvpn/speedtest $site/tools/speedtest_cli.py && chmod +x /root/myv
 wget -O /root/myvpn/ram $site/tools/ram.sh && chmod +x /root/myvpn/ram
 wget -O /root/myvpn/detailserver $site/tools/detailserver.sh && chmod +x /root/myvpn/detailserver
 wget -O /root/myvpn/whologin $site/tools/whologin.sh && chmod +x /root/myvpn/whologin
+wget -O /root/myvpn/smanager $site/tools/smanager.sh && chmod +x /root/myvpn/smanager
 
 rm -rf setup-tools.sh

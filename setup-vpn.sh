@@ -115,10 +115,10 @@ chmod +x /root/autoreboot.sh
 echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
 
 #Auto start slowdns if error
-wget -O /usr/bin/slowdns-eror $site/slowdns/slowdns-error
-chmod +x /usr/bin/slowdns-eror
-echo "0 4 * * * root slowdns-eror" >> /etc/crontab
-echo "0 18 * * * root slowdns-eror" >> /etc/crontab
+#wget -O /usr/bin/slowdns-eror $site/slowdns/slowdns-error
+#chmod +x /usr/bin/slowdns-eror
+#echo "0 4 * * * root slowdns-eror" >> /etc/crontab
+#echo "0 18 * * * root slowdns-eror" >> /etc/crontab
 service cron reload
 service cron restart
 

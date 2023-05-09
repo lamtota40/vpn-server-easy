@@ -12,8 +12,7 @@ if [ $? -eq 0 ]; then
 	#read -p "Please Enter to Continue...."
 	#/root/myvpn/addusers
 	exit 1
-	
-	fi
+fi
 
 read -p "input password     : " Pass
 read -p "Expired (day)      : " exp
@@ -30,6 +29,7 @@ echo -e "Password	: $Pass"
 echo -e "Expired	: $(date +%d/%m/%y -d "$expdate")"
 echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "Host CF	: $domain"
+echo -e "NS SlowDNS     : $nsdomain"
 echo -e "IP             : $(jq -r '.query' <<< "$cekip")"
 echo -e "ISP		: $(jq -r '.isp' <<< "$cekip") | $(jq -r '.country' <<< "$cekip")"
 echo -e "Host Bug	: bug.$domain"

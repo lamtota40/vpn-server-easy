@@ -6,6 +6,19 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 
+#create directory
+mkdir -p /root/myvpn
+mkdir -p /root/myvpn/data
+mkdir -p /root/myvpn/config
+mkdir -p /root/myvpn/cron
+
+read -p "input your domain" domain
+echo $domain > /root/myvpn/domain
+chmod +x /root/myvpn/domain
+read -p "input your NS Domain" domain
+echo $domain > /root/myvpn/nsdomain
+chmod +x /root/myvpn/nsdomain
+
 #dependency
 #apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
 apt install iptables python jq cron curl openssl net-tools unzip -y
@@ -20,12 +33,6 @@ apt purge ufw
 cekip=$(curl -s "http://ipinfo.io")
 timezone=$(jq -r '.timezone' <<< "$cekip")
 ln -fs /usr/share/zoneinfo/$timezone /etc/localtime
-
-#create directory
-mkdir -p /root/myvpn
-mkdir -p /root/myvpn/data
-mkdir -p /root/myvpn/config
-mkdir -p /root/myvpn/cron
 
 #disable ipv6
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 

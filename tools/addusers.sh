@@ -22,7 +22,7 @@ echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 cekip=$(curl -s "http://ip-api.com/json/")
 domain=$(cat /root/myvpn/domain)
 nsdomain=$(cat /root/myvpn/nsdomain)
-pubkey=$(cat /root/myvpn/nsdomain)
+pubkey=$(cat /etc/slowdns/server.pub)
 expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
 echo -e "◇━━━━ Account Info ━━━━◇"

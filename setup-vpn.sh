@@ -27,9 +27,9 @@ mkdir -p /root/myvpn/data
 mkdir -p /root/myvpn/config
 mkdir -p /root/myvpn/cron
 
-#for security
-#sysctl -w net.ipv6.conf.all.disable_ipv6=1 
-#sysctl -w net.ipv6.conf.default.disable_ipv6=1
+#disable ipv6
+sysctl -w net.ipv6.conf.all.disable_ipv6=1 
+sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 #add user for admin default
 grep "/bin/false" /etc/shells || echo "/bin/false" >> /etc/shells

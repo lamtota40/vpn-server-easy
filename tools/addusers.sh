@@ -1,4 +1,5 @@
 #!/bin/bash
+
 clear
 echo "======================================"
 echo "ADD user for SSH+Openvpn+Socks+UDP"
@@ -18,10 +19,9 @@ read -p "Expired (day)      : " exp
 
 useradd -e `date -d "$exp days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
-#myip=$(wget -qO- ifconfig.me/ip)
 cekip=$(curl -s "http://ip-api.com/json/")
-domain="zerostore.sit.my.id"
 expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
+domain=$(cat /root/myvpn/domain)
 clear
 echo -e "â—‡â”â”â”â” Account Info â”â”â”â”â—‡"
 echo -e "Username	: $Login"

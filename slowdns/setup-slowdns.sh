@@ -16,7 +16,7 @@ netfilter-persistent reload
 
 cd
 mkdir /root/myvpn
-echo "slow-id.vip.sit.my.id" > /root/myvpn/nsdomain
+echo "ns-zero.sit.my.id" > /root/myvpn/nsdomain
 
 nameserver=$(cat /root/myvpn/nsdomain)
 apt install -y python3 python3-dnslib net-tools

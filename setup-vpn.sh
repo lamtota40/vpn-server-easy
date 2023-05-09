@@ -12,10 +12,10 @@ mkdir -p /root/myvpn/data
 mkdir -p /root/myvpn/config
 mkdir -p /root/myvpn/cron
 
-read -p "input your domain" domain
+read -p "input your domain = " domain
 echo $domain > /root/myvpn/domain
 #chmod +x /root/myvpn/domain
-read -p "input your NS Domain" domain
+read -p "input your NS Domain =" domain
 echo $domain > /root/myvpn/nsdomain
 #chmod +x /root/myvpn/nsdomain
 

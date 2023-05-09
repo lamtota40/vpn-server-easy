@@ -108,7 +108,7 @@ echo 'if [[ -n $SSH_CONNECTION ]] ; then' | sudo tee -a ~/.bashrc
 echo '/usr/sbin/menu' | sudo tee -a ~/.bashrc
 echo 'fi' | sudo tee -a ~/.bashrc
 
-#Cron
+#Cron (Auto Run Task)
 #auto reboot vps once at 00.00 clock
 wget -P /root $site/tools/autoreboot.sh
 chmod +x /root/autoreboot.sh

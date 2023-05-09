@@ -48,4 +48,10 @@ else
     echo "[OK] to install server-slowdns"
 fi
 
+if ! systemctl status client-sldns &> /dev/null; then
+    echo "[Failed] to install client-slowdns"
+else
+    echo "[OK] to install client-slowdns"
+fi
+
 rm -rf status.sh

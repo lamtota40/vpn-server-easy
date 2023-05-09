@@ -56,6 +56,9 @@ wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
 #install dropbear (SSH)
 wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
 
+#install slowdns [require OpenSSH]
+wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
+
 #install nginx (website)
 #wget $site/nginx/setup-nginx.sh && bash setup-nginx.sh
 
@@ -80,9 +83,6 @@ wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 #install OHP [require install proxy+ssh]
 wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh
 #apt install iptables-persistent -y
-
-#install slowdns [require ssh]
-wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
 #install OpenVPN
 #wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh

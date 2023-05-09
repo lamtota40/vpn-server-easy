@@ -123,7 +123,6 @@ service cron reload
 service cron restart
 
 clear
-
 #cek status all service
 wget $site/tools/status.sh && bash status.sh
 

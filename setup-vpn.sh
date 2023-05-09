@@ -115,5 +115,5 @@ echo "OK…finish installation..you can enter command 'menu'"
 wget $site/tools/status.sh && bash status.sh
 
 echo "type menu"
-history -c && history -w
+history -c
 rm -rf setup-vpn.sh

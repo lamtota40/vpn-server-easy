@@ -104,10 +104,15 @@ cd
 wget -O /usr/sbin/menu $site/tools/menu.sh && chmod +x /usr/sbin/menu
 
 #nano ~/.bashrc
+echo 'if [[ -n $SSH_CONNECTION ]] ; then' | sudo tee -a ~/.bashrc
+echo '/usr/sbin/menu' | sudo tee -a ~/.bashrc
+echo 'fi' | sudo tee -a ~/.bashrc
+
 #if [[ -n $SSH_CONNECTION ]] ; then
 #   /usr/sbin/menu
 #fi
 
+#Cron
 #auto reboot vps once at 00.00 clock
 wget -P /root $site/tools/autoreboot.sh
 chmod +x /root/autoreboot.sh

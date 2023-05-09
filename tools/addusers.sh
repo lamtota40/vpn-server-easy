@@ -22,6 +22,7 @@ echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 cekip=$(curl -s "http://ip-api.com/json/")
 domain=$(cat /root/myvpn/domain)
 nsdomain=$(cat /root/myvpn/nsdomain)
+pubkey=$(cat /root/myvpn/nsdomain)
 expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
 echo -e "◇━━━━ Account Info ━━━━◇"
@@ -49,9 +50,8 @@ echo -e "Squid	:3128"
 echo -e "Socks5	:1080"
 echo -e "◇━━━━ Slow DNS ━━━━━◇"
 echo -e "NS SlowDNS     : $nsdomain"
-echo -e "Pubkey		"
-echo -e "Dropbear	:23,144,7000"
-echo -e "WS Dropbear	:80,2082,8880"
+echo -e "Pubkey SlowDNS : $pubkey"
+echo -e "Port SlowDNS	:22 / Bebas"
 echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "UDPcustom	:1-65535"
 echo -e "BadVPN/UDPGW	:7200,7300"

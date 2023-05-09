@@ -1,0 +1,209 @@
+#!/bin/bash
+
+YEL='\033[1;33m'
+#RED='\033[1;31m'
+RED='\e[1;49;95m'
+BLUE='\033[1;36m'
+NC='\033[0m'
+clear
+raminfo=$(free -m | grep Mem)=$(free | grep Mem | awk '{print $4/$2 * 100}')
+ram_usage=($(awk '{print $2}' <<< "$raminfo")-$(awk '{print $4}' <<< "$raminfo"))
+#ram_usage=(free | grep Mem | awk '{print $2-$4}')
+ram_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
+swap_free_p=$(free | grep Mem | awk '{print $4/$2 * 100}')
+cekip=$(curl -s "http://ip-api.com/json/")
+domain=$(cat /root/myvpn/domain)
+nsdomain=$(cat /root/myvpn/nsdomain)
+
+echo -e "\e[36m╒════════════════════════════════════════════╕\033[0m"
+echo -e " \E[44;1;37m                 INFO SERVER                \E[0m"
+echo -e "\e[36m╘════════════════════════════════════════════╛\033[0m"
+echo -e "${RED}Time${NC}	 :" `date "+%H:%M:%S"` "|" `date "+%d/%m/%y"`
+echo -e "${RED}Uptime${NC}	 :" `uptime -p`
+echo -e "${RED}Host${NC}	 : $domain | $(jq -r '.query' <<< "$cekip")"
+echo -e "${RED}NS Host${NC}	 : $nsdomain"
+echo -e "${RED}ISP${NC}	 : $(jq -r '.isp' <<< "$cekip") | $(jq -r '.country' <<< "$cekip")"
+echo -e "${RED}RAM${NC}	 : Usage = $(awk '{print $3}' <<< "$raminfo") Mb (${ram_free_p%.*}%) | Total = $(awk '{print $2}' <<< "$raminfo") Mb"
+echo -e "${RED}SWAP RAM${NC} : Usage = $(awk 'FNR == 2 {print$4}' <<< "$swapinfo" | numfmt --to=iec) | Total = $(awk 'FNR == 2 {print$3}' <<< "$swapinfo" | numfmt --to=iec)"
+echo -e "\e[36m╒══════════════════════════════════╕\033[0m"
+echo -e " \E[44;1;37m               MENU               \E[0m"
+echo -e "\e[36m╘══════════════════════════════════╛\033[0m"
+echo -e "1. ${YEL}ADD USER${NC}"
+echo -e "2. ${YEL}Whois Login${NC}"
+echo -e "3. ${YEL}List USERS (Block/Extend/Delete)${NC}"
+echo -e "4. ${YEL}Service Manager${NC}"
+echo -e "5. ${YEL}Monitoring Bandwith${NC}"
+echo -e "6. ${YEL}Delete Cache${NC}"
+echo -e "7. ${YEL}Settings${NC}"
+echo -e "8. ${YEL}Security${NC}"
+echo -e "9. ${YEL}Tools${NC}"
+echo -e "0. ${YEL}Exit Menu${NC}"
+echo "================================"
+read -p "Choose Options [0-9] :" num
+case $num in
+1)
+	clear
+	echo "1. Add User for SSH+OpenVPN+Socks5+UDP"
+	echo "3. Add User for V2ray(Vmess/Vless/Tojan/shadowsocks)"
+	echo "4. Add User for All in one(SSH+UDP+V2ray)"
+	echo "0. Back to Menu"
+	read -p "Choose Options [0-4] :" num1
+	case $num1 in
+	1)
+	clear
+	/root/myvpn/addusers
+	;;
+	2)
+	/root/myvpn/addudp
+	;;
+	3)
+	/root/myvpn/addv2ray
+	;;
+	0)
+	/usr/sbin/menu
+	;;
+	esac
+;;
+2)
+	Clear
+	/root/myvpn/whologin
+	read -p "Back to Menu Press Enter...."
+	/usr/sbin/menu
+;;
+3)
+	clear
+	echo "================================================="
+	echo "1. List User SSH+OpenVPN+Socks+UDPcustom"
+	echo "2. List User V2ray(Vmess/Vless/Trojan/Shadowsocks)"
+	echo "0. Back to Menu"
+	echo "================================================="
+	read -p "Choose Options [0-2] :" num2
+	case $num2 in
+	1)
+	clear
+	/root/myvpn/listusers
+	;;
+	0)
+	clear
+	/usr/sbin/menu
+	;;
+	esac
+;;
+4)
+	clear
+	/root/myvpn/smanager
+	read -p "Back to Menu Press Enter...."
+	/usr/sbin/menu
+;;
+7)
+	clear
+	echo "1. Change Banner SSH"
+	echo "2. Change Domain"
+	echo "3. Change NS Domain"
+	echo "4. Change Port"
+	echo "5. Change Time Zone"
+	echo "9. Change Password Root (Admin)"
+	echo "0. Back to Menu"
+	read -p "Choose Options [0-9] :" num7
+	case $num7 in
+	1)
+	clear
+	echo "================================="
+	echo "Note :"
+	echo "For Save press (CTRL+O & ENTER)"
+	echo "For Exit press (CTRL+X)"
+	echo "================================="
+	echo "OR from URL file"
+	echo "wget -O /etc/banner https://url"
+	echo "================================="
+	read -p "To Continue Press Enter...."
+	nano /etc/banner
+	;;
+	2)
+	clear
+	echo "================================="
+	echo "Note :"
+	echo "For Save press (CTRL+O & ENTER)"
+	echo "For Exit press (CTRL+X)"
+	echo "Please input just Domain only"
+	echo "Dont Use www. Example : mydomain.com"
+	echo "================================="
+	read -p "To Continue Press Enter...."
+	nano /root/myvpn/domain
+	;;
+	3)
+	clear
+	echo "================================="
+	echo "Note :"
+	echo "For Save press (CTRL+O & ENTER)"
+	echo "For Exit press (CTRL+X)"
+	echo "Please input just Domain only"
+	echo "Dont Use www. Example : ns.mydomain.com"
+	echo "================================="
+	read -p "To Continue Press Enter...."
+	nano /root/myvpn/nsdomain
+	;;
+	9)
+	clear
+	echo "================================================"
+	echo "		!!! WARNING !!!"
+	echo "Note : Becareful your change password Root"
+	echo "To Cancel press CTRL+C"
+	echo "================================================"
+	read -p  "Please input your New Password Root :" passroot
+	read -p  "Please confrim your Password Root   :" passroot2
+	#passwd $passroot
+	echo "Success To change password root"
+	read -p "Back To Menu Press Enter...."
+	/usr/sbin/menu
+	;;
+	0)
+	/usr/sbin/menu
+	;;
+	esac
+;;
+9)
+	clear
+	echo "1. Detail Server"
+	echo "2. Speedtest"
+	echo "3. Benchmark"
+	echo "4. Monitoring RAM"
+	echo "9. Reboot Server"
+	echo "0. Back to Menu"
+	read -p "Choose Options [0-3] :" num9
+	case $num9 in
+	1)
+	clear
+	/root/myvpn/detailserver
+	read -p "Back To Menu Press Enter...."
+	/usr/sbin/menu
+	;;
+	2)
+	clear
+	/root/myvpn/speedtest
+	read -p "Back To Menu Press Enter...."
+	/usr/sbin/menu
+	;;
+	4)
+	clear
+	/root/myvpn/ram
+	read -p "Back To Menu Press Enter...."
+	/usr/sbin/menu
+	;;
+	9)
+	echo "To Cancel press CTRL+C"
+	read -p "Press Enter For confirmation Reboot Server..."
+	echo "Okay...Please wait 5 sec for Reboot Server"
+	sleep 5
+	reboot
+	;;
+	0)
+	clear
+	/usr/sbin/menu
+	;;
+	esac
+;;
+0)
+	exit 1
+;;
+esac

@@ -20,7 +20,8 @@ read -p "Expired (day)      : " exp
 useradd -e `date -d "$exp days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 cekip=$(curl -s "http://ip-api.com/json/")
-domain="zerostore.sit.my.id"
+domain=$(cat /root/myvpn/domain)
+nsdomain=$(cat /root/myvpn/nsdomain)
 expdate="$(chage -l $Login | grep "Account expires" | awk -F": " '{print $2}')"
 clear
 echo -e "◇━━━━ Account Info ━━━━◇"
@@ -29,7 +30,6 @@ echo -e "Password	: $Pass"
 echo -e "Expired	: $(date +%d/%m/%y -d "$expdate")"
 echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "Host CF	: $domain"
-echo -e "NS SlowDNS     : $nsdomain"
 echo -e "IP             : $(jq -r '.query' <<< "$cekip")"
 echo -e "ISP		: $(jq -r '.isp' <<< "$cekip") | $(jq -r '.country' <<< "$cekip")"
 echo -e "Host Bug	: bug.$domain"
@@ -47,6 +47,11 @@ echo -e "OHP OpenSSH	:8080"
 echo -e "OHP Dropbear	:8181"
 echo -e "Squid	:3128"
 echo -e "Socks5	:1080"
+echo -e "◇━━━━ Slow DNS ━━━━━◇"
+echo -e "NS SlowDNS     : $nsdomain"
+echo -e "Pubkey		"
+echo -e "Dropbear	:23,144,7000"
+echo -e "WS Dropbear	:80,2082,8880"
 echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "UDPcustom	:1-65535"
 echo -e "BadVPN/UDPGW	:7200,7300"

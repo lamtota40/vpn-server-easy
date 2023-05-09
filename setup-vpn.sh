@@ -27,7 +27,7 @@ site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 
 #remove firewall
 sudo ufw disable
-apt purge ufw
+apt purge ufw -y
 
 #change Timezone
 cekip=$(curl -s "http://ipinfo.io")

@@ -9,9 +9,11 @@ read -p "input username     : " Login
 /bin/egrep  -i "^${Login}:" /etc/passwd
 if [ $? -eq 0 ]; then
 	echo "User $Login exists Please create other User"
-	read -p "Please Enter to Continue...."
+	#read -p "Please Enter to Continue...."
 	#/root/myvpn/addusers
-fi
+	exit 1
+	
+	fi
 
 read -p "input password     : " Pass
 read -p "Expired (day)      : " exp

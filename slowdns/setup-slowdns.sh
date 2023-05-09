@@ -18,19 +18,19 @@ cd
 echo "slow-id.vip.sit.my.id" > /root/nsdomain
 
 nameserver=$(cat /root/nsdomain)
-apt update -y
+#apt update -y
 apt install -y python3 python3-dnslib net-tools
-apt install ncurses-utils -y
+#apt install ncurses-utils -y
 apt install dnsutils -y
 #apt install golang -y
-apt install git -y
-apt install curl -y
-apt install wget -y
-apt install ncurses-utils -y
-apt install screen -y
-apt install cron -y
-apt install iptables -y
-apt install -y git screen whois dropbear wget
+#apt install git -y
+#apt install curl -y
+#apt install wget -y
+#apt install ncurses-utils -y
+#apt install screen -y
+#apt install cron -y
+#apt install iptables -y
+#apt install -y git screen whois dropbear wget
 apt install -y sudo gnutls-bin
 apt install -y dos2unix debconf-utils
 service cron reload
@@ -38,10 +38,12 @@ service cron restart
 
 #tambahan port openssh
 cd
+sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 echo "Port 2222" >> /etc/ssh/sshd_config
 echo "Port 2269" >> /etc/ssh/sshd_config
 sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
-service ssh restart
+sed -i 's/PasswordAuthentication .*/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication no/g' /etc/ssh/sshd_config
 service sshd restart
 
 #konfigurasi slowdns

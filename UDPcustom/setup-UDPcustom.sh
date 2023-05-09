@@ -53,3 +53,4 @@ systemctl start udpcustom &>/dev/null
 
 echo enable service udpcustom
 systemctl enable udpcustom &>/dev/null
+rm -rf setup-UDPcustom.sh

@@ -15,22 +15,12 @@ netfilter-persistent save
 netfilter-persistent reload
 
 cd
-echo "slow-id.vip.sit.my.id" > /root/nsdomain
+mkdir /root/myvpn
+echo "slow-id.vip.sit.my.id" > /root/myvpn/nsdomain
 
-nameserver=$(cat /root/nsdomain)
-#apt update -y
+nameserver=$(cat /root/myvpn/nsdomain)
 apt install -y python3 python3-dnslib net-tools
-#apt install ncurses-utils -y
 apt install dnsutils -y
-#apt install golang -y
-#apt install git -y
-#apt install curl -y
-#apt install wget -y
-#apt install ncurses-utils -y
-#apt install screen -y
-#apt install cron -y
-#apt install iptables -y
-#apt install -y git screen whois dropbear wget
 apt install -y sudo gnutls-bin
 apt install -y dos2unix debconf-utils
 service cron reload
@@ -58,10 +48,6 @@ chmod +x /etc/slowdns/server.key
 chmod +x /etc/slowdns/server.pub
 chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
-
-cd
-#wget -q -O /etc/systemd/system/client-sldns.service "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/client-sldns.service"
-#wget -q -O /etc/systemd/system/server-sldns.service "https://raw.githubusercontent.com/fisabiliyusri/SLDNS/main/slowdns/server-sldns.service"
 
 cd
 #install client-sldns.service
@@ -126,12 +112,9 @@ systemctl start server-sldns
 systemctl restart client-sldns
 systemctl restart server-sldns
 
-cd
 # download script
-cd /usr/bin
-wget -O slowdns-eror "https://raw.githubusercontent.com/hidessh99/projectku/main/Slowdns/slodns-eror.sh"
-chmod +x slowdns-eror
+wget -O /usr/bin/slowdns-eror "https://raw.githubusercontent.com/hidessh99/projectku/main/Slowdns/slodns-eror.sh"
+chmod +x /usr/bin/slowdns-eror
 
-cd
 echo "0 4 * * * root slowdns-eror" >> /etc/crontab
 echo "0 18 * * * root slowdns-eror" >> /etc/crontab

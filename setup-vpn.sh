@@ -48,7 +48,7 @@ usermod -aG sudo $Login
 wget $site/tools/setup-rameswap.sh && bash setup-ramswap.sh
 
 #Banner welcome SSH
-wget -P /etc $site/tools/other/banner
+wget -P /etc $site/tools/other/banner3
 
 #install openSSH (SSH)
 wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
@@ -82,10 +82,10 @@ wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh
 #apt install iptables-persistent -y
 
 #install slowdns [require ssh]
-#wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
+wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
 #install OpenVPN
-wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+#wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
 #wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #install UDP custom

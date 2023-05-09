@@ -8,16 +8,9 @@ iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
 netfilter-persistent save
 netfilter-persistent reload
 
-#cd
-#mkdir /root/myvpn
-#echo "ns-zero.sit.my.id" > /root/myvpn/nsdomain
-
 nameserver=$(cat /root/myvpn/nsdomain)
 apt install -y python3 python3-dnslib net-tools
 apt install dnsutils gnutls-bin dos2unix debconf-utils -y
-apt install cron -y
-service cron reload
-service cron restart
 
 #tambahan port openssh
 cd
@@ -102,10 +95,4 @@ systemctl start server-sldns
 systemctl restart client-sldns
 systemctl restart server-sldns
 
-# download script
-wget -O /usr/bin/slowdns-eror "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/slowdns-error"
-chmod +x /usr/bin/slowdns-eror
-
-echo "0 4 * * * root slowdns-eror" >> /etc/crontab
-echo "0 18 * * * root slowdns-eror" >> /etc/crontab
 rm -rf setup-slowdns.sh

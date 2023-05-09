@@ -92,7 +92,7 @@ systemctl enable server-sldns
 systemctl start client-sldns
 systemctl start server-sldns
 
-systemctl restart client-sldns
-systemctl restart server-sldns
+#systemctl restart client-sldns
+#systemctl restart server-sldns
 
 rm -rf setup-slowdns.sh

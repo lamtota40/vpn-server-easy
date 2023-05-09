@@ -103,14 +103,10 @@ wget $site/tools/setup-tools.sh && bash setup-tools.sh
 cd
 wget -O /usr/sbin/menu $site/tools/menu.sh && chmod +x /usr/sbin/menu
 
-#nano ~/.bashrc
+#autostartup lunch menu
 echo 'if [[ -n $SSH_CONNECTION ]] ; then' | sudo tee -a ~/.bashrc
 echo '/usr/sbin/menu' | sudo tee -a ~/.bashrc
 echo 'fi' | sudo tee -a ~/.bashrc
-
-#if [[ -n $SSH_CONNECTION ]] ; then
-#   /usr/sbin/menu
-#fi
 
 #Cron
 #auto reboot vps once at 00.00 clock

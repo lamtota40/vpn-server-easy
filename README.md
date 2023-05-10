@@ -52,7 +52,7 @@ TCP WS+OHP+Dropbear : <br>
 -----------------------------------------------------<br>
 <b>PROXY:::</b><br>
 Socks5 :1080<br>
-Squid :3128,8080<br>
+Squid :3128<br>
 -----------------------------------------------------<br>
 <b>Mode slowDNS:::</b><br>
 NS Server :slow.yourdomain.com<br>

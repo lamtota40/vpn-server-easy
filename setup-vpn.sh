@@ -52,7 +52,7 @@ usermod -aG sudo $Login
 wget $site/tools/setup-rameswap.sh && bash setup-ramswap.sh
 
 #Banner welcome SSH
-wget -O /etc/banner $site/tools/other/banner3
+wget -O /etc/banner $site/tools/other/banner
 
 #install openSSH (SSH)
 wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh

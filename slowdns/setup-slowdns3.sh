@@ -63,6 +63,8 @@ AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
 ExecStart=/etc/slowdns/sldns-client -udp 8.8.8.8:53 --pubkey-file /etc/slowdns/server.pub $nameserver 127.0.0.1:2222
 Restart=on-failure
+StartLimitBurst=2
+StartLimitInterval=30
 
 [Install]
 WantedBy=multi-user.target
@@ -111,8 +113,8 @@ systemctl start server-sldns
 #systemctl restart server-sldns
 
 # download script
-wget -O /usr/bin/slowdns-eror "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/slowdns-error"
-chmod +x /usr/bin/slowdns-eror
+#wget -O /usr/bin/slowdns-eror "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/slowdns-error"
+#chmod +x /usr/bin/slowdns-eror
 
-echo "0 4 * * * root slowdns-eror" >> /etc/crontab
-echo "0 18 * * * root slowdns-eror" >> /etc/crontab
+#echo "0 4 * * * root slowdns-eror" >> /etc/crontab
+#echo "0 18 * * * root slowdns-eror" >> /etc/crontab

@@ -40,11 +40,10 @@ rm -rf /etc/slowdns
 mkdir -m 777 /etc/slowdns
 wget -q -O /etc/slowdns/server.key "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/server.key"
 wget -q -O /etc/slowdns/server.pub "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/server.pub"
-wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/sldns-server"
-wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/sldns-client"
-cd
-chmod +x /etc/slowdns/server.key
-chmod +x /etc/slowdns/server.pub
+wget -q -O /etc/slowdns/sldns-server "https://raw.githubusercontent.com/MyRidwan/abc/raw/ipuk/slowdns/dnstt-server"
+wget -q -O /etc/slowdns/sldns-client "https://raw.githubusercontent.com/MyRidwan/abc/raw/ipuk/slowdns/dnstt-client
+#chmod +x /etc/slowdns/server.key
+#chmod +x /etc/slowdns/server.pub
 chmod +x /etc/slowdns/sldns-server
 chmod +x /etc/slowdns/sldns-client
 

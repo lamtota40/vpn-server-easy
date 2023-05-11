@@ -316,6 +316,6 @@ echo -e "⚙️ Crons                   :$status_cron"
 echo -e "⚙️ Vnstat                  :$status_vnstat"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
-read -n 1 -s -r -p "Klik Enter Untuk Kembali Ke menu"
+read -n 1 -s -r -p "Back to Menu Press Enter...."
 
 menu

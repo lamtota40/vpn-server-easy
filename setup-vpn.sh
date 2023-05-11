@@ -42,9 +42,6 @@ sysctl -w net.ipv6.conf.default.disable_ipv6=1
 grep "/bin/false" /etc/shells || echo "/bin/false" >> /etc/shells
 grep "/bin/nologin" /etc/shells || echo "/usr/sbin/nologin" >> /etc/shells
 
-##useradd -s /bin/false -M el
-##echo -e "satu\nsatu\n" | passwd el &> /dev/null
-
 Login="master"
 Pass="qwerty"
 useradd -m -s /bin/bash $Login
@@ -64,7 +61,7 @@ wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
 wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
 
 #install slowdns [require OpenSSH]
-wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
+#wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
 #install nginx (website)
 #wget $site/nginx/setup-nginx.sh && bash setup-nginx.sh
@@ -119,8 +116,8 @@ echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
 #chmod +x /usr/bin/slowdns-eror
 #echo "0 4 * * * root slowdns-eror" >> /etc/crontab
 #echo "0 18 * * * root slowdns-eror" >> /etc/crontab
-service cron reload
-service cron restart
+#service cron reload
+#service cron restart
 
 clear
 #cek status all service

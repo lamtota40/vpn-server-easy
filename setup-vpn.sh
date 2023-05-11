@@ -107,17 +107,17 @@ echo 'fi' | sudo tee -a ~/.bashrc
 
 #Cron (Auto Run Task)
 #auto reboot vps once at 00.00 clock
-wget -P /root $site/tools/autoreboot.sh
-chmod +x /root/autoreboot.sh
-echo "0 0 * * * root /root/autoreboot.sh" > /etc/cron.d/autoreboot
+wget -O /root/myvpn/autoreboot /root $site/tools/autoreboot.sh
+chmod +x /root/myvpn/autoreboot
+echo "0 0 * * * root /root/myvpn/autoreboot" > /etc/cron.d/autoreboot
 
 #Auto start slowdns if error
 #wget -O /usr/bin/slowdns-eror $site/slowdns/slowdns-error
 #chmod +x /usr/bin/slowdns-eror
 #echo "0 4 * * * root slowdns-eror" >> /etc/crontab
 #echo "0 18 * * * root slowdns-eror" >> /etc/crontab
-#service cron reload
-#service cron restart
+service cron reload
+service cron restart
 
 clear
 #cek status all service

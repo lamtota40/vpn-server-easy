@@ -33,7 +33,6 @@ clear
 source /etc/os-release
 Versi_OS=$VERSION
 ver=$VERSION_ID
-Tipe=$NAME
 URL_SUPPORT=$HOME_URL
 basedong=$ID
 
@@ -315,12 +314,9 @@ totalram=$(($total_ram/1024))
 kernelku=$(uname -r)
 
 # GETTING DOMAIN NAME
-echo -e "💠 Hostname    : $HOSTNAME"
-echo -e "💠 OS Name     : $Tipe"
-echo -e "💠 Total RAM   : ${totalram}MB"
-echo -e "💠 Public IP   : $MYIP"
 
-echo -e "💠 Client Name : $Name"
+echo -e "💠 Total RAM   : ${totalram}MB"
+
 echo -e "💠 Exp Script  : $Exp2"
 echo -e "💠 Version     : Beta Version"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"

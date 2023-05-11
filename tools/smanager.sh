@@ -316,13 +316,6 @@ totalram=$(($total_ram/1024))
 # KERNEL TERBARU
 kernelku=$(uname -r)
 
-# WAKTU SEKARANG 
-#harini=`date -d "0 days" +"%d-%m-%Y"`
-#jam=`date -d "0 days" +"%X"`
-
-# DNS PATCH
-#tipeos2=$(uname -m)
-
 # GETTING DOMAIN NAME
 Domen="$(cat /etc/xray/domain)"
 echo -e ""

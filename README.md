@@ -11,7 +11,7 @@ step 2:
 ```console
 wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 ```
-username default for access OpenSSH,dropbear,Openvpn,shock5,slowdns,UDPcustom<br>
+username admin default for access OpenSSH,dropbear,Openvpn,shock5,slowdns,UDPcustom<br>
 user: <b>master</b><br>
 pass: <b>qwerty</b><br>
 

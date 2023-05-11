@@ -7,6 +7,7 @@ if (( $EUID != 0 )); then
 fi
 
 #create directory
+cd
 mkdir -p /root/myvpn
 mkdir -p /root/myvpn/data
 mkdir -p /root/myvpn/config
@@ -48,56 +49,56 @@ useradd -m -s /bin/bash $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 usermod -aG sudo $Login
 
+cd
 #ADD Extra Ram Swap 2GB
-wget $site/tools/setup-rameswap.sh && bash setup-ramswap.sh
+wget -O setup-ramswap.sh $site/tools/setup-ramswap.sh && bash setup-ramswap.sh
 
 #Banner welcome SSH
 wget -O /etc/banner $site/tools/other/banner
 
 #install openSSH (SSH)
-wget $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
+wget -O setup-openssh.sh $site/SSH/openssh/setup-openssh.sh && bash setup-openssh.sh
 
 #install dropbear (SSH)
-wget $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
+wget -O setup-dropbear.sh $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
 
 #install slowdns [require OpenSSH]
-#wget $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
+#wget -O setup-slowdns.sh $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
 #install nginx (website)
-#wget $site/nginx/setup-nginx.sh && bash setup-nginx.sh
+#wget -O setup-nginx.sh $site/nginx/setup-nginx.sh && bash setup-nginx.sh
 
 #install stunnel4/TLS
-wget $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
+wget -O setup-stunnel4.sh $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 
 #install badvpn (For support UDP/videocall,etc)
-wget $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
+wget -O setup-badvpn.sh $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh
 
 #install websocket
-wget $site/websocket/setup-websocket.sh && bash setup-websocket.sh
+wget -O setup-websocket.sh $site/websocket/setup-websocket.sh && bash setup-websocket.sh
 
 #install proxy squid
-wget $site/PROXY/squid/setup-squid.sh && bash setup-squid.sh
+wget -O setup-squid.sh $site/PROXY/squid/setup-squid.sh && bash setup-squid.sh
 
 #install socks4 & socks5
-wget $site/PROXY/socks/setup-socks.sh && bash setup-socks.sh 
+wget -O setup-socks.sh $site/PROXY/socks/setup-socks.sh && bash setup-socks.sh 
 
 #install sslh (for sharing one port/multiplexer)
-wget $site/sslh/setup-sslh.sh && bash setup-sslh.sh
+wget -O setup-sslh.sh $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 
 #install OHP [require install proxy+ssh]
-wget $site/OHP/setup-ohp.sh && bash setup-ohp.sh
+wget -O setup-ohp.sh $site/OHP/setup-ohp.sh && bash setup-ohp.sh
 #apt install iptables-persistent -y
 
 #install OpenVPN
-#wget $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+#wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
 #wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #install UDP custom
-wget $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPcustom.sh
+wget -O setup-UDPcustom.sh $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPcustom.sh
 
 #download menu & tools
-wget $site/tools/setup-tools.sh && bash setup-tools.sh
-cd
+wget -O setup-tools.sh $site/tools/setup-tools.sh && bash setup-tools.sh
 wget -O /usr/sbin/menu $site/tools/menu.sh && chmod +x /usr/sbin/menu
 
 #autostartup lunch menu
@@ -121,7 +122,7 @@ service cron restart
 
 clear
 #cek status all service
-wget $site/tools/status.sh && bash status.sh
+wget -O status.sh $site/tools/status.sh && bash status.sh
 
 echo "OK…finish installation..you can enter command 'menu'"
 history -c

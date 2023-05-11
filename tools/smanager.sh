@@ -29,9 +29,7 @@ bec='v2ray'
 fi
 
 clear
-MYIP=$(curl -sS ipv4.icanhazip.com)
-#########################
-# GETTING OS INFORMATION
+#GETTING OS INFORMATION
 source /etc/os-release
 Versi_OS=$VERSION
 ver=$VERSION_ID
@@ -317,19 +315,11 @@ totalram=$(($total_ram/1024))
 kernelku=$(uname -r)
 
 # GETTING DOMAIN NAME
-Domen="$(cat /etc/xray/domain)"
-echo -e ""
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[41;1;39m              ⇱ Sytem Information ⇲             \E[0m"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "💠 Hostname    : $HOSTNAME"
 echo -e "💠 OS Name     : $Tipe"
 echo -e "💠 Total RAM   : ${totalram}MB"
 echo -e "💠 Public IP   : $MYIP"
-echo -e "💠 Domain      : $Domen"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
-echo -e "\E[41;1;39m          ⇱ Subscription Information ⇲          \E[0m"
-echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
+
 echo -e "💠 Client Name : $Name"
 echo -e "💠 Exp Script  : $Exp2"
 echo -e "💠 Version     : Beta Version"

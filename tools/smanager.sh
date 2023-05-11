@@ -31,20 +31,6 @@ ver=$VERSION_ID
 URL_SUPPORT=$HOME_URL
 basedong=$ID
 
-# VPS ISP INFORMATION
-#ITAM='\033[0;30m'
-echo -e "$ITAM"
-#REGION=$( curl -s ipinfo.io/region )
-#clear
-#COUNTRY=$( curl -s ipinfo.io/country )
-#clear
-#WAKTU=$( curl -s ipinfo.ip/timezone )
-#clear
-CITY=$( curl -s ipinfo.io/city )
-#clear
-#REGION=$( curl -s ipinfo.io/region )
-#clear
-
 # CHEK STATUS 
 l2tp_status=$(systemctl status xl2tpd | grep Active | awk '{print $3}' | cut -d "(" -f2 | cut -d ")" -f1)
 openvpn_service="$(systemctl show openvpn.service --no-page)"
@@ -306,14 +292,6 @@ total_ram=` grep "MemTotal: " /proc/meminfo | awk '{ print $2}'`
 totalram=$(($total_ram/1024))
 
 # KERNEL TERBARU
-kernelku=$(uname -r)
-
-# GETTING DOMAIN NAME
-
-echo -e "💠 Total RAM   : ${totalram}MB"
-
-echo -e "💠 Exp Script  : $Exp2"
-echo -e "💠 Version     : Beta Version"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[41;1;39m            ⇱ Service Information ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"

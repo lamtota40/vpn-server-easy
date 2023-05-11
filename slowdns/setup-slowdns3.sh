@@ -107,8 +107,8 @@ systemctl enable server-sldns
 systemctl start client-sldns
 systemctl start server-sldns
 
-systemctl restart client-sldns
-systemctl restart server-sldns
+#systemctl restart client-sldns
+#systemctl restart server-sldns
 
 # download script
 wget -O /usr/bin/slowdns-eror "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/slowdns-error"

@@ -40,8 +40,8 @@ done
 echo "Total User Used Service OpenSSH = $b"
 
 echo "";
-echo "Checking User UDP logged in";
+echo "Checking User UDP Custom logged in";
 echo "(PID - Username - IP)";
 echo "-----------------------------------------";
-echo "Total User Used Service OpenSSH = 0"
+echo "Total User Used Service UDP Custom = 0"
 echo "=========================================";

@@ -9,8 +9,8 @@ netfilter-persistent save
 netfilter-persistent reload
 
 cd
-mkdir /root/myvpn
-echo "ns.sit.my.id" > /root/myvpn/nsdomain
+#mkdir /root/myvpn
+#echo "ns.sit.my.id" > /root/myvpn/nsdomain
 
 nameserver=$(cat /root/myvpn/nsdomain)
 apt install -y python3 python3-dnslib net-tools

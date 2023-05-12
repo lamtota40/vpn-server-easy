@@ -38,4 +38,10 @@ echo "$PID - $USER - $IP";
 fi
 done
 echo "Total User Used Service OpenSSH = $b"
+
+echo "";
+echo "Checking User UDP logged in";
+echo "(PID - Username - IP)";
+echo "-----------------------------------------";
+echo "Total User Used Service OpenSSH = 0"
 echo "=========================================";

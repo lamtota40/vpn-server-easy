@@ -2,7 +2,7 @@
 
 # detail ssl
 CN=$(cat /root/myvpn/domain)
-#CN=*.whatsapp.com
+#CN=*.myweb.com
 #organization=NAVER
 #country=ID
 #state=Bandung
@@ -27,5 +27,10 @@ chmod 600 /etc/stunnel/stunnel.pem
 
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
+
+cp key.pem /root/myvpn/config/key.pem
+cp cert.pem /root/myvpn/config/cert.pem
+rm -rf key.pem
+rm -rf cert.pem
 
 rm -rf setup-stunnel4.sh

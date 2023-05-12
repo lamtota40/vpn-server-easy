@@ -34,8 +34,8 @@ timezone=$(jq -r '.timezone' <<< "$cekip")
 ln -fs /usr/share/zoneinfo/$timezone /etc/localtime
 
 #disable ipv6
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 
-sysctl -w net.ipv6.conf.default.disable_ipv6=1
+#sysctl -w net.ipv6.conf.all.disable_ipv6=1 
+#sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 #add user for admin default
 grep "/bin/false" /etc/shells || echo "/bin/false" >> /etc/shells

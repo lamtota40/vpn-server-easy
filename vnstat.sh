@@ -1,6 +1,6 @@
 #!/bin/bash
 # setting vnstat
-apt -y install vnstat
+apt -y install vnstat gcc
 /etc/init.d/vnstat restart
 apt -y install libsqlite3-dev
 wget https://humdi.net/vnstat/vnstat-2.6.tar.gz

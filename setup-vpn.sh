@@ -100,6 +100,7 @@ wget -O setup-tools.sh $site/tools/setup-tools.sh && bash setup-tools.sh
 wget -O /usr/sbin/menu $site/tools/menu.sh && chmod +x /usr/sbin/menu
 
 #autostartup lunch menu
+cd
 echo 'if [[ -n $SSH_CONNECTION ]] ; then' | sudo tee -a ~/.bashrc
 echo '/usr/sbin/menu' | sudo tee -a ~/.bashrc
 echo 'fi' | sudo tee -a ~/.bashrc

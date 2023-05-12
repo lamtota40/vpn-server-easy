@@ -86,7 +86,7 @@ case $num in
 ;;
 2)
 	Clear
-	/root/myvpn/whologin
+	/root/myvpn/whoislogin
 	read -p "Back to Menu Press Enter...."
 	/usr/sbin/menu
 ;;

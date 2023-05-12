@@ -95,6 +95,9 @@ wget -O setup-UDPcustom.sh $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPc
 #install slowdns [require OpenSSH]
 wget -O setup-slowdns.sh $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
+#install vnstat(for monitoring bandwith)
+wget -O setup-vnstat.sh $site/tools/vnstat/setup-vnstat.sh && bash setup-vnstat.sh
+
 #download menu & tools
 wget -O setup-tools.sh $site/tools/setup-tools.sh && bash setup-tools.sh
 wget -O /usr/sbin/menu $site/tools/menu.sh && chmod +x /usr/sbin/menu

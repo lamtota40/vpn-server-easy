@@ -23,7 +23,7 @@ echo "Total User Used Service Dropbear = $a"
  
 data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
 echo "";
-echo "Checking User OpenSSH logged in";
+echo "Checking User OpenSSH/Slow DNS logged in";
 echo "(PID - Username - IP)";
 echo "-----------------------------------------";
 for PID in "${data[@]}"

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+if (( $EUID != 0 )); then
+    echo "Please run as root"
+    echo "You can Try comand 'su root' or 'sudo -i' or 'sudo -'"
+    exit 1
+fi
+
 YEL='\033[1;33m'
 RED='\e[1;49;95m'
 BLUE='\033[1;36m'

@@ -61,7 +61,7 @@ wget -O setup-openssh.sh $site/SSH/openssh/setup-openssh.sh && bash setup-openss
 wget -O setup-dropbear.sh $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
 
 #install slowdns [require OpenSSH]
-#wget -O setup-slowdns.sh $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
+wget -O setup-slowdns.sh $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
 #install nginx (website)
 #wget -O setup-nginx.sh $site/nginx/setup-nginx.sh && bash setup-nginx.sh

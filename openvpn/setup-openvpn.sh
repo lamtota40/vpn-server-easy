@@ -24,6 +24,7 @@ chown -R root:root /etc/openvpn/server/easy-rsa/
 
 cd
 mkdir -p /usr/lib/openvpn/
+mkdir -p /home/vps/public_html/
 cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib/openvpn/openvpn-plugin-auth-pam.so
 
 # nano /etc/default/openvpn

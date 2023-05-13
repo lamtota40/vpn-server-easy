@@ -86,15 +86,16 @@ wget -O setup-sslh.sh $site/sslh/setup-sslh.sh && bash setup-sslh.sh
 wget -O setup-ohp.sh $site/OHP/setup-ohp.sh && bash setup-ohp.sh
 #apt install iptables-persistent -y
 
-#install OpenVPN
-#wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
-#wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
-
 #install UDP custom
 wget -O setup-UDPcustom.sh $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPcustom.sh
 
 #install slowdns [require OpenSSH]
 wget -O setup-slowdns.sh $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
+
+#install OpenVPN
+wget -O setup-openvpn.sh https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+#wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+#wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #install vnstat(for monitoring bandwith)
 wget -O setup-vnstat.sh $site/tools/vnstat/setup-vnstat.sh && bash setup-vnstat.sh

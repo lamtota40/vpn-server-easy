@@ -3,6 +3,8 @@ echo -e "
 "
 date
 echo ""
+sleep 10
+echo "vip.sit.my.id" > /root/domain
 domain=$(cat /root/domain)
 sleep 1
 mkdir -p /etc/xray 

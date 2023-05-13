@@ -65,7 +65,7 @@ wget -O setup-dropbear.sh $site/SSH/dropbear/setup-dropbear.sh && bash setup-dro
 #wget -O setup-nginx.sh $site/nginx/setup-nginx.sh && bash setup-nginx.sh
 
 #install stunnel4/TLS
-wget -O setup-stunnel4.sh $site/SSH/stunel4/setup-stunnel4.sh && bash setup-stunnel4.sh
+wget -O setup-stunnel4.sh $site/stunnel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 
 #install badvpn (For support UDP/videocall,etc)
 wget -O setup-badvpn.sh $site/VPN/badvpn/setup-badvpn.sh && bash setup-badvpn.sh

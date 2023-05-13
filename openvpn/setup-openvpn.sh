@@ -11,7 +11,7 @@ MYIP2="s/xxxxxxxxx/$MYIP/g";
 ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 
 # Install OpenVPN dan Easy-RSA
-apt install openvpn easy-rsa unzip -y
+apt install netfilter-persistent openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
@@ -180,4 +180,4 @@ rm -f /root/vpn.sh
 
 #xip file openvpn
 cd /home/vps/public_html
-zip config.zip client-tcp-1194.ovpn client-tcp-ssl.ovpn client-udp-2200.ovpn
+zip allconfig.zip client-tcp-1194.ovpn client-tcp-ssl.ovpn client-udp-2200.ovpn

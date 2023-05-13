@@ -35,23 +35,23 @@ timezone=$(jq -r '.timezone' <<< "$cekip")
 ln -fs /usr/share/zoneinfo/$timezone /etc/localtime
 
 # nano /etc/rc.local
-cat > /etc/rc.local <<-END
+##cat > /etc/rc.local <<-END
 #!/bin/sh -e
 # rc.local
 # By default this script does nothing.
-exit 0
-END
+##exit 0
+##END
 
 # Ubah izin akses
-chmod +x /etc/rc.local
+##chmod +x /etc/rc.local
 
 # enable rc local
-systemctl enable rc-local
-systemctl start rc-local.service
+##systemctl enable rc-local
+##systemctl start rc-local.service
 
 # disable ipv6
-echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
-sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
+##echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+##sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
 #sysctl -w net.ipv6.conf.all.disable_ipv6=1 
 #sysctl -w net.ipv6.conf.default.disable_ipv6=1

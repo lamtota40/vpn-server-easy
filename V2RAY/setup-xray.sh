@@ -16,7 +16,7 @@ wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/godtrex99/v4/ma
 mkdir -p /home/vps/public_html
 /etc/init.d/nginx restart
 
-echo "xray.sit.my.id" > /root/domain
+echo "v2ray.sit.my.id" > /root/domain
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 

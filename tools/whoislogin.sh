@@ -23,7 +23,7 @@ echo "Total User Used Service Dropbear = $a"
  
 data=( `ps aux | grep "\[priv\]" | sort -k 72 | awk '{print $2}'`);
 echo "";
-echo "Checking User OpenSSH/Slow DNS logged in";
+echo "Checking User OpenSSH/SlowDNS logged in";
 echo "(PID - Username - IP)";
 echo "-----------------------------------------";
 for PID in "${data[@]}"
@@ -37,19 +37,19 @@ b=$((b+1))
 echo "$PID - $USER - $IP";
 fi
 done
-echo "Total User Used Service OpenSSH = $b"
+echo "Total User Used Service OpenSSH/SlowDNS = $b"
 
 echo "";
-echo "Checking User UDP Custom logged in";
+echo "Checking User UDPcustom logged in";
 echo "(PID - Username - IP)";
 echo "-----------------------------------------";
-echo "Total User Used Service UDP Custom = 0"
+echo "Total User Used Service UDPcustom = 0"
 echo "=========================================";
 
 
 echo "";
-echo "Checking User Openvpn logged in";
+echo "Checking User OpenVPN logged in";
 echo "(PID - Username - IP)";
 echo "-----------------------------------------";
-echo "Total User Used Service Openvpn = 0"
+echo "Total User Used Service OpenVPN = 0"
 echo "=========================================";

@@ -105,4 +105,4 @@ echo "Port 2269" >> /etc/ssh/sshd_config
 sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
 service sshd restart
 
-rm -rf setup-vpn.sh
+rm -rf setup-slowdns.sh

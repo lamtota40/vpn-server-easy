@@ -54,9 +54,9 @@ EOF
 chmod +x /etc/systemd/system/udpgw7300.service
 
 systemctl daemon-reload
-systemctl start udpgw7200.service
 systemctl enable udpgw7200.service
-systemctl start udpgw7300.service
 systemctl enable udpgw7300.service
+systemctl start udpgw7200.service
+systemctl start udpgw7300.service
 
 rm -rf setup-badvpn.sh

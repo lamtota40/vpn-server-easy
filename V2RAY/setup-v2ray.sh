@@ -360,8 +360,8 @@ LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
-
 EOF
+
 cat > /etc/systemd/system/runn.service <<EOF
 [Unit]
 Description=Mantap-Sayang

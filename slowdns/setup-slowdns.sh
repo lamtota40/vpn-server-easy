@@ -1,7 +1,9 @@
 #!/bin/bash
 
-#setting IPtables
-apt install iptables netfilter-persistent -y
+#install dependcy
+apt install python3 python3-dnslib net-tools -y
+apt install dnsutils gnutls-bin dos2unix debconf-utils -y
+apt install cron iptables netfilter-persistent -y
 
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -t nat -I PREROUTING -p udp --dport 53 -j REDIRECT --to-ports 5300
@@ -13,12 +15,6 @@ cd
 #echo "ns.sit.my.id" > /root/myvpn/nsdomain
 
 nameserver=$(cat /root/myvpn/nsdomain)
-apt install -y python3 python3-dnslib net-tools
-apt install dnsutils gnutls-bin dos2unix debconf-utils -y
-apt install cron -y
-service cron reload
-service cron restart
-
 
 #konfigurasi slowdns
 rm -rf /etc/slowdns
@@ -96,12 +92,13 @@ systemctl start server-sldns
 systemctl restart client-sldns
 systemctl restart server-sldns
 
-# download script
-wget -O /usr/bin/slowdns-eror "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/slowdns-error"
-chmod +x /usr/bin/slowdns-eror
-
-echo "0 4 * * * root slowdns-eror" >> /etc/crontab
-echo "0 18 * * * root slowdns-eror" >> /etc/crontab
+#Auto start slowdns if error
+wget -O /root/myvpn/cron/slowdns-eror $site/slowdns/slowdns-error
+chmod +x /root/myvpn/cron/slowdns-eror
+echo "0 4 * * * root /root/myvpn/cron/slowdns-eror" >> /etc/cron.d/autoreboot
+echo "0 18 * * * root /root/myvpn/cron/slowdns-eror" >> /etc/cron.d/autoreboot
+service cron reload
+service cron restart
 
 echo "Port 2222" >> /etc/ssh/sshd_config
 echo "Port 2269" >> /etc/ssh/sshd_config

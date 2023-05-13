@@ -19,7 +19,7 @@ chown -R root:root /etc/openvpn/server/easy-rsa/
 
 cd
 mkdir -p /usr/lib/openvpn/
-mkdir -p /home/vps/public_html/
+mkdir -p /root/public_html
 cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib/openvpn/openvpn-plugin-auth-pam.so
 
 # nano /etc/default/openvpn
@@ -118,7 +118,6 @@ echo '</ca>' >> /etc/openvpn/client-tcp-ssl.ovpn
 cp /etc/openvpn/client-tcp-ssl.ovpn /home/vps/public_html/client-tcp-ssl.ovpn
 
 #firewall untuk memperbolehkan akses UDP dan akses jalur TCP
-
 iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ANU -j MASQUERADE
 iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ANU -j MASQUERADE
 iptables-save > /etc/iptables.up.rules
@@ -133,10 +132,9 @@ systemctl enable openvpn
 systemctl start openvpn
 /etc/init.d/openvpn restart
 
-# Delete script
-history -c
-rm -f /root/vpn.sh
-
 #xip file openvpn
-cd /home/vps/public_html
-zip allconfig.zip client-tcp-1194.ovpn client-tcp-ssl.ovpn client-udp-2200.ovpn
+#cd /root/myvpn/public_html
+#zip allconfig.zip client-tcp-1194.ovpn client-tcp-ssl.ovpn client-udp-2200.ovpn
+cd
+
+rm -f /root/vpn.sh

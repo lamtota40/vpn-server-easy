@@ -16,7 +16,7 @@ wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/godtrex99/v4/ma
 mkdir -p /home/vps/public_html
 /etc/init.d/nginx restart
 
-echo "el.sit.my.id" > /root/domain
+echo "xray.sit.my.id" > /root/domain
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
@@ -71,7 +71,9 @@ chmod +x /root/.acme.sh/acme.sh
 /root/.acme.sh/acme.sh --set-default-ca --server letsencrypt
 /root/.acme.sh/acme.sh --issue -d $domain --standalone -k ec-256
 ~/.acme.sh/acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key --ecc
-
+sleep 8
+cat /etc/xray/xray.crt
+sleep 15
 # nginx renew ssl
 echo -n '#!/bin/bash
 /etc/init.d/nginx stop

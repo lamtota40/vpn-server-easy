@@ -1,9 +1,4 @@
 #!/bin/bash
-echo -e "
-"
-date
-echo ""
-sleep 10
 
 apt -y install nginx
 cd
@@ -25,6 +20,7 @@ apt install iptables iptables-persistent -y
 sleep 1
 echo -e "[ ${green}INFO$NC ] Setting ntpdate"
 ntpdate pool.ntp.org 
+sleep 10
 timedatectl set-ntp true
 sleep 1
 echo -e "[ ${green}INFO$NC ] Enable chronyd"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-apt -y install nginx
+apt install nginx chrony -y
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default

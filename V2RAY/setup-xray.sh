@@ -28,7 +28,7 @@ apt install iptables iptables-persistent -y
 sleep 1
 echo -e "[ ${green}INFO$NC ] Setting ntpdate"
 ntpdate pool.ntp.org 
-sleep 8
+sleep 2
 timedatectl set-ntp true
 sleep 1
 echo -e "[ ${green}INFO$NC ] Enable chronyd"

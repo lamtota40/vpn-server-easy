@@ -54,4 +54,10 @@ else
     echo "[OK] to install client-slowdns"
 fi
 
+if ! systemctl status udpcustom &> /dev/null; then
+    echo "[Failed] to install udpcustom"
+else
+    echo "[OK] to install udpcustom"
+fi
+
 rm -rf status.sh

@@ -1,7 +1,4 @@
 #!/bin/bash
-# Tunneling OpenVPN
-# By HideSSH
-# ==================================================
 
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
@@ -15,8 +12,6 @@ apt install netfilter-persistent openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-#download configurasi openserver
-#wget https://adiscript.vercel.app/vpn/vpn.zip
 wget https://github.com/hidessh99/hidemu/raw/main/OVPN/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
@@ -49,15 +44,6 @@ client
 dev tun
 proto tcp
 remote xxxxxxxxx 1194
-##### Modification VPN #####
-#delete "#" use modification OpenVPN Tunnel  
-#http-proxy-retry
-#http-proxy xxxxxxxxx 3128
-#http-proxy-option CUSTOM-HEADER Host google.com
-#http-proxy-option CUSTOM-HEADER X-Online-Host m.instagram.com
-#http-proxy-option CUSTOM-HEADER X-Forward-Host m.instagram.com
-#http-proxy-option CUSTOM-HEADER Connection Keep-Alive
-##### END modification #####
 resolv-retry infinite
 route-method exe
 nobind
@@ -72,22 +58,10 @@ sed -i $MYIP2 /etc/openvpn/client-tcp-1194.ovpn;
 
 # Buat config client UDP 2200
 cat > /etc/openvpn/client-udp-2200.ovpn <<-END
-##### WELCOME TO HIDESSH #####
-##### WWW.HIDESSH.COM #####
-##### DONT FORGET TO SUPPORT US #####
 client
 dev tun
 proto udp
 remote xxxxxxxxx 2200
-##### Modification VPN #####
-#delete "#" use modification OpenVPN Tunnel  
-#http-proxy-retry
-#http-proxy xxxxxxxxx 3128
-#http-proxy-option CUSTOM-HEADER Host google.com
-#http-proxy-option CUSTOM-HEADER X-Online-Host m.instagram.com
-#http-proxy-option CUSTOM-HEADER X-Forward-Host m.instagram.com
-#http-proxy-option CUSTOM-HEADER Connection Keep-Alive
-##### END modification #####
 resolv-retry infinite
 route-method exe
 nobind
@@ -102,23 +76,10 @@ sed -i $MYIP2 /etc/openvpn/client-udp-2200.ovpn;
 
 # Buat config client SSL
 cat > /etc/openvpn/client-tcp-ssl.ovpn <<-END
-##### WELCOME TO HIDESSH #####
-##### WWW.HIDESSH.COM #####
-##### DONT FORGET TO SUPPORT US #####
 client
 dev tun
 proto tcp
 remote xxxxxxxxx 442
-##### Modification VPN #####
-#delete "#" use modification OpenVPN Tunnel  
-#http-proxy-retry
-#http-proxy xxxxxxxxx 3128
-#http-proxy-option CUSTOM-HEADER Host google.com
-#http-proxy-option CUSTOM-HEADER Host m.instagram.com
-#http-proxy-option CUSTOM-HEADER X-Online-Host m.instagram.com
-#http-proxy-option CUSTOM-HEADER X-Forward-Host m.instagram.com
-#http-proxy-option CUSTOM-HEADER Connection Keep-Alive
-##### END modification #####
 resolv-retry infinite
 route-method exe
 nobind

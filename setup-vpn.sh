@@ -116,10 +116,10 @@ chmod +x /root/myvpn/cron/autoreboot
 echo "0 0 1 * * root /root/myvpn/cron/autoreboot" > /etc/cron.d/autoreboot
 
 #Auto start slowdns if error
-#wget -O /usr/bin/slowdns-eror $site/slowdns/slowdns-error
-#chmod +x /usr/bin/slowdns-eror
-#echo "0 4 * * * root slowdns-eror" >> /etc/crontab
-#echo "0 18 * * * root slowdns-eror" >> /etc/crontab
+wget -O /root/myvpn/cron/slowdns-eror $site/slowdns/slowdns-error
+chmod +x /root/myvpn/cron/slowdns-eror
+echo "0 4 * * * root /root/myvpn/cron/slowdns-eror" >> /etc/cron.d/autoreboot
+echo "0 18 * * * root /root/myvpn/cron/slowdns-eror" >> /etc/cron.d/autoreboot
 service cron reload
 service cron restart
 

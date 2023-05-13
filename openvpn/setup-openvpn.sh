@@ -17,7 +17,7 @@ mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
 #download configurasi openserver
 #wget https://adiscript.vercel.app/vpn/vpn.zip
-wget https://github.com/4hidessh/hidessh/blob/main/OVPN/vpn.zip?raw=true
+wget https://github.com/hidessh99/hidemu/raw/main/OVPN/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/

@@ -16,7 +16,7 @@ wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/godtrex99/v4/ma
 mkdir -p /home/vps/public_html
 /etc/init.d/nginx restart
 
-echo "vip.sit.my.id" > /root/domain
+echo "el.sit.my.id" > /root/domain
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 
 sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
@@ -342,7 +342,8 @@ cat > /etc/xray/config.json << END
 END
 rm -rf /etc/systemd/system/xray.service.d
 rm -rf /etc/systemd/system/xray@.service
-cat <<EOF> /etc/systemd/system/xray.service
+
+cat <<EOF > /etc/systemd/system/xray.service
 Description=Xray Service
 Documentation=https://github.com/xtls
 After=network.target nss-lookup.target
@@ -362,7 +363,7 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 EOF
 
-cat > /etc/systemd/system/runn.service <<EOF
+cat <<EOF > /etc/systemd/system/runn.service
 [Unit]
 Description=Mantap-Sayang
 After=network.target

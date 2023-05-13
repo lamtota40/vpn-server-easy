@@ -133,4 +133,4 @@ systemctl start openvpn
 #zip allconfig.zip client-tcp-1194.ovpn client-tcp-ssl.ovpn client-udp-2200.ovpn
 cd
 
-rm -f /root/vpn.sh
+rm -rf setup-openvpn.sh

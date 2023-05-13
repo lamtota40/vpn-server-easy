@@ -4,6 +4,15 @@ echo -e "
 date
 echo ""
 sleep 10
+
+apt -y install nginx
+cd
+rm /etc/nginx/sites-enabled/default
+rm /etc/nginx/sites-available/default
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/godtrex99/v4/main/ssh/nginx.conf"
+mkdir -p /home/vps/public_html
+/etc/init.d/nginx restart
+
 echo "vip.sit.my.id" > /root/domain
 sysctl -w net.ipv6.conf.all.disable_ipv6=1 
 sysctl -w net.ipv6.conf.default.disable_ipv6=1

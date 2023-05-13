@@ -12,7 +12,7 @@ apt install netfilter-persistent openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
 mkdir -p /etc/openvpn/server/easy-rsa/
 cd /etc/openvpn/
-wget https://github.com/hidessh99/hidemu/raw/main/OVPN/vpn.zip
+wget -O vpn.zip https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/openvpn/vpn.zip
 unzip vpn.zip
 rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/

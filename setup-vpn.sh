@@ -93,8 +93,7 @@ wget -O setup-UDPcustom.sh $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPc
 wget -O setup-slowdns.sh $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
 #install OpenVPN
-wget -O setup-openvpn.sh https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
-#wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
 #wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #install vnstat(for monitoring bandwith)

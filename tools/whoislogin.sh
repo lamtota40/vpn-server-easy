@@ -45,3 +45,11 @@ echo "(PID - Username - IP)";
 echo "-----------------------------------------";
 echo "Total User Used Service UDP Custom = 0"
 echo "=========================================";
+
+
+echo "";
+echo "Checking User Openvpn logged in";
+echo "(PID - Username - IP)";
+echo "-----------------------------------------";
+echo "Total User Used Service Openvpn = 0"
+echo "=========================================";

@@ -8,6 +8,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install sslh --no-install-recommends -y
 wget -O /etc/default/sslh "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/sslh/sslh.conf"
 service sslh restart
 
+cat <<EOF > /etc/systemd/system/sslh80.service
 [Unit]
 Description=SSL/SSH multiplexer
 After=network.target
@@ -19,6 +20,10 @@ KillMode=process
 
 [Install]
 WantedBy=multi-user.target
+EOF
+
+systemctl enable sslh80 &>/dev/null
+systemctl start sslh80 &>/dev/null
 
 rm -rf setup-sslh.sh
 

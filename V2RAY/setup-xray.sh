@@ -484,7 +484,7 @@ $uuid
 END
 
 #nginx config
-
+sed -i s/xxxxxxxxx/$PUBLIC_IP/g /etc/squid/squid.conf
 
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload

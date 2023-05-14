@@ -13,7 +13,6 @@ Description=SSL/SSH multiplexer
 After=network.target
 
 [Service]
-EnvironmentFile=/etc/conf.d/sslh
 ExecStart=/usr/sbin/sslh --foreground --user sslh --listen 0.0.0.0:80 --ssh 127.0.0.1:23 --tls 127.0.0.1:955 --openvpn 127.0.0.1:111 --http 127.0.0.1:2082 --pidfile /var/run/sslh/sslh80.pid
 KillMode=process
 

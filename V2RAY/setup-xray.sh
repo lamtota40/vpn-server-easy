@@ -484,7 +484,8 @@ $uuid
 END
 
 #nginx config
-sed -i s/xxxxxxxxx/$domain/g /etc/squid/squid.conf
+wget -O /etc/nginx/conf.d/xray.conf https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/V2RAY/nginx-xray.conf
+sed -i s/xxxxxxxxx/$domain/g /etc/nginx/conf.d/xray.conf
 
 echo -e "$yell[SERVICE]$NC Restart All service"
 systemctl daemon-reload

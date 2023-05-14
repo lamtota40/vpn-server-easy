@@ -4,7 +4,6 @@
 #SSLH support TCP UDP & Probes for HTTP, TLS/SSL (including SNI and ALPN), SSH, OpenVPN, tinc, XMPP, SOCKS5,
 
 DEBIAN_FRONTEND=noninteractive apt-get install sslh --no-install-recommends -y
-#port 443,5222,5228
 wget -O /etc/default/sslh "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/sslh/sslh.conf"
 service sslh restart
 
@@ -22,8 +21,9 @@ KillMode=process
 WantedBy=multi-user.target
 EOF
 
-systemctl enable sslh80 &>/dev/null
-systemctl start sslh80 &>/dev/null
+systemctl daemon-reload
+systemctl enable sslh80
+systemctl start sslh80
 
 rm -rf setup-sslh.sh
 

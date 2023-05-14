@@ -2,7 +2,6 @@
 # Created by HideSSH
 #auto script SlowDNS Eror
 
-
 pkill sldns-server
 pkill sldns-client
 

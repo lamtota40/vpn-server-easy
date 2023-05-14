@@ -10,9 +10,6 @@ systemctl daemon-reload
 systemctl stop client-sldns
 systemctl stop server-sldns
 
-systemctl enable client-sldns
-systemctl enable server-sldns
-
 systemctl start client-sldns
 systemctl start server-sldns
 

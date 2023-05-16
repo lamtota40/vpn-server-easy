@@ -43,7 +43,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/etc/slowdns/sldns-client -udp 8.8.8.8:53 --pubkey-file /etc/slowdns/server.pub $nameserver 127.0.0.1:2222
+ExecStart=/etc/slowdns/sldns-client -udp 8.8.8.8:53 --pubkey-file /etc/slowdns/server.pub $nameserver 127.0.0.1:88
 Restart=on-failure
 
 [Install]
@@ -100,9 +100,9 @@ echo "0 18 * * * root /root/myvpn/cron/slowdns-eror" >> /etc/cron.d/autoreboot
 service cron reload
 service cron restart
 
-sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
-echo "Port 2222" >> /etc/ssh/sshd_config
-sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
-service sshd restart
+#sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
+#echo "Port 2222" >> /etc/ssh/sshd_config
+#sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding yes/g' /etc/ssh/sshd_config
+#service sshd restart
 
 rm -rf setup-slowdns.sh

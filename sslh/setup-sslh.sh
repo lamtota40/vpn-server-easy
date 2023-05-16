@@ -30,7 +30,7 @@ Description=SSL/SSH multiplexer
 After=network.target
 
 [Service]
-ExecStart=/usr/sbin/sslh --foreground --user sslh --listen 0.0.0.0:77 --ssh 127.0.0.1:22 --tls 127.0.0.1:944 --openvpn 127.0.0.1:111 --http 127.0.0.1:8043 --pidfile /var/run/sslh/sslh77.pid
+ExecStart=/usr/sbin/sslh --foreground --user sslh --listen 0.0.0.0:77 --ssh 127.0.0.1:22 --tls 127.0.0.1:944 --openvpn 127.0.0.1:111 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh77.pid
 KillMode=process
 
 [Install]

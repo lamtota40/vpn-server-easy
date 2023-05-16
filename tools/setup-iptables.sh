@@ -5,7 +5,6 @@ ETH=$(ip -o $ETH -4 route show to default | awk '{print $5}');
 #UDPcustom
 iptables -t nat -D PREROUTING -i eth0 -p udp -m udp --dport 1:65535 -j DNAT --to-destination :36712
 iptables -t nat -A PREROUTING -i eth0 -p udp -m udp --dport 54:65535 -j DNAT --to-destination :36712
-iptables -A INPUT -p udp -m udp --dport 36712 -j ACCEPT
 
 #SlowDNS
 iptables -A INPUT -i eth0 -p udp –dport 53 -j ACCEPT

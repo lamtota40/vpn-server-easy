@@ -114,14 +114,14 @@ cp /etc/openvpn/client-udp-2200.ovpn /root/myvpn/public_html/udp2200.ovpn
 cp /etc/openvpn/client-tcp-ssl.ovpn /root/myvpn/public_html/tcpssl.ovpn
 
 #firewall untuk memperbolehkan akses UDP dan akses jalur TCP
-iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ANU -j MASQUERADE
-iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ANU -j MASQUERADE
-iptables-save > /etc/iptables.up.rules
-chmod +x /etc/iptables.up.rules
+#iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ANU -j MASQUERADE
+#iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ANU -j MASQUERADE
+#iptables-save > /etc/iptables.up.rules
+#chmod +x /etc/iptables.up.rules
 
-iptables-restore -t < /etc/iptables.up.rules
-netfilter-persistent save
-netfilter-persistent reload
+#iptables-restore -t < /etc/iptables.up.rules
+#netfilter-persistent save
+#netfilter-persistent reload
 
 # Restart service openvpn
 systemctl enable openvpn

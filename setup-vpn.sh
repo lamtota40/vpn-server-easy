@@ -105,7 +105,7 @@ wget -O setup-ohp.sh $site/OHP/setup-ohp.sh && bash setup-ohp.sh
 #apt install iptables-persistent -y
 
 #install UDP custom
-wget -O setup-UDPcustom.sh $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPcustom.sh
+#wget -O setup-UDPcustom.sh $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPcustom.sh
 
 #install slowdns [require OpenSSH]
 wget -O setup-slowdns.sh $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh

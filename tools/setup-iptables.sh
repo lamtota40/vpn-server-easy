@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #SlowDNS
-iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2222 -j ACCEPT
 iptables -t nat -I PREROUTING -i eth0 -p udp --dport 53 -j REDIRECT --to-ports 5300
+iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 
 #OpenVPN
 iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $CMD -j MASQUERADE

@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #SlowDNS
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2222 -j ACCEPT
+iptables -A INPUT -i eth0 -p tcp --dport 2222 -j ACCEPT
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2222 -j REDIRECT --to-port 88
 iptables -t nat -I PREROUTING -i eth0 -p udp --dport 53 -j REDIRECT --to-ports 5300
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 
@@ -16,4 +17,4 @@ netfilter-persistent save >/dev/null 2>&1
 netfilter-persistent reload >/dev/null 2>&1
 systemctl enable iptables >/dev/null 2>&1 
 systemctl start iptables >/dev/null 2>&1 
-systemctl restart iptables >/dev/null 2>&1 
+systemctl restart iptables >/dev/null 2>&1

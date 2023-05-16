@@ -5,7 +5,6 @@ export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
 MYIP=$(wget -qO- icanhazip.com);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
-ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 
 # Install OpenVPN dan Easy-RSA
 apt install netfilter-persistent openvpn easy-rsa unzip -y
@@ -114,6 +113,7 @@ cp /etc/openvpn/client-udp-2200.ovpn /root/myvpn/public_html/udp2200.ovpn
 cp /etc/openvpn/client-tcp-ssl.ovpn /root/myvpn/public_html/tcpssl.ovpn
 
 #firewall untuk memperbolehkan akses UDP dan akses jalur TCP
+#ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');
 #iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ANU -j MASQUERADE
 #iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ANU -j MASQUERADE
 #iptables-save > /etc/iptables.up.rules

@@ -11,8 +11,8 @@ apt install cron iptables netfilter-persistent -y
 #netfilter-persistent reload
 
 cd
-mkdir /root/myvpn
-echo "ns.sit.my.id" > /root/myvpn/nsdomain
+#mkdir /root/myvpn
+#echo "ns.sit.my.id" > /root/myvpn/nsdomain
 
 nameserver=$(cat /root/myvpn/nsdomain)
 
@@ -64,7 +64,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/etc/slowdns/sldns-server -udp :5300 -privkey-file /etc/slowdns/server.key $nameserver 127.0.0.1:22
+ExecStart=/etc/slowdns/sldns-server -udp :5300 -privkey-file /etc/slowdns/server.key $nameserver 127.0.0.1:80
 Restart=on-failure
 
 [Install]

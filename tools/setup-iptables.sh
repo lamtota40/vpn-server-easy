@@ -2,7 +2,7 @@
 
 #SlowDNS
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 88 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2222 -j ACCEPT
 iptables -t nat -I PREROUTING -i eth0 -p udp --dport 53 -j REDIRECT --to-ports 5300
 
 #OpenVPN

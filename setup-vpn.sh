@@ -139,9 +139,10 @@ echo "0 0 1 * * root /root/myvpn/cron/autoreboot" > /etc/cron.d/autoreboot
 service cron reload
 service cron restart
 
-clear
 #cek status all service
-wget -O status.sh $site/tools/status.sh && bash status.sh
+wget -O status.sh $site/tools/status.sh
+clear
+bash status.sh
 
 echo "OK…finish installation..you can enter command 'menu'"
 history -c

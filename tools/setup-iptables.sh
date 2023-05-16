@@ -6,6 +6,7 @@ iptables -t nat -I PREROUTING -i eth0 -p udp --dport 53 -j REDIRECT --to-ports 5
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 
 #OpenVPN
+CMD=$(ip -o $CMD -4 route show to default | awk '{print $5}');
 iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $CMD -j MASQUERADE
 iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $CMD -j MASQUERADE
 

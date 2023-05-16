@@ -50,11 +50,11 @@ ln -fs /usr/share/zoneinfo/$timezone /etc/localtime
 ##systemctl start rc-local.service
 
 # disable ipv6
-##echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
-##sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
+echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
+sed -i '$ i\echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6' /etc/rc.local
 
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 
-sysctl -w net.ipv6.conf.default.disable_ipv6=1
+#sysctl -w net.ipv6.conf.all.disable_ipv6=1 
+#sysctl -w net.ipv6.conf.default.disable_ipv6=1
 
 #add user for admin default
 grep "/bin/false" /etc/shells || echo "/bin/false" >> /etc/shells

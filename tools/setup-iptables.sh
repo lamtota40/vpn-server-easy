@@ -1,15 +1,14 @@
 #!/bin/bash
 
+ETH=$(ip -o $ETH -4 route show to default | awk '{print $5}');
+
 #SlowDNS
-iptables -A INPUT -i eth0 -p tcp --dport 2222 -j ACCEPT
-iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2222 -j REDIRECT --to-port 88
 iptables -t nat -I PREROUTING -i eth0 -p udp --dport 53 -j REDIRECT --to-ports 5300
 iptables -I INPUT -p udp --dport 5300 -j ACCEPT
 
 #OpenVPN
-CMD=$(ip -o $CMD -4 route show to default | awk '{print $5}');
-iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $CMD -j MASQUERADE
-iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $CMD -j MASQUERADE
+iptables -t nat -I POSTROUTING -s 10.6.0.0/24 -o $ETH -j MASQUERADE
+iptables -t nat -I POSTROUTING -s 10.7.0.0/24 -o $ETH -j MASQUERADE
 
 iptables-save >/etc/iptables/rules.v4 >/dev/null 2>&1
 iptables-save >/etc/iptables.up.rules >/dev/null 2>&1

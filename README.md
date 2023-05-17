@@ -86,7 +86,7 @@ TCP XTLS+vmess: <br>
 TCP XTLS+vless: <br>
 
 # TOOLS Android
-All in one Support: SSH,Openvpn,SlowDNS,phisipon,V2Ray,TLS/Non TLS<br>
+All in one Support: SSH,Openvpn,SlowDNS,UDPcustom,phisipon,V2Ray,TLS/Non TLS<br>
 https://play.google.com/store/apps/details?id=xyz.easypro.httpcustom
 <br><br>v2ray vpn<br>
 https://play.google.com/store/apps/details?id=com.v2ray.ang

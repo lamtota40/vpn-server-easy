@@ -79,9 +79,6 @@ wget -O setup-openssh.sh $site/SSH/openssh/setup-openssh.sh && bash setup-openss
 #install dropbear (SSH)
 wget -O setup-dropbear.sh $site/SSH/dropbear/setup-dropbear.sh && bash setup-dropbear.sh
 
-#install nginx (website)
-#wget -O setup-nginx.sh $site/nginx/setup-nginx.sh && bash setup-nginx.sh
-
 #install stunnel4/TLS
 wget -O setup-stunnel4.sh $site/stunnel4/setup-stunnel4.sh && bash setup-stunnel4.sh
 
@@ -116,6 +113,9 @@ wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvp
 
 #install vnstat(for monitoring bandwith)
 wget -O setup-vnstat.sh $site/tools/vnstat/setup-vnstat.sh && bash setup-vnstat.sh
+
+#install nginx (website)
+wget -O setup-nginx.sh $site/nginx/setup-nginx.sh && bash setup-nginx.sh
 
 #Setting IPTABLES
 wget -O setup-iptables.sh $site/tools/setup-iptables.sh && bash setup-iptables.sh

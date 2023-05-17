@@ -108,9 +108,9 @@ cat /etc/openvpn/server/ca.crt >> /etc/openvpn/client-tcp-ssl.ovpn
 echo '</ca>' >> /etc/openvpn/client-tcp-ssl.ovpn
 
 # Copy config OpenVPN to web
-cp /etc/openvpn/client-tcp-1194.ovpn /root/myvpn/public_html/tcp1194.ovpn
-cp /etc/openvpn/client-udp-2200.ovpn /root/myvpn/public_html/udp2200.ovpn
-cp /etc/openvpn/client-tcp-ssl.ovpn /root/myvpn/public_html/tcpssl.ovpn
+cp /etc/openvpn/client-tcp-1194.ovpn /var/www/html/tcp1194.ovpn
+cp /etc/openvpn/client-udp-2200.ovpn /var/www/html/udp2200.ovpn
+cp /etc/openvpn/client-tcp-ssl.ovpn /var/www/html/tcpssl.ovpn
 
 #firewall untuk memperbolehkan akses UDP dan akses jalur TCP
 #ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');

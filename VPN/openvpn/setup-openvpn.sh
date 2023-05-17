@@ -74,7 +74,7 @@ cat > /etc/openvpn/client-tcp-ssl.ovpn <<-END
 client
 dev tun
 proto tcp
-remote xxxxxxxxx 443
+remote xxxxxxxxx 995
 resolv-retry infinite
 route-method exe
 nobind
@@ -107,9 +107,9 @@ cat /etc/openvpn/server/ca.crt >> /etc/openvpn/client-tcp-ssl.ovpn
 echo '</ca>' >> /etc/openvpn/client-tcp-ssl.ovpn
 
 # Copy config OpenVPN to web
-cp /etc/openvpn/client-tcp-1194.ovpn /var/www/html/tcp1194.ovpn
-cp /etc/openvpn/client-udp-2200.ovpn /var/www/html/udp2200.ovpn
-cp /etc/openvpn/client-tcp-ssl.ovpn /var/www/html/tcpssl443.ovpn
+cp /etc/openvpn/client-tcp-1194.ovpn /var/www/html/tcp-1194.ovpn
+cp /etc/openvpn/client-tcp-ssl.ovpn /var/www/html/tcpssl-995.ovpn
+cp /etc/openvpn/client-udp-2200.ovpn /var/www/html/udp-2200.ovpn
 
 #firewall untuk memperbolehkan akses UDP dan akses jalur TCP
 #ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');

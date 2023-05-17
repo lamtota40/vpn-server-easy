@@ -107,15 +107,15 @@ wget -O setup-UDPcustom.sh $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPc
 #install slowdns [require OpenSSH]
 wget -O setup-slowdns.sh $site/slowdns/setup-slowdns.sh && bash setup-slowdns.sh
 
-#install OpenVPN
-wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
-#wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
-
 #install vnstat(for monitoring bandwith)
 wget -O setup-vnstat.sh $site/tools/vnstat/setup-vnstat.sh && bash setup-vnstat.sh
 
 #install nginx (website)
 wget -O setup-nginx.sh $site/nginx/setup-nginx.sh && bash setup-nginx.sh
+
+#install OpenVPN
+wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+#wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #Setting IPTABLES
 wget -O setup-iptables.sh $site/tools/setup-iptables.sh && bash setup-iptables.sh

@@ -3,9 +3,6 @@
 cd
 mkdir -p /etc/udpc
 
-# change to time GMT+7
-#ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
-
 # download udp-custom
 wget -O /etc/udpc/udp-custom https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/udp-custom
 chmod +x /etc/udpc/udp-custom
@@ -14,7 +11,9 @@ chmod +x /etc/udpc/udp-custom
 wget -O /etc/udpc/config.json https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/UDPcustom/config.json
 chmod 644 /etc/udpc/config.json
 
-if [ -z "$1" ]; then
+#port not listen UDPcustom for slowdns&openvpn
+notlisten="1,53,2200,5300"
+
 cat <<EOF > /etc/systemd/system/udpcustom.service
 [Unit]
 Description=UDP Custom by ePro Dev. Team
@@ -22,7 +21,7 @@ Description=UDP Custom by ePro Dev. Team
 [Service]
 User=root
 Type=simple
-ExecStart=/etc/udpc/udp-custom server
+ExecStart=/etc/udpc/udp-custom server -exclude $notlisten
 WorkingDirectory=/etc/udpc
 Restart=always
 RestartSec=2s
@@ -30,23 +29,6 @@ RestartSec=2s
 [Install]
 WantedBy=default.target
 EOF
-else
-cat <<EOF > /etc/systemd/system/udpcustom.service
-[Unit]
-Description=UDP Custom by ePro Dev. Team
-
-[Service]
-User=root
-Type=simple
-ExecStart=/etc/udpc/udp-custom server -exclude $1
-WorkingDirectory=/etc/udpcustom
-Restart=always
-RestartSec=2s
-
-[Install]
-WantedBy=default.target
-EOF
-fi
 
 echo start service udpcustom
 systemctl start udpcustom &>/dev/null

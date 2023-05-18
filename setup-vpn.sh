@@ -115,7 +115,7 @@ wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvp
 #wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #install UDP custom
-wget -O setup-UDPcustom2.sh $site/UDPcustom/setup-UDPcustom2.sh && bash setup-UDPcustom2.sh
+wget -O setup-UDPcustom.sh $site/UDPcustom/setup-UDPcustom.sh && bash setup-UDPcustom.sh
 
 #Setting IPTABLES
 wget -O setup-iptables.sh $site/tools/setup-iptables.sh && bash setup-iptables.sh

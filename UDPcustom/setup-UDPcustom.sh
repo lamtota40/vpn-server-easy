@@ -12,7 +12,7 @@ wget -O /etc/udpc/config.json https://raw.githubusercontent.com/lamtota40/vpn-se
 chmod 644 /etc/udpc/config.json
 
 #port not listen UDPcustom for slowdns&openvpn
-notlisten="1,53,2200,5300"
+notlisten="53,2200,5300"
 
 cat <<EOF > /etc/systemd/system/udpcustom.service
 [Unit]

@@ -67,7 +67,7 @@ comp-lzo
 verb 3
 END
 
-sed -i $MYIP2 /etc/openvpn/client-udp-2200.ovpn;
+sed -i $MYIP2 /etc/openvpn/client-udp-50.ovpn;
 
 # Buat config client SSL
 cat > /etc/openvpn/client-tcp-ssl.ovpn <<-END
@@ -109,7 +109,7 @@ echo '</ca>' >> /etc/openvpn/client-tcp-ssl.ovpn
 # Copy config OpenVPN to web
 cp /etc/openvpn/client-tcp-1194.ovpn /var/www/html/tcp-1194.ovpn
 cp /etc/openvpn/client-tcp-ssl.ovpn /var/www/html/tcpssl-995.ovpn
-cp /etc/openvpn/client-udp-2200.ovpn /var/www/html/udp-2200.ovpn
+cp /etc/openvpn/client-udp-50.ovpn /var/www/html/udp-50.ovpn
 
 #firewall untuk memperbolehkan akses UDP dan akses jalur TCP
 #ANU=$(ip -o $ANU -4 route show to default | awk '{print $5}');

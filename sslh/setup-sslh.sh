@@ -40,24 +40,6 @@ EOF
 systemctl daemon-reload
 systemctl enable sslh880
 systemctl start sslh880
-##########################
-cat <<EOF > /etc/systemd/system/sslh77.service
-[Unit]
-Description=SSL/SSH multiplexer
-After=network.target
-
-[Service]
-ExecStart=/usr/sbin/sslh --foreground --user sslh --listen 0.0.0.0:77 --ssh 127.0.0.1:22 --tls 127.0.0.1:944 --openvpn 127.0.0.1:1194 --http 127.0.0.1:8880 --pidfile /var/run/sslh/sslh77.pid
-KillMode=process
-
-[Install]
-WantedBy=multi-user.target
-EOF
-
-systemctl daemon-reload
-systemctl enable sslh77
-systemctl start sslh77
-#########################
-
+##################################
 
 rm -rf setup-sslh.sh

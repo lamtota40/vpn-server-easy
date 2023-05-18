@@ -25,7 +25,7 @@ sed -i 's/#AUTOSTART="all"/AUTOSTART="all"/g' /etc/default/openvpn
 
 # restart openvpn dan cek status openvpn
 systemctl enable --now openvpn-server@server-tcp-1194
-systemctl enable --now openvpn-server@server-udp-2200
+systemctl enable --now openvpn-server@server-udp-50
 /etc/init.d/openvpn restart
 /etc/init.d/openvpn status
 
@@ -51,12 +51,12 @@ END
 
 sed -i $MYIP2 /etc/openvpn/client-tcp-1194.ovpn;
 
-# Buat config client UDP 2200
-cat > /etc/openvpn/client-udp-2200.ovpn <<-END
+# Buat config client UDP 50
+cat > /etc/openvpn/client-udp-50.ovpn <<-END
 client
 dev tun
 proto udp
-remote xxxxxxxxx 2200
+remote xxxxxxxxx 50
 resolv-retry infinite
 route-method exe
 nobind
@@ -96,10 +96,10 @@ echo '<ca>' >> /etc/openvpn/client-tcp-1194.ovpn
 cat /etc/openvpn/server/ca.crt >> /etc/openvpn/client-tcp-1194.ovpn
 echo '</ca>' >> /etc/openvpn/client-tcp-1194.ovpn
 
-# masukkan certificatenya ke dalam config client UDP 2200
-echo '<ca>' >> /etc/openvpn/client-udp-2200.ovpn
-cat /etc/openvpn/server/ca.crt >> /etc/openvpn/client-udp-2200.ovpn
-echo '</ca>' >> /etc/openvpn/client-udp-2200.ovpn
+# masukkan certificatenya ke dalam config client UDP 50
+echo '<ca>' >> /etc/openvpn/client-udp-50.ovpn
+cat /etc/openvpn/server/ca.crt >> /etc/openvpn/client-udp-50.ovpn
+echo '</ca>' >> /etc/openvpn/client-udp-50.ovpn
 
 # masukkan certificatenya ke dalam config client SSL
 echo '<ca>' >> /etc/openvpn/client-tcp-ssl.ovpn
@@ -129,7 +129,7 @@ systemctl start openvpn
 
 #xip file openvpn
 #cd /root/myvpn/public_html
-#zip allconfig.zip client-tcp-1194.ovpn client-tcp-ssl.ovpn client-udp-2200.ovpn
+#zip allconfig.zip client-tcp-1194.ovpn client-tcp-ssl.ovpn client-udp-50.ovpn
 cd
 
 rm -rf setup-openvpn.sh

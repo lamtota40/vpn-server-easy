@@ -4,6 +4,8 @@ if [ ! $(which python) ]; then
    apt install python -y
 fi
 
+#instalasi Websocket (accept http port 2082 forward to port 23[dropbear])
+wget -O /usr/local/bin/ws-openvpn82 https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/websocket/ws-openvpn82.py && chmod +x /usr/local/bin/ws-openvpn82
 
 cat > /etc/systemd/system/ws-openvpn82.service <<-END
 [Unit]

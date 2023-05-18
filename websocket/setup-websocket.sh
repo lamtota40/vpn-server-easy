@@ -7,7 +7,7 @@ fi
 
 cat > /etc/systemd/system/ws-openvpn82.service <<-END
 [Unit]
-Description=HTTP SSH Over Websocket 2082 Python
+Description=Websocket Over openVPN 82 Python
 Documentation=https://github.com/lamtota40
 After=network.target nss-lookup.target
 

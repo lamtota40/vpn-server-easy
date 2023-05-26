@@ -32,3 +32,4 @@ echo "$dateis | Username $username | expired : $tgl $bulantahun removed" >> /roo
 fi
 done
 rm -f /tmp/listuser.txt
+echo "$dateis | cron execution" >> /root/myvpn/log/tes.txt

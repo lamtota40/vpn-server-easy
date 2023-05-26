@@ -136,6 +136,11 @@ wget -O /root/myvpn/cron/autoreboot $site/tools/cron/autoreboot.sh
 chmod +x /root/myvpn/cron/autoreboot
 echo "0 1 * * * root /root/myvpn/cron/autoreboot" > /etc/cron.d/autoreboot
 
+#auto reboot vps once at 00.15 clock
+wget -O /root/myvpn/cron/autoreboot $site/tools/cron/autoreboot.sh
+chmod +x /root/myvpn/cron/autoreboot
+echo "0 1 * * * root /root/myvpn/cron/autoreboot" > /etc/cron.d/autoreboot
+
 service cron reload
 service cron restart
 

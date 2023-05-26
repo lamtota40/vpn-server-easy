@@ -1,6 +1,6 @@
 #!/bin/bash
 data=( `ps aux | grep -i udpc | awk '{print $2}'`);
-echo "Checking User Dropbear logged in";
+echo "Checking User UDPcustom logged in";
 echo "(PID - Username - IP)";
 echo "-----------------------------------------";
 a=b=0

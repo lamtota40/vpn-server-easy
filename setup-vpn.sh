@@ -141,6 +141,11 @@ wget -O /root/myvpn/cron/autodelexp $site/tools/cron/autodelexp.sh
 chmod +x /root/myvpn/cron/autodelexp
 echo "0 0 15 * * root /root/myvpn/cron/autodelexp" > /etc/cron.d/autodelexp
 
+#auto clear cache RAM/Buffer/SWAP/HDDlog every 4 hours
+wget -O /root/myvpn/cron/autoclearhddram $site/tools/cron/autoclearhddram.sh
+chmod +x /root/myvpn/cron/autoclearhddram
+echo "0 0 15 * * root /root/myvpn/cron/autoclearhddram" > /etc/cron.d/autoclearhddram
+
 service cron reload
 service cron restart
 

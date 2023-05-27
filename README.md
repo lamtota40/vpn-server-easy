@@ -16,7 +16,7 @@ wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 username admin default for access OpenSSH,dropbear,Openvpn,shock5,slowdns,UDPcustom<br>
 user: <b>master</b><br>
 pass: <b>qwerty</b><br>
-Note: For security you can delete this user type comaand
+Note: For security you can delete this user type comand <br>
 `userdel -f -r master`
 
 # List Port

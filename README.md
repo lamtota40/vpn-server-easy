@@ -20,7 +20,7 @@ Note: For security you can delete this user type comand <br>
 `userdel -f -r master`
 
 # List Port
-Auto reboot every day at 00:00<br><br>
+
 <b>Mode TCP direct Non TLS:::</b><br>
 OpenSSH :22,143,8000<br>
 Dropbear :23,144,7000<br>
@@ -88,6 +88,12 @@ TCP Stunnel+vmess: <br>
 TCP Stunnel+vless: <br>
 TCP XTLS+vmess: <br>
 TCP XTLS+vless: <br>
+
+<b>Auto cron Execution:::</b>
+Auto reboot every day at 00:55<br>
+Auto delete user every day at 00:15<br>
+Auto clear cache every 4 hours<br>
+<br>
 
 # TOOLS Android
 All in one Support: SSH,Openvpn,SlowDNS,UDPcustom,phisipon,V2Ray,TLS/Non TLS<br>

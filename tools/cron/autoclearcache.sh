@@ -10,5 +10,4 @@ do
     file=$(du -bs /var/log/* | awk '$1 >= 1*(1024*1024*1024)' | awk '{print $2}' | awk 'NR==1')
     truncate -s 0 $file
 done
-#truncate -s 0 $file
 echo "$dateis | Execution Cron Clear Cache RAM/SWAP/HDDlog" >> /root/myvpn/log/logcron.txt

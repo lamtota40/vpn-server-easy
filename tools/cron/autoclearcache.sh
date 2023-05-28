@@ -6,12 +6,11 @@ swapoff -a && swapon -a
 journalctl --vacuum-size=500M
 #du -sh /var/log/*
 #truncate -s 0 /var/log/syslog
-
-s=("football" "cricket" "hockey") 
-for n in ${s[@]}; 
+#du -bs /var/log/* | awk '$1 >= 1*(1024*1024*1024)' | awk '{print $2}' | awk 'NR==1'
+count=7
+for (( i=1 ; i<=$count ; i++ )); 
 do
-    du -bs /var/log/* | awk '$1 >= 1*(1024*1024*1024)' | awk '{print $2}' | awk 'NR==1'
-    echo $n
+    echo $i
 done
 
 #truncate -s 0 $file

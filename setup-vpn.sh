@@ -136,12 +136,13 @@ echo 'fi' | sudo tee -a ~/.bashrc
 #Auto reboot vps once at 00.55 clock
 wget -O /root/myvpn/cron/autoreboot $site/tools/cron/autoreboot.sh
 chmod +x /root/myvpn/cron/autoreboot
-echo "0 0 55 * * root /root/myvpn/cron/autoreboot" > /etc/cron.d/autoreboot
+echo "15 0 * * * root /root/myvpn/cron/autoreboot" > /etc/cron.d/autoreboot
 
 #auto delete user expired once at 00.15 clock
 wget -O /root/myvpn/cron/autodelexp $site/tools/cron/autodelexp.sh
 chmod +x /root/myvpn/cron/autodelexp
-echo "0 0 15 * * root /root/myvpn/cron/autodelexp" > /etc/cron.d/autodelexp
+echo "15 0 * * * root /root/myvpn/cron/autodelexp" > /etc/cron.d/autodelexp
+
 
 #auto clear cache RAM/Buffer/SWAP/HDDlog every 4 hours
 wget -O /root/myvpn/cron/autoclearcache $site/tools/cron/autoclearcache.sh

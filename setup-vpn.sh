@@ -132,10 +132,10 @@ echo 'fi' | sudo tee -a ~/.bashrc
 
 #Cron (Auto Run Task)
 #For generator cron https://crontab.cronhub.io/
-#auto reboot vps once at 00.30 clock
+#auto reboot vps once at 00.55 clock
 wget -O /root/myvpn/cron/autoreboot $site/tools/cron/autoreboot.sh
 chmod +x /root/myvpn/cron/autoreboot
-echo "0 0 30 * * root /root/myvpn/cron/autoreboot" > /etc/cron.d/autoreboot
+echo "0 0 55 * * root /root/myvpn/cron/autoreboot" > /etc/cron.d/autoreboot
 
 #auto delete user expired once at 00.15 clock
 wget -O /root/myvpn/cron/autodelexp $site/tools/cron/autodelexp.sh

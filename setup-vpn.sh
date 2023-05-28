@@ -131,6 +131,7 @@ echo '/usr/sbin/menu' | sudo tee -a ~/.bashrc
 echo 'fi' | sudo tee -a ~/.bashrc
 
 #Cron (Auto Run Task)
+#For generator cron https://crontab.cronhub.io/
 #auto reboot vps once at 00.30 clock
 wget -O /root/myvpn/cron/autoreboot $site/tools/cron/autoreboot.sh
 chmod +x /root/myvpn/cron/autoreboot

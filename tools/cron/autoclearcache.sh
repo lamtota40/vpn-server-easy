@@ -6,8 +6,10 @@ swapoff -a && swapon -a
 #Delete file log for more 1GB
 count=$(du -bs /var/log/* | awk '$1 >= 1*(1024*1024*1024)' | wc -l)
 file=( $(du -bs /var/log/* | awk '$1 >= 1*(1024*1024*1024)' | awk '{print $2}') )
+x=0
 for (( i=1 ; i<=$count ; i++ )); 
 do
-     truncate -s 0 ${file[$i]}
+     truncate -s 0 ${file[$x]}
+     x++
 done
 echo "$dateis | Execution Cron Clear Cache RAM/SWAP/HDDlog" >> /root/myvpn/log/logcron.txt

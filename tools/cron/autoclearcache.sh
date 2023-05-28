@@ -6,6 +6,13 @@ swapoff -a && swapon -a
 journalctl --vacuum-size=500M
 #du -sh /var/log/*
 #truncate -s 0 /var/log/syslog
-du -bs /var/log/* | awk '$1 >= 1*(1024*1024*1024)' | awk '{print $2}' | awk 'NR==1'
+
+s=("football" "cricket" "hockey") 
+for n in ${s[@]}; 
+do
+    du -bs /var/log/* | awk '$1 >= 1*(1024*1024*1024)' | awk '{print $2}' | awk 'NR==1'
+    echo $n
+done
+
 #truncate -s 0 $file
 echo "$dateis | Execution Cron Clear Cache RAM/SWAP/HDDlog" >> /root/myvpn/log/logcron.txt

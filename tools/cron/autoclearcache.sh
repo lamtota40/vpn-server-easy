@@ -10,6 +10,6 @@ x=0
 for (( i=1 ; i<=$count ; i++ )); 
 do
      truncate -s 0 ${file[$x]}
-     x++
+     x=$(($x + 1))
 done
 echo "$dateis | Execution Cron Clear Cache RAM/SWAP/HDDlog" >> /root/myvpn/log/logcron.txt

@@ -3,7 +3,6 @@
 dateis=$(date +"%m-%d-%Y/%R")
 sync; echo 1 > /proc/sys/vm/drop_caches
 swapoff -a && swapon -a
-journalctl --vacuum-size=500M
 #Delete file log for more 1GB
 count=$(du -bs /var/log/* | awk '$1 >= 1*(1024*1024*1024)' | wc -l)
 for (( i=1 ; i<=$count ; i++ )); 

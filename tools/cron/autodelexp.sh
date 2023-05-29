@@ -32,3 +32,4 @@ echo "$dateis | Username $username | expired : $tgl $bulantahun removed" >> /roo
 fi
 done
 rm -f /tmp/listuser.txt
+echo "$dateis | Execution Auto Delete Account EXP" >> /root/myvpn/log/logcron.txt

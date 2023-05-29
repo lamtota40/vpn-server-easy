@@ -9,7 +9,7 @@ wget -O /usr/local/bin/ws-openvpn82 https://raw.githubusercontent.com/lamtota40/
 
 cat > /etc/systemd/system/ws-openvpn82.service <<-END
 [Unit]
-Description=Websocket Over openVPN 82 Python
+Description=HTTP Websocket Over OpenVPN 82 Python
 Documentation=https://github.com/lamtota40
 After=network.target nss-lookup.target
 
@@ -32,7 +32,7 @@ wget -O /usr/local/bin/ws-http2082 https://raw.githubusercontent.com/lamtota40/v
 
 cat > /etc/systemd/system/ws-http2082.service <<-END
 [Unit]
-Description=HTTP SSH Over Websocket 2082 Python
+Description=HTTP Websocket Over SSH 2082 Python
 Documentation=https://github.com/lamtota40
 After=network.target nss-lookup.target
 
@@ -55,7 +55,7 @@ wget -O /usr/local/bin/ws-http8880 https://raw.githubusercontent.com/lamtota40/v
 
 cat > /etc/systemd/system/ws-http8880.service <<-END
 [Unit]
-Description=HTTP SSH Over Websocket 8880 Python
+Description=HTTP Websocket Over SSH 8880 Python
 Documentation=https://github.com/lamtota40
 After=network.target nss-lookup.target
 

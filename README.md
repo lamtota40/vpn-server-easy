@@ -89,7 +89,7 @@ TCP Stunnel+vless: <br>
 TCP XTLS+vmess: <br>
 TCP XTLS+vless: <br>
 
-<b>Auto cron Execution:::</b>
+<b>Auto cron Execution:::</b><br>
 Auto reboot every day at 00:55<br>
 Auto delete user every day at 00:15<br>
 Auto clear cache every 4 hours<br>

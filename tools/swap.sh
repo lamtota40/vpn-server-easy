@@ -1,1 +1,1 @@
-cat /etc/fstab | grep "swap"
+cat tab | grep "swap" | sed 's/^/#/'

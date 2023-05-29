@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dateis=$(date +"%m-%d-%Y/%R")
+dateis=$(date +"%d-%m-%Y/%R")
 truncate -s 0 /var/log/auth.log
 /root/myvpn/cron/autoclearcache
 journalctl --vacuum-size=100M

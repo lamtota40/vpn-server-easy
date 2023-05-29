@@ -1,1 +1,1 @@
-cat tab | grep "swap" | sed 's/^/#/'
+sed -i '/swap/{s/^/#/}' tab

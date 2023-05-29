@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dateis=$(date +"%m-%d-%Y/%R")
+dateis=$(date +"%d-%m-%Y/%R")
 cat /etc/shadow | cut -d: -f1,8 | sed /:$/d > /tmp/listuser.txt
 totalaccounts=`cat /tmp/listuser.txt | wc -l`
  for((i=1; i<=$totalaccounts; i++ ))

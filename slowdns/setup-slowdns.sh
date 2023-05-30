@@ -64,7 +64,7 @@ User=root
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/etc/slowdns/sldns-server -udp :5300 -privkey-file /etc/slowdns/server.key $nameserver 127.0.0.1:80
+ExecStart=/etc/slowdns/sldns-server -udp :5300 -privkey-file /etc/slowdns/server.key $nameserver 127.0.0.1:443
 Restart=on-failure
 
 [Install]
@@ -93,7 +93,7 @@ systemctl restart client-sldns
 systemctl restart server-sldns
 
 #Auto start slowdns if error
-wget -O /root/myvpn/cron/slowdns-eror $site/slowdns/slowdns-error
+wget -O /root/myvpn/cron/slowdns-eror https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/slowdns/slowdns-error
 chmod +x /root/myvpn/cron/slowdns-eror
 echo "0 4 * * * root /root/myvpn/cron/slowdns-eror" >> /etc/cron.d/autoreboot
 echo "0 18 * * * root /root/myvpn/cron/slowdns-eror" >> /etc/cron.d/autoreboot

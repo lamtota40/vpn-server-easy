@@ -68,7 +68,7 @@ usermod -aG sudo $Login
 
 cd
 #ADD Extra Ram Swap 2GB
-#wget -O setup-ramswap.sh $site/tools/setup-ramswap.sh && bash setup-ramswap.sh
+wget -O setup-ramswap.sh $site/tools/setup-ramswap.sh && bash setup-ramswap.sh
 
 #Banner welcome SSH
 wget -O /etc/banner $site/tools/other/banner

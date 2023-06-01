@@ -24,7 +24,7 @@ else
 usermod -L $username
 killall -u $username
 userdel -f $username
-echo "$dateis | Removed Username $username | expired : $tgl $bulantahun" >> /root/myvpn/log/logdelexp.txt
+echo "$dateis | Removed Username $username | expired : $bulantahun" >> /root/myvpn/log/logdelexp.txt
 fi
 done
 rm -f /tmp/listuser.txt

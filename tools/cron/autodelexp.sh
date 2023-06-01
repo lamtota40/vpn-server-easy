@@ -15,10 +15,6 @@ totalaccounts=`cat /tmp/listuser.txt | wc -l`
       do
       tgl="0"$tgl
     done
-    while [ ${#username} -lt 15 ]
-       do
-       username=$username" " 
-    done
 bulantahun=`echo $tglexp |awk -F" " '{print $2,$3,$4}'`
 todaystime=`date +%s`
 if [ $userexpireinseconds -ge $todaystime ] ;

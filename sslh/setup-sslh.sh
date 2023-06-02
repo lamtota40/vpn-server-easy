@@ -19,10 +19,6 @@ KillMode=process
 [Install]
 WantedBy=multi-user.target
 EOF
-
-systemctl daemon-reload
-systemctl enable sslh443
-systemctl start sslh443
 ##########################
 cat <<EOF > /etc/systemd/system/sslh880.service
 [Unit]
@@ -38,8 +34,17 @@ WantedBy=multi-user.target
 EOF
 
 systemctl daemon-reload
+systemctl enable sslh
+systemctl start sslh
+systemctl restart sslh
+
+systemctl enable sslh443
+systemctl start sslh443
+systemctl restart sslh443
+
 systemctl enable sslh880
 systemctl start sslh880
+systemctl restart sslh880
 ##################################
 
 rm -rf setup-sslh.sh

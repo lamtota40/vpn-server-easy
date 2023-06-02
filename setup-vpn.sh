@@ -33,6 +33,9 @@ cekip=$(curl -s "http://ipinfo.io")
 timezone=$(jq -r '.timezone' <<< "$cekip")
 ln -fs /usr/share/zoneinfo/$timezone /etc/localtime
 
+#disable syslog
+#/etc/rsyslog.d/50-default.conf
+
 # nano /etc/rc.local
 ##cat > /etc/rc.local <<-END
 #!/bin/sh -e

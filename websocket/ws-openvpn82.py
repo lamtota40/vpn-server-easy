@@ -8,7 +8,7 @@ IP = '0.0.0.0'
 try:
    PORT = int(sys.argv[1])
 except:
-   PORT = 2082
+   PORT = 82
 PASS = ''
 BUFLEN = 8196 * 8
 TIMEOUT = 60

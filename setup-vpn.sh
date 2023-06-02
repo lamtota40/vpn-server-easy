@@ -34,8 +34,8 @@ timezone=$(jq -r '.timezone' <<< "$cekip")
 ln -fs /usr/share/zoneinfo/$timezone /etc/localtime
 
 #disable syslog
-#
 sed -i '/\/var\/log\/syslog/{s/^/#/}' /etc/rsyslog.d/50-default.conf
+service rsyslog restart
 
 # nano /etc/rc.local
 ##cat > /etc/rc.local <<-END

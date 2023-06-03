@@ -21,7 +21,7 @@ echo $domain > /root/myvpn/nsdomain
 
 #dependency
 #apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
-apt install gcc make iptables python jq cron curl openssl net-tools unzip rsyslog -y
+apt install gcc make parted iptables python jq cron curl openssl net-tools unzip rsyslog -y
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 

@@ -16,7 +16,7 @@ if [ $? -eq 0 ]; then
 	echo "User $Login exists Please create other User"
 	read -p "Please [Enter] to Continue...."
 	/root/myvpn/addusers
-	
+        exit	
 fi
 
 read -p "input password     : " Pass

@@ -19,7 +19,7 @@ cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json")
 swapinfo=$(swapon --bytes)
 
 echo "============= Time on server ============="
-echo "Time =" `date "+%H:%M:%S"` " | "`date "+%d/%m/%y"
+echo "Time =" `date "+%H:%M:%S"` " | "`date "+%d/%m/%y"`
 echo "Time Zone = $(timedatectl | grep -oP "(?<=Time zone:).*")"
 echo "Uptime =" `uptime -p`
 
@@ -37,7 +37,7 @@ echo "OS = $os_name $os_version"
 echo "Frimware = $([ -d /sys/firmware/efi ] && echo UEFI || echo BIOS)"
 echo "Number of core = $core"
 echo "CPU frequency = $freq MHz"
-echo "Model name = $(lscpu | grep -oP "(?<=Model name:).*" | sed 's/ *$//g')"
+echo "Model name = $(lscpu | grep -oP "(?<=Model name:).*" | sed 's/^[ \t]*//;s/[ \t]*$//')"
 echo "Kernel = $(hostnamectl | grep -oP "(?<=Kernel:).*")"
 echo "RAM Free = $(awk '{print $4}' <<< "$raminfo") (${ram_free_p%.*} %) | Usage = $(awk '{print $3}' <<< "$raminfo") | Total = $(awk '{print $2}' <<< "$raminfo")"
 echo "SWAP Free = $(awk 'FNR == 2 {print$3-$4}' <<< "$swapinfo" | numfmt --to=iec) (${ram_free_p%.*} %) | Usage = $(awk 'FNR == 2 {print$4}' <<< "$swapinfo" | numfmt --to=iec) | Total = $(awk 'FNR == 2 {print$3}' <<< "$swapinfo" | numfmt --to=iec)"

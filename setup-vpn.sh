@@ -154,6 +154,15 @@ echo "0 */4 * * * root /root/myvpn/cron/autoclearcache" > /etc/cron.d/autoclearc
 service cron reload
 service cron restart
 
+#setup lolcat for colouring text
+cd
+apt install ruby -y
+apt install lolcat -y
+wget -O lolcat.zip https://github.com/busyloop/lolcat/archive/master.zip
+unzip lolcat.zip
+cd lolcat-master/bin
+gem install lolcat
+
 #cek status all service
 wget -O status.sh $site/tools/status.sh
 clear

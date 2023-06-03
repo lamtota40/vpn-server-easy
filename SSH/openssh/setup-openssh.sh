@@ -11,8 +11,9 @@ echo "Port 143" >> /etc/ssh/sshd_config
 echo "Port 8000" >> /etc/ssh/sshd_config
 sed -i 's%#Banner.*%Banner /etc/banner%' /etc/ssh/sshd_config
 sed -i 's/PasswordAuthentication .*/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication yes/g' /etc/ssh/sshd_config
+sed -i 's/#PubkeyAuthentication .*/PubkeyAuthentication no/g' /etc/ssh/sshd_config
 sed -i 's/#PermitEmptyPasswords .*/PermitEmptyPasswords no/g' /etc/ssh/sshd_config
+sed -i 's/#PermitRootLogin .*/PermitRootLogin yes/g' /etc/ssh/sshd_config
 
 #echo "Port 2222" >> /etc/ssh/sshd_config
 #echo "Port 2269" >> /etc/ssh/sshd_config

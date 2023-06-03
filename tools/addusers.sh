@@ -13,9 +13,9 @@ done
 /bin/egrep  -i "^${Login}:" /etc/passwd
 if [ $? -eq 0 ]; then
 	echo "User $Login exists Please create other User"
-	#read -p "Please Enter to Continue...."
-	#/root/myvpn/addusers
 	exit 1
+	read -p "Please [Enter] to Continue...."
+	/root/myvpn/addusers
 fi
 
 read -p "input password     : " Pass

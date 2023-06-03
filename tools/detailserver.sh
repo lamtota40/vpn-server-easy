@@ -19,7 +19,7 @@ cekip=$(curl -s "https://get.geojs.io/v1/ip/geo.json")
 swapinfo=$(swapon --bytes)
 
 echo "============= Time on server ============="
-echo "Time =" `date "+%H:%M:%S"` " | "`date "+%d/%m/%y"`
+echo "Time =" `date "+%H:%M"` " | "`date "+%d/%m/%y"`
 echo "Time Zone = $(timedatectl | grep -oP "(?<=Time zone:).*")"
 echo "Uptime =" `uptime -p`
 

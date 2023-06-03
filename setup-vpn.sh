@@ -161,6 +161,7 @@ wget -O lolcat.zip https://github.com/busyloop/lolcat/archive/master.zip
 unzip lolcat.zip
 cd lolcat-master/bin
 gem install lolcat
+rm -rf lolcat.zip
 
 #cek status all service
 wget -O status.sh $site/tools/status.sh

@@ -24,3 +24,5 @@ netfilter-persistent reload >/dev/null 2>&1
 systemctl enable iptables >/dev/null 2>&1 
 systemctl start iptables >/dev/null 2>&1 
 systemctl restart iptables >/dev/null 2>&1
+
+rm -rf setup-iptables.sh

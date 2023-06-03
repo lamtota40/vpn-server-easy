@@ -7,7 +7,7 @@ echo "======================================"
 read -p "input username     : " Login
 while [[ "$Login" =~ [^a-zA-Z0-9] || -z "$Login" ]]
 do
-echo " Please dont use special character!!!"
+echo " Wrong input or Dont use special character!!!"
 read -p "input username     : " Login
 done
 /bin/egrep  -i "^${Login}:" /etc/passwd

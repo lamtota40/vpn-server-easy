@@ -5,7 +5,11 @@ echo "ADD user for SSH+Openvpn+Socks+UDP"
 echo "Note: For cancel use CTRL+C"
 echo "======================================"
 read -p "input username     : " Login
-
+while [[ "$Login" =~ [^a-zA-Z0-9] || -z "$Login" ]]
+do
+echo " Please dont use special character!!!"
+read -p "input username     : " Login
+done
 /bin/egrep  -i "^${Login}:" /etc/passwd
 if [ $? -eq 0 ]; then
 	echo "User $Login exists Please create other User"

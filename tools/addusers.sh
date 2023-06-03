@@ -1,4 +1,5 @@
 #!/bin/bash
+
 clear
 echo "======================================"
 echo "ADD user for SSH+Openvpn+Socks+UDP"
@@ -13,9 +14,9 @@ done
 /bin/egrep  -i "^${Login}:" /etc/passwd
 if [ $? -eq 0 ]; then
 	echo "User $Login exists Please create other User"
-	exit 1
 	read -p "Please [Enter] to Continue...."
 	/root/myvpn/addusers
+	
 fi
 
 read -p "input password     : " Pass

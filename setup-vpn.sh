@@ -155,13 +155,13 @@ service cron restart
 
 #setup lolcat for colouring text
 cd
-apt install ruby -y
-apt install lolcat -y
+apt install lolcat ruby -y
 wget -O lolcat.zip https://github.com/busyloop/lolcat/archive/master.zip
 unzip lolcat.zip
 cd lolcat-master/bin
 gem install lolcat
 rm -rf lolcat.zip
+rm -rf lolcat-master
 
 #cek status all service
 wget -O status.sh $site/tools/status.sh

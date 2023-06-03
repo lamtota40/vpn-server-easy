@@ -110,7 +110,7 @@ case $num in
 2)
 	Clear
 	/root/myvpn/whoislogin
-	read -p "Back to Menu Press Enter...."
+	read -p "Back to Menu Press [Enter]...."
 	/usr/sbin/menu
 ;;
 3)
@@ -135,7 +135,7 @@ case $num in
 4)
 	clear
 	/root/myvpn/smanager
-	read -p "Back to Menu Press Enter...."
+	read -p "Back to Menu Press [Enter]...."
 	/usr/sbin/menu
 ;;
 5)
@@ -184,8 +184,9 @@ case $num in
 	echo "================================="
 	echo "OR from URL file"
 	echo "wget -O /etc/banner https://url"
+	
 	echo "================================="
-	read -p "To Continue Press Enter...."
+	read -p "To Continue Press [Enter]...."
 	nano /etc/banner
 	;;
 	2)
@@ -197,7 +198,7 @@ case $num in
 	echo "Please input just Domain only"
 	echo "Dont Use www. Example : mydomain.com"
 	echo "================================="
-	read -p "To Continue Press Enter...."
+	read -p "To Continue Press [Enter]...."
 	nano /root/myvpn/domain
 	;;
 	3)
@@ -209,7 +210,7 @@ case $num in
 	echo "Please input just Domain only"
 	echo "Dont Use www. Example : ns.mydomain.com"
 	echo "================================="
-	read -p "To Continue Press Enter...."
+	read -p "To Continue Press [Enter]...."
 	nano /root/myvpn/nsdomain
 	;;
 	9)
@@ -223,7 +224,7 @@ case $num in
 	read -p  "Please confrim your Password Root   :" passroot2
 	#passwd $passroot
 	echo "Success To change password root"
-	read -p "Back To Menu Press Enter...."
+	read -p "Back to Menu Press [Enter]...."
 	/usr/sbin/menu
 	;;
 	0)
@@ -246,19 +247,19 @@ case $num in
 	1)
 	clear
 	/root/myvpn/detailserver
-	read -p "Back To Menu Press Enter...."
+	read -p "Back to Menu Press [Enter]...."
 	/usr/sbin/menu
 	;;
 	2)
 	clear
 	/root/myvpn/speedtest
-	read -p "Back To Menu Press Enter...."
+	read -p "Back to Menu Press [Enter]...."
 	/usr/sbin/menu
 	;;
 	4)
 	clear
 	/root/myvpn/ram
-	read -p "Back To Menu Press Enter...."
+	read -p "Back to Menu Press [Enter]...."
 	/usr/sbin/menu
 	;;
 	9)

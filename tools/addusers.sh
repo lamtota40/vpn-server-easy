@@ -9,7 +9,7 @@ read -p "input username     : " Login
 
 while [[ "$Login" =~ [^a-zA-Z0-9.-] || -z "$Login" || $Login =~ ^[0-9]+$ ]]
 do
-echo " Wrong input.. Dont input only number/special character!"
+echo " Wrong input.. Dont input only number/special character(.-)!"
 read -p "input username     : " Login
 done
 

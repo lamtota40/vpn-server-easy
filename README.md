@@ -4,7 +4,7 @@ benerin squid
 create vpn server easy<br>
 Tested on 64bit ubuntu 18 & 20<br>
 Minimum requiment :
-- 1 core cpu
+- 1 vcpu
 - 1 GB RAM
 - 20 GB HDD
 

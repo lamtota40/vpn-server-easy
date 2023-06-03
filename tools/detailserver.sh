@@ -26,7 +26,7 @@ echo "Uptime =" `uptime -p`
 
 echo "============= Detail server ============="
 echo "Hostname = $HOSTNAME"
-echo "Ip Public IPV4= $(jq -r '.ip' <<< "$cekip") "
+echo "Ip Public IPV4= $(wget -4qO- ipinfo.io/ip) "
 echo "Ip Public IPv6= $(jq -r '.ip' <<< "$cekip") "
 echo "Ip Private = $private_ip"
 echo "ISP = $(jq -r '.organization_name' <<< "$cekip") | Country= $(jq -r '.country' <<< "$cekip")"

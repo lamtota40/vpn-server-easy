@@ -138,6 +138,31 @@ case $num in
 	read -p "Back to Menu Press Enter...."
 	/usr/sbin/menu
 ;;
+5)
+	clear
+	echo "1. Daily"
+	echo "2. Monthly"
+	echo "0. Back to Menu"
+	read -p "Choose Options [0-2] :" num5
+	case $num5 in
+	1)
+	clear
+	vnstat -d
+	read -p "Back to Menu Press [Enter]...."
+	/usr/sbin/menu
+	;;
+	2)
+	clear
+	vnstat -m
+	read -p "Back to Menu Press [Enter]...."
+	/usr/sbin/menu
+	;;
+	0)
+	clear
+	/usr/sbin/menu
+	;;
+	esac
+;;
 7)
 	clear
 	echo "1. Change Banner SSH"
@@ -202,31 +227,6 @@ case $num in
 	/usr/sbin/menu
 	;;
 	0)
-	/usr/sbin/menu
-	;;
-	esac
-;;
-5)
-	clear
-	echo "1. Daily"
-	echo "2. Monthly"
-	echo "0. Back to Menu"
-	read -p "Choose Options [0-2] :" num5
-	case $num5 in
-	1)
-	clear
-	vnstat -d
-	read -p "Back to Menu Press [Enter]...."
-	/usr/sbin/menu
-	;;
-	2)
-	clear
-	vnstat -m
-	read -p "Back to Menu Press [Enter]...."
-	/usr/sbin/menu
-	;;
-	0)
-	clear
 	/usr/sbin/menu
 	;;
 	esac

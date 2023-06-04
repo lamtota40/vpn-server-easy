@@ -1,6 +1,7 @@
 
 apt instal make git -y
-git@github.com:yrutschle/sslh.git
+git clone https://github.com/yrutschle/sslh.git
+cd sslh
 make
 cp sslh-fork /usr/local/sbin/sslh
 cp basic.cfg /etc/sslh.cfg

@@ -71,16 +71,16 @@ END
 chmod +x /etc/systemd/system/ws-ssh2082.service
 ##################################################
 systemctl daemon-reload
-systemctl enable ws-openvpn82.service
-systemctl start ws-openvpn82.service
-systemctl restart ws-openvpn82.service
+systemctl enable ws-openvpn2052.service
+systemctl start ws-openvpn2052.service
+systemctl restart ws-openvpn2052.service
 
-systemctl enable ws-http2082.service
-systemctl start ws-http2082.service
-systemctl restart ws-http2082.service
+systemctl enable ws-ssh2082.service
+systemctl start ws-ssh2082.service
+systemctl restart ws-ssh2082.service
 
-systemctl enable ws-http8880.service
-systemctl start ws-http8880.service
-systemctl restart ws-http8880.service
+systemctl enable ws-dropbear8880.service
+systemctl start ws-dropbear8880.service
+systemctl restart ws-dropbear8880.service
 
 rm -rf setup-websocket.sh

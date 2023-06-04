@@ -12,7 +12,7 @@ except:
 PASS = ''
 BUFLEN = 8196 * 8
 TIMEOUT = 60
-MSG = 'POTATO'
+MSG = 'EL'
 COR = '<font color="blue">'
 FTAG = '</font>'
 DEFAULT_HOST = '0.0.0.0:22'

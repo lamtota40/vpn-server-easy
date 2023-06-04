@@ -8,7 +8,7 @@ cp ohpserver /usr/local/bin/ohpserver
 
 # Installing Service
 # OpenSSH OHP Port 8080
-cat > /etc/systemd/system/ssh-ohp.service << END
+cat > /etc/systemd/system/ohp-ssh.service << END
 [Unit]
 Description=OHP Server Default Server Service
 Documentation=https://github.com/cybertize/
@@ -28,7 +28,7 @@ WantedBy=multi-user.target
 END
 
 # Dropbear OHP 8181
-cat > /etc/systemd/system/dropbear-ohp.service << END
+cat > /etc/systemd/system/ohp-dropbear.service << END
 [Unit]
 Description=OHP Server Default Server Service
 Documentation=https://github.com/cybertize/
@@ -48,7 +48,7 @@ WantedBy=multi-user.target
 END
 
 # OpenVPN OHP 8282
-cat > /etc/systemd/system/openvpn-ohp.service << END
+cat > /etc/systemd/system/ohp-openvpn.service << END
 [Unit]
 Description=OHP Server Default Server Service
 Documentation=https://github.com/cybertize/
@@ -68,11 +68,16 @@ WantedBy=multi-user.target
 END
 
 systemctl daemon-reload
-systemctl enable ssh-ohp
-systemctl restart ssh-ohp
-systemctl enable dropbear-ohp
-systemctl restart dropbear-ohp
-systemctl enable openvpn-ohp
-systemctl restart openvpn-ohp
+systemctl enable ohp-ssh
+systemctl start ohp-ssh
+systemctl restart ohp-ssh
+
+systemctl enable ohp-dropbear
+systemctl start ohp-dropbear
+systemctl restart ohp-dropbear
+
+systemctl enable ohp-openvpn
+systemctl start ohp-openvpn
+systemctl restart ohp-openvpn
 
 rm -rf setup-ohp.sh

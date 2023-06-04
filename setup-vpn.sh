@@ -98,7 +98,7 @@ wget -O setup-squid.sh $site/PROXY/squid/setup-squid.sh && bash setup-squid.sh
 wget -O setup-socks.sh $site/PROXY/socks/setup-socks.sh && bash setup-socks.sh 
 
 #install sslh (for sharing one port/multiplexer)
-wget -O setup-sslh.sh $site/sslh/setup-sslh.sh && bash setup-sslh.sh
+wget -O setup-sslh.sh $site/sslh/setup-sslh3.sh && bash setup-sslh.sh
 
 #install OHP [require install proxy+ssh]
 wget -O setup-ohp.sh $site/OHP/setup-ohp.sh && bash setup-ohp.sh

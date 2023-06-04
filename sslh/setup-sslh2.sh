@@ -1,5 +1,5 @@
 
-apt instal make libconfig-dev libwrap0-dev libsystemd-dev git -y
+apt instal make libconfig-dev libwrap0-dev libsystemd-dev libcap-dev libbsd-dev git -y
 git clone https://github.com/yrutschle/sslh.git
 cd sslh
 make

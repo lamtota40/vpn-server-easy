@@ -6,7 +6,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install sslh --no-install-recommends -y
 wget -O /etc/default/sslh "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/sslh/sslh.conf"
 mkdir /etc/sslh
 wget -O /etc/sslh/sslh.cfg "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/sslh/sslh.cfg"
-service sslh restart
+systemctl stop sslh
 
 cat <<EOF > /etc/systemd/system/sslh880.service
 [Unit]

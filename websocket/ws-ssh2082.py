@@ -8,14 +8,14 @@ IP = '0.0.0.0'
 try:
    PORT = int(sys.argv[1])
 except:
-   PORT = 8880
+   PORT = 2082
 PASS = ''
 BUFLEN = 8196 * 8
 TIMEOUT = 60
 MSG = 'POTATO'
 COR = '<font color="blue">'
 FTAG = '</font>'
-DEFAULT_HOST = '0.0.0.0:23'
+DEFAULT_HOST = '0.0.0.0:22'
 RESPONSE = 'HTTP/1.1 101 Potato Tunneling\r\nContent-Length: 1048576000000\r\n\r\n'
  
 class Server(threading.Thread):

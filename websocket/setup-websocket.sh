@@ -5,7 +5,6 @@ if [ ! $(which python) ]; then
 fi
 
 wget -O /usr/local/bin/ws-openvpn2052 https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/websocket/ws-openvpn2052.py && chmod +x /usr/local/bin/ws-openvpn2052
-
 cat > /etc/systemd/system/ws-openvpn2052.service <<-END
 [Unit]
 Description=HTTP Websocket 2052 over OpenVPN 1194 Python
@@ -27,7 +26,6 @@ END
 chmod +x /etc/systemd/system/ws-openvpn2052.service
 ###################################################
 wget -O /usr/local/bin/ws-dropbear8880 https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/websocket/ws-dropbear8880.py && chmod +x /usr/local/bin/ws-dropbear8880
-
 cat > /etc/systemd/system/ws-dropbear8880.service <<-END
 [Unit]
 Description=HTTP Websocket 8880 over Dropbear 23 Python
@@ -49,7 +47,6 @@ END
 chmod +x /etc/systemd/system/ws-dropbear8880.service
 ###################################################
 wget -O /usr/local/bin/ws-ssh2082 https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/websocket/ws-ssh2082.py && chmod +x /usr/local/bin/ws-ssh2082
-
 cat > /etc/systemd/system/ws-ssh2082.service <<-END
 [Unit]
 Description=HTTP Websocket 2082 over OpenSSH 22 Python

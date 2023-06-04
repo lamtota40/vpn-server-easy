@@ -1,4 +1,5 @@
 # vpn-server-easy
+U+02192	&#x2192;	&#8594;	&rarr;	\2192
 create vpn server easy<br>
 Tested on 64bit ubuntu 18 & 20<br>
 Minimum requiment :

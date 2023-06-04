@@ -3,7 +3,7 @@
 # initialisasi var
 export DEBIAN_FRONTEND=noninteractive
 OS=`uname -m`;
-MYIP=$(wget -qO- icanhazip.com);
+MYIP=$(wget -4qO- ipinfo.io/ip);
 MYIP2="s/xxxxxxxxx/$MYIP/g";
 
 # Install OpenVPN dan Easy-RSA

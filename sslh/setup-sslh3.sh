@@ -24,11 +24,9 @@ EOF
 systemctl daemon-reload
 systemctl enable sslh
 systemctl start sslh
-systemctl restart sslh
 
 systemctl enable sslh880
 systemctl start sslh880
-systemctl restart sslh880
 ##################################
 
 rm -rf setup-sslh.sh

@@ -1,5 +1,5 @@
 
-apt instal make git -y
+apt instal make libconfig-dev git -y
 git clone https://github.com/yrutschle/sslh.git
 cd sslh
 make

@@ -35,25 +35,25 @@ Stunnelarr;Dropbear :955,465<br>
 Stunnel &rarr; OpenSSH :944,587<br>
 -----------------------------------------------------<br>
 <b>Mode TCP websocket Non TLS:::</b><br>
-WS+OpenSSH :-<br>
-WS+Dropbear :80,2082,8880<br>
+WS→OpenSSH :-<br>
+WS→Dropbear :80,2082,8880<br>
 
 <b>Mode TCP websocket TLS:::</b><br>
-Stunnel &rarr; WS &rarr; OpenSSH :6443,944<br>
-Stunnel &rarr; WS &rarr; Dropbear :000,000<br>
+Stunnel→WS→OpenSSH :6443,944<br>
+Stunnel→WS→Dropbear :000,000<br>
 -----------------------------------------------------<br>
 <b>Mode Openvpn:::</b><br>
 TCP OpenVPN :1194<br>
 TCP WS &rarr; OpenVPN :80<br>
-TCP Stunnel &rarr; OpenVPN :995<br>
-TCP SSLH &rarr; Stunnel &rarr; WS &rarr; OpenVPN :443<br>
-TCP OHP &rarr; OpenVPN :9088<br>
+TCP Stunnel→OpenVPN :995<br>
+TCP SSLH→Stunnel→WS→OpenVPN :443<br>
+TCP OHP→OpenVPN :9088<br>
 UDP OpenVPN :53,123,443<br>
 -----------------------------------------------------<br>
 <b>Mode OHP:::</b><br>
-TCP OHP &rarr; OpenSSH : 8080<br>
-TCP OHP &rarr; Dropber : 8181<br>
-TCP OHP &rarr; OpenVPN : 8282<br>
+TCP OHP→OpenSSH : 8080<br>
+TCP OHP→Dropber : 8181<br>
+TCP OHP→OpenVPN : 8282<br>
 TCP Stunnel &rarr; OHP &rarr; Dropbear : <br>
 TCP WS &rarr; OHP &rarr; Dropbear : <br>
 -----------------------------------------------------<br>

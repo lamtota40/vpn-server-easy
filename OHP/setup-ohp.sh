@@ -6,31 +6,10 @@ chmod +x ohpserver
 cp ohpserver /usr/local/bin/ohpserver
 /bin/rm -rf ohpserver*
 
-# Installing Service
-# OpenSSH OHP Port 8080
-cat > /etc/systemd/system/ohp-ssh.service << END
-[Unit]
-Description=OHP Server Default Server Service
-Documentation=https://github.com/cybertize/
-After=network.target network-online.target nss-lookup.target
-
-[Service]
-User=nobody
-CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
-NoNewPrivileges=true
-ExecStart=/usr/local/bin/ohpserver -port 8080 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:22
-Restart=on-failure
-RestartPreventExitStatus=23
-
-[Install]
-WantedBy=multi-user.target
-END
-
-# Dropbear OHP 8181
+# OHP Server Dropbear 8080
 cat > /etc/systemd/system/ohp-dropbear.service << END
 [Unit]
-Description=OHP Server Default Server Service
+Description=OHP Server Dropbear 8080
 Documentation=https://github.com/cybertize/
 After=network.target network-online.target nss-lookup.target
 
@@ -39,7 +18,7 @@ User=nobody
 CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
 NoNewPrivileges=true
-ExecStart=/usr/local/bin/ohpserver -port 8181 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:23
+ExecStart=/usr/local/bin/ohpserver -port 8080 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:23
 Restart=on-failure
 RestartPreventExitStatus=23
 
@@ -47,10 +26,30 @@ RestartPreventExitStatus=23
 WantedBy=multi-user.target
 END
 
-# OpenVPN OHP 8282
+# OHP Server OpenSSH 8181
+cat > /etc/systemd/system/ohp-dropbear.service << END
+[Unit]
+Description=OHP Server OpenSSH 8181
+Documentation=https://github.com/cybertize/
+After=network.target network-online.target nss-lookup.target
+
+[Service]
+User=nobody
+CapabilityBoundingSet=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+AmbientCapabilities=CAP_NET_ADMIN CAP_NET_BIND_SERVICE
+NoNewPrivileges=true
+ExecStart=/usr/local/bin/ohpserver -port 8181 -proxy 127.0.0.1:3128 -tunnel 127.0.0.1:22
+Restart=on-failure
+RestartPreventExitStatus=23
+
+[Install]
+WantedBy=multi-user.target
+END
+
+# OHP Server OpenVPN 8282
 cat > /etc/systemd/system/ohp-openvpn.service << END
 [Unit]
-Description=OHP Server Default Server Service
+Description=OHP Server OpenVPN 8282
 Documentation=https://github.com/cybertize/
 After=network.target network-online.target nss-lookup.target
 

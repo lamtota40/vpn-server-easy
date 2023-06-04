@@ -5,10 +5,12 @@ if (( $EUID != 0 )); then
     echo "You can Try comand 'su root' or 'sudo -i' or 'sudo -'"
     exit 1
 fi
+
 #disable ipv6
-echo "net.ipv6.conf.all.disable_ipv6 = 1" > /etc/sysctl.conf
-echo "net.ipv6.conf.default.disable_ipv6 = 1" > /etc/sysctl.conf
-echo "net.ipv6.conf.lo.disable_ipv6 = 1" > /etc/sysctl.conf
+echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.eth0.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
 sysctl -p
 
 read -p "input your domain = " domain

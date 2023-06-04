@@ -73,7 +73,7 @@ echo -e "Port TCP OpenVPN :80,443"
 echo -e "Port UDP OpenVPN :80,443,2200"
 echo -e "Port SSL OpenVPN :443,995"
 echo -e "Config OpenVPN.  : http://"$domain":81/ovpngen.html"
-echo -e "Conf All OpenVPN : http://"$domain":81/confopenvpn-all.zip"
+echo -e "Conf All OpenVPN : http://"$domain":81/openvpn-confall.zip"
 
 echo -e "TCP Non SSL/TLS: http://"$domain":81/tcp-1194.ovpn"
 echo -e "TCP SSL/TLS: http://"$domain":81/tcpssl-995.ovpn"

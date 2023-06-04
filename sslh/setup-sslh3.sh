@@ -7,3 +7,5 @@ wget -O /etc/default/sslh "https://raw.githubusercontent.com/lamtota40/vpn-serve
 mkdir /etc/sslh
 wget -O /etc/sslh/sslh.cfg "https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main/sslh/sslh.cfg"
 service sslh restart
+
+ #sslh -F /etc/sslh/sslh.cfg

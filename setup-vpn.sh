@@ -11,6 +11,9 @@ echo "net.ipv6.conf.default.disable_ipv6 = 1" > /etc/sysctl.conf
 echo "net.ipv6.conf.lo.disable_ipv6 = 1" > /etc/sysctl.conf
 sysctl -p
 
+read -p "input your domain = " domain
+read -p "input your NS Domain = " nsdomain
+
 #create directory
 cd
 mkdir -p /root/myvpn
@@ -19,10 +22,8 @@ mkdir -p /root/myvpn/log
 mkdir -p /root/myvpn/data
 mkdir -p /root/myvpn/config
 
-read -p "input your domain = " domain
 echo $domain > /root/myvpn/domain
-read -p "input your NS Domain = " domain
-echo $domain > /root/myvpn/nsdomain
+echo $nsdomain > /root/myvpn/nsdomain
 
 #dependency
 #apt install python jq cron curl openssl iptables iptables-persistent net-tools -y

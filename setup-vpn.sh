@@ -28,7 +28,6 @@ echo $domain > /root/myvpn/domain
 echo $nsdomain > /root/myvpn/nsdomain
 
 #dependency
-#apt install python jq cron curl openssl iptables iptables-persistent net-tools -y
 apt install gcc lsof make parted iptables python jq cron curl openssl net-tools unzip rsyslog -y
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
@@ -57,9 +56,6 @@ service rsyslog restart
 ##chmod +x /etc/rc.local
 ##systemctl enable rc-local
 ##systemctl start rc-local.service
-
-# disable ipv6
-#echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 
 #add user for admin default
 grep "/bin/false" /etc/shells || echo "/bin/false" >> /etc/shells

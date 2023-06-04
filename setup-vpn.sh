@@ -162,6 +162,7 @@ wget -O lolcat.zip https://github.com/busyloop/lolcat/archive/master.zip
 unzip lolcat.zip
 cd lolcat-master/bin
 gem install lolcat
+cd
 rm -rf lolcat.zip
 rm -rf lolcat-master
 

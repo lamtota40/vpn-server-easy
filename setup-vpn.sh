@@ -7,11 +7,11 @@ if (( $EUID != 0 )); then
 fi
 
 #disable ipv6
-#echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
-#echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
-#echo "net.ipv6.conf.eth0.disable_ipv6 = 1" >> /etc/sysctl.conf
-#echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
-#sysctl -p
+echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.eth0.disable_ipv6 = 1" >> /etc/sysctl.conf
+echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
+sysctl -p
 
 read -p "input your domain = " domain
 read -p "input your NS Domain = " nsdomain

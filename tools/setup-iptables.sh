@@ -2,9 +2,13 @@
 
 ETH=$(ip -o $ETH -4 route show to default | awk '{print $5}');
 
-#UDPcustom
-#iptables -t nat -D PREROUTING -i eth0 -p udp -m udp --dport 1:65535 -j DNAT --to-destination :36712
-#iptables -t nat -A PREROUTING -i eth0 -p udp -m udp --dport 54:65535 -j DNAT --to-destination :36712
+#Websocket Redirect
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2086 -j REDIRECT --to-port 8880
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2095 -j REDIRECT --to-port 8880
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2053 -j REDIRECT --to-port 8043
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2083 -j REDIRECT --to-port 8043
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2087 -j REDIRECT --to-port 8043
+iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2096 -j REDIRECT --to-port 8043
 
 #SlowDNS
 iptables -A INPUT -i eth0 -p udp --dport 53 -j ACCEPT

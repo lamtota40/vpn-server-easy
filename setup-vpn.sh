@@ -27,13 +27,13 @@ mkdir -p /root/myvpn/config
 echo $domain > /root/myvpn/domain
 echo $nsdomain > /root/myvpn/nsdomain
 
+#remove firewall
+apt-get remove --purge ufw firewalld -y
+
 #dependency
 apt install gcc lsof make parted iptables python jq cron curl openssl net-tools unzip rsyslog -y
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
-
-#remove firewall
-apt-get remove --purge ufw firewalld -y
 
 #change Timezone
 cekip=$(curl -s "http://ipinfo.io")
@@ -70,6 +70,9 @@ usermod -aG sudo $Login
 cd
 #ADD Extra Ram Swap 2GB
 wget -O setup-ramswap.sh $site/tools/setup-ramswap.sh && bash setup-ramswap.sh
+
+#install Xray/V2RAY
+wget -O setup-xray.sh $site/xray/setup-xray.sh && bash setup-xray.sh
 
 #Banner welcome SSH
 wget -O /etc/banner $site/tools/other/banner

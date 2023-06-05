@@ -91,18 +91,21 @@ case $num in
 	clear
 	echo "1. Add User for SSH+OpenVPN+Socks5+UDPcustom"
 	echo "2. Add User for Vmess"
-	echo "3. Add User for Vmess"
-	echo "2. Add User for V2ray(Vmess/Vless/Tojan/shadowsocks)"
-	echo "3. Add User for All in one(SSH+V2ray)"
+	echo "3. Add User for Vless"
+	echo "4. Add User for Trojoan"
+	echo "5. Add User for Shadowsocks"
+	echo "6. Add User for Vmess+Vless"
+	echo "7. Add User for All in one V2ray(Vmess/Vless/Tojan/shadowsocks)"
+	echo "8. Add User for All in one [SSH+V2ray(Vmess/Vless/Tojan/shadowsocks)]"
 	echo "0. Back to Menu"
-	read -p "Choose Options [0-3] : " num1
+	read -p "Choose Options [0-8] : " num1
 	case $num1 in
 	1)
 	clear
 	/root/myvpn/addusers
 	;;
-	3)
-	/root/myvpn/addv2ray
+	2)
+	/root/myvpn/xray/addvmess
 	;;
 	0)
 	/usr/sbin/menu

@@ -13,7 +13,6 @@ LIGHT='\033[0;37m'
 MYIP=$(wget -qO- ipinfo.io/ip);
 
 domain=$(cat /etc/xray/domain)
-read -rp "Masukkan Bug: " -e bug
 #tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
 #nontls="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 tls="8443"

@@ -10,7 +10,6 @@ apt -y install chrony
 timedatectl set-ntp true
 systemctl enable chronyd && systemctl restart chronyd
 systemctl enable chrony && systemctl restart chrony
-#timedatectl set-timezone Asia/Jakarta
 chronyc sourcestats -v
 chronyc tracking -v
 date

@@ -103,9 +103,14 @@ case $num in
 	1)
 	clear
 	/root/myvpn/addusers
+	read -p "To back to MENU press [ENTER]..."
+	/usr/sbin/menu
 	;;
 	2)
+	clear
 	/root/myvpn/xray/addvmess
+	read -p "To back to MENU press [ENTER]..."
+	/usr/sbin/menu
 	;;
 	0)
 	/usr/sbin/menu

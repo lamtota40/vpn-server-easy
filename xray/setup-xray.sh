@@ -1,7 +1,6 @@
 #!/bin/bash
 
 domain=$(cat /root/myvpn/domain)
-cp /root/myvpn/domain /etc/xray/domain
 #apt install cron iptables iptables-persistent -y
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat bash-completion ntpdate -y
@@ -23,6 +22,7 @@ xraycore_link="https://github.com/XTLS/Xray-core/releases/download/v$latest_vers
 #Make Main Directory
 mkdir -p /usr/bin/xray
 mkdir -p /etc/xray
+cp /root/myvpn/domain /etc/xray/domain
 
 #Unzip Xray Linux 64
 cd `mktemp -d`

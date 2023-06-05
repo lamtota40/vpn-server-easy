@@ -128,7 +128,6 @@ echo -e "Expired     : $exp" | lolcat
 echo -e "═══════════════════════" | lolcat
 echo -e""
 read -p "Ketik Enter Untuk Kembali Ke Menu...."
-sleep 1
-menu
+
 exit 0
 fi

@@ -45,7 +45,7 @@ bash acme.sh --register-account -m senowahyu62@gmail.com
 bash acme.sh --issue --standalone -d $domain --force
 bash acme.sh --installcert -d $domain --fullchainpath /etc/xray/xray.crt --keypath /etc/xray/xray.key
 
-service squid start
+#service squid start
 uuid=$(cat /proc/sys/kernel/random/uuid)
 uuid1=$(cat /proc/sys/kernel/random/uuid)
 uuid2=$(cat /proc/sys/kernel/random/uuid)
@@ -324,10 +324,10 @@ cat > /etc/xray/config.json << END
 }
 END
 
-# / / Installation Xray Service
+#Installation Xray Service
 cat > /etc/systemd/system/xray.service << END
 [Unit]
-Description=Xray Service By JAGOANNEON
+Description=Xray Service
 Documentation=http://jagoanneon-premium.xyz
 After=network.target nss-lookup.target
 
@@ -344,18 +344,6 @@ RestartPreventExitStatus=23
 WantedBy=multi-user.target
 END
 
-# // Enable & Start Service
-# Accept port Xray 
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2080 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2080 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083 -j ACCEPT
-iptables-save > /etc/iptables.up.rules
-iptables-restore -t < /etc/iptables.up.rules
-netfilter-persistent save
-netfilter-persistent reload
 systemctl daemon-reload
 systemctl stop xray.service
 systemctl start xray.service

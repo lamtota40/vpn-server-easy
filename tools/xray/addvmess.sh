@@ -47,7 +47,7 @@ cat>/etc/xray/vmess-$user-tls.json<<EOF
       "net": "ws",
       "path": "/Jvg",
       "type": "none",
-      "host": "bug.${domain}",
+      "host": "bug.com",
       "tls": "tls"
 }
 EOF
@@ -62,7 +62,7 @@ cat>/etc/xray/vmess-$user-nontls.json<<EOF
       "net": "ws",
       "path": "/Jvg",
       "type": "none",
-      "host": "bug.${domain}",
+      "host": "bug.com",
       "tls": "none"
 }
 EOF
@@ -77,7 +77,7 @@ cat >/etc/xray/$user-tls.json << EOF
       "net": "grpc",
       "path": "GunService",
       "type": "none",
-      "host": "bug.${domain}",
+      "host": "bug.com",
       "tls": "tls"
 }
 EOF

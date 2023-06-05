@@ -72,13 +72,13 @@ cat >/etc/xray/$user-tls.json << EOF
       "v": "0",
       "ps": "${user}",
       "add": "${domain}",
-      "port": "80",
+      "port": "${nontls}",
       "id": "${uuid}",
       "aid": "0",
       "net": "grpc",
       "path": "GunService",
       "type": "none",
-      "host": "${bug}",
+      "host": "bug.${domain}",
       "tls": "tls"
 }
 EOF
@@ -109,7 +109,6 @@ echo -e "Mode        : Multi" | lolcat
 echo -e "SecurityGRPC: TLS" | lolcat
 echo -e "Type        : GRPC" | lolcat
 echo -e "Service Name: GunService" | lolcat
-echo -e "Bug         : ${bug}" | lolcat
 echo -e "Path        : /Jvg" | lolcat
 echo -e "═══════════════════════" | lolcat
 echo -e "Link TLS    : " | lolcat

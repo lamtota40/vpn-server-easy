@@ -23,6 +23,7 @@ mkdir -p /root/myvpn/cron
 mkdir -p /root/myvpn/log
 mkdir -p /root/myvpn/data
 mkdir -p /root/myvpn/config
+mkdir -p /root/myvpn/xray
 
 echo $domain > /root/myvpn/domain
 echo $nsdomain > /root/myvpn/nsdomain

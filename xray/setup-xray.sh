@@ -1,6 +1,7 @@
 #!/bin/bash
 
 domain=$(cat /root/myvpn/domain)
+echo $domain > /etc/xray/domain
 apt install iptables iptables-persistent -y
 apt install curl socat xz-utils wget apt-transport-https gnupg gnupg2 gnupg1 dnsutils lsb-release -y 
 apt install socat cron bash-completion ntpdate -y
@@ -100,7 +101,7 @@ cat > /etc/xray/config.json << END
       }
     },
     {
-      "port": 80,
+      "port": 2080,
       "protocol": "vmess",
       "settings": {
         "clients": [
@@ -178,7 +179,7 @@ cat > /etc/xray/config.json << END
       }
     },
     {
-      "port": 80,
+      "port": 2080,
       "protocol": "vless",
       "settings": {
         "clients": [
@@ -224,7 +225,7 @@ cat > /etc/xray/config.json << END
         ],
         "fallbacks": [
           {
-            "dest": 80
+            "dest": 2080
           }
         ]
       },
@@ -347,8 +348,8 @@ END
 # Accept port Xray 
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8443 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 80 -j ACCEPT
-iptables -I INPUT -m state --state NEW -m udp -p udp --dport 80 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2080 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2080 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083 -j ACCEPT
 iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083 -j ACCEPT
 iptables-save > /etc/iptables.up.rules
@@ -362,5 +363,4 @@ systemctl enable xray.service
 systemctl restart xray.service
 
 cd
-cp /root/myvpn/domain /etc/xray
 rm -rf setup-xray.sh

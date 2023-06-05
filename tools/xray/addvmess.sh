@@ -48,7 +48,7 @@ cat>/etc/xray/vmess-$user-tls.json<<EOF
       "net": "ws",
       "path": "/Jvg",
       "type": "none",
-      "host": "${bug}",
+      "host": "bug.${domain}",
       "tls": "tls"
 }
 EOF
@@ -56,14 +56,14 @@ cat>/etc/xray/vmess-$user-nontls.json<<EOF
       {
       "v": "2",
       "ps": "${user}",
-      "add": "${bug}",
+      "add": "${domain}",
       "port": "${nontls}",
       "id": "${uuid}",
       "aid": "0",
       "net": "ws",
       "path": "/Jvg",
       "type": "none",
-      "host": "${domain}",
+      "host": "bug.${domain}",
       "tls": "none"
 }
 EOF

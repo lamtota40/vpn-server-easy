@@ -1,6 +1,4 @@
 #!/bin/bash
-# Jagoanneon
-# ==========================================
 # Color
 RED='\033[0;31m'
 NC='\033[0m'
@@ -14,13 +12,12 @@ LIGHT='\033[0;37m'
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 
-#source /var/lib/crot/ipvps.conf
 domain=$(cat /etc/xray/domain)
 read -rp "Masukkan Bug: " -e bug
 #tls="$(cat ~/log-install.txt | grep -w "Vmess TLS" | cut -d: -f2|sed 's/ //g')"
 #nontls="$(cat ~/log-install.txt | grep -w "Vmess None TLS" | cut -d: -f2|sed 's/ //g')"
 tls="8443"
-nontls="8880"
+nontls="2080"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
 		read -rp "Username : " -e user
 		CLIENT_EXISTS=$(grep -w $user /etc/xray/config.json | wc -l)
@@ -128,10 +125,7 @@ echo -e "Link GRPC : " | lolcat
 echo -e ""
 echo -e " ${xrayv2ray3}" | lolcat
 echo -e "═══════════════════════" | lolcat
-echo -e "Created     : $hariini" | lolcat
 echo -e "Expired     : $exp" | lolcat
-echo -e "═══════════════════════" | lolcat
-echo -e "${RED}AutoScriptSSH By Jvg${NC}"
 echo -e "═══════════════════════" | lolcat
 echo -e""
 read -p "Ketik Enter Untuk Kembali Ke Menu...."

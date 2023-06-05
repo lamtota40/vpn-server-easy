@@ -90,6 +90,8 @@ case $num in
 1)
 	clear
 	echo "1. Add User for SSH+OpenVPN+Socks5+UDPcustom"
+	echo "2. Add User for Vmess"
+	echo "3. Add User for Vmess"
 	echo "2. Add User for V2ray(Vmess/Vless/Tojan/shadowsocks)"
 	echo "3. Add User for All in one(SSH+V2ray)"
 	echo "0. Back to Menu"

@@ -85,5 +85,3 @@ echo -e "Reboot VPS	: 00.05 ()"
 echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "GET / HTTP/1.1[crlf]Host: [host][crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "\n◇━━━━━━━━━━━━━━━━━◇"
-read -p "To back to MENU press [ENTER]..."
-/usr/sbin/menu

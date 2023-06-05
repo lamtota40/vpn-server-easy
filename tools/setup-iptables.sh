@@ -6,9 +6,16 @@ ETH=$(ip -o $ETH -4 route show to default | awk '{print $5}');
 iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2086 -j REDIRECT --to-port 8880
 iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2095 -j REDIRECT --to-port 8880
 iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2053 -j REDIRECT --to-port 8043
-iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2083 -j REDIRECT --to-port 8043
 iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2087 -j REDIRECT --to-port 8043
 iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 2096 -j REDIRECT --to-port 8043
+
+#Xray
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 8443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 8443 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2080 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2080 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m tcp -p tcp --dport 2083 -j ACCEPT
+iptables -I INPUT -m state --state NEW -m udp -p udp --dport 2083 -j ACCEPT
 
 #SlowDNS
 iptables -A INPUT -i eth0 -p udp --dport 53 -j ACCEPT

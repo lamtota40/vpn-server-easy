@@ -13,10 +13,10 @@ PASS = ''
 BUFLEN = 8196 * 8
 TIMEOUT = 60
 MSG = 'EL'
-COR = '<font color="blue">'
+COR = '<font color="green">'
 FTAG = '</font>'
 DEFAULT_HOST = '0.0.0.0:1194'
-RESPONSE = 'HTTP/1.1 101 eL-WS.OpenVPN\r\nContent-Length: 1048576000000\r\n\r\n'
+RESPONSE = 'HTTP/1.1 101 <font color="green"><b>eL-WS.OpenVPN</b></font>\r\nContent-Length: 1048576000000\r\n\r\n'
  
 class Server(threading.Thread):
     def __init__(self, host, port):

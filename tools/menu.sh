@@ -112,6 +112,12 @@ case $num in
 	read -p "To back to MENU press [ENTER]..."
 	/usr/sbin/menu
 	;;
+	3)
+	clear
+	/root/myvpn/xray/addvless
+	read -p "To back to MENU press [ENTER]..."
+	/usr/sbin/menu
+	;;
 	0)
 	/usr/sbin/menu
 	;;

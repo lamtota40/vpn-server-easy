@@ -1,6 +1,5 @@
 #!/bin/bash
-# Jagoanneon
-# ==========================================
+
 # Color
 RED='\033[0;31m'
 NC='\033[0m'
@@ -10,29 +9,14 @@ BLUE='\033[0;34m'
 PURPLE='\033[0;35m'
 CYAN='\033[0;36m'
 LIGHT='\033[0;37m'
-# ==========================================
+
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
 echo "Checking VPS"
 
 IZIN=$( curl https://raw.githubusercontent.com/godtrex99/ip/main/ipvps | grep $MYIP )
 
-if [ $MYIP = $IZIN ]; then
-echo -e "${GREEN}Akses Di Izinkan...${NC}"
-else
-echo -e "${RED}VPS tidak diijinkan${NC}";
-echo "Kontak Admin Untuk Mendapatkan Akses Script"
-echo "Facebook   : Generasi Jvg Tuban"
-echo "WhatsApp   : 083857684916"
-exit 0
-fi
 clear
-source /var/lib/crot/ipvps.conf
-if [[ "$IP" = "" ]]; then
-domain=$(cat /etc/xray/domain)
-else
-domain=$IP
-fi
 read -rp "Masukkan Bug: " -e bug
 tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 nontls="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"

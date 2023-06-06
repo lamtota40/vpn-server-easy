@@ -41,7 +41,6 @@ xrayvless1="vless://${uuid}@${domain}:$tls?path=/Jvg&security=tls&encryption=non
 xrayvless2="vless://${uuid}@${domain}:$nontls?path=/Jvg&encryption=none&type=ws#${user}"
 xrayvless3="vless://${uuid}@${domain}:2080?mode=multi&security=tls&encryption=none&type=grpc&serviceName=GunService&sni=${bug}#$user"
 systemctl restart xray.service
-#service cron restart
 clear
 echo -e ""
 echo -e "═══════════════════════" | lolcat

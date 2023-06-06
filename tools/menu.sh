@@ -98,7 +98,11 @@ case $num in
 	echo "7. Add User for All in one V2ray(Vmess/Vless/Tojan/shadowsocks)"
 	echo "8. Add User for All in one [SSH+V2ray(Vmess/Vless/Tojan/shadowsocks)]"
 	echo "0. Back to Menu"
-	read -p "Choose Options [0-8] : " num1
+	read -p "Choose Number Options [0-8] : " num1
+	while ! [[ "${num1}" =~ ^[0-9]$ || -z "${num1}" ]]; do
+	echo -e "${RED} Wrong your input!${NC}"
+	read -p "Choose Number Options [0-8] : " num1
+	done
 	case $num1 in
 	1)
 	clear

@@ -12,12 +12,9 @@ LIGHT='\033[0;37m'
 
 # Getting
 MYIP=$(wget -qO- ipinfo.io/ip);
-echo "Checking VPS"
-
-IZIN=$( curl https://raw.githubusercontent.com/godtrex99/ip/main/ipvps | grep $MYIP )
 
 clear
-read -rp "Masukkan Bug: " -e bug
+bug="bug.com"
 tls="$(cat ~/log-install.txt | grep -w "Vless TLS" | cut -d: -f2|sed 's/ //g')"
 nontls="$(cat ~/log-install.txt | grep -w "Vless None TLS" | cut -d: -f2|sed 's/ //g')"
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${CLIENT_EXISTS} == '0' ]]; do
@@ -62,7 +59,6 @@ echo -e "Network     : WS & Grpc" | lolcat
 echo -e "Mode        : Multi" | lolcat
 echo -e "SecurityGRPC: TLS" | lolcat
 echo -e "Type        : GRPC" | lolcat
-echo -e "Bug.        : ${bug}" | lolcat
 echo -e "Path        : /Jvg" | lolcat
 echo -e "═══════════════════════" | lolcat
 echo -e "Link TLS    : " | lolcat

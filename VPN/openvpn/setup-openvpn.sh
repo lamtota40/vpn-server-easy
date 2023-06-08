@@ -127,7 +127,7 @@ systemctl enable openvpn
 systemctl start openvpn
 /etc/init.d/openvpn restart
 
-#xip file openvpn
+#zip file openvpn
 cd /var/www/html/
 zip -r openvpn-confall.zip tcp-1194.ovpn tcpssl-995.ovpn udp-2200.ovpn
 cd

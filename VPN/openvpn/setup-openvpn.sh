@@ -128,8 +128,8 @@ systemctl start openvpn
 /etc/init.d/openvpn restart
 
 #xip file openvpn
-#cd /root/myvpn/public_html
-#zip allconfig.zip client-tcp-1194.ovpn client-tcp-ssl.ovpn client-udp-2200.ovpn
+cd /var/www/html/
+zip -r openvpn-confall.zip tcp-1194.ovpn tcpssl-995.ovpn udp-2200.ovpn
 cd
 
 rm -rf setup-openvpn.sh

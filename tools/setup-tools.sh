@@ -9,6 +9,6 @@ wget -O /root/myvpn/detailserver $site/tools/detailserver.sh && chmod +x /root/m
 wget -O /root/myvpn/whoislogin $site/tools/whoislogin.sh && chmod +x /root/myvpn/whoislogin
 wget -O /root/myvpn/smanager $site/tools/smanager.sh && chmod +x /root/myvpn/smanager
 wget -O /root/myvpn/xray/addvmess $site/tools/m-xray/addvmess.sh && chmod +x /root/myvpn/xray/addvmess
-wget -O /root/myvpn/xray/addvless $site/tools/m-xray/addvmess.sh && chmod +x /root/myvpn/xray/addvmess
+wget -O /root/myvpn/xray/addvless $site/tools/m-xray/addvmess.sh && chmod +x /root/myvpn/xray/addvless
 
 rm -rf setup-tools.sh

@@ -16,7 +16,7 @@ NC='\033[0m'
 clear
 tuser="0"
 Tssh=$(cat /etc/shadow | cut -d: -f1,8 | sed /:$/d | wc -l)
-gmt_info=$(timedatectl | grep "Time zone" | awk -F"[()]" '{print $2}')
+gmt_info=$(timedatectl | grep "Time zone" | awk -F"[()]" '{print $2}' | awk '{print $2}')
 hddinfo=$(df -h --total | grep total)
 raminfo=$(free -m | grep Mem)
 ram_total=$(awk '{print $2}' <<< "$raminfo")
@@ -43,7 +43,7 @@ monthly_usage=$(vnstat -m --oneline | awk -F\; '{print $11}' | sed 's/ //')
 echo -e "\e[36m╒══════════════════════════════════════════════════╕\033[0m"
 echo -e " \E[46;1;37m                    INFO SERVER                   \E[0m"
 echo -e "\e[36m╘══════════════════════════════════════════════════╛\033[0m"
-echo -e "${PINK}Time${NC}	 :${BLUE}" `date "+%H:%M"` "|" `date "+%d/%m/%y"` "| $gmt_info ${NC}"
+echo -e "${PINK}Time${NC}	 :${BLUE}" `date "+%H:%M"` "|" `date "+%d/%m/%y"` "| GMT $gmt_info ${NC}"
 echo -e "${PINK}Uptime${NC}	 :${BLUE}" `uptime -p`"${NC}"
 echo -e "${PINK}Host${NC}	 :${BLUE} $domain | $(jq -r '.query' <<< "$cekip")${NC}"
 echo -e "${PINK}NS Host${NC}	 :${BLUE} $nsdomain ${NC}"

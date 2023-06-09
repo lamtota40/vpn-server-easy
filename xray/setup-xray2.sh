@@ -58,6 +58,32 @@ path_key="/etc/xray/xray.key"
 # Buat Config Xray
 cat > /etc/xray/config.json << END
 {
+  "log" : {
+    "access": "/var/log/xray/access.log",
+    "error": "/var/log/xray/error.log",
+    "loglevel": "warning"
+  },
+  "inbounds": [
+      {
+      "listen": "127.0.0.1",
+      "port": 10085,
+      "protocol": "dokodemo-door",
+      "settings": {
+        "address": "127.0.0.1"
+      },
+      "tag": "api"
+    },
+   {
+     "listen": "127.0.0.1",
+     "port": "14016",
+     "protocol": "vless",
+      "settings": {
+          "decryption":"none",
+            "clients": [
+               {
+                 "id": "${uuid}"
+#######55
+{
   "log": {
     "access": "/var/log/xray/access.log",
     "error": "/var/log/xray/error.log",

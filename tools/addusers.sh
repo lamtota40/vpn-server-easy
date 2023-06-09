@@ -30,6 +30,7 @@ echo " Wrong input.. Please input 0 - 365 day"
 read -p "Expired (day)      : " exp
 done
 
+gmt_info=$(timedatectl | grep "Time zone" | awk -F"[()]" '{print $2}' | awk '{print $2}')
 useradd -e `date -d "$exp days" +"%Y-%m-%d"` -s /bin/false -M $Login
 echo -e "$Pass\n$Pass\n" | passwd $Login &> /dev/null
 cekip=$(curl -s "http://ip-api.com/json/")
@@ -80,7 +81,7 @@ echo -e "UDP SSL/TLS: http://"$domain":81/udp-2200.ovpn"
 echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "UDPcustom	:1-65535"
 echo -e "BadVPN/UDPGW	:7200,7300"
-echo -e "Reboot VPS	: 00.05 ()"
+echo -e "Reboot VPS	: 00.05 (GMT $gmt_info)"
 echo -e "◇━━━━━━━━━━━━━━━━━◇"
 echo -e "GET / HTTP/1.1[crlf]Host: [host][crlf]User-Agent: [ua][crlf]Upgrade: websocket[crlf][crlf]"
 echo -e "\n◇━━━━━━━━━━━━━━━━━◇"

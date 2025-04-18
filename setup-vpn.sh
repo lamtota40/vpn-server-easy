@@ -27,6 +27,7 @@ mkdir -p /root/myvpn/xray
 
 echo $domain > /root/myvpn/domain
 echo $nsdomain > /root/myvpn/nsdomain
+sudo hostnamectl set-hostname $domain
 
 #remove firewall
 apt-get remove --purge ufw firewalld -y

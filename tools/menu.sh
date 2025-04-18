@@ -263,6 +263,8 @@ fi
 timedatectl set-timezone "$timezone"
 echo "Timezone telah diubah menjadi: $timezone"
 timedatectl
+	read -p "Back to Menu Press [Enter]...."
+	/usr/sbin/menu
 ;;
 	9)
 	clear
@@ -271,10 +273,10 @@ timedatectl
 	echo "Note : Becareful your change password Root"
 	echo "To Cancel press CTRL+C"
 	echo "================================================"
-	read -p  "Please input your New Password Root :" passroot
-	read -p  "Please confrim your Password Root   :" passroot2
-	#passwd $passroot
-	echo "Success To change password root"
+echo "Please input your New Password Root:"
+read -p "Password: " password
+echo "root:$password" | chpasswd
+echo "Success To change password root"
 	read -p "Back to Menu Press [Enter]...."
 	/usr/sbin/menu
 	;;

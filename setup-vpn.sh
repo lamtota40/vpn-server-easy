@@ -27,13 +27,13 @@ mkdir -p /root/myvpn/xray
 
 echo $domain > /root/myvpn/domain
 echo $nsdomain > /root/myvpn/nsdomain
-sudo hostnamectl set-hostname $domain
+hostnamectl set-hostname $domain
 
 #remove firewall
 apt-get remove --purge ufw firewalld -y
 
 #dependency
-apt install gcc lsof make parted iptables python jq cron curl openssl net-tools unzip rsyslog -y
+apt install sudo gcc lsof make parted iptables python jq cron curl openssl net-tools unzip rsyslog -y
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 

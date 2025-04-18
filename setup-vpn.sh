@@ -13,8 +13,8 @@ echo "net.ipv6.conf.eth0.disable_ipv6 = 1" >> /etc/sysctl.conf
 echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
 sysctl -p
 
-read -p "input your domain = " domain
-read -p "input your NS Domain = " nsdomain
+read -p "input your domain (example.com)= " domain
+read -p "input your NS Domain (ns.example.com) = " nsdomain
 
 #create directory
 cd

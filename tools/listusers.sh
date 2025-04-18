@@ -78,6 +78,7 @@ read -p "To continue press [Enter]..."
 read -p "Please input Username for delete :" usertodel
 if id "$usertodel" &>/dev/null; then
 	userdel $usertodel
+ 	rm -rf /home/$usertodel
 	echo "Ok Success Delete Username = $usertodel"
 else
 	echo "Failed Username Not Found"

@@ -19,6 +19,7 @@ Tssh=$(cat /etc/shadow | cut -d: -f1,8 | sed /:$/d | wc -l)
 gmt_info=$(timedatectl | grep "Time zone" | awk -F"[()]" '{print $2}' | awk '{print $2}')
 hddinfo=$(df -h --total | grep total)
 cpuinfo=$(cat /proc/cpuinfo | grep MHz | awk '{print $4}')
+cpuuse=$(top -bn1 | grep "Cpu(s)" | awk '{print $2}' | awk -F. '{print $1}')
 raminfo=$(free -m | grep Mem)
 ram_total=$(awk '{print $2}' <<< "$raminfo")
 ram_usage=$(($(awk '{print $2}' <<< "$raminfo") - $(awk '{print $4}' <<< "$raminfo")))
@@ -49,7 +50,7 @@ echo -e "${PINK}Uptime${NC}	 :${BLUE}" `uptime -p`"${NC}"
 echo -e "${PINK}Host${NC}	 :${BLUE} $domain | $(jq -r '.query' <<< "$cekip")${NC}"
 echo -e "${PINK}NS Host${NC}	 :${BLUE} $nsdomain ${NC}"
 echo -e "${PINK}ISP${NC}	 :${BLUE} $(jq -r '.isp' <<< "$cekip") | $(jq -r '.country' <<< "$cekip") ${NC}"
-echo -e "${PINK}CPU${NC}	 :${BLUE} Usage = ${YEL} (???%) ${BLUE}| Total = ${YEL}"$cpuinfo" MHz ${NC}"
+echo -e "${PINK}CPU${NC}	 :${BLUE} Usage = ${YEL}("$cpuuse"%) ${BLUE}| Total = ${YEL}"$cpuinfo" MHz ${NC}"
 echo -e "${PINK}RAM${NC}	 :${BLUE} Usage = ${YEL}"$ram_usage" Mb ($(($ram_usage * 100 / $ram_total))%) ${BLUE}| Total = ${YEL}"$ram_total" Mb ${NC}"
 echo -e "${PINK}SWAP RAM${NC} :${BLUE} Usage = ${YEL}"$swap_usage" Mb ("$swap_percent"%) ${BLUE}| Total = ${YEL}"$swap_total" Mb ${NC}"
 echo -e "${PINK}HDD${NC}      :${BLUE} Usage = ${YEL}$hdd_usage   ($(awk '{print $5}' <<< "$hddinfo")) ${BLUE}| Total =${YEL} $hdd_total ${NC}"

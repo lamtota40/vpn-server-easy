@@ -238,6 +238,32 @@ case $num in
 	read -p "To Continue Press [Enter]...."
 	nano /root/myvpn/nsdomain
 	;;
+5)
+get_gmt_offset() {
+  while true; do
+    read -p "Masukkan offset GMT (-12 hingga +12): " gmt_offset
+    if [[ "$gmt_offset" =~ ^[+-]?[0-9]+$ ]]; then
+      # Menghapus tanda + jika ada
+      gmt_offset="${gmt_offset/#\+}"
+      abs_offset="${gmt_offset#-}"
+      if [ "$abs_offset" -le 12 ] && [ "$abs_offset" -ge 0 ]; then
+        echo "$gmt_offset"
+        return
+      fi
+    fi
+    echo "Input tidak valid. Harap masukkan angka antara -12 dan +12, dengan format +X atau -X."
+  done
+}
+gmt_offset=$(get_gmt_offset)
+if [[ "$gmt_offset" == -* ]]; then
+  timezone="Etc/GMT+$(( -gmt_offset ))"  # Untuk -1, ini menjadi Etc/GMT+1
+else
+  timezone="Etc/GMT-$gmt_offset"  # Untuk 1, ini menjadi Etc/GMT-1
+fi
+timedatectl set-timezone "$timezone"
+echo "Timezone telah diubah menjadi: $timezone"
+timedatectl
+;;
 	9)
 	clear
 	echo "================================================"

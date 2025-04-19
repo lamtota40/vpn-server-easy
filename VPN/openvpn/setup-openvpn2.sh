@@ -1,16 +1,3 @@
-#!/bin/bash
-
-
-
-
-#!/bin/bash
-
-# Memastikan script dijalankan dengan hak akses root
-if [ "$EUID" -ne 0 ]; then
-  echo "Silakan jalankan script ini sebagai root."
-  exit
-fi
-
 # Instalasi OpenVPN dan Easy-RSA
 apt-get update
 apt-get install -y openvpn easy-rsa

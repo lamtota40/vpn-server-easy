@@ -23,12 +23,13 @@ set_var EASYRSA_REQ_EMAIL      "email@domain.com"
 set_var EASYRSA_REQ_OU         "UnitOrganisasi"
 EOL
 
+CN="toxa.ix.tc"
 # Membuat CA
-./easyrsa build-ca nopass
+echo "$CN" | ./easyrsa build-ca nopass
 
 # Membuat sertifikat server
 (echo "$CN"; echo "yes") | ./easyrsa gen-req server nopass
-./easyrsa sign-req server server
+echo "yes" | ./easyrsa sign-req server server
 
 # Membuat Diffie-Hellman
 ./easyrsa gen-dh

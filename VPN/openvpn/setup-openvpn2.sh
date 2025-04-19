@@ -43,21 +43,25 @@ cp /root/easy-rsa/pki/dh.pem /etc/openvpn/
 # Membuat file konfigurasi server OpenVPN
 cat <<EOL > /etc/openvpn/server.conf
 port 1194
-proto udp
+proto tcp
 dev tun
 ca ca.crt
 cert server.crt
 key server.key
 dh dh.pem
-server 10.8.0.0 255.255.255.0
+plugin /usr/lib/openvpn/openvpn-plugin-auth-pam.so login
+verify-client-cert none
+username-as-common-name
+server 10.6.0.0 255.255.255.0
 ifconfig-pool-persist ipp.txt
-keepalive 10 120
-cipher AES-256-CBC
-user nobody
-group nogroup
+push "redirect-gateway def1 bypass-dhcp"
+push "dhcp-option DNS 8.8.8.8"
+push "dhcp-option DNS 8.8.4.4"
+keepalive 5 60
+comp-lzo
 persist-key
 persist-tun
-status openvpn-status.log
+status openvpn-tcp.log
 verb 3
 EOL
 

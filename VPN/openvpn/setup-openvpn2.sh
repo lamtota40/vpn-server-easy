@@ -71,14 +71,17 @@ chmod 644 /etc/openvpn/openvpn-tcp.log
 systemctl start openvpn@server
 systemctl enable openvpn@server
 
-# Membuat sertifikat klien
-echo "$CN" | ./easyrsa gen-req client nopass
-echo "yes" | ./easyrsa sign-req client client
-
 # Menyalin file ke direktori klien
 CLIENT_DIR=~/client-configs
 mkdir -p $CLIENT_DIR
-cp pki/ca.crt pki/issued/client.crt pki/private/client.key $CLIENT_DIR/
+
+# Membuat sertifikat klien
+cp /root/easy-rsa/pki/ca.crt $CLIENT_DIR/
+echo "$CN" | ./easyrsa gen-req client nopass
+cp /root/easy-rsa/pki/private/client.key $CLIENT_DIR/
+
+echo "yes" | ./easyrsa sign-req client client
+cp /root/easy-rsa/pki/issued/client.crt $CLIENT_DIR/
 
 # Membuat file konfigurasi klien
 cat <<EOL > $CLIENT_DIR/client.ovpn

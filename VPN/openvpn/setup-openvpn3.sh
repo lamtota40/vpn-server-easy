@@ -9,12 +9,10 @@ MYIP2="s/xxxxxxxxx/$MYIP/g";
 # Install OpenVPN dan Easy-RSA
 apt install netfilter-persistent openvpn easy-rsa unzip -y
 apt install openssl iptables iptables-persistent -y
-mkdir -p /etc/openvpn/server/easy-rsa/
-cd /etc/openvpn/
-wget -O vpn.zip https://github.com/lamtota40/vpn-server-easy/raw/main/VPN/openvpn/vpn.zip
-unzip vpn.zip
-rm -f vpn.zip
-chown -R root:root /etc/openvpn/server/easy-rsa/
+#mkdir -p /etc/openvpn/server/easy-rsa/
+#cd /etc/openvpn/
+#isiopenvpn zip
+#chown -R root:root /etc/openvpn/server/easy-rsa/
 
 cd
 mkdir -p /usr/lib/openvpn/

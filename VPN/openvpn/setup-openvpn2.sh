@@ -63,8 +63,8 @@ systemctl start openvpn@server
 systemctl enable openvpn@server
 
 # Membuat sertifikat klien
-./easyrsa gen-req client nopass
-./easyrsa sign-req client client
+echo "$CN" | ./easyrsa gen-req client nopass
+echo "yes" | ./easyrsa sign-req client client
 
 # Menyalin file ke direktori klien
 CLIENT_DIR=~/client-configs

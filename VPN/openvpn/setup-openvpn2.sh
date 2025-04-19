@@ -40,6 +40,9 @@ cp /root/easy-rsa/pki/issued/server.crt /etc/openvpn/
 ./easyrsa gen-dh
 cp /root/easy-rsa/pki/dh.pem /etc/openvpn/
 
+mkdir -p /usr/lib/openvpn/
+cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib/openvpn/openvpn-plugin-auth-pam.so
+
 # Membuat file konfigurasi server OpenVPN
 cat <<EOL > /etc/openvpn/server.conf
 port 1194

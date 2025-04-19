@@ -26,13 +26,20 @@ EOL
 CN="toxa.ix.tc"
 # Membuat CA
 echo "$CN" | ./easyrsa build-ca nopass
+cp /root/easy-rsa/pki/ca.crt /etc/openvpn/
 
 # Membuat sertifikat server
 (echo "$CN"; echo "yes") | ./easyrsa gen-req server nopass
+cp /root/easy-rsa/pki/reqs/server.req /etc/openvpn/
+cp /root/easy-rsa/pki/private/server.key /etc/openvpn/
+
 echo "yes" | ./easyrsa sign-req server server
+cp /root/easy-rsa/pki/issued/server.crt /etc/openvpn/
+/root/easy-rsa/pki/issued/client.crt
 
 # Membuat Diffie-Hellman
 ./easyrsa gen-dh
+cp /root/easy-rsa/pki/dh.pem /etc/openvpn/
 
 # Menyalin file ke direktori OpenVPN
 cp pki/ca.crt pki/issued/server.crt pki/private/server.key pki/dh.pem /etc/openvpn/

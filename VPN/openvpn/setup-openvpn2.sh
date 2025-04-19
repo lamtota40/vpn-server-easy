@@ -16,10 +16,10 @@ cd $EASYRSA_DIR
 # Mengedit file vars
 cat <<EOL > vars
 set_var EASYRSA_REQ_COUNTRY    "ID"
-set_var EASYRSA_REQ_PROVINCE   "Jawa"
+set_var EASYRSA_REQ_PROVINCE   "DKI Jakarta"
 set_var EASYRSA_REQ_CITY       "Jakarta"
 set_var EASYRSA_REQ_ORG        "NamaOrganisasi"
-set_var EASYRSA_REQ_EMAIL      "email@domain.com"
+set_var EASYRSA_REQ_EMAIL      "email@mydomain.com"
 set_var EASYRSA_REQ_OU         "UnitOrganisasi"
 EOL
 

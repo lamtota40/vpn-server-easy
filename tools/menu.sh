@@ -42,12 +42,17 @@ dateinstall="14/05/23"
 explicen="lifetime"
 daily_usage=$(vnstat -d --oneline | awk -F\; '{print $6}' | sed 's/ //')
 monthly_usage=$(vnstat -m --oneline | awk -F\; '{print $11}' | sed 's/ //')
+OS_NAME=$(lsb_release -si)
+OS_VERSION=$(lsb_release -sr)
+OS_CODENAME=$(lsb_release -sc)
+ARCHITECTURE=$(uname -m)
 
 echo -e "\e[36m╒══════════════════════════════════════════════════╕\033[0m"
 echo -e " \E[46;1;37m                    INFO SERVER                   \E[0m"
 echo -e "\e[36m╘══════════════════════════════════════════════════╛\033[0m"
 echo -e "${PINK}Time${NC}	 :${BLUE}" `date "+%H:%M"` "|" `date "+%d/%m/%y"` "| GMT $gmt_info ${NC}"
 echo -e "${PINK}Uptime${NC}	 :${BLUE}" `uptime -p`"${NC}"
+echo -e "${PINK}OS ${NC}	 :${BLUE}" $OS_NAME/$OS_VERSION ($OS_CODENAME)/$ARCHITECTURE"${NC}"
 echo -e "${PINK}Host${NC}	 :${BLUE} $domain | $(jq -r '.query' <<< "$cekip")${NC}"
 echo -e "${PINK}NS Host${NC}	 :${BLUE} $nsdomain ${NC}"
 echo -e "${PINK}ISP${NC}	 :${BLUE} $(jq -r '.isp' <<< "$cekip") | $(jq -r '.country' <<< "$cekip") ${NC}"

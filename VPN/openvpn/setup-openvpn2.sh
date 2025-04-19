@@ -98,3 +98,5 @@ sed -i "s/your_server_ip/$(hostname -I | awk '{print $1}')/g" $CLIENT_DIR/client
 
 echo "OpenVPN dan Easy-RSA telah diinstal dan dikonfigurasi."
 echo "File konfigurasi klien dapat ditemukan di: $CLIENT_DIR/client.ovpn"
+
+cd

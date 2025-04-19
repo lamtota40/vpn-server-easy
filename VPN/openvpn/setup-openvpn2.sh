@@ -64,6 +64,8 @@ persist-tun
 status openvpn-tcp.log
 verb 3
 EOL
+touch /etc/openvpn/openvpn-tcp.log
+chmod 644 /etc/openvpn/openvpn-tcp.log
 
 # Mengaktifkan dan memulai layanan OpenVPN
 systemctl start openvpn@server

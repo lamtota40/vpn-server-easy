@@ -23,6 +23,7 @@ sohq=$(cek_status ohp-openvpn.service)
 sohr=$(cek_status ohp-ssh.service)
 swsopen=$(cek_status ws-dropbear8880.service)
 sopenssh=$(cek_status ssh)
+clear
 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[41;1;39m            ⇱ Service Information ⇲             \E[0m"

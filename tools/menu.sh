@@ -71,8 +71,7 @@ echo -e "${PINK}SWAP RAM${NC} :${BLUE} Usage = ${YEL}"$swap_usage" Mb ("$swap_pe
 echo -e "${PINK}HDD${NC}      :${BLUE} Usage = ${YEL}$hdd_usage   ($(awk '{print $5}' <<< "$hddinfo")) ${BLUE}| Total =${YEL} $hdd_total ${NC}"
 echo -e "${PINK}Service${NC}  :${RED} $sfailed OFF ${BLUE} |  Total 60 ${NC}"
 echo -e "${BICyan}┌──────────────────────────────────────────────────┐${NC}"
-echo -e "${BICyan} \033[0m ${BOLD}${YELLOW} SSH     VMESS     VLESS     TROJAN     SHADOW  $NC ${BICyan} "
-echo -e "   $Tssh      $tuser      $tuser         $tuser        $tuser"
+echo -e "SSH\tVMESS\tVLESS\tTROJAN\tSHADOW\n1\t2\t3\t4\t5" | column -t
 echo -e "${BICyan}└──────────────────────────────────────────────────┘${NC}"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}" | lolcat
 echo -e "  ${PINK}༶ ━━━━━━━━ [ Bandwidth Monitoring ] ━━━━━━━━ ༶   ${NC}"

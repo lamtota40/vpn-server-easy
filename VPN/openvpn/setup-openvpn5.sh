@@ -17,6 +17,45 @@ rm -f vpn.zip
 chown -R root:root /etc/openvpn/server/easy-rsa/
 
 cd
+# Membuat direktori kerja untuk Easy-RSA
+EASYRSA_DIR=~/easy-rsa
+mkdir -p $EASYRSA_DIR
+cp -r /usr/share/easy-rsa/* $EASYRSA_DIR
+
+# Masuk ke direktori Easy-RSA
+cd $EASYRSA_DIR
+
+# Inisialisasi PKI
+./easyrsa init-pki
+
+# Mengedit file vars
+cat <<EOL > vars
+set_var EASYRSA_REQ_COUNTRY    "ID"
+set_var EASYRSA_REQ_PROVINCE   "DKI Jakarta"
+set_var EASYRSA_REQ_CITY       "Jakarta"
+set_var EASYRSA_REQ_ORG        "NamaOrganisasi"
+set_var EASYRSA_REQ_EMAIL      "email@mydomain.com"
+set_var EASYRSA_REQ_OU         "UnitOrganisasi"
+EOL
+
+CN="toxa.ix.tc"
+# Membuat CA
+echo "$CN" | ./easyrsa build-ca nopass
+cp /root/easy-rsa/pki/ca.crt /etc/openvpn/
+
+# Membuat sertifikat server
+(echo "$CN"; echo "yes") | ./easyrsa gen-req server nopass
+cp /root/easy-rsa/pki/reqs/server.req /etc/openvpn/
+cp /root/easy-rsa/pki/private/server.key /etc/openvpn/
+
+echo "yes" | ./easyrsa sign-req server server
+cp /root/easy-rsa/pki/issued/server.crt /etc/openvpn/
+
+# Membuat Diffie-Hellman
+./easyrsa gen-dh
+cp /root/easy-rsa/pki/dh.pem /etc/openvpn/
+
+cd
 mkdir -p /usr/lib/openvpn/
 cp /usr/lib/x86_64-linux-gnu/openvpn/plugins/openvpn-plugin-auth-pam.so /usr/lib/openvpn/openvpn-plugin-auth-pam.so
 

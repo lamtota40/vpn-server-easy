@@ -25,6 +25,7 @@ sws8880=$(cek_status ws-dropbear8880.service)
 sopenvpn=$(cek_status openvpn)
 ssquid=$(cek_status squid)
 scron=$(cek_status cron)
+snginx=$(cek_status nginx)
 
 sohq=$(cek_status ohp-openvpn.service)
 sohr=$(cek_status ohp-ssh.service)

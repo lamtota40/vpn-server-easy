@@ -33,6 +33,11 @@ rm data-users.zip
 echo "Export completed. Data saved to $OUTPUT_FILE."
 echo "OR for download http://"$domain":81/data-user.zip"
 
+
+
+
+unzip -P "abcd1238" "data-user.zip"
+
 INPUT_FILE="data-users.txt"
 
 if [ ! -f "$FILE" ]; then

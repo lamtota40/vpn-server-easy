@@ -32,6 +32,9 @@ sudpgw7200=$(cek_status udpgw7200.service)
 sudpgw7300=$(cek_status udpgw7300.service)
 scsldns=$(cek_status client-sldns)
 sssldns=$(cek_status server-sldns)
+sohpssh8080=$(cek_status ohp-ssh8080.service)
+sohpdropbear8181=$(cek_status ohp-dropbear8181.service)
+sohpopenvpn8282=$(cek_status ohp-openvpb8282.service)
 
 svnstat=$(cek_status vnstat)
 sdanted=$(cek_status danted)
@@ -58,9 +61,9 @@ echo -e "⚙️ OpenVPN TCP 1194        :$sopenvpntcp"
 echo -e "⚙️ OpenVPN UDP 2200        :$sopenvpnudp"
 echo -e "⚙️ BadVPN/UDPGW            :$sopenssh"
 echo -e "⚙️ Stunnel4 (SSL)          :$sstunnel"
-echo -e "⚙️ OHP                     :$sopenssh"
-echo -e "⚙️ OHP Dropbear            :$sopenssh"
-echo -e "⚙️ OHP Openvpn             :$sopenssh"
+echo -e "⚙️ OHP SSH 8080            :$sohpssh8080"
+echo -e "⚙️ OHP Dropbear 8181       :$sohpdropbear8181"
+echo -e "⚙️ OHP Openvpn 8282        :$sohpopenvpn8282"
 echo -e "⚙️ Danted (Proxy Socks)    :$sdanted"
 echo -e "⚙️ Squid (Proxy HTTP/S)    :$ssquid"
 echo -e "⚙️ XRAYS Vmess TLS         :$sopenssh"

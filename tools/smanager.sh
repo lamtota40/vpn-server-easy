@@ -22,6 +22,9 @@ cek_status() {
 sopenssh=$(cek_status ssh)
 sdropbear=$(cek_status dropbear)
 sws8880=$(cek_status ws-dropbear8880.service)
+sopenvpn=$(cek_status openvpn)
+ssquid=$(cek_status squid)
+scron=$(cek_status cron)
 
 sohq=$(cek_status ohp-openvpn.service)
 sohr=$(cek_status ohp-ssh.service)
@@ -37,12 +40,12 @@ echo -e "⚙️ Dropbear                :$sdropbear"
 echo -e "⚙️ Websocket               :$sws8880"
 echo -e "⚙️ Slow DNS                :$sopenssh"
 echo -e "⚙️ UDP Custom              :$sopenssh"
-echo -e "⚙️ OpenVPN                 :$sopenssh"
+echo -e "⚙️ OpenVPN                 :$sopenvpn"
 echo -e "⚙️ BadVPN/UDPGW            :$sopenssh"
 echo -e "⚙️ Stunnel (SSL)           :$sopenssh"
 echo -e "⚙️ OHP                     :$sopenssh"
 echo -e "⚙️ Dante (Proxy Socks)     :$sopenssh"
-echo -e "⚙️ Squid (Proxy HTTP/S)    :$sopenssh"
+echo -e "⚙️ Squid (Proxy HTTP/S)    :$ssquid"
 echo -e "⚙️ XRAYS Vmess TLS         :$sopenssh"
 echo -e "⚙️ XRAYS Vmess None TLS    :$sopenssh"
 echo -e "⚙️ XRAYS Vless TLS         :$sopenssh"
@@ -54,7 +57,7 @@ echo -e "⚙️ XRAYS Trojan            :$sopenssh"
 echo -e "⚙️ SSLH                    :$sopenssh"
 echo -e "⚙️ Nginx                   :$sopenssh"
 echo -e "⚙️ Fail2Ban                :$sopenssh"
-echo -e "⚙️ Crons                   :$sopenssh"
+echo -e "⚙️ Cron                    :$scron"
 echo -e "⚙️ Vnstat                  :$sopenssh"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""

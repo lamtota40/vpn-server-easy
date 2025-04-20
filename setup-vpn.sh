@@ -117,7 +117,7 @@ wget -O setup-vnstat.sh $site/tools/vnstat/setup-vnstat.sh && bash setup-vnstat.
 wget -O setup-nginx.sh $site/nginx/setup-nginx.sh && bash setup-nginx.sh
 
 #install OpenVPN
-wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn.sh && bash setup-openvpn.sh
+wget -O setup-openvpn.sh $site/VPN/openvpn/setup-openvpn5.sh && bash setup-openvpn5.sh
 #wget https://raw.githubusercontent.com/godtrex99/V2vps/1c0d89c80a81661cca63eed089f0b72492b2fddc/ssh/vpn.sh && bash vpn.sh
 
 #install UDP custom

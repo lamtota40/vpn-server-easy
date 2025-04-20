@@ -23,6 +23,8 @@ sopenssh=$(cek_status ssh)
 sdropbear=$(cek_status dropbear)
 sws8880=$(cek_status ws-dropbear8880.service)
 sopenvpn=$(cek_status openvpn)
+sopenvpntcp=$(cek_status openvpn-server@server-tcp-1194.service)
+sopenvpnudp=$(cek_status openvpn-server@server-udp-2200.service)
 ssquid=$(cek_status squid)
 scron=$(cek_status cron)
 snginx=$(cek_status nginx)
@@ -47,9 +49,13 @@ echo -e "⚙️ Websocket               :$sws8880"
 echo -e "⚙️ Slow DNS                :$sopenssh"
 echo -e "⚙️ UDP Custom              :$sopenssh"
 echo -e "⚙️ OpenVPN                 :$sopenvpn"
+echo -e "⚙️ OpenVPN TCP 1194        :$sopenvpntcp"
+echo -e "⚙️ OpenVPN UDP 2200        :$sopenvpnudp"
 echo -e "⚙️ BadVPN/UDPGW            :$sopenssh"
 echo -e "⚙️ Stunnel4 (SSL)          :$sstunnel"
 echo -e "⚙️ OHP                     :$sopenssh"
+echo -e "⚙️ OHP Dropbear            :$sopenssh"
+echo -e "⚙️ OHP Openvpn             :$sopenssh"
 echo -e "⚙️ Danted (Proxy Socks)    :$sdanted"
 echo -e "⚙️ Squid (Proxy HTTP/S)    :$ssquid"
 echo -e "⚙️ XRAYS Vmess TLS         :$sopenssh"

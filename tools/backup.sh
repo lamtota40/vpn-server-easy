@@ -1,5 +1,6 @@
 #!/bin/bash
 
+domain=$(cat /root/myvpn/domain)
 # File untuk menyimpan data pengguna
 OUTPUT_FILE="data-users.txt"
 
@@ -29,7 +30,7 @@ cp data-users.zip /var/www/html/data-user.zip
 rm data-users.zip
 
 echo "Export completed. Data saved to $OUTPUT_FILE."
-
+echo "OR for download http://"$domain":81/data-user.zip"
 
 INPUT_FILE="data-users.txt"
 

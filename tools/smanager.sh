@@ -28,6 +28,8 @@ scron=$(cek_status cron)
 snginx=$(cek_status nginx)
 
 svnstat=$(cek_status vnstat)
+sdanted=$(cek_status danted)
+sstunnel=$(cek_status stunnel4)
 
 sohq=$(cek_status ohp-openvpn.service)
 sohr=$(cek_status ohp-ssh.service)
@@ -45,9 +47,9 @@ echo -e "⚙️ Slow DNS                :$sopenssh"
 echo -e "⚙️ UDP Custom              :$sopenssh"
 echo -e "⚙️ OpenVPN                 :$sopenvpn"
 echo -e "⚙️ BadVPN/UDPGW            :$sopenssh"
-echo -e "⚙️ Stunnel (SSL)           :$sopenssh"
+echo -e "⚙️ Stunnel4 (SSL)          :$sstunnel"
 echo -e "⚙️ OHP                     :$sopenssh"
-echo -e "⚙️ Dante (Proxy Socks)     :$sopenssh"
+echo -e "⚙️ Danted (Proxy Socks)    :$sdanted"
 echo -e "⚙️ Squid (Proxy HTTP/S)    :$ssquid"
 echo -e "⚙️ XRAYS Vmess TLS         :$sopenssh"
 echo -e "⚙️ XRAYS Vmess None TLS    :$sopenssh"

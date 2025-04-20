@@ -30,6 +30,8 @@ scron=$(cek_status cron)
 snginx=$(cek_status nginx)
 sudpgw7200=$(cek_status udpgw7200.service)
 sudpgw7300=$(cek_status udpgw7300.service)
+scsldns=$(cek_status client-sldns)
+sssldns=$(cek_status server-sldns)
 
 svnstat=$(cek_status vnstat)
 sdanted=$(cek_status danted)
@@ -48,7 +50,8 @@ echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━�
 echo -e "⚙️ Open SSH                :$sopenssh"
 echo -e "⚙️ Dropbear                :$sdropbear"
 echo -e "⚙️ Websocket               :$sws8880"
-echo -e "⚙️ Slow DNS                :$sopenssh"
+echo -e "⚙️ Slow DNS Server         :$sssldns"
+echo -e "⚙️ Slow DNS Client         :$scsldns"
 echo -e "⚙️ UDP Custom              :$sopenssh"
 echo -e "⚙️ OpenVPN                 :$sopenvpn"
 echo -e "⚙️ OpenVPN TCP 1194        :$sopenvpntcp"

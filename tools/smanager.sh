@@ -30,6 +30,7 @@ snginx=$(cek_status nginx)
 svnstat=$(cek_status vnstat)
 sdanted=$(cek_status danted)
 sstunnel=$(cek_status stunnel4)
+ssslh=$(cek_status sslh)
 
 sohq=$(cek_status ohp-openvpn.service)
 sohr=$(cek_status ohp-ssh.service)
@@ -59,7 +60,7 @@ echo -e "⚙️ Shadowsocks-R           :$sopenssh"
 echo -e "⚙️ Shadowsocks-OBFS HTTPS  :$sopenssh"
 echo -e "⚙️ Shadowsocks-OBFS HTTP   :$sopenssh"
 echo -e "⚙️ XRAYS Trojan            :$sopenssh"
-echo -e "⚙️ SSLH                    :$sopenssh"
+echo -e "⚙️ SSLH                    :$ssslh"
 echo -e "⚙️ Nginx                   :$snginx"
 echo -e "⚙️ Fail2Ban                :$sopenssh"
 echo -e "⚙️ Cron                    :$scron"

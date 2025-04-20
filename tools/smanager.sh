@@ -28,6 +28,8 @@ sopenvpnudp=$(cek_status openvpn-server@server-udp-2200.service)
 ssquid=$(cek_status squid)
 scron=$(cek_status cron)
 snginx=$(cek_status nginx)
+sudpgw7200=$(cek_status udpgw7200.service)
+sudpgw7300=$(cek_status udpgw7300.service)
 
 svnstat=$(cek_status vnstat)
 sdanted=$(cek_status danted)

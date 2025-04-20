@@ -35,6 +35,12 @@ echo "OR for download http://"$domain":81/data-user.zip"
 
 INPUT_FILE="data-users.txt"
 
+if [ ! -f "$FILE" ]; then
+    echo "File $FILE tidak ditemukan."
+    # Keluar dari skrip
+    exit 1
+fi
+
 # Membaca file baris per baris
 while IFS=: read -r username password expire blocked shell; do
     # Membuat pengguna baru

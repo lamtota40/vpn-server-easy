@@ -285,6 +285,39 @@ else
    swsopen="${RED}  Not Running ${NC}  ( Error )${NC}"
 fi
 
+
+
+
+
+
+
+
+
+
+
+# Fungsi untuk cek status service
+cek_status() {
+    local service_name=$1
+    local status=$(systemctl is-active "$service_name")
+
+    if [[ $status == "active" ]]; then
+        echo -e "${GREEN}Running${NC} ( No Error )"
+    else
+        echo -e "${RED}Not Running${NC} ( Error )"
+    fi
+}
+
+# Warna
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+# Panggil fungsi untuk tiap service
+sohq=$(cek_status ohp-openvpn.service)
+sohr=$(cek_status ohp-ssh.service)
+swsopen=$(cek_status ws-dropbear8880.service)
+
+
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[41;1;39m            ⇱ Service Information ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"

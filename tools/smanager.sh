@@ -27,6 +27,8 @@ ssquid=$(cek_status squid)
 scron=$(cek_status cron)
 snginx=$(cek_status nginx)
 
+svnstat=$(cek_status vnstat)
+
 sohq=$(cek_status ohp-openvpn.service)
 sohr=$(cek_status ohp-ssh.service)
 
@@ -56,10 +58,10 @@ echo -e "⚙️ Shadowsocks-OBFS HTTPS  :$sopenssh"
 echo -e "⚙️ Shadowsocks-OBFS HTTP   :$sopenssh"
 echo -e "⚙️ XRAYS Trojan            :$sopenssh"
 echo -e "⚙️ SSLH                    :$sopenssh"
-echo -e "⚙️ Nginx                   :$sopenssh"
+echo -e "⚙️ Nginx                   :$snginx"
 echo -e "⚙️ Fail2Ban                :$sopenssh"
 echo -e "⚙️ Cron                    :$scron"
-echo -e "⚙️ Vnstat                  :$sopenssh"
+echo -e "⚙️ Vnstat                  :$svnstat"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo ""
 read -n 1 -s -r -p "Back to Menu Press Enter...."

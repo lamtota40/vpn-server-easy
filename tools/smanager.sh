@@ -19,18 +19,22 @@ cek_status() {
 }
 
 # Panggil fungsi untuk tiap service
+sopenssh=$(cek_status ssh)
+sdropbear=$(cek_status dropbear)
+sws8880=$(cek_status ws-dropbear8880.service)
+
 sohq=$(cek_status ohp-openvpn.service)
 sohr=$(cek_status ohp-ssh.service)
-swsopen=$(cek_status ws-dropbear8880.service)
-sopenssh=$(cek_status ssh)
+
+
 clear
 
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "\E[41;1;39m            ⇱ Service Information ⇲             \E[0m"
 echo -e "${CYAN}━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m${NC}"
 echo -e "⚙️ Open SSH                :$sopenssh"
-echo -e "⚙️ Dropbear                :$sopenssh"
-echo -e "⚙️ Websocket               :$sopenssh"
+echo -e "⚙️ Dropbear                :$sdropbear"
+echo -e "⚙️ Websocket               :$sws8880"
 echo -e "⚙️ Slow DNS                :$sopenssh"
 echo -e "⚙️ UDP Custom              :$sopenssh"
 echo -e "⚙️ OpenVPN                 :$sopenssh"

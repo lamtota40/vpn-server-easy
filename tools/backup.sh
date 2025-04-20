@@ -25,7 +25,7 @@ for user in $(awk -F: '$3 >= 1000 {print $1}' /etc/passwd); do
     # Menulis informasi pengguna ke file
     echo "$user:$password:$expire:$blocked_status:$shell" >> $OUTPUT_FILE
 done
-read -p "Please input password for security file data-user.zip " pass
+read -p "Please input password for security file data-user.zip :" pass
 zip -P "$pass" "data-user.zip" "$OUTPUT_FILE"
 cp data-users.zip /var/www/html/data-user.zip
 rm data-users.zip

@@ -171,4 +171,4 @@ cd /var/www/html/
 zip -r openvpn-confall.zip tcp-1194.ovpn tcpssl-995.ovpn udp-2200.ovpn
 cd
 
-rm -rf setup-openvpn.sh
+rm -rf setup-openvpn5.sh

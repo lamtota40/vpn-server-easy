@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Meminta input dari pengguna untuk ukuran swap
-read -p "Masukkan ukuran swap baru (misalnya 2G, 4G): " swap_size
+read -p "Masukkan ukuran swap baru (misalnya 3 untuk 3GB): " swap_size
 
 while true; do
     read -p "Masukkan nilai swappiness baru (0-100): " swappiness

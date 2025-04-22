@@ -1,8 +1,19 @@
 #!/bin/bash
 
-# Meminta input dari pengguna
+# Meminta input dari pengguna untuk ukuran swap
 read -p "Masukkan ukuran swap baru (misalnya 2G, 4G): " swap_size
-read -p "Masukkan nilai swappiness baru (0-100): " swappiness
+
+# Meminta input untuk swappiness dengan validasi
+while true; do
+    read -p "Masukkan nilai swappiness baru (0-100): " swappiness
+    if [[ "$swappiness" =~ ^[0-9]+$ ]] && [ "$swappiness" -ge 0 ] && [ "$swappiness" -le 100 ]; then
+        break
+    else
+        echo "Nilai swappiness harus berupa angka antara 0 dan 100. Silakan coba lagi."
+    fi
+done
+
+# Meminta input untuk vfs_cache_pressure
 read -p "Masukkan nilai vfs_cache_pressure baru: " vfs_cache_pressure
 
 # Mematikan swap yang ada

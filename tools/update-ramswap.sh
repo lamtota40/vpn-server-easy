@@ -3,7 +3,6 @@
 # Meminta input dari pengguna untuk ukuran swap
 read -p "Masukkan ukuran swap baru (misalnya 2G, 4G): " swap_size
 
-# Meminta input untuk swappiness dengan validasi
 while true; do
     read -p "Masukkan nilai swappiness baru (0-100): " swappiness
     if [[ "$swappiness" =~ ^[0-9]+$ ]] && [ "$swappiness" -ge 0 ] && [ "$swappiness" -le 100 ]; then
@@ -13,8 +12,14 @@ while true; do
     fi
 done
 
-# Meminta input untuk vfs_cache_pressure
-read -p "Masukkan nilai vfs_cache_pressure baru: " vfs_cache_pressure
+while true; do
+    read -p "Masukkan nilai vfs_cache_pressure baru (default:100): " vfs_cache_pressure
+    if [[ "$vfs_cache_pressure" =~ ^[0-9]+$ ]] && [ "$vfs_cache_pressure" -ge 0 ] && [ "$vfs_cache_pressure" -le 1000 ]; then
+        break
+    else
+        echo "Nilai swappiness harus berupa angka antara 0 dan 1000. Silakan coba lagi."
+    fi
+done
 
 # Mematikan swap yang ada
 sudo swapoff /swapfile

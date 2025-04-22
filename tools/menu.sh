@@ -64,7 +64,7 @@ echo -e "${PINK}OS${NC}       :${BLUE} $OS_NAME | $OS_VERSION $OS_CODENAME | $AR
 echo -e "${PINK}Host${NC}	 :${BLUE} $domain | $(jq -r '.query' <<< "$cekip")${NC}"
 echo -e "${PINK}NS Host${NC}	 :${BLUE} $nsdomain ${NC}"
 echo -e "${PINK}ISP${NC}	 :${BLUE} $(jq -r '.isp' <<< "$cekip") | $(jq -r '.country' <<< "$cekip") ${NC}"
-echo -e "${PINK}CPU Info${NC} :${BLUE} $cpucore CORE/VCPU | $pinfo ${NC}"
+echo -e "${PINK}CPU Info${NC} :${BLUE} $cpucore CORE/VCPU | $pinfo | $(systemd-detect-virt) ${NC}"
 echo -e "${PINK}CPU${NC}	 :${BLUE} Usage = ${YEL}"$cpuuse"% ${BLUE}| C.Speed = ${YEL}"$cpuinfo" MHz ${NC}"
 echo -e "${PINK}RAM${NC}	 :${BLUE} Usage = ${YEL}"$ram_usage" Mb ($(($ram_usage * 100 / $ram_total))%) ${BLUE}| Total = ${YEL}"$ram_total" Mb ${NC}"
 echo -e "${PINK}SWAP RAM${NC} :${BLUE} Usage = ${YEL}"$swap_usage" Mb ("$swap_percent"%) ${BLUE}| Total = ${YEL}"$swap_total" Mb ${NC}"

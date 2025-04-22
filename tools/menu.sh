@@ -303,6 +303,7 @@ echo "Success To change password root"
 	echo "2. Speedtest"
 	echo "3. Benchmark"
 	echo "4. Monitoring RAM"
+	echo "5. Scan Open Port"
 	echo "7. Update Version Script"
 	echo "8. Backup/Restore Data"
 	echo "9. Reboot Server"
@@ -322,6 +323,12 @@ echo "Success To change password root"
 	/usr/sbin/menu
 	;;
 	4)
+	clear
+	nmap -sT -O localhost
+	read -p "Back to Menu Press [Enter]...."
+	/usr/sbin/menu
+	;;
+ 	5)
 	clear
 	/root/myvpn/ram
 	read -p "Back to Menu Press [Enter]...."

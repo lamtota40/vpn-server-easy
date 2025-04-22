@@ -1,7 +1,15 @@
 #!/bin/bash
 
 # Meminta input dari pengguna untuk ukuran swap
-read -p "Masukkan ukuran swap baru (misalnya 3 untuk 3GB): " swap_size
+while true; do
+    read -p "Masukkan ukuran swap baru (misalnya 3 untuk 3GB): " swap_size
+    if [[ "$swap_size" =~ ^[0-9]+$ ]] && [ "$swap_size" -ge 1 ] && [ "$swap_size" -le 100 ]; then
+        break
+    else
+        echo "Nilai swappiness harus berupa angka antara 0 dan 100. Silakan coba lagi."
+    fi
+done
+
 
 while true; do
     read -p "Masukkan nilai swappiness baru (0-100): " swappiness

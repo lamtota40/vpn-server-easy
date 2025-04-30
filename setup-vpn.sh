@@ -10,7 +10,7 @@ if command -v screen >/dev/null 2>&1; then
 if screen -list | grep -q "\.setupvpn"; then
     clear
     echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
-    screen -d setupvpn
+    screen -d -r setupvpn || screen -d setupvpn
     exit 0
 fi
 fi

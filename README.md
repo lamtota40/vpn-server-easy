@@ -19,6 +19,7 @@ wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 OR
 ```console
 apt install tmux
+tmux attach-session -t setupvpn
 wget n9.cl/vpnsetup -O setup-vpn.sh
 tmux new-session -s setupvpn './setup-vpn.sh'
 ```

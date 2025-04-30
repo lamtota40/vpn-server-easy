@@ -7,7 +7,7 @@ if (( $EUID != 0 )); then
 fi
 
 if command -v screen >/dev/null 2>&1; then
-if screen -list | grep -q "\.setupvpn"; then
+if screen -list | grep -q "\.setupvpn[[:space:]]*(Attached\|Detached)"; then
     clear
     echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
     screen -d -r setupvpn || screen -d setupvpn

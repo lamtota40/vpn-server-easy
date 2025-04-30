@@ -8,8 +8,8 @@ fi
 
 if command -v screen >/dev/null 2>&1; then
 if screen -list | grep -q "\.setupvpn"; then
-    echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
     clear
+    echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
     screen -r setupvpn
     exit 0
 fi

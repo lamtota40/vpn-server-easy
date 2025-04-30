@@ -6,6 +6,12 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 
+if screen -list | grep -q "\.setupvpn"; then
+    echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
+    screen -r setupvpn
+    exit 0
+fi
+
 #disable ipv6
 echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
 echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
@@ -19,11 +25,6 @@ read -p "input your NS Domain (ns.example.com) = " nsdomain
 sudo apt update
 sudo apt install screen -y
 screen -S setupvpn
-if screen -list | grep -q "\.setupvpn"; then
-    echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
-    screen -r setupvpn
-    exit 0
-fi
 
 #create directory
 cd

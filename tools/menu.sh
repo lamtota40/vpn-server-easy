@@ -325,6 +325,7 @@ echo "Success To change password root"
 	4)
 	clear
 	nmap -sT -O localhost
+ nmap -sU -O localhost
 	read -p "Back to Menu Press [Enter]...."
 	/usr/sbin/menu
 	;;

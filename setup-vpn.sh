@@ -5,11 +5,12 @@ if (( $EUID != 0 )); then
     echo "You can Try comand 'su root' or 'sudo -i' or 'sudo -'"
     exit 1
 fi
-
+if systemctl list-units --type=service | grep -q screen; then
 if screen -list | grep -q "\.setupvpn"; then
     echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
     screen -r setupvpn
     exit 0
+fi
 fi
 
 #disable ipv6

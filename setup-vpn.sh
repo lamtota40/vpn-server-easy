@@ -20,7 +20,7 @@ read -p "input your NS Domain (ns.example.com) = " nsdomain
 
 sudo apt update
 sudo apt install screen -y
-screen -S setupvpn
+screen -S setupvpn -dm bash
 
 #disable ipv6
 echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf

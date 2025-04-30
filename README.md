@@ -22,7 +22,7 @@ apt install tmux -y
 if tmux has-session -t setupvpn 2>/dev/null; then
 tmux attach-session -t setupvpn
 else
-wget n9.cl/vpnsetup -O setup-vpn.sh
+wget n9.cl/vpnsetup -O setup-vpn.sh && chmod +x setup-vpn.sh
 tmux new-session -s setupvpn './setup-vpn.sh'
 fi
 ```

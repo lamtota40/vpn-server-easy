@@ -6,7 +6,7 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 
-if systemctl list-units --type=service | grep -q screen; then
+if command -v screen >/dev/null 2>&1; then
 if screen -list | grep -q "\.setupvpn"; then
     echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
     clear

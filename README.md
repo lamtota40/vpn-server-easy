@@ -18,12 +18,14 @@ wget n9.cl/vpnsetup -O setup-vpn.sh && bash setup-vpn.sh
 ```
 OR
 ```console
-apt install tmux
+apt install tmux -y
+if tmux has-session -t setupvpn 2>/dev/null; then
 tmux attach-session -t setupvpn
+else
 wget n9.cl/vpnsetup -O setup-vpn.sh
 tmux new-session -s setupvpn './setup-vpn.sh'
+fi
 ```
-
 username admin default for access OpenSSH,dropbear,Openvpn,shock5,slowdns,UDPcustom<br>
 user: <b>master</b><br>
 pass: <b>qwerty</b><br>

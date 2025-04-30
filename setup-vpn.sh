@@ -16,6 +16,19 @@ sysctl -p
 read -p "input your domain (example.com)= " domain
 read -p "input your NS Domain (ns.example.com) = " nsdomain
 
+sudo apt update
+sudo apt install screen -y
+screen -S setupvpn
+if screen -list | grep -q "\.setupvpn"; then
+    echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
+    screen -r setupvpn
+    exit 0
+fi
+
+# Bagian ini hanya dijalankan jika sesi tidak ditemukan
+touch data.txt
+
+
 #create directory
 cd
 mkdir -p /root/myvpn

@@ -9,8 +9,9 @@ fi
 if command -v screen >/dev/null 2>&1; then
 if screen -list | grep -q "\.setupvpn[[:space:]]*(Attached\|Detached)"; then
     clear
+    screen -d setupvpn
     echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
-    screen -d -r setupvpn || screen -d setupvpn
+    screen -r setupvpn
     exit 0
 fi
 fi

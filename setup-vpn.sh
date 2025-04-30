@@ -25,10 +25,6 @@ if screen -list | grep -q "\.setupvpn"; then
     exit 0
 fi
 
-# Bagian ini hanya dijalankan jika sesi tidak ditemukan
-touch data.txt
-
-
 #create directory
 cd
 mkdir -p /root/myvpn

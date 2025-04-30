@@ -9,6 +9,7 @@ fi
 if systemctl list-units --type=service | grep -q screen; then
 if screen -list | grep -q "\.setupvpn"; then
     echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
+    clear
     screen -r setupvpn
     exit 0
 fi

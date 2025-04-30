@@ -6,22 +6,8 @@ if (( $EUID != 0 )); then
     exit 1
 fi
 
-if command -v screen >/dev/null 2>&1; then
-if screen -list | grep -q "\.setupvpn[[:space:]]*(Attached\|Detached)"; then
-    clear
-    screen -d setupvpn
-    echo "Sesi 'setupvpn' sudah berjalan. Menyambung kembali..."
-    screen -r setupvpn
-    exit 0
-fi
-fi
-
 read -p "input your domain (example.com)= " domain
 read -p "input your NS Domain (ns.example.com) = " nsdomain
-
-sudo apt update
-sudo apt install screen -y
-screen -S setupvpn -dm bash
 
 #disable ipv6
 echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf

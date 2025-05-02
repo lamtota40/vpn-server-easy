@@ -33,7 +33,7 @@ hostnamectl set-hostname $domain
 apt-get remove --purge ufw firewalld -y
 
 #dependency
-apt install sudo gcc lsof make parted iptables python python2 jq cron curl openssl net-tools unzip rsyslog -y
+apt install sudo gcc lsof make parted iptables python python2 jq cron curl openssl net-tools unzip rsyslog nmap -y
 
 site="https://raw.githubusercontent.com/lamtota40/vpn-server-easy/main"
 

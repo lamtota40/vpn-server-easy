@@ -12,20 +12,20 @@ done
 
 
 while true; do
-    read -e -i 60 -p "Masukkan nilai swappiness baru (0-100;default:60): " swappiness
-    if [[ "$swappiness" =~ ^[0-9]+$ ]] && [ "$swappiness" -ge 0 ] && [ "$swappiness" -le 100 ]; then
+    read -e -i 60 -p "Masukkan nilai swappiness baru (1-100;default:60): " swappiness
+    if [[ "$swappiness" =~ ^[0-9]+$ ]] && [ "$swappiness" -ge 1 ] && [ "$swappiness" -le 100 ]; then
         break
     else
-        echo "Nilai swappiness harus berupa angka antara 0 dan 100. Silakan coba lagi."
+        echo "Nilai swappiness harus berupa angka antara 1 dan 100. Silakan coba lagi."
     fi
 done
 
 while true; do
-    read -e -i 100 -p "Masukkan nilai vfs_cache_pressure baru (0-1000;default:100): " vfs_cache_pressure
-    if [[ "$vfs_cache_pressure" =~ ^[0-9]+$ ]] && [ "$vfs_cache_pressure" -ge 0 ] && [ "$vfs_cache_pressure" -le 1000 ]; then
+    read -e -i 100 -p "Masukkan nilai vfs_cache_pressure baru (1-1000;default:100): " vfs_cache_pressure
+    if [[ "$vfs_cache_pressure" =~ ^[0-9]+$ ]] && [ "$vfs_cache_pressure" -ge 1 ] && [ "$vfs_cache_pressure" -le 1000 ]; then
         break
     else
-        echo "Nilai swappiness harus berupa angka antara 0 dan 1000. Silakan coba lagi."
+        echo "Nilai swappiness harus berupa angka antara 1 dan 1000. Silakan coba lagi."
     fi
 done
 

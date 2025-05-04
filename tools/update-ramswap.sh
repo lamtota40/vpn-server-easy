@@ -1,15 +1,20 @@
 #!/bin/bash
 
+# Mengecek apakah swap aktif
+if ! swapon --summary | grep -q '^/'; then
+    echo "Tidak ada swap yang aktif. Skrip dihentikan."
+    exit 0
+fi
+
 # Meminta input dari pengguna untuk ukuran swap
 while true; do
     read -p "Masukkan ukuran swap baru dalam Mb (misalnya 3000 untuk 3GB): " swap_size
     if [[ "$swap_size" =~ ^[0-9]+$ ]] && [ "$swap_size" -ge 250 ] && [ "$swap_size" -le 9000 ]; then
         break
     else
-        echo "Nilai swappiness harus berupa angka antara 250 dan 9000. Silakan coba lagi."
+        echo "Ukuran swap harus berupa angka antara 250 dan 9000. Silakan coba lagi."
     fi
 done
-
 
 while true; do
     read -e -i 60 -p "Masukkan nilai swappiness baru (1-100;default:60): " swappiness
@@ -25,7 +30,7 @@ while true; do
     if [[ "$vfs_cache_pressure" =~ ^[0-9]+$ ]] && [ "$vfs_cache_pressure" -ge 1 ] && [ "$vfs_cache_pressure" -le 1000 ]; then
         break
     else
-        echo "Nilai swappiness harus berupa angka antara 1 dan 1000. Silakan coba lagi."
+        echo "Nilai vfs_cache_pressure harus berupa angka antara 1 dan 1000. Silakan coba lagi."
     fi
 done
 
@@ -33,7 +38,7 @@ done
 sudo swapoff /swapfile
 
 # Mengubah ukuran swap
-sudo fallocate -l $swap_size /swapfile
+sudo fallocate -l ${swap_size}M /swapfile
 sudo chmod 600 /swapfile
 sudo mkswap /swapfile
 sudo swapon /swapfile

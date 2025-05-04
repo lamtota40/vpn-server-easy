@@ -2,17 +2,17 @@
 
 # Meminta input dari pengguna untuk ukuran swap
 while true; do
-    read -p "Masukkan ukuran swap baru (misalnya 3 untuk 3GB): " swap_size
-    if [[ "$swap_size" =~ ^[0-9]+$ ]] && [ "$swap_size" -ge 1 ] && [ "$swap_size" -le 100 ]; then
+    read -p "Masukkan ukuran swap baru dalam Mb (misalnya 3000 untuk 3GB): " swap_size
+    if [[ "$swap_size" =~ ^[0-9]+$ ]] && [ "$swap_size" -ge 250 ] && [ "$swap_size" -le 9000 ]; then
         break
     else
-        echo "Nilai swappiness harus berupa angka antara 0 dan 100. Silakan coba lagi."
+        echo "Nilai swappiness harus berupa angka antara 250 dan 9000. Silakan coba lagi."
     fi
 done
 
 
 while true; do
-    read -p "Masukkan nilai swappiness baru (0-100): " swappiness
+    read -e -i 60 -p "Masukkan nilai swappiness baru (0-100;default:60): " swappiness
     if [[ "$swappiness" =~ ^[0-9]+$ ]] && [ "$swappiness" -ge 0 ] && [ "$swappiness" -le 100 ]; then
         break
     else
@@ -21,7 +21,7 @@ while true; do
 done
 
 while true; do
-    read -p "Masukkan nilai vfs_cache_pressure baru (default:100): " vfs_cache_pressure
+    read -e -i 100 -p "Masukkan nilai vfs_cache_pressure baru (0-1000;default:100): " vfs_cache_pressure
     if [[ "$vfs_cache_pressure" =~ ^[0-9]+$ ]] && [ "$vfs_cache_pressure" -ge 0 ] && [ "$vfs_cache_pressure" -le 1000 ]; then
         break
     else
